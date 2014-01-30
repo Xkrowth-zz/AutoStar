@@ -116,7 +116,7 @@ namespace AutoStar.app
             ListItem pr30 = new ListItem("15:15:00", "15:15:00");
             ListItem pr31 = new ListItem("15:30:00", "15:30:00");
             ListItem pr32 = new ListItem("15:45:00", "15:45:00");
-            ListItem pr33 = new ListItem("16:00:00", "16:30:00");
+            ListItem pr33 = new ListItem("16:00:00", "16:00:00");
             ListItem pr34 = new ListItem("16:15:00", "16:15:00");
             ListItem pr35 = new ListItem("16:30:00", "16:30:00");
             ListItem pr36 = new ListItem("16:45:00", "16:45:00");
@@ -301,7 +301,7 @@ namespace AutoStar.app
             DataTable dt = new DataTable();
             da.Fill(dt);
 
-
+            int hora_actual = buscar_hora_Actual();
 
             for (int x = 0; x < dt.Rows.Count; x++) //ciclo para recorrer los tecnicos
             {
@@ -337,7 +337,11 @@ namespace AutoStar.app
                         TableCell tCell1 = new TableCell();
                         Button boton = new Button();
 
-
+                        bool marcar = false;
+                        if (num_cell == hora_actual)
+                        {
+                            marcar = true;
+                        }
 
                         switch (num_cell) // relaciona el numero de celda con la hora 
                         {
@@ -349,7 +353,10 @@ namespace AutoStar.app
                             case 2:
                                 //tabla += "<td class='tableCellPlanografoHoras'";                                
                                 tCell1.CssClass = "tableCellPlanografoHoras";
-
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -415,9 +422,13 @@ namespace AutoStar.app
                                 tRow.Cells.Add(tCell1);
                                 break;
                             case 3:
+
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";                                  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -482,7 +493,10 @@ namespace AutoStar.app
                             case 4:
                                 // tabla += "<td class='tableCellPlanografoHoras'";                                  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
-
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -548,7 +562,10 @@ namespace AutoStar.app
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'"; 
                                 //TableCell tCell5 = new TableCell();
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -612,6 +629,10 @@ namespace AutoStar.app
                             case 6:
                                 //tabla += "<td class='tableCellPlanografoHoras'";                                 
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -675,7 +696,10 @@ namespace AutoStar.app
                             case 7:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";                                  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -739,6 +763,10 @@ namespace AutoStar.app
                             case 8:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -802,6 +830,10 @@ namespace AutoStar.app
                             case 9:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -865,6 +897,10 @@ namespace AutoStar.app
                             case 10:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -928,6 +964,10 @@ namespace AutoStar.app
                             case 11:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -991,6 +1031,10 @@ namespace AutoStar.app
                             case 12:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1054,6 +1098,10 @@ namespace AutoStar.app
                             case 13:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1117,6 +1165,10 @@ namespace AutoStar.app
                             case 14:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1180,6 +1232,10 @@ namespace AutoStar.app
                             case 15:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1243,6 +1299,10 @@ namespace AutoStar.app
                             case 16:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1306,6 +1366,10 @@ namespace AutoStar.app
                             case 17:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1369,6 +1433,10 @@ namespace AutoStar.app
                             case 18:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1432,6 +1500,10 @@ namespace AutoStar.app
                             case 19:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1495,6 +1567,10 @@ namespace AutoStar.app
                             case 20:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1557,6 +1633,10 @@ namespace AutoStar.app
                             case 21:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1619,6 +1699,10 @@ namespace AutoStar.app
                             case 22:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1681,6 +1765,10 @@ namespace AutoStar.app
                             case 23:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1743,6 +1831,10 @@ namespace AutoStar.app
                             case 24:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1805,6 +1897,10 @@ namespace AutoStar.app
                             case 25:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1867,6 +1963,10 @@ namespace AutoStar.app
                             case 26:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1929,6 +2029,10 @@ namespace AutoStar.app
                             case 27:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -1991,6 +2095,10 @@ namespace AutoStar.app
                             case 28:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2053,6 +2161,10 @@ namespace AutoStar.app
                             case 29:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2115,6 +2227,10 @@ namespace AutoStar.app
                             case 30:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2177,6 +2293,10 @@ namespace AutoStar.app
                             case 31:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2238,6 +2358,10 @@ namespace AutoStar.app
                             case 32:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2299,6 +2423,10 @@ namespace AutoStar.app
                             case 33:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2361,6 +2489,10 @@ namespace AutoStar.app
                             case 34:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2423,6 +2555,10 @@ namespace AutoStar.app
                             case 35:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2484,6 +2620,10 @@ namespace AutoStar.app
                             case 36:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2545,6 +2685,10 @@ namespace AutoStar.app
                             case 37:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2607,6 +2751,10 @@ namespace AutoStar.app
                             case 38:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2669,6 +2817,10 @@ namespace AutoStar.app
                             case 39:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2730,6 +2882,10 @@ namespace AutoStar.app
                             case 40:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2791,6 +2947,10 @@ namespace AutoStar.app
                             case 41:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2853,6 +3013,10 @@ namespace AutoStar.app
                             case 42:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                if (marcar)
+                                {
+                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
@@ -2936,15 +3100,25 @@ namespace AutoStar.app
                     tCell1.Controls.Add(etiq);
                     tRow1.Cells.Add(tCell1);
 
-
+                    
 
                     for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
                     {
+                        bool marcar = false;
+                        if (num_cell == hora_actual)
+                        {
+                            marcar = true;
+                        }
+
                         if ((num_cell % 2) == 0)
                         {
                             //tabla += "<td class='tableCellPlanografoHoras'></td>";
                             TableCell tCell2 = new TableCell();
                             tCell2.CssClass = "tableCellPlanografoHoras";
+                            if (marcar)
+                            {
+                                tCell2.BackColor = System.Drawing.Color.Blue;
+                            }
                             tRow1.Cells.Add(tCell2);
 
                         }
@@ -2953,6 +3127,10 @@ namespace AutoStar.app
                             //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";
                             TableCell tCell2 = new TableCell();
                             tCell2.CssClass = "tableCellPlanografoHoras_impar";
+                            if (marcar)
+                            {
+                                tCell2.BackColor = System.Drawing.Color.Blue;
+                            }
                             tRow1.Cells.Add(tCell2);
                         }
 
@@ -2967,6 +3145,214 @@ namespace AutoStar.app
 
             con.Close();
             return tabla;
+        }
+
+        /// <summary>
+        /// se encarga de buscar la hora mas cercana para marcar la franja
+        /// </summary>
+        /// <returns></returns>
+        private int buscar_hora_Actual()
+        {
+            int numero = 0;
+            DateTime fecha = DateTime.Now;
+            string hora_a = fecha.Hour +"," + fecha.Minute;
+            hora_a = formatear_down(hora_a);
+
+            string[] calcular = hora_a.Split(',');
+            int hora = int.Parse(calcular[0]);
+            int min = int.Parse(calcular[1]);
+
+            switch (hora)
+            {
+                case 7:                   
+                    if (min == 30)
+                    {
+                         numero  = 2;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 3;
+                    }
+                    break;
+                case 8:
+                    if (min == 0)
+                    {
+                        numero  = 4;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 5;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 6;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 7;
+                    }
+                    break;
+                case 9:
+                    if (min == 0)
+                    {
+                        numero  = 8;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 9;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 10;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 11;
+                    }
+                    break;
+                case 10:
+                    if (min == 0)
+                    {
+                        numero  = 12;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 13;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 14;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 15;
+                    }
+                    break;
+                case 11:
+                    if (min == 0)
+                    {
+                        numero  = 16;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 17;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 18;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 19;
+                    }
+                    break;
+                case 12:
+                    if (min == 0)
+                    {
+                        numero  = 20;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 21;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 22;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 23;
+                    }
+                    break;
+                case 13:
+                    if (min == 0)
+                    {
+                        numero  = 24;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 25;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 26;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 27;
+                    }
+                    break;
+                case 14:
+                    if (min == 0)
+                    {
+                        numero  = 28;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  =29;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  =30 ;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 31;
+                    }
+                    break;
+                case 15:
+                    if (min == 0)
+                    {
+                        numero  = 32;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 33;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 34;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 35;
+                    }
+                    break;
+                case 16:
+                    if (min == 0)
+                    {
+                        numero  = 36;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 37;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 38;
+                    }
+                    else if (min == 45)
+                    {
+                         numero  = 39;
+                    }
+                    break;
+                case 17:
+                    if (min == 0)
+                    {
+                        numero  = 40;
+                    }
+                    else if (min == 15)
+                    {
+                         numero  = 41;
+                    }
+                    else if (min == 30)
+                    {
+                         numero  = 42;
+                    }
+                    break;
+            }
+
+            return numero;
         }
 
         #endregion
@@ -2991,7 +3377,7 @@ namespace AutoStar.app
 
 
                     string formate = formatear(htazada.Text);
-                    string[] hora_taza = formate.Split(':');
+                    string[] hora_taza = formate.Split(',');
 
                     //string[] final = drpHoraFinal.SelectedValue.Split(':');
                     fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
@@ -3036,7 +3422,7 @@ namespace AutoStar.app
                 else if (Button1.Text.Equals("Actualizar"))
                 {
                     string formate = formatear(htazada.Text);
-                    string[] hora_taza = formate.Split(':');
+                    string[] hora_taza = formate.Split(',');
 
                     DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
 
@@ -3091,25 +3477,50 @@ namespace AutoStar.app
 
         private string formatear(string p)
         {
-            string[] calcular = p.Split(':');
+            string[] calcular = p.Split(',');
             int hora = int.Parse(calcular[0]);
             int min = int.Parse(calcular[1]);
             if (min > 0 && min < 15)
             {
-                return p[0] + ":15";
+                return hora + ",15";
             }
             if (min > 15 && min < 30)
             {
-                return p[0] + ":30";
+                return hora + ",30";
             }
             if (min > 30 && min < 45)
             {
-                return p[0] + ":45";
+                return hora + ",45";
             }
             if (min > 45 && min < 60)
             {
                 hora += 1;
-                return hora + ":00";
+                return hora + ",00";
+            }
+            return p;
+        }
+
+        private string formatear_down(string p)
+        {
+            string[] calcular = p.Split(',');
+            int hora = int.Parse(calcular[0]);
+            int min = int.Parse(calcular[1]);
+            if (min > 0 && min < 15)
+            {
+                return hora + ",00";
+            }
+            if (min > 15 && min < 30)
+            {
+                return hora + ",15";
+            }
+            if (min > 30 && min < 45)
+            {
+                return hora + ",30";
+            }
+            if (min > 45 && min < 60)
+            {
+                hora += 1;
+                return hora + ",45";
             }
             return p;
         }
@@ -3179,7 +3590,7 @@ namespace AutoStar.app
                 fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
                 fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
-                string[] hora_taza = htazada.Text.Split(':');
+                string[] hora_taza = htazada.Text.Split(',');
 
                 DateTime fechafinal = fechainicio;
                 //string[] final = drpHoraFinal.SelectedValue.Split(':');

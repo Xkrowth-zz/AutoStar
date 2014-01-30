@@ -141,8 +141,8 @@
             <asp:Label ID="Label28" CssClass="busquedalbl" runat="server" Text="Hora Tasada:"></asp:Label>
             <asp:TextBox ID="htazada" CssClass="planografotxt" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged"></asp:TextBox>
             <br />
-            <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="Introduzca formato H:m" ValidationExpression="[0-9]?[0-9]:[0-9]?[0-9]" ValidationGroup="validar"></asp:RegularExpressionValidator>--%>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="Introduzca formato H,m" ValidationExpression="[0-9]?[0-9],[0-9]?[0-9]" ValidationGroup="validar"></asp:RegularExpressionValidator>
 
             <asp:Label ID="Label5" CssClass="busquedalbl" runat="server" Text="Hora Final:"></asp:Label>
             <asp:TextBox ID="txthorafinal" CssClass="planografotxt" runat="server" Enabled="False"></asp:TextBox>

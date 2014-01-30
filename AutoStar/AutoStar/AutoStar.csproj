@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2B67497-FBB2-467B-BDDE-D4C28829C9AB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AutoStar</RootNamespace>
+    <AssemblyName>AutoStar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\packages\AjaxControlToolkit.7.1005\lib\45\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\packages\AjaxMin.4.97.4951.28483\lib\net40\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0-rc1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0-rc1\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0-rc1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0-rc1\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0-rc1\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0-rc1\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0-rc1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.1.0.0-rc1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.0.0-rc1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0-rc1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.2.0.0-rc1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="app\About.aspx.cs">
+      <DependentUpon>timeManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\About.aspx.designer.cs">
+      <DependentUpon>timeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\AutoStar.Master.cs">
+      <DependentUpon>AutoStar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\AutoStar.Master.designer.cs">
+      <DependentUpon>AutoStar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="app\changeState.aspx.cs">
+      <DependentUpon>changeState.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\changeState.aspx.designer.cs">
+      <DependentUpon>changeState.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\configGeneral.aspx.cs">
+      <DependentUpon>configGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\configGeneral.aspx.designer.cs">
+      <DependentUpon>configGeneral.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\construccion.aspx.cs">
+      <DependentUpon>construccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\construccion.aspx.designer.cs">
+      <DependentUpon>construccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Acceso_Menu.aspx.cs">
+      <DependentUpon>GT_Acceso_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Acceso_Menu.aspx.designer.cs">
+      <DependentUpon>GT_Acceso_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Areas.aspx.cs">
+      <DependentUpon>GT_Areas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Areas.aspx.designer.cs">
+      <DependentUpon>GT_Areas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Asignacion_Parqueo.aspx.cs">
+      <DependentUpon>GT_Asignacion_Parqueo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Asignacion_Parqueo.aspx.designer.cs">
+      <DependentUpon>GT_Asignacion_Parqueo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Departamentos.aspx.cs">
+      <DependentUpon>GT_Departamentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Departamentos.aspx.designer.cs">
+      <DependentUpon>GT_Departamentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Status_Orden.aspx.cs">
+      <DependentUpon>GT_Status_Orden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Status_Orden.aspx.designer.cs">
+      <DependentUpon>GT_Status_Orden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Nueva_Orden.aspx.cs">
+      <DependentUpon>GT_Nueva_Orden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Nueva_Orden.aspx.designer.cs">
+      <DependentUpon>GT_Nueva_Orden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Opcion_Menu.aspx.cs">
+      <DependentUpon>GT_Opcion_Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Opcion_Menu.aspx.designer.cs">
+      <DependentUpon>GT_Opcion_Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Orden_Trabajo.aspx.cs">
+      <DependentUpon>GT_Orden_Trabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Orden_Trabajo.aspx.designer.cs">
+      <DependentUpon>GT_Orden_Trabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Planografo_Digital.aspx.cs">
+      <DependentUpon>GT_Planografo_Digital.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Planografo_Digital.aspx.designer.cs">
+      <DependentUpon>GT_Planografo_Digital.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Prioridad_Orden_Trabajo.aspx.cs">
+      <DependentUpon>GT_Prioridad_Orden_Trabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Prioridad_Orden_Trabajo.aspx.designer.cs">
+      <DependentUpon>GT_Prioridad_Orden_Trabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Roles.aspx.cs">
+      <DependentUpon>GT_Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Roles.aspx.designer.cs">
+      <DependentUpon>GT_Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Tareas.aspx.cs">
+      <DependentUpon>GT_Tareas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Tareas.aspx.designer.cs">
+      <DependentUpon>GT_Tareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\GT_Usuario.aspx.cs">
+      <DependentUpon>GT_Usuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Usuario.aspx.designer.cs">
+      <DependentUpon>GT_Usuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\keyManager.aspx.cs">
+      <DependentUpon>keyManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\keyManager.aspx.designer.cs">
+      <DependentUpon>keyManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="app\orders.aspx.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\orders.aspx.designer.cs">
+      <DependentUpon>orders.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\packageManager.aspx.cs">
+      <DependentUpon>packageManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\packageManager.aspx.designer.cs">
+      <DependentUpon>packageManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\queries.aspx.cs">
+      <DependentUpon>queries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\queries.aspx.designer.cs">
+      <DependentUpon>queries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\search.aspx.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\search.aspx.designer.cs">
+      <DependentUpon>search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\SlideTest.aspx.cs">
+      <DependentUpon>SlideTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\SlideTest.aspx.designer.cs">
+      <DependentUpon>SlideTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\stuffManager.aspx.cs">
+      <DependentUpon>stuffManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\stuffManager.aspx.designer.cs">
+      <DependentUpon>stuffManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\workOrder.aspx.cs">
+      <DependentUpon>workOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\workOrder.aspx.designer.cs">
+      <DependentUpon>workOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="WebServiceAutoStar.asmx.cs">
+      <DependentUpon>WebServiceAutoStar.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\configGeneral.aspx" />
+    <Content Include="app\construccion.aspx" />
+    <Content Include="app\GT_Acceso_Menu.aspx" />
+    <Content Include="app\GT_Areas.aspx" />
+    <Content Include="app\GT_Asignacion_Parqueo.aspx" />
+    <Content Include="app\GT_Departamentos.aspx" />
+    <Content Include="app\GT_Status_Orden.aspx" />
+    <Content Include="app\GT_Nueva_Orden.aspx" />
+    <Content Include="app\GT_Opcion_Menu.aspx" />
+    <Content Include="app\GT_Orden_Trabajo.aspx" />
+    <Content Include="app\GT_Planografo_Digital.aspx" />
+    <Content Include="app\GT_Prioridad_Orden_Trabajo.aspx" />
+    <Content Include="app\GT_Roles.aspx" />
+    <Content Include="app\GT_Tareas.aspx" />
+    <Content Include="app\GT_Usuario.aspx" />
+    <Content Include="app\Images\backgrounds\Chrysler1.jpg" />
+    <Content Include="app\Images\backgrounds\Chrysler2.jpg" />
+    <Content Include="app\Images\backgrounds\FL1.jpg" />
+    <Content Include="app\Images\backgrounds\FL2.jpg" />
+    <Content Include="app\Images\backgrounds\Freightliner1.jpg" />
+    <Content Include="app\Images\backgrounds\Freightliner2.jpg" />
+    <Content Include="app\Images\backgrounds\J1.jpg" />
+    <Content Include="app\Images\backgrounds\J2.jpg" />
+    <Content Include="app\Images\backgrounds\Jeep1.jpg" />
+    <Content Include="app\Images\backgrounds\Jeep2.jpg" />
+    <Content Include="app\Images\backgrounds\mb1.jpg" />
+    <Content Include="app\Images\backgrounds\mb2.jpg" />
+    <Content Include="app\Images\backgrounds\MB3.jpg" />
+    <Content Include="app\Images\backgrounds\MercedesBenz1.jpg" />
+    <Content Include="app\Images\backgrounds\MercedesBenz2.jpg" />
+    <Content Include="app\Images\backgrounds\ParkBack.png" />
+    <Content Include="app\Images\backgrounds\R1.jpg" />
+    <Content Include="app\Images\backgrounds\Ram1.jpg" />
+    <Content Include="app\Images\backgrounds\Ram2.jpg" />
+    <Content Include="app\Images\construccion.png" />
+    <Content Include="app\Images\icons\iconAcceso.png" />
+    <Content Include="app\Images\icons\iconAreas.png" />
+    <Content Include="app\Images\icons\iconAsignacionTiempo.png" />
+    <Content Include="app\Images\icons\iconAsignarPersonal.png" />
+    <Content Include="app\Images\icons\iconBorrar.png" />
+    <Content Include="app\Images\icons\iconBuscar.png" />
+    <Content Include="app\Images\icons\iconCambioEstado.png" />
+    <Content Include="app\Images\icons\iconConfigGeneral.png" />
+    <Content Include="app\Images\icons\iconConsultas.png" />
+    <Content Include="app\Images\icons\iconCrear.png" />
+    <Content Include="app\Images\icons\iconDepartamento.png" />
+    <Content Include="app\Images\icons\iconEditar.png" />
+    <Content Include="app\Images\icons\iconEstado.png" />
+    <Content Include="app\Images\icons\iconGuardar.png" />
+    <Content Include="app\Images\icons\iconInicio.png" />
+    <Content Include="app\Images\icons\iconListadoOrdenes.png" />
+    <Content Include="app\Images\icons\iconLogin.png" />
+    <Content Include="app\Images\icons\iconOrdenTrabajo.png" />
+    <Content Include="app\Images\icons\iconOpciones.png" />
+    <Content Include="app\Images\icons\iconAsignacionParqueo.png" />
+    <Content Include="app\Images\icons\iconPlanografoDigital.png" />
+    <Content Include="app\Images\icons\iconPrioridad.png" />
+    <Content Include="app\Images\icons\iconRoles.png" />
+    <Content Include="app\Images\icons\iconStatus.png" />
+    <Content Include="app\Images\icons\iconTareas.png" />
+    <Content Include="app\Images\icons\iconUsuario.png" />
+    <Content Include="app\Images\logo.png" />
+    <Content Include="app\keyManager.aspx" />
+    <Content Include="app\login.aspx" />
+    <Content Include="app\modalBackground.css" />
+    <Content Include="app\orders.aspx" />
+    <Content Include="app\packageManager.aspx" />
+    <Content Include="app\queries.aspx" />
+    <Content Include="app\search.aspx" />
+    <Content Include="app\settings.aspx" />
+    <Content Include="app\SlideTest.aspx" />
+    <Content Include="app\stuffManager.aspx" />
+    <Content Include="app\Styles\Main.css" />
+    <Content Include="app\timeManager.aspx" />
+    <Content Include="app\changeState.aspx" />
+    <Content Include="app\default.aspx" />
+    <Content Include="app\Styles\AutoStar.css" />
+    <Content Include="app\workOrder.aspx" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="app\AutoStar.Master" />
+    <Content Include="WebServiceAutoStar.asmx" />
+    <Content Include="app\MasterPage.Master" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveAccountPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\Account\" />
+    <Folder Include="app\AppData\" />
+    <Folder Include="app\Scripts\" />
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1874</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1874/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

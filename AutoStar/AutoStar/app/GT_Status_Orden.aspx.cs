@@ -181,6 +181,25 @@ namespace AutoStar.app
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+
+
+            String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+            String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
+            int idStatus = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("updateStatus", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@idStatus", SqlDbType.Int).Value = idStatus;
+            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
 
         }
 

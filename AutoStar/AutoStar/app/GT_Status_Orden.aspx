@@ -78,13 +78,11 @@
 
                 <asp:TemplateField HeaderText="descripcion" SortExpression="descripcion">
                     <EditItemTemplate>
-                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion">
-    </asp:DropDownList>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
                     </ItemTemplate>
-
                     <FooterTemplate>                        
                         <asp:TextBox ID="TextBox5" runat="server" TextMode="MultiLine"></asp:TextBox>
                     </FooterTemplate>
@@ -92,7 +90,7 @@
 
                 <asp:TemplateField HeaderText="comentarios" SortExpression="comentarios">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" TextMode="MultiLine" Text='<%# Bind("comentarios") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" TextMode="MultiLine" Text='<%# Bind("comentarios") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>

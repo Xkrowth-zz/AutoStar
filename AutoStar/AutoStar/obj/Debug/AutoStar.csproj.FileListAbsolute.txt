@@ -701,3 +701,4 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxCont
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache

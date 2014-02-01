@@ -124,7 +124,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Número de Orden" SortExpression="numeroOrden">
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtfld_numeroOrden" runat="server" Text='<%# Bind("numeroOrden") %>' ReadOnly="true"></asp:TextBox>
+                    <asp:TextBox ID="txtfld_numeroOrden" runat="server" Text='<%# Bind("numeroOrden") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("numeroOrden") %>'> </asp:Label>
@@ -154,14 +154,14 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
             <asp:TemplateField HeaderText="Técnico" SortExpression="idTecnico">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList14" runat="server" DataSourceID="SqlDataSource3" DataTextField="nombre" DataValueField="nombre">
-    </asp:DropDownList>
+                    </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("idTecnico") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="nombre" DataValueField="nombre">
-    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idTecnico" runat="server"></asp:TextBox>--%>
+                    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idTecnico" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idTecnico" ValidationGroup="Insert" runat="server" ErrorMessage="Tecnico es un campo obligatario" ControlToValidate="DropDownList3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </FooterTemplate>
@@ -170,14 +170,14 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
             <asp:TemplateField HeaderText="Area" SortExpression="idArea">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList13" runat="server" DataSourceID="SqlDataSource4" DataTextField="descripcion" DataValueField="descripcion">
-    </asp:DropDownList>
+                    </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="descripcion" DataValueField="descripcion">
-    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idArea" runat="server"></asp:TextBox>--%>
+                    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idArea" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idArea" ValidationGroup="Insert" runat="server" ErrorMessage="Area es un campo obligatario" ControlToValidate="DropDownList4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
 
                 </FooterTemplate>
@@ -200,7 +200,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
             <asp:TemplateField HeaderText="Asesor" SortExpression="idAsesor">
                 <EditItemTemplate>
                     <asp:DropDownList ID="DropDownList12" runat="server" DataSourceID="SqlDataSource5" DataTextField="nombre" DataValueField="nombre">
-    </asp:DropDownList>
+                    </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label6" runat="server" Text='<%# Bind("idAsesor") %>'></asp:Label>

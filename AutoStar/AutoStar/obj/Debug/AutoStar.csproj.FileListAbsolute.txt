@@ -699,6 +699,5 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlT
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
-C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb

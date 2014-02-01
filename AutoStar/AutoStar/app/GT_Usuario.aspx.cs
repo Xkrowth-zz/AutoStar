@@ -333,5 +333,30 @@ namespace AutoStar.app
 
         }
 
+        protected void btn_guardarClick(object sender, ImageClickEventArgs e)
+        {
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+            int idUsuario = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label2")).Text);
+            String nombre = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_nombre")).Text;
+            String apellido1 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido1")).Text;
+            String apellido2 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido2")).Text;
+            String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList5")).SelectedItem.Text;
+            String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList4")).SelectedItem.Text;
+            String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("updateUsuario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+            cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+            cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
+            cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+            cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
+            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
+        }
     }
 }

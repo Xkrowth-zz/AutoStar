@@ -28,7 +28,7 @@
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton2" AlternateText="Editar" runat="server" ImageUrl="~/app/Images/icons/iconEditar.png" OnClick="btn_editar_Click" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="update" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="btn_guardarClick" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminar_Click" />
@@ -47,8 +47,7 @@
         </DeleteParameters>
 
         <InsertParameters>
-            <asp:Parameter Name="idRol" Type="Int32" />
-            <asp:Parameter Name="idDepartamento" Type="Int32" />
+            <asp:Parameter Name="rol" Type="String" />
             <asp:Parameter Name="nombre" Type="String" />
             <asp:Parameter Name="apellido1" Type="String" />
             <asp:Parameter Name="apellido2" Type="String" />
@@ -60,11 +59,12 @@
         </SelectParameters>
         <UpdateParameters>
             <asp:Parameter Name="idUsuario" Type="Int32" />
-            <asp:Parameter Name="idRol" Type="Int32" />
-            <asp:Parameter Name="idDepartamento" Type="Int32" />
+            <asp:Parameter Name="rol" Type="String" />
+            <asp:Parameter Name="area" Type="String" />
             <asp:Parameter Name="nombre" Type="String" />
             <asp:Parameter Name="apellido1" Type="String" />
             <asp:Parameter Name="apellido2" Type="String" />
+            <asp:Parameter Name="status" Type="Boolean" />
             <asp:Parameter Name="comentarios" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
@@ -75,8 +75,11 @@
         <asp:ListItem>Nombre</asp:ListItem>
         <asp:ListItem>Apellido1</asp:ListItem>
         <asp:ListItem>Apellido2</asp:ListItem>
-        <asp:ListItem>Rol</asp:ListItem>        
+        <asp:ListItem>Rol</asp:ListItem>
+        <asp:ListItem>Area</asp:ListItem>        
     </asp:DropDownList>
+
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
 
     <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
@@ -146,19 +149,33 @@
                     <asp:RequiredFieldValidator ID="rfv_insert_departamento" ValidationGroup="Insert" runat="server" ErrorMessage="Departamento es un campo obligatario" ControlToValidate="txtfld_insert_departamento" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>--%>
+
             <asp:TemplateField HeaderText="Rol" SortExpression="Rol">
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtfld_rol" runat="server" Text='<%# Bind("idRol") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_rol" runat="server" ErrorMessage="Rol es un campo obligatario" ControlToValidate="txtfld_rol" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_rol" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                 </FooterTemplate>
                 <ControlStyle Width="100px" />
             </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Area" SortExpression="idArea">
+                <EditItemTemplate>
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>                    
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lbl_area" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                </FooterTemplate>
+                <ControlStyle Width="100px" />
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Comentarios" SortExpression="Comentarios">
                 <EditItemTemplate>
                     <asp:TextBox ID="txtfld_comentarios" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
@@ -172,9 +189,10 @@
                     <asp:RequiredFieldValidator ID="rfv_insert_comentarios" ValidationGroup="Insert" runat="server" ErrorMessage="Comentarios es un campo obligatario" ControlToValidate="txtfld_insert_comentarios" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="idUsuario" SortExpression="idUsuario" Visible="false">
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtfld_idUsuario" runat="server" Text='<%# Bind("idUsuario") %>'></asp:TextBox>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("idUsuario") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_idUsuario" runat="server" Text='<%# Bind("idUsuario") %>'></asp:Label>
@@ -183,7 +201,7 @@
         </Columns>
     </asp:GridView>
 
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
 
     <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
     <asp:ValidationSummary ID="ValidationSummary2" ForeColor="Red" runat="server" />

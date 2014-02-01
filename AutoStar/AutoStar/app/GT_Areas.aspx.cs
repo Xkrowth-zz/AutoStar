@@ -23,29 +23,12 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LevelUp;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.CommandText = "listarEmpleados";
-            //cmd.Connection = con;
-
-            //    con.Open();
-            //    GridView1.EmptyDataText = "No Records Found";
-            //    GridView1.DataSource = cmd.ExecuteReader();
-            //    GridView1.DataBind();
-
-            //    con.Close();
-            //    con.Dispose();
-
-
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             GridView1.PageIndex = e.NewPageIndex;
             DataBind();
         }
-
-        //This event shows how to delete a row on delete LinkButton click.
 
         protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -105,11 +88,7 @@ namespace AutoStar.app
 
         protected void GridView1_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
-            // Get the currently selected row. Because the SelectedIndexChanging event
-            // occurs before the select operation in the GridView control, the
-            // SelectedRow property cannot be used. Instead, use the Rows collection
-            // and the NewSelectedIndex property of the e argument passed to this 
-            // event handler.
+            
             GridViewRow row = GridView1.Rows[e.NewSelectedIndex];
             //GridView1.SelectRow(e.NewSelectedIndex);
 
@@ -255,6 +234,27 @@ namespace AutoStar.app
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e) 
         {
+
+            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+            //Accessing Edited values from the GridView
+
+
+            int idArea = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+            string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+            string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
+
+
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("updateArea", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@idArea", SqlDbType.Int).Value = idArea;
+            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
+
 
         }
         

@@ -67,7 +67,7 @@
                     <asp:Button CssClass="botonSemi" ID="Button23" runat="server" Enabled="False" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton PostBackUrl="~/app/GT_Usuario.aspx" CssClass="botonFull" ID="ImageButton9" AlternateText="Acceso" runat="server" ImageUrl="~/app/Images/icons/iconAcceso.png" />
+                    <asp:ImageButton PostBackUrl="~/app/GT_Acceso_Menu.aspx" CssClass="botonFull" ID="ImageButton9" AlternateText="Acceso" runat="server" ImageUrl="~/app/Images/icons/iconAcceso.png" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

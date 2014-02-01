@@ -6,9 +6,6 @@
         body {
             background-image: url('/app/Images/backgrounds/MB3.jpg');
             background-repeat: no-repeat;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            -webkit-background-size: cover;
             background-size: cover;
         }
     </style>
@@ -71,7 +68,10 @@
         <asp:ListItem>Opcion</asp:ListItem>        
     </asp:DropDownList>
         
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idAcceso" ShowFooter="True" ShowHeaderWhenEmpty="True">
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Opcion_Menu"></asp:SqlDataSource>
+        
+            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idAcceso" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField>
                         <FooterTemplate>
@@ -81,7 +81,7 @@
 
                     <asp:TemplateField HeaderText="Acceso" SortExpression="idAcceso" Visible="False">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:TextBox>
+                            <asp:Label ID="Label6" runat="server" Text='<%# Bind("idAcceso") %>'></asp:Label>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:Label>
@@ -90,37 +90,37 @@
 
                     <asp:TemplateField HeaderText="Rol" SortExpression="idRol">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("idRol") %>'></asp:TextBox>
+                            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-                            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                         </FooterTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Opcion" SortExpression="idOpcion">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:TextBox>
+                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-                            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                            <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                         </FooterTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Comentarios" SortExpression="comentarios">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>' TextMode="MultiLine"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("comentarios") %>' ></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-                            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                            <asp:TextBox ID="TextBox7" runat="server" TextMode="MultiLine"></asp:TextBox>
                         </FooterTemplate>
                     </asp:TemplateField>
 

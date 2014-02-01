@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Web;
@@ -17,12 +19,39 @@ namespace AutoStar.app
 
         protected void btn_buscarClick(object sender, ImageClickEventArgs e)
         {
+            String valor = TextBox1.Text;
+            String campo = DropDownList1.SelectedItem.Text;            
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("accesoBusquedas", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;            
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
 
         }
 
         protected void lbInsert_Click(object sender, ImageClickEventArgs e)
         {
 
+            String rol = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList5")).SelectedItem.Text;
+            String opcion = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList4")).SelectedItem.Text;
+            String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);            
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("insertAcceso", conn);
+            cmd.CommandType = CommandType.StoredProcedure;            
+            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+            cmd.Parameters.Add("@opcion", SqlDbType.NVarChar).Value = opcion;            
+            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
+          
         }
 
         protected void btn_editar_Click(object sender, EventArgs e)
@@ -51,6 +80,22 @@ namespace AutoStar.app
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
+            int idAcceso = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label6")).Text);
+            String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList3")).SelectedItem.Text;
+            String opcion = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList2")).SelectedItem.Text;
+            String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("updateAcceso", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@idAcceso", SqlDbType.Int).Value = idAcceso;
+            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+            cmd.Parameters.Add("@opcion", SqlDbType.NVarChar).Value = opcion;
+            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.ExecuteReader();
+            DataBind();
+            con.Close();
 
         }
         protected void btn_eliminar_Click(object sender, ImageClickEventArgs e)

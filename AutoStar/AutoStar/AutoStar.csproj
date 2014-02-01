@@ -191,12 +191,12 @@
     <Compile Include="app\changeState.aspx.designer.cs">
       <DependentUpon>changeState.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\configGeneral.aspx.cs">
-      <DependentUpon>configGeneral.aspx</DependentUpon>
+    <Compile Include="app\GT_Configuracion_General.aspx.cs">
+      <DependentUpon>GT_Configuracion_General.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="app\configGeneral.aspx.designer.cs">
-      <DependentUpon>configGeneral.aspx</DependentUpon>
+    <Compile Include="app\GT_Configuracion_General.aspx.designer.cs">
+      <DependentUpon>GT_Configuracion_General.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\construccion.aspx.cs">
       <DependentUpon>construccion.aspx</DependentUpon>
@@ -399,7 +399,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\configGeneral.aspx" />
+    <Content Include="app\GT_Configuracion_General.aspx" />
     <Content Include="app\construccion.aspx" />
     <Content Include="app\GT_Acceso_Menu.aspx" />
     <Content Include="app\GT_Areas.aspx" />

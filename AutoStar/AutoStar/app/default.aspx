@@ -71,7 +71,7 @@
         <asp:Table CssClass="table" ID="Table5" runat="server">
             <asp:TableRow CssClass="tableRow">
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton PostBackUrl="~/app/configGeneral.aspx" CssClass="botonFull" ID="configGeneral" runat="server" ImageUrl="~/app/Images/icons/iconConfigGeneral.png" />
+                    <asp:ImageButton PostBackUrl="~/app/GT_Configuracion_General.aspx" CssClass="botonFull" ID="configGeneral" runat="server" ImageUrl="~/app/Images/icons/iconConfigGeneral.png" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

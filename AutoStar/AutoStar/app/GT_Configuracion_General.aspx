@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="configGeneral.aspx.cs" Inherits="SGT_AutoStar.app.configGeneral" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Configuracion_General.aspx.cs" Inherits="SGT_AutoStar.app.configGeneral" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -74,7 +74,7 @@
         <asp:Table CssClass="table" ID="Table5" runat="server">
             <asp:TableRow CssClass="tableRow">
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton PostBackUrl="~/app/GT_Usuario.aspx" CssClass="botonFull" ID="ImageButton2" AlternateText="Opciones" runat="server" ImageUrl="~/app/Images/icons/iconOpciones.png" />
+                    <asp:ImageButton PostBackUrl="~/app/GT_Opcion_Menu.aspx" CssClass="botonFull" ID="ImageButton2" AlternateText="Opciones" runat="server" ImageUrl="~/app/Images/icons/iconOpciones.png" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

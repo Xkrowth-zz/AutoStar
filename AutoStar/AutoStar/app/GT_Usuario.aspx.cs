@@ -61,65 +61,8 @@ namespace AutoStar.app
         } 
 
 
-        //This event shows how to delete a row on delete LinkButton click.
-
-        protected void delete(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("deleteUsuario", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            //int delete_idUsuario = int.Parse( GridView1.SelectedRow.Cells[1].Text );
-            int idUsuario = int.Parse(((Label)GridView1.SelectedRow.FindControl("txtfld_idUsuario")).Text);
-            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
-        }
 
 
-
-        //This event will update information in database.
-
-        protected void update(object sender, EventArgs e)
-        {
-            try
-            {
-                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-                //Console.Write(((TextBox)GridView1.FindControl("txtfld_departamento")).ToString());
-                //int idRol = int.Parse(((TextBox)GridView1.Rows[GridView1.SelectedIndex].Cells[1].FindControl("txtfld_rol")).Text);
-                int idRol = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("txtfld_rol")).Text);
-                int idDepartamento = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("txtfld_departamento")).Text);
-                string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
-                string str_nombre = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_nombre")).Text;  //Company
-                string str_apellido1 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido1")).Text;  //Name
-                string str_apellido2 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido2")).Text;
-                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("updateUsuario", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = str_nombre;
-                cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = str_apellido1;
-                cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = str_apellido2;
-                cmd.Parameters.Add("@idDepartamento", SqlDbType.Int).Value = idDepartamento;
-                cmd.Parameters.Add("@idRol", SqlDbType.Int).Value = idRol;
-                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-                cmd.ExecuteReader();
-                //cmd.CommandText = "listarEmpleados";
-                //GridView1.DataSource = cmd.ExecuteReader();
-                DataBind();
-                con.Close();
-            }
-            catch (Exception x)
-            {
-                Console.WriteLine("Error reading from {0}. Message = {1}");
-            }
-            
-            // Do something with buffer...
-            
-        }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
@@ -127,22 +70,6 @@ namespace AutoStar.app
             DataBind();
         }
 
-        //This event shows how to delete a row on delete LinkButton click.
-
-        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
-        {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            Label deleteId = (Label)GridView1.Rows[e.RowIndex].FindControl("idEmpleado");
-            cmd.CommandText = "Delete from Empleado where idEmpleado='" + deleteId.Text + "'";
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            DataBind();
-        }
-
-        //This event is used to show a row in editable mode.
 
         protected void GridView1_RowEditing(object sender, GridViewEditEventArgs e)
         {

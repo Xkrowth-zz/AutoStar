@@ -37,13 +37,10 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteAcceso" DeleteCommandType="StoredProcedure" InsertCommand="insertAcceso" InsertCommandType="StoredProcedure" SelectCommand="accesoBusquedas" UpdateCommand="updateAcceso" UpdateCommandType="StoredProcedure" SelectCommandType="StoredProcedure">
                 <DeleteParameters>
                     <asp:Parameter Name="idAcceso" Type="int32" />
-                    <asp:Parameter Name="idOpcion" Type="int32" />
-                    <asp:Parameter Name="idRol" Type="Int32" />                    
-                    <asp:Parameter Name="comentarios" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="idOpcion" Type="int32" />
-                    <asp:Parameter Name="idRol" Type="Int32" /> 
+                    <asp:Parameter Name="opcion" Type="String" />
+                    <asp:Parameter Name="rol" Type="String" /> 
                     <asp:Parameter Name="comentarios" Type="String" />
                 </InsertParameters>
                 <SelectParameters>
@@ -52,8 +49,8 @@
                 </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="idAcceso" Type="int32" />
-                    <asp:Parameter Name="idOpcion" Type="int32" />
-                    <asp:Parameter Name="idRol" Type="Int32" /> 
+                    <asp:Parameter Name="opcion" Type="String" />
+                    <asp:Parameter Name="rol" Type="String" /> 
                     <asp:Parameter Name="comentarios" Type="String" />
                 </UpdateParameters>
             </asp:SqlDataSource>
@@ -61,8 +58,8 @@
 
 
         
-            <asp:Label ID="Label1" runat="server" Text="Valor a buscar:"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text="Valor a buscar:" CssClass="busquedalbl"></asp:Label>
+    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
     <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem>Rol</asp:ListItem>
         <asp:ListItem>Opcion</asp:ListItem>        

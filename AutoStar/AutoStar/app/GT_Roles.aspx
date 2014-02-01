@@ -36,7 +36,7 @@
 
         <h1>Roles</h1>
         <hr/>
-            <asp:Label ID="Label1" runat="server" Font-Names="Adobe Caslon Pro Bold" Font-Size="Large" ForeColor="White" Text="Valor a buscar:"></asp:Label>
+            <asp:Label ID="Label1" runat="server" CssClass="busquedalbl" Text="Valor a buscar:"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" Font-Names="Adobe Caslon Pro Bold" Font-Size="Large" ForeColor="Black"></asp:TextBox>
         <asp:DropDownList ID="DropDownList1" runat="server" Font-Names="Adobe Caslon Pro Bold" Font-Size="Large">
             <asp:ListItem>Descripcion</asp:ListItem>
@@ -68,7 +68,7 @@
 
 
         
-            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True">
+            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField HeaderText="idRol" InsertVisible="False" SortExpression="idRol" Visible="False">
                         <EditItemTemplate>
@@ -83,7 +83,7 @@
 
                     <asp:TemplateField HeaderText="Descripcion" SortExpression="descripcion">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("descripcion") %>' TextMode="MultiLine"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>
@@ -94,7 +94,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Comentarios" SortExpression="comentarios">
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>' TextMode="MultiLine"></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>

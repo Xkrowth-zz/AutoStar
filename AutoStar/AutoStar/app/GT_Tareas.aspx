@@ -11,7 +11,7 @@
 
         <h1>Tareas</h1>
         <hr/>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" style="margin-left: 385px; margin-top: 137px" Width="670px">
+    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" style="margin-left: 385px; margin-top: 137px" Width="670px" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:BoundField DataField="idTarea" HeaderText="idTarea" SortExpression="idTarea" />
             <asp:BoundField DataField="descripcion" HeaderText="descripcion" SortExpression="descripcion" />

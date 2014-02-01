@@ -178,15 +178,13 @@
 
             <asp:TemplateField HeaderText="Comentarios" SortExpression="Comentarios">
                 <EditItemTemplate>
-                    <asp:TextBox ID="txtfld_comentarios" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_comentarios" runat="server" ErrorMessage="Comentarios es un campo obligatario" ControlToValidate="txtfld_comentarios" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtfld_comentarios" runat="server" Text='<%# Bind("comentarios") %>' TextMode="MultiLine"></asp:TextBox>                    
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_comentarios" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtfld_insert_comentarios" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_insert_comentarios" ValidationGroup="Insert" runat="server" ErrorMessage="Comentarios es un campo obligatario" ControlToValidate="txtfld_insert_comentarios" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtfld_insert_comentarios" runat="server" TextMode="MultiLine"></asp:TextBox>                    
                 </FooterTemplate>
             </asp:TemplateField>
 

@@ -98,8 +98,27 @@ namespace AutoStar.app
             con.Close();
 
         }
-        protected void btn_eliminar_Click(object sender, ImageClickEventArgs e)
+        protected void btn_eliminar_Click(object sender, EventArgs e)
         {
+            foreach (GridViewRow row in GridView1.Rows)
+            {
+                if (row.RowIndex == GridView1.SelectedIndex)
+                {
+                    //GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Delete$" + GridView1.SelectedRow.RowIndex);
+                    GridView1.DeleteRow(row.RowIndex);
+                    //GridView1.SetEditRow(row.RowIndex);
+                    //GridView1.SelectRow(GridView1.SelectedIndex);
+                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    row.ToolTip = string.Empty;
+                }
+                else
+                {
+                    row.BackColor = GridView1.BackColor;
+                    //row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                    //row.ToolTip = "Click to select this row.";
+                }
+            }
 
         }
 

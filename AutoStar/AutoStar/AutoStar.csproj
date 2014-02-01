@@ -170,26 +170,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="app\About.aspx.cs">
-      <DependentUpon>timeManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\About.aspx.designer.cs">
-      <DependentUpon>timeManager.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\AutoStar.Master.cs">
       <DependentUpon>AutoStar.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="app\AutoStar.Master.designer.cs">
       <DependentUpon>AutoStar.Master</DependentUpon>
-    </Compile>
-    <Compile Include="app\changeState.aspx.cs">
-      <DependentUpon>changeState.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\changeState.aspx.designer.cs">
-      <DependentUpon>changeState.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\GT_Configuracion_General.aspx.cs">
       <DependentUpon>GT_Configuracion_General.aspx</DependentUpon>
@@ -303,13 +289,6 @@
     <Compile Include="app\GT_Usuario.aspx.designer.cs">
       <DependentUpon>GT_Usuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\keyManager.aspx.cs">
-      <DependentUpon>keyManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\keyManager.aspx.designer.cs">
-      <DependentUpon>keyManager.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -324,61 +303,12 @@
     <Compile Include="app\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="app\orders.aspx.cs">
-      <DependentUpon>orders.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\orders.aspx.designer.cs">
-      <DependentUpon>orders.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\packageManager.aspx.cs">
-      <DependentUpon>packageManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\packageManager.aspx.designer.cs">
-      <DependentUpon>packageManager.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\queries.aspx.cs">
-      <DependentUpon>queries.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\queries.aspx.designer.cs">
-      <DependentUpon>queries.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\search.aspx.cs">
-      <DependentUpon>search.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\search.aspx.designer.cs">
-      <DependentUpon>search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\settings.aspx.cs">
-      <DependentUpon>settings.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\settings.aspx.designer.cs">
-      <DependentUpon>settings.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\SlideTest.aspx.cs">
       <DependentUpon>SlideTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="app\SlideTest.aspx.designer.cs">
       <DependentUpon>SlideTest.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\stuffManager.aspx.cs">
-      <DependentUpon>stuffManager.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\stuffManager.aspx.designer.cs">
-      <DependentUpon>stuffManager.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="app\workOrder.aspx.cs">
-      <DependentUpon>workOrder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\workOrder.aspx.designer.cs">
-      <DependentUpon>workOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -461,22 +391,12 @@
     <Content Include="app\Images\icons\iconTareas.png" />
     <Content Include="app\Images\icons\iconUsuario.png" />
     <Content Include="app\Images\logo.png" />
-    <Content Include="app\keyManager.aspx" />
     <Content Include="app\login.aspx" />
     <Content Include="app\modalBackground.css" />
-    <Content Include="app\orders.aspx" />
-    <Content Include="app\packageManager.aspx" />
-    <Content Include="app\queries.aspx" />
-    <Content Include="app\search.aspx" />
-    <Content Include="app\settings.aspx" />
     <Content Include="app\SlideTest.aspx" />
-    <Content Include="app\stuffManager.aspx" />
     <Content Include="app\Styles\Main.css" />
-    <Content Include="app\timeManager.aspx" />
-    <Content Include="app\changeState.aspx" />
     <Content Include="app\default.aspx" />
     <Content Include="app\Styles\AutoStar.css" />
-    <Content Include="app\workOrder.aspx" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Acceso_Menu.aspx.cs" Inherits="AutoStar.app.GT_Acceso_Menu1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Acceso_Menu.aspx.cs" EnableEventValidation="false" Inherits="AutoStar.app.GT_Acceso_Menu1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -67,46 +67,63 @@
             <asp:Label ID="Label1" runat="server" Text="Valor a buscar:"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
     <asp:DropDownList ID="DropDownList1" runat="server">
+        <asp:ListItem>Rol</asp:ListItem>
+        <asp:ListItem>Opcion</asp:ListItem>        
     </asp:DropDownList>
-
-
-
         
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idAcceso" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
-                    <asp:TemplateField></asp:TemplateField>
-                    <asp:TemplateField HeaderText="idAcceso" SortExpression="idAcceso">
+                    <asp:TemplateField>
+                        <FooterTemplate>
+                            <asp:Label ID="Label5" runat="server" Text="Informacion a insertar:"></asp:Label>
+                        </FooterTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Acceso" SortExpression="idAcceso" Visible="False">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:Label>
-                        </ItemTemplate>
+                        </ItemTemplate>                                             
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="idRol" SortExpression="idRol">
+
+                    <asp:TemplateField HeaderText="Rol" SortExpression="idRol">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("idRol") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
                         </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                        </FooterTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="idOpcion" SortExpression="idOpcion">
+
+                    <asp:TemplateField HeaderText="Opcion" SortExpression="idOpcion">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:Label>
                         </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+                        </FooterTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="comentarios" SortExpression="comentarios">
+
+                    <asp:TemplateField HeaderText="Comentarios" SortExpression="comentarios">
                         <EditItemTemplate>
                             <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label2" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>
                         </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                        </FooterTemplate>
                     </asp:TemplateField>
+
                 </Columns>
             </asp:GridView>
 </asp:Content>

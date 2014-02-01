@@ -84,15 +84,6 @@
     <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
-                <%--<EditItemTemplate>
-                    <asp:LinkButton ID="link_update" runat="server" CausesValidation="True" CommandName="Update"  Text="Guardar"></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="link_cancel" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:LinkButton ID="link_edit" runat="server" CausesValidation="False" CommandName="Edit" ></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="link_select" runat="server" CausesValidation="False" CommandName="Select" ></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="link_delete" runat="server" CausesValidation="False" CommandName="Delete" ></asp:LinkButton>
-                </ItemTemplate>--%>
                 <FooterTemplate>
                     <asp:LinkButton ID="link_insert" ValidationGroup="Insert" runat="server" OnClick="lbInsert_Click">Información a insertar:</asp:LinkButton>
                 </FooterTemplate>
@@ -136,19 +127,6 @@
                     <asp:RequiredFieldValidator ID="rfv_insert_apellido2" ValidationGroup="Insert" runat="server" ErrorMessage="Apellido2 es un campo obligatario" ControlToValidate="txtfld_insert_apellido2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <%--<asp:TemplateField HeaderText="Departamento" SortExpression="Departamento">
-                <EditItemTemplate>
-                    <asp:TextBox ID="txtfld_departamento" runat="server" Text='<%# Bind("idDepartamento") %>'></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_departamento" runat="server" ErrorMessage="Departamento es un campo obligatario" ControlToValidate="txtfld_departamento" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="lbl_departamento" runat="server" Text='<%# Bind("idDepartamento") %>'></asp:Label>
-                </ItemTemplate>
-                <FooterTemplate>
-                    <asp:TextBox ID="txtfld_insert_departamento" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_insert_departamento" ValidationGroup="Insert" runat="server" ErrorMessage="Departamento es un campo obligatario" ControlToValidate="txtfld_insert_departamento" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                </FooterTemplate>
-            </asp:TemplateField>--%>
 
             <asp:TemplateField HeaderText="Rol" SortExpression="Rol">
                 <EditItemTemplate>

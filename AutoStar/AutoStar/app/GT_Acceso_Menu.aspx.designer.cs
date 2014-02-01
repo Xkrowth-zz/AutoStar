@@ -10,34 +10,70 @@
 namespace AutoStar.app {
     
     
-    public partial class GT_Accesso_Menu {
+    public partial class GT_Acceso_Menu1 {
         
         /// <summary>
-        /// btn_acceso_menu_eliminar control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_acceso_menu_eliminar;
+        protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// btn_acceso_menu_editar control.
+        /// ImageButton3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_acceso_menu_editar;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
         
         /// <summary>
-        /// btn_acceso_menu_nuevo control.
+        /// btn_buscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btn_acceso_menu_nuevo;
+        protected global::System.Web.UI.WebControls.ImageButton btn_buscar;
+        
+        /// <summary>
+        /// ImageButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        
+        /// <summary>
+        /// ImageButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
+        
+        /// <summary>
+        /// ImageButton4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
+        
+        /// <summary>
+        /// ImageButton5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
         
         /// <summary>
         /// SqlDataSource1 control.
@@ -49,6 +85,33 @@ namespace AutoStar.app {
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
         
         /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
+        
+        /// <summary>
+        /// TextBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        
+        /// <summary>
+        /// DropDownList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -56,311 +119,5 @@ namespace AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// pnl_acceso_menu_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_acceso_menu_crear;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_crear_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_crear_crear;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_crear_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_crear_idOpcion;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_crear_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_crear_idOpcion;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_crear_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_crear_idRol;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_crear_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_crear_idRol;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_crear_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_crear_comentarios;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_crear_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_crear_comentarios;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_crear_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_crear_crear;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_crear_cancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_crear_cancelar;
-        
-        /// <summary>
-        /// pnl_acceso_menu_editar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_acceso_menu_editar;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_editar_editar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_editar_editar;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_editar_idAcceso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_editar_idAcceso;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_editar_idAcceso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_editar_idAcceso;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_editar_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_editar_idOpcion;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_editar_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_editar_idOpcion;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_editar_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_editar_idRol;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_editar_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_editar_idRol;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_editar_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_editar_comentarios;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_editar_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_editar_comentarios;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_editar_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_editar_crear;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_editar_cancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_editar_cancelar;
-        
-        /// <summary>
-        /// pnl_acceso_menu_eliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_acceso_menu_eliminar;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_eliminar_eliminar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_eliminar_eliminar;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_eliminar_idAcceso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_eliminar_idAcceso;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_eliminar_idAcceso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_eliminar_idAcceso;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_eliminar_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_eliminar_idOpcion;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_eliminar_idOpcion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_eliminar_idOpcion;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_eliminar_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_eliminar_idRol;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_eliminar_idRol control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_eliminar_idRol;
-        
-        /// <summary>
-        /// lbl_acceso_menu_pnl_eliminar_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_acceso_menu_pnl_eliminar_comentarios;
-        
-        /// <summary>
-        /// txtfld_acceso_menu_pnl_eliminar_comentarios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtfld_acceso_menu_pnl_eliminar_comentarios;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_eliminar_crear control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_eliminar_crear;
-        
-        /// <summary>
-        /// btn_acceso_menu_pnl_eliminar_cancelar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_acceso_menu_pnl_eliminar_cancelar;
     }
 }

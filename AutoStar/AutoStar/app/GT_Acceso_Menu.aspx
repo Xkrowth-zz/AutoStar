@@ -1,15 +1,43 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Acceso_Menu.aspx.cs" Inherits="AutoStar.app.GT_Accesso_Menu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Acceso_Menu.aspx.cs" Inherits="AutoStar.app.GT_Acceso_Menu1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-            <asp:ImageButton ID="btn_acceso_menu_eliminar" class="icono" runat="server" ImageUrl="AppData/btn_eliminar.png" onclick="btn_acceso_menu_eliminar_click"/>                                                                                       <!-- LINK IMG TO PAGE -->
-            <asp:ImageButton ID="btn_acceso_menu_editar" class="icono" runat="server" ImageUrl="AppData/btn_editar.png" onclick="btn_acceso_menu_editar_click" />
-            <asp:ImageButton ID="btn_acceso_menu_nuevo" runat="server" class="icono" ImageUrl="AppData/btn_nuevo.png" onclick="btn_acceso_menu_nuevo_click" /> 
-
-        <h1>Accesos a Menu</h1>
-        <hr/>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString %>" DeleteCommand="deleteAcceso" DeleteCommandType="StoredProcedure" InsertCommand="insertAcceso" InsertCommandType="StoredProcedure" SelectCommand="SELECT * FROM GT_Acceso_Menu" UpdateCommand="updateAcceso" UpdateCommandType="StoredProcedure">
+    <style type="text/css" class="bodyUsuarios">
+        body {
+            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-repeat: no-repeat;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            -webkit-background-size: cover;
+            background-size: cover;
+        }
+    </style>
+    <h1>Acceso</h1>
+    <div>
+        <asp:Table CssClass="table" ID="Table1" runat="server">
+            <asp:TableRow CssClass="tableRow">
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton PostBackUrl="~/app/Default.aspx" CssClass="botonFull" ID="ImageButton3" AlternateText="Home" runat="server" ImageUrl="~/app/Images/icons/iconInicio.png" />
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton CssClass="botonFull" ID="btn_buscar" AlternateText="Buscar" runat="server" ImageUrl="~/app/Images/icons/iconBuscar.png" onClick="btn_buscarClick"/>
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton1" AlternateText="Crear" runat="server" ImageUrl="~/app/Images/icons/iconCrear.png" ValidationGroup="Insert" OnClick="lbInsert_Click" />
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton2" AlternateText="Editar" runat="server" ImageUrl="~/app/Images/icons/iconEditar.png" OnClick="btn_editar_Click" />
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="btn_guardarClick" />
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminar_Click" />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+    </div>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteAcceso" DeleteCommandType="StoredProcedure" InsertCommand="insertAcceso" InsertCommandType="StoredProcedure" SelectCommand="accesoBusquedas" UpdateCommand="updateAcceso" UpdateCommandType="StoredProcedure" SelectCommandType="StoredProcedure">
                 <DeleteParameters>
                     <asp:Parameter Name="idAcceso" Type="int32" />
                     <asp:Parameter Name="idOpcion" Type="int32" />
@@ -17,11 +45,14 @@
                     <asp:Parameter Name="comentarios" Type="String" />
                 </DeleteParameters>
                 <InsertParameters>
-                    <asp:Parameter Name="idAcceso" Type="int32" />
                     <asp:Parameter Name="idOpcion" Type="int32" />
                     <asp:Parameter Name="idRol" Type="Int32" /> 
                     <asp:Parameter Name="comentarios" Type="String" />
                 </InsertParameters>
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="TextBox1" DefaultValue="vacio" Name="valor" PropertyName="Text" Type="String" />
+                    <asp:ControlParameter ControlID="DropDownList1" DefaultValue="" Name="campo" PropertyName="SelectedValue" Type="String" />
+                </SelectParameters>
                 <UpdateParameters>
                     <asp:Parameter Name="idAcceso" Type="int32" />
                     <asp:Parameter Name="idOpcion" Type="int32" />
@@ -33,58 +64,49 @@
 
 
         
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" BackColor="Black" ForeColor="White">
+            <asp:Label ID="Label1" runat="server" Text="Valor a buscar:"></asp:Label>
+    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server">
+    </asp:DropDownList>
+
+
+
+        
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" >
                 <Columns>
-                    <asp:BoundField DataField="idAcceso" HeaderText="idAcceso" SortExpression="idAcceso" />
-                    <asp:BoundField DataField="idRol" HeaderText="idRol" SortExpression="idRol" />
-                    <asp:BoundField DataField="comentarios" HeaderText="comentarios" SortExpression="comentarios" />                    
-                    <asp:BoundField DataField="idOpcion" HeaderText="idOpcion" SortExpression="idOpcion" />
+                    <asp:TemplateField></asp:TemplateField>
+                    <asp:TemplateField HeaderText="idAcceso" SortExpression="idAcceso">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label4" runat="server" Text='<%# Bind("idAcceso") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="idRol" SortExpression="idRol">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("idRol") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label3" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="idOpcion" SortExpression="idOpcion">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="comentarios" SortExpression="comentarios">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="Label2" runat="server" Text='<%# Bind("comentarios") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
-</asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <asp:Panel ID="pnl_acceso_menu_crear" runat="server" Height="164px" Visible="False">
-
-        <asp:Label ID="lbl_acceso_menu_pnl_crear_crear" runat="server" Font-Size="Larger" Text="Crear"></asp:Label>                
-                <br />  
-        <asp:Label ID="lbl_acceso_menu_pnl_crear_idOpcion" runat="server" Text="idOpcion:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_crear_idOpcion" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_crear_idRol" runat="server" Text="idRol:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_crear_idRol" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_crear_comentarios" runat="server" Text="Comentarios:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_crear_comentarios" runat="server" Height="61px" TextMode="MultiLine" Width="374px"></asp:TextBox>
-        <asp:Button ID="btn_acceso_menu_pnl_crear_crear" runat="server" Text="Crear" OnClick="btn_acceso_menu_pnl_crear_crear_click" />
-        <asp:Button ID="btn_acceso_menu_pnl_crear_cancelar" runat="server" Text="Cancelar" OnClick="btn_acceso_menu_pnl_crear_cancelar_Click" />
-    </asp:Panel>
-
-    <asp:Panel ID="pnl_acceso_menu_editar" runat="server" Height="150px" Visible="False">
-        <asp:Label ID="lbl_acceso_menu_pnl_editar_editar" runat="server" Font-Size="Larger" Text="Editar"></asp:Label>                
-                <br /> 
-        <asp:Label ID="lbl_acceso_menu_pnl_editar_idAcceso" runat="server" Text="idAccesoMenu:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_editar_idAcceso" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_editar_idOpcion" runat="server" Text="idOpcion:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_editar_idOpcion" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_editar_idRol" runat="server" Text="idRol:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_editar_idRol" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_editar_comentarios" runat="server" Text="Comentarios:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_editar_comentarios" runat="server" Height="61px" TextMode="MultiLine" Width="374px"></asp:TextBox>
-        <asp:Button ID="btn_acceso_menu_pnl_editar_crear" runat="server" Text="Editar" OnClick="btn_acceso_menu_pnl_editar_editar_click" />
-        <asp:Button ID="btn_acceso_menu_pnl_editar_cancelar" runat="server" Text="Cancelar" OnClick="btn_acceso_menu_pnl_editar_cancelar_Click" />
-    </asp:Panel>
-    <asp:Panel ID="pnl_acceso_menu_eliminar" runat="server" Height="183px" Visible="False">
-        <asp:Label ID="lbl_acceso_menu_pnl_eliminar_eliminar" runat="server" Font-Size="Larger" Text="Eliminar"></asp:Label>                
-                <br /> 
-        <asp:Label ID="lbl_acceso_menu_pnl_eliminar_idAcceso" runat="server" Text="idAcceso:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_eliminar_idAcceso" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_eliminar_idOpcion" runat="server" Text="idOpcion:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_eliminar_idOpcion" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_eliminar_idRol" runat="server" Text="idRol:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_eliminar_idRol" runat="server"></asp:TextBox>
-        <asp:Label ID="lbl_acceso_menu_pnl_eliminar_comentarios" runat="server" Text="Comentarios:"></asp:Label>
-        <asp:TextBox ID="txtfld_acceso_menu_pnl_eliminar_comentarios" runat="server" Height="61px" TextMode="MultiLine" Width="374px"></asp:TextBox>
-        <asp:Button ID="btn_acceso_menu_pnl_eliminar_crear" runat="server" Text="Eliminar" OnClick="btn_acceso_menu_pnl_eliminar_eliminar_Click" />
-        <asp:Button ID="btn_acceso_menu_pnl_eliminar_cancelar" runat="server" Text="Cancelar" OnClick="btn_acceso_menu_pnl_eliminar_cancelar_Click" />
-    </asp:Panel>
-
 </asp:Content>

@@ -114,6 +114,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:LinkButton ID="link_insert" ValidationGroup="Insert" runat="server" OnClick="link_insertClick">Información a insertar:</asp:LinkButton>
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="idOrdenTrabajo" InsertVisible="False" SortExpression="idOrdenTrabajo" Visible="false">
                 <EditItemTemplate>
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("idOrdenTrabajo") %>'></asp:Label>
@@ -122,6 +123,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:Label ID="Label11" runat="server" Text='<%# Bind("idOrdenTrabajo") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Número de Orden" SortExpression="numeroOrden">
                 <EditItemTemplate>
                     <asp:TextBox ID="txtfld_numeroOrden" runat="server" Text='<%# Bind("numeroOrden") %>'></asp:TextBox>
@@ -132,22 +134,21 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_numeroOrden" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_insert_numeroOrden" ValidationGroup="Insert" runat="server" ErrorMessage="Numero de Orden es un campo obligatario" ControlToValidate="txtfld_insert_numeroOrden" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Estado" SortExpression="idEstado">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList15" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion">
+                    <asp:DropDownList ID="DropDownList15" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("idEstado") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion">
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idEstado" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idEstado" ValidationGroup="Insert" runat="server" ErrorMessage="Estado es un campo obligatario" ControlToValidate="DropDownList2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
             
@@ -163,7 +164,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="nombre" DataValueField="nombre">
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idTecnico" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idTecnico" ValidationGroup="Insert" runat="server" ErrorMessage="Tecnico es un campo obligatario" ControlToValidate="DropDownList3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -179,7 +179,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="descripcion" DataValueField="descripcion">
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idArea" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idArea" ValidationGroup="Insert" runat="server" ErrorMessage="Area es un campo obligatario" ControlToValidate="DropDownList4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -193,7 +192,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_placa" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_insert_placa" ValidationGroup="Insert" runat="server" ErrorMessage="Placa es un campo obligatario" ControlToValidate="txtfld_insert_placa" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -209,7 +207,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource5" DataTextField="nombre" DataValueField="nombre">
     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idAsesor" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idAsesor" ValidationGroup="Insert" runat="server" ErrorMessage="Asesor es un campo obligatario" ControlToValidate="DropDownList5" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -335,8 +332,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                         <asp:ListItem>2018</asp:ListItem>
                         <asp:ListItem>2019</asp:ListItem>
                         <asp:ListItem>2020</asp:ListItem>                        
-                    </asp:DropDownList>
-                    
+                    </asp:DropDownList>                    
                     <asp:RequiredFieldValidator ID="rfv_insert_dia" ValidationGroup="Insert" runat="server" ErrorMessage="Dia es un campo obligatario" ControlToValidate="DropDownList6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ID="rfv_insert_mes" ValidationGroup="Insert" runat="server" ErrorMessage="Mes es un campo obligatario" ControlToValidate="DropDownList7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                     <asp:RequiredFieldValidator ID="rfv_insert_año" ValidationGroup="Insert" runat="server" ErrorMessage="Año de Ingreso es un campo obligatario" ControlToValidate="DropDownList8" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -364,8 +360,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_respuestas" runat="server" TextMode="MultiLine" ></asp:TextBox>
-                    
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -378,8 +372,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_garantia" runat="server" TextMode="MultiLine" ></asp:TextBox>
-                    
-
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -392,8 +384,6 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_logistica" runat="server" TextMode="MultiLine" ></asp:TextBox>
-                    
-
                 </FooterTemplate>
             </asp:TemplateField>
 

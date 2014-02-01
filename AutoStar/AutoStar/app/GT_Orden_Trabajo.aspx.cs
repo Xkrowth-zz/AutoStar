@@ -300,9 +300,6 @@ namespace AutoStar.app
 
         protected void btn_orden_guardar_Click(object sender, ImageClickEventArgs e)
         {
-            // Iterates through the rows of the GridView control
-            foreach (GridViewRow row in GridView1.Rows)
-            {
                 SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
                 //Accessing Edited values from the GridView
                 //string str_id =  //ID
@@ -343,8 +340,7 @@ namespace AutoStar.app
                 DataBind();
                 con.Close();
 
-            }
-
+            
 
         }
 

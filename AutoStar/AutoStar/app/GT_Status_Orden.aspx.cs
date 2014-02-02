@@ -116,7 +116,7 @@ namespace AutoStar.app
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
-
+            
             String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
             String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");

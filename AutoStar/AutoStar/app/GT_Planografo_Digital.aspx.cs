@@ -122,7 +122,7 @@ namespace AutoStar.app
             ListItem pr36 = new ListItem("16:45:00", "16:45:00");
             ListItem pr37 = new ListItem("17:00:00", "17:00:00");
             ListItem pr38 = new ListItem("17:15:00", "17:15:00");
-            ListItem pr39 = new ListItem("17:30:00", "17:30:00");
+            //ListItem pr39 = new ListItem("17:30:00", "17:30:00");
 
             drpHoraInicio.Items.Add(pr);
             //drpHoraFinal.Items.Add(pr);
@@ -241,7 +241,7 @@ namespace AutoStar.app
             drpHoraInicio.Items.Add(pr38);
             //drpHoraFinal.Items.Add(pr38);
 
-            drpHoraInicio.Items.Add(pr39);
+            //drpHoraInicio.Items.Add(pr39);
             //drpHoraFinal.Items.Add(pr39);
         }
 
@@ -3152,7 +3152,13 @@ namespace AutoStar.app
         /// </summary>
         /// <returns></returns>
         private int buscar_hora_Actual()
-        {
+        {            
+            DateTime fecha_c =DateTime.Parse( Session["fecha_consulta"].ToString());
+            if (fecha_c.Date != DateTime.Now.Date)
+            {
+                return 0;
+            }
+
             int numero = 0;
             DateTime fecha = DateTime.Now;
             string hora_a = fecha.Hour +"," + fecha.Minute;
@@ -3362,124 +3368,379 @@ namespace AutoStar.app
             Page.Validate("validar");
             if (Page.IsValid)
             {
+                #region AGREGAR
                 if (Button1.Text.Equals("Agregar"))
                 {
-                    DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());// Calendar1.SelectedDate;
-                    DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
-
-
-                    string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-                    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-                    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-                    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
-
-                    DateTime fechafinal = fechainicio;
-
-
-                    string formate = formatear(htazada.Text);
-                    string[] hora_taza = formate.Split(',');
-
-                    //string[] final = drpHoraFinal.SelectedValue.Split(':');
-                    fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                    fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
-
-                    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                    con.Open();
-                    SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                    SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
-                    cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
-                    cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
-                    cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
-                    cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                    cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                    cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-                    try
-                    {
-                        //Ejecuto
-                        cmd.ExecuteNonQuery();
-                        tr.Commit(); //Actualizar bd    
-                        cargarOrdenes();
-                        cargarTecnicos();
-                        cargarHoras();
-                        cargarStatus();
-                        //crearTabla();
-                        Response.Redirect("GT_Planografo_Digital.aspx", false);
-                    }
-                    catch (Exception ex)
-                    {
-                        //De haber un error lo capturo
-                        // msg = ex.Message;
-                        //Deshacemos la operacion
-                        tr.Rollback();
-                    }
-                    finally
-                    {
-                        con.Close(); //Cerramos la conexion
-
-                    }
-
+                    Agregar_registro(-999);
                 }
+                #endregion 
                 else if (Button1.Text.Equals("Actualizar"))
                 {
-                    string formate = formatear(htazada.Text);
-                    string[] hora_taza = formate.Split(',');
-
-                    DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
-
-                    string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-                    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-                    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-                    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
-
-                    DateTime fechafinal = fechainicio;
-
-                    fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                    fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
-
-                    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                    con.Open();
-                    SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
                     int id = int.Parse(Session["id_modf"].ToString());
-                    SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
-                    cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
-                    cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
-                    cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                    cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                    cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-                    try
-                    {
-                        //Ejecuto
-                        cmd.ExecuteNonQuery();
-                        tr.Commit(); //Actualizar bd    
-                        cargarOrdenes();
-                        cargarTecnicos();
-                        cargarHoras();
-                        cargarStatus();
-                        //crearTabla();
-                        Response.Redirect("GT_Planografo_Digital.aspx", false);
-                    }
-                    catch (Exception ex)
-                    {
-                        //De haber un error lo capturo
-                        // msg = ex.Message;
-                        //Deshacemos la operacion
-                        tr.Rollback();
-                    }
-                    finally
-                    {
-                        con.Close(); //Cerramos la conexion
+                    Eliminar_registro(id);
+                    Agregar_registro(id);
+                    #region Actualizar anterior
+                    //string formate = formatear(htazada.Text);
+                    //string[] hora_taza = formate.Split(',');
 
-                    }
+                    //DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
+
+                    //string[] inicio = drpHoraInicio.SelectedValue.Split(':');
+                    //fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+                    //fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+                    //fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+                    //DateTime fechafinal = fechainicio;
+
+                    //fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
+                    //fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
+
+                    //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                    //con.Open();
+                    //SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                    //int id = int.Parse(Session["id_modf"].ToString());
+                    //SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
+                    //cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
+                    //cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
+                    //cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                    //cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                    //cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+                    //try
+                    //{
+                    //    //Ejecuto
+                    //    cmd.ExecuteNonQuery();
+                    //    tr.Commit(); //Actualizar bd                            
+                    //    Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    //De haber un error lo capturo
+                    //    // msg = ex.Message;
+                    //    //Deshacemos la operacion
+                    //    tr.Rollback();
+                    //}
+                    //finally
+                    //{
+                    //    con.Close(); //Cerramos la conexion
+
+                    //}
+                    //BUSCAMOS LOS REGISTROS QUE PERTENEZCAN A LA ORDEN ACTUAL 
+                //    int id = int.Parse(Session["id_modf"].ToString());
+                //    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                //    string query = "select * from GT_Ordenes Where numero = '" + id + "'";
+                //    con.Open();
+
+                //    SqlCommand cmd = new SqlCommand(query, con);
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    DataTable dt = new DataTable();
+                //    da.Fill(dt);
+                //    con.Close();
+
+                //    string formate = formatear(htazada.Text);
+                //    string[] hora_taza = formate.Split(',');
+
+                //    DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
+
+                //    string[] inicio = drpHoraInicio.SelectedValue.Split(':');
+                //    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+                //    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+                //    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+                //    DateTime fechafinal = fechainicio;
+
+                //    fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
+                //    fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1])*6);
+
+                   
+
+                //    DateTime limite = DateTime.Parse ("17:30:00");
+                //    if (fechafinal.TimeOfDay <= limite.TimeOfDay)
+                //    {
+                //        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                //        con.Open();
+                //        SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                //        SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
+                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
+                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
+                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
+                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+                //        try
+                //        {
+                //            //Ejecuto
+                //            cmd.ExecuteNonQuery();
+                //            tr.Commit(); //Actualizar bd                                
+                //            Response.Redirect("GT_Planografo_Digital.aspx", false);
+                //        }
+                //        catch (Exception ex)
+                //        {
+                //            //De haber un error lo capturo
+                //            // msg = ex.Message;
+                //            //Deshacemos la operacion
+                //            tr.Rollback();
+                //        }
+                //        finally
+                //        {
+                //            con.Close(); //Cerramos la conexion
+
+                //        }
+                //    }
+                //    else // aqui hay que dividir en 2 la orden
+                //    {
+                //        DateTime fecha_partida = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 30, 00);
+
+                //        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                //        con.Open();
+                //        SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                //        SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
+                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
+                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
+                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
+                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+
+                //        DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                //        fecha_n_inicio = fecha_n_inicio.AddDays(1);
+
+                //        DateTime fecha_n_final = fecha_n_inicio;
+
+                //        try
+                //        {
+                //            //Ejecuto
+                //            cmd.ExecuteNonQuery();
+                //            tr.Commit(); //Actualizar bd                             
+                //            //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                //        }
+                //        catch (Exception ex)
+                //        {
+                //            //De haber un error lo capturo
+                //            // msg = ex.Message;
+                //            //Deshacemos la operacion
+                //            tr.Rollback();
+                //        }
+                //        finally
+                //        {
+                //            con.Close(); //Cerramos la conexion
+
+                //        }
+
+                        
+
+                //        con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                //        con.Open();
+                //        tr = con.BeginTransaction(IsolationLevel.Serializable);
+                //        cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
+
+                //        TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
+                //        fecha_n_final = fecha_n_final.Add(diferencia);
+
+
+                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
+                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fecha_n_inicio;
+                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_n_final;
+                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+
+                //        try
+                //        {
+                //            //Ejecuto
+                //            cmd.ExecuteNonQuery();
+                //            tr.Commit(); //Actualizar bd                        
+                //            Response.Redirect("GT_Planografo_Digital.aspx", false);
+                //        }
+                //        catch (Exception ex)
+                //        {
+                //            //De haber un error lo capturo
+                //            // msg = ex.Message;
+                //            //Deshacemos la operacion
+                //            tr.Rollback();
+                //        }
+                //        finally
+                //        {
+                //            con.Close(); //Cerramos la conexion
+
+                //        }
+                //    }
+#endregion
                 }
             }
 
+        }
+
+        private void Eliminar_registro(int id)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            con.Open();
+            SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE numero = '"+id+"'", con, tr);
+            try
+            {
+                //Ejecuto
+                cmd.ExecuteNonQuery();
+                tr.Commit(); //Actualizar bd                                
+                Response.Redirect("GT_Planografo_Digital.aspx", false);
+            }
+            catch (Exception ex)
+            {
+                //De haber un error lo capturo
+                // msg = ex.Message;
+                //Deshacemos la operacion
+                tr.Rollback();
+            }
+            finally
+            {
+                con.Close(); //Cerramos la conexion
+
+            }
+        }
+
+        private void Agregar_registro(int id)
+        {
+            if (id == -999)
+            {
+               id = int.Parse(drpOt.SelectedValue);
+            }
+
+            DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());// Calendar1.SelectedDate;
+            DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
+
+
+            string[] inicio = drpHoraInicio.SelectedValue.Split(':');
+            fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+            fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+            fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+            DateTime fechafinal = fechainicio;
+
+
+            string formate = formatear(htazada.Text);
+            string[] hora_taza = formate.Split(',');
+
+            //string[] final = drpHoraFinal.SelectedValue.Split(':');
+            fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
+            fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
+
+            //ver si cabe en el mismo dia o si hay que hacer split de 2 días
+            DateTime limite = DateTime.Parse("17:30:00");
+            if (fechafinal.TimeOfDay <= limite.TimeOfDay)
+            {
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                con.Open();
+                SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+                cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
+                cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+                try
+                {
+                    //Ejecuto
+                    cmd.ExecuteNonQuery();
+                    tr.Commit(); //Actualizar bd                                
+                    Response.Redirect("GT_Planografo_Digital.aspx", false);
+                }
+                catch (Exception ex)
+                {
+                    //De haber un error lo capturo
+                    // msg = ex.Message;
+                    //Deshacemos la operacion
+                    tr.Rollback();
+                }
+                finally
+                {
+                    con.Close(); //Cerramos la conexion
+
+                }
+            }
+            else // aqui hay que dividir en 2 la orden
+            {
+                DateTime fecha_partida = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 30, 00);
+
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                con.Open();
+                SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+                cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
+                cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+
+                DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                fecha_n_inicio = fecha_n_inicio.AddDays(1);
+
+                DateTime fecha_n_final = fecha_n_inicio;
+
+                try
+                {
+                    //Ejecuto
+                    cmd.ExecuteNonQuery();
+                    tr.Commit(); //Actualizar bd                             
+                    //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                }
+                catch (Exception ex)
+                {
+                    //De haber un error lo capturo
+                    // msg = ex.Message;
+                    //Deshacemos la operacion
+                    tr.Rollback();
+                }
+                finally
+                {
+                    con.Close(); //Cerramos la conexion
+
+                }
+
+                con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                con.Open();
+                tr = con.BeginTransaction(IsolationLevel.Serializable);
+                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+
+                TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
+                fecha_n_final = fecha_n_final.Add(diferencia);
+
+
+                cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
+                cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fecha_n_inicio;
+                cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_n_final;
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+
+                try
+                {
+                    //Ejecuto
+                    cmd.ExecuteNonQuery();
+                    tr.Commit(); //Actualizar bd                        
+                    Response.Redirect("GT_Planografo_Digital.aspx", false);
+                }
+                catch (Exception ex)
+                {
+                    //De haber un error lo capturo
+                    // msg = ex.Message;
+                    //Deshacemos la operacion
+                    tr.Rollback();
+                }
+                finally
+                {
+                    con.Close(); //Cerramos la conexion
+
+                }
+
+            }
         }
 
         private string formatear(string p)
         {
             string[] calcular = p.Split(',');
             int hora = int.Parse(calcular[0]);
-            int min = int.Parse(calcular[1]);
+            int min = int.Parse(calcular[1])*6;
             if (min > 0 && min < 15)
             {
                 return hora + ",15";
@@ -3501,7 +3762,7 @@ namespace AutoStar.app
         }
 
         private string formatear_down(string p)
-        {
+        {            
             string[] calcular = p.Split(',');
             int hora = int.Parse(calcular[0]);
             int min = int.Parse(calcular[1]);
@@ -3576,12 +3837,12 @@ namespace AutoStar.app
 
         }
       
-
         protected void htazada_TextChanged(object sender, EventArgs e)
         {
             Page.Validate("validar");
             if (Page.IsValid)
-            {
+            { 
+
                 DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
                 DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
 
@@ -3595,9 +3856,22 @@ namespace AutoStar.app
                 DateTime fechafinal = fechainicio;
                 //string[] final = drpHoraFinal.SelectedValue.Split(':');
                 fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
-                string[] text = fechafinal.ToString().Split(' ');
-                txthorafinal.Text = text[1];
+                fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1])*6);                
+
+                DateTime limite = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 30, 00);
+                if (!(fechafinal.TimeOfDay <= limite.TimeOfDay))
+                {
+                    DateTime nuevo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                    nuevo = nuevo.AddDays(1);
+                    TimeSpan resta = fechafinal.Subtract(limite);
+                    nuevo = nuevo.Add(resta);
+                    txthorafinal.Text = nuevo.TimeOfDay.ToString();
+                }
+                else
+                {
+                    txthorafinal.Text = fechafinal.TimeOfDay.ToString();
+                }
+                
             }
         }
 

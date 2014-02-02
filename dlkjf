@@ -1,0 +1,106 @@
+[33mcommit 4642fb4a6e56f2cfb9afbebbe83f47bcadfd6ae8[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sun Feb 2 10:37:41 2014 -0600
+
+    No se
+
+[33mcommit a9b4c76e967116f9ae3e87e001be5e4fdd2a3ffc[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 18:33:55 2014 -0600
+
+    GT_Status Edit Mode
+
+[33mcommit d0a604eb672e3f6cb8e8c5653fc2514a0e576c8e[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 17:29:37 2014 -0600
+
+    Borrado Arreglos
+
+[33mcommit f7adaca820490a64624d6491600d1c346005e711[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 17:25:30 2014 -0600
+
+    Borrado GT_Departamentos
+
+[33mcommit 4ee01142cc21aeddaaf840d8ff8a66c6a7d24af2[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 17:22:38 2014 -0600
+
+    Borrado de paginas innecesarias
+
+[33mcommit 411492130b511328bb1d2db569510e3ac5967f52[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 17:18:58 2014 -0600
+
+    configGeneral por GT_Configuracion_General Rename
+
+[33mcommit 0ff80fc13ec074b1e273244d8053e098ad871d89[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 17:13:03 2014 -0600
+
+    ShowHeaderWhenEmpty a todas y GT_Opcion_Menu
+
+[33mcommit 5254a48ad333bc54c9ad6a03950fc7b43e7a4ace[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Sat Feb 1 14:40:34 2014 -0600
+
+    GT_Acceso_Menu GT_Roles Gridview Style
+
+[33mcommit b89d5fceed2089f5006f4ef83a76e6f924a619fc[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 23:59:14 2014 -0600
+
+    GT_Acceso_Menu GridView Template Field
+
+[33mcommit 15ade81ce6f76922585a030a29f05324e8d4d7fc[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 20:48:41 2014 -0600
+
+    GT_Acceso_Menu GridView
+
+[33mcommit 851e4844585fb0b7bfc03575496483656543aa69[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 20:20:01 2014 -0600
+
+    GT_Acceso_Menu
+
+[33mcommit 5f3d8e3d2921e5104f96753001fb39ebd4771c4f[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 19:07:24 2014 -0600
+
+    Ordenes
+
+[33mcommit 13c43565b54f4d2106ceda32649289a45ca0ddc2[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 18:27:35 2014 -0600
+
+    Busqueda Usuarios por Area
+
+[33mcommit fdb392c125d87c54436f0335c974dd53e24666c0[m
+Author: Marcelo <mguzman16@hotmail.com>
+Date:   Fri Jan 31 15:59:08 2014 -0600
+
+    Status Editable y Edit Mode  textbox
+
+[33mcommit 2ae11bba0cf1c01a20bd095e6d7391d7a973a3fc[m
+Author: Andresrf13 <andres.rf13@outlook.com>
+Date:   Thu Jan 30 17:57:42 2014 -0600
+
+    Add franja horaria
+    
+    se muestra la franja horaria actual de color azul
+
+[33mcommit 99407ff132a589af46a75b4e004ebcfc5364d875[m
+Author: Xkrowth <jose12rivera.tec@gmail.com>
+Date:   Thu Jan 30 02:05:17 2014 -0600
+
+    Proyecto AutoStar
+    
+    Subida del proyecto completo para iniciar a trabajarlo entre los
+    integrantes
+
+[33mcommit 7b669a20cae1b0f733d2e468503f00f11786595e[m
+Author: Xkrowth <jose12rivera.tec@gmail.com>
+Date:   Wed Jan 29 21:29:46 2014 -0800
+
+    Initial commit

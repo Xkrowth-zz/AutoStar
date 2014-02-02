@@ -97,8 +97,8 @@ namespace AutoStar.app
                 {
                     //GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Edit$" + GridView1.SelectedRow.RowIndex);
 
-                    GridView1.SetEditRow(row.RowIndex);
-                    //GridView1.SelectRow(GridView1.SelectedIndex);
+                    GridView1.SetEditRow(row.RowIndex);                    
+                    
                     row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;

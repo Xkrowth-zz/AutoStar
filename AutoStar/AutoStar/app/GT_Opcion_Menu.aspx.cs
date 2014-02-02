@@ -195,7 +195,7 @@ namespace AutoStar.app
 
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
-            SqlCommand cmd = new SqlCommand("opcionesBusqueda", conn);
+            SqlCommand cmd = new SqlCommand("opcionBusquedas", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
             cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;

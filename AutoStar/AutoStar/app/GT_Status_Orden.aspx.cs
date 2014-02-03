@@ -61,7 +61,7 @@ namespace AutoStar.app
                 if (row.RowIndex == GridView1.SelectedIndex)
                 {
                     GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + GridView1.SelectedRow.RowIndex);
-
+                    
                     //GridView1.SetEditRow(row.RowIndex);
                     //GridView1.SelectRow(row.RowIndex);
                     row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
@@ -83,6 +83,7 @@ namespace AutoStar.app
 
                 GridView1.SelectedIndex = e.Row.RowIndex;
                 e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
+                
                 Console.Write("This is the row index selected " + e.Row.RowIndex);
                 e.Row.ToolTip = "Click to select this row.";
 
@@ -97,8 +98,8 @@ namespace AutoStar.app
                 {
                     //GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Edit$" + GridView1.SelectedRow.RowIndex);
 
-                    GridView1.SetEditRow(row.RowIndex);                    
-                    
+                    GridView1.SetEditRow(row.RowIndex);                  
+                                   
                     row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
@@ -198,10 +199,17 @@ namespace AutoStar.app
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
 
             cmd.ExecuteReader();
+            GridView1.EditIndex = -1;
             DataBind();
             con.Close();
 
         }
+
+        protected void setFocus(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
 
 
 

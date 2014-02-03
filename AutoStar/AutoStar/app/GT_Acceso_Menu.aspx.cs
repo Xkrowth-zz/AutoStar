@@ -94,6 +94,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@opcion", SqlDbType.NVarChar).Value = opcion;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.ExecuteReader();
+            GridView1.EditIndex = -1;
             DataBind();
             con.Close();
 

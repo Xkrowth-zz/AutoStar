@@ -282,6 +282,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.ExecuteReader();
+            GridView1.EditIndex = -1;
             DataBind();
             con.Close();
         }

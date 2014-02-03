@@ -335,8 +335,9 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@respuestas", SqlDbType.NVarChar).Value = respuestas;
                 cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;
                 cmd.Parameters.Add("@garantia", SqlDbType.NVarChar).Value = garantia;
-
+                
                 cmd.ExecuteReader();
+                GridView1.EditIndex = -1;
                 DataBind();
                 con.Close();
 

@@ -78,7 +78,7 @@
 
                 <asp:TemplateField HeaderText="descripcion" SortExpression="descripcion">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("descripcion") %>' OnLoad="setFocus"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("descripcion") %>'></asp:Label>

@@ -237,9 +237,7 @@ namespace AutoStar.app
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
-            // Iterates through the rows of the GridView control
-            foreach (GridViewRow row in GridView1.Rows)
-            {
+
                 SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);                
                 int idRol = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
                 string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
@@ -256,8 +254,7 @@ namespace AutoStar.app
                 DataBind();
                 con.Close();
 
-            }
-
+            
 
         }
 

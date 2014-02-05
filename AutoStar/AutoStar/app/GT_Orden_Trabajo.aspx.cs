@@ -270,9 +270,10 @@ namespace AutoStar.app
             int mes = int.Parse(((DropDownList)GridView1.FooterRow.FindControl("DropDownList7")).SelectedItem.Text);
             int año = int.Parse(((DropDownList)GridView1.FooterRow.FindControl("DropDownList8")).SelectedItem.Text);
             String garantia = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_garantia")).Text;
-            String respuestas = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_respuestas")).Text;
+            String repuestos = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_repuestos")).Text;
             String logistica = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_logistica")).Text;
             string comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
+            string cliente = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_cliente")).Text;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
 
@@ -289,9 +290,10 @@ namespace AutoStar.app
             cmd.Parameters.Add("@mes", SqlDbType.Int).Value = mes;
             cmd.Parameters.Add("@año", SqlDbType.Int).Value = año;
             cmd.Parameters.Add("@garantia", SqlDbType.NVarChar).Value = garantia;
-            cmd.Parameters.Add("@respuestas", SqlDbType.NVarChar).Value = respuestas;
+            cmd.Parameters.Add("@respuestas", SqlDbType.NVarChar).Value = repuestos;
             cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@cliente", SqlDbType.NVarChar).Value = cliente;
 
             cmd.ExecuteReader();            
             DataBind();
@@ -313,10 +315,11 @@ namespace AutoStar.app
                 int dia = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList9")).SelectedItem.Text);
                 int mes = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList10")).SelectedItem.Text);
                 int año = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList11")).SelectedItem.Text);
-                String respuestas = ((TextBox)GridView1.SelectedRow.FindControl("TextBox9")).Text;
+                String repuestos = ((TextBox)GridView1.SelectedRow.FindControl("TextBox9")).Text;
                 String logistica = ((TextBox)GridView1.SelectedRow.FindControl("TextBox13")).Text;
                 String garantia = ((TextBox)GridView1.SelectedRow.FindControl("TextBox11")).Text;                 
                 String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox8")).Text;
+                String cliente = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
 
                 SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 conn.Open();
@@ -332,9 +335,10 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@mes", SqlDbType.Int).Value = mes;
                 cmd.Parameters.Add("@año", SqlDbType.Int).Value = año;
                 cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-                cmd.Parameters.Add("@respuestas", SqlDbType.NVarChar).Value = respuestas;
+                cmd.Parameters.Add("@repuestos", SqlDbType.NVarChar).Value = repuestos;
                 cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;
                 cmd.Parameters.Add("@garantia", SqlDbType.NVarChar).Value = garantia;
+                cmd.Parameters.Add("@cliente", SqlDbType.NVarChar).Value = cliente;
                 
                 cmd.ExecuteReader();
                 GridView1.EditIndex = -1;

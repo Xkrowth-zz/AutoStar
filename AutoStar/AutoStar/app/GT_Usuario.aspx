@@ -101,7 +101,7 @@
                     <asp:RequiredFieldValidator ID="rfv_insert_nombre" ValidationGroup="Insert" runat="server" ErrorMessage="Nombre es un campo obligatario" ControlToValidate="txtfld_insert_nombre" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Apellido1" SortExpression="Apellido1">
+            <asp:TemplateField HeaderText="1er Apellido" SortExpression="Apellido1">
                 <EditItemTemplate>
                     <asp:TextBox ID="txtfld_apellido1" runat="server" Text='<%# Bind("apellido1") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_apellido1" runat="server" ErrorMessage="Apellido1 es un campo obligatario" ControlToValidate="txtfld_apellido1" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -114,7 +114,7 @@
                     <asp:RequiredFieldValidator ID="rfv_insert_apellido1" ValidationGroup="Insert" runat="server" ErrorMessage="Apellido1 es un campo obligatario" ControlToValidate="txtfld_insert_apellido1" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Apellido2" SortExpression="Apellido2">
+            <asp:TemplateField HeaderText="2do Apellido" SortExpression="Apellido2">
                 <EditItemTemplate>
                     <asp:TextBox ID="txtfld_apellido2" runat="server" Text='<%# Bind("apellido2") %>'></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_apellido2" runat="server" ErrorMessage="Apellido2 es un campo obligatario" ControlToValidate="txtfld_apellido2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>

@@ -338,6 +338,20 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:RequiredFieldValidator ID="rfv_insert_año" ValidationGroup="Insert" runat="server" ErrorMessage="Año de Ingreso es un campo obligatario" ControlToValidate="DropDownList8" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
+
+            <asp:TemplateField HeaderText="Cliente" SortExpression="cliente">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("cliente") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label9" runat="server" Text='<%# Bind("cliente") %>' ></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtfld_insert_cliente" runat="server" ></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_insert_cliente" ValidationGroup="Insert" runat="server" ErrorMessage="Cliente es un campo obligatario" ControlToValidate="txtfld_insert_cliente" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                </FooterTemplate>
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Comentarios" SortExpression="comentarios">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox8" runat="server" Text='<%# Bind("comentarios") %>' TextMode="MultiLine"></asp:TextBox>
@@ -349,17 +363,17 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:TextBox ID="txtfld_insert_comentarios" runat="server" TextMode="MultiLine" ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_insert_comentarios" ValidationGroup="Insert" runat="server" ErrorMessage="Comentarios es un campo obligatario" ControlToValidate="txtfld_insert_comentarios" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
-            </asp:TemplateField>
+            </asp:TemplateField>            
 
-            <asp:TemplateField HeaderText="Respuestas" SortExpression="respuestas">
+            <asp:TemplateField HeaderText="Repuestos" SortExpression="repuestos">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("respuestas") %>' TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="TextBox9" runat="server" Text='<%# Bind("repuestos") %>' TextMode="MultiLine"></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label10" runat="server" Text='<%# Bind("respuestas") %>'></asp:Label>
+                    <asp:Label ID="Label10" runat="server" Text='<%# Bind("repuestos") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="txtfld_insert_respuestas" runat="server" TextMode="MultiLine" ></asp:TextBox>
+                    <asp:TextBox ID="txtfld_insert_repuestos" runat="server" TextMode="MultiLine" ></asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
 

@@ -83,6 +83,7 @@
         <asp:ListItem>Asesor</asp:ListItem>
         <asp:ListItem>Placa</asp:ListItem>
         <asp:ListItem>Area</asp:ListItem>
+        <asp:ListItem>Cliente</asp:ListItem>
     </asp:DropDownList>
     
     
@@ -101,15 +102,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
     <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
-                <%--<EditItemTemplate>
-                    <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Guardar"></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancelar"></asp:LinkButton>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:LinkButton ID="link_edit" runat="server" CausesValidation="False" CommandName="Edit" ></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="link_select" runat="server" CausesValidation="False" CommandName="Select" ></asp:LinkButton>
-                    &nbsp;<asp:LinkButton ID="link_delete" runat="server" CausesValidation="False" CommandName="Delete" ></asp:LinkButton>
-                </ItemTemplate>--%>
+                                
                 <FooterTemplate>
                     <asp:LinkButton ID="link_insert" ValidationGroup="Insert" runat="server" OnClick="link_insertClick">Información a insertar:</asp:LinkButton>
                 </FooterTemplate>

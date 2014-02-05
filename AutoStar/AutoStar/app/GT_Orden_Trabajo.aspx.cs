@@ -133,7 +133,7 @@ namespace AutoStar.app
 
                     //GridView1.SetEditRow(row.RowIndex);
                     //GridView1.SelectRow(row.RowIndex);
-                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    row.BackColor = ColorTranslator.FromHtml("#8E7070");
                     //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
                 }
@@ -167,7 +167,7 @@ namespace AutoStar.app
                     GridView1.DeleteRow(row.RowIndex);
                     //GridView1.SetEditRow(row.RowIndex);
                     //GridView1.SelectRow(GridView1.SelectedIndex);
-                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    row.BackColor = ColorTranslator.FromHtml("#8E7070");
                     //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
                 }
@@ -190,7 +190,7 @@ namespace AutoStar.app
 
                     GridView1.SetEditRow(row.RowIndex);
                     //GridView1.SelectRow(GridView1.SelectedIndex);
-                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                    row.BackColor = ColorTranslator.FromHtml("#8E7070");
                     //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
                 }

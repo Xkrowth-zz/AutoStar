@@ -176,14 +176,14 @@ namespace AutoStar.app
 
             string descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;  
             string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
-
-
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("insertArea", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;            
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();            
             DataBind();
             con.Close();
@@ -242,7 +242,7 @@ namespace AutoStar.app
             int idArea = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
             string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
             string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
-
+            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
 
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
@@ -251,6 +251,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@idArea", SqlDbType.Int).Value = idArea;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;
             DataBind();

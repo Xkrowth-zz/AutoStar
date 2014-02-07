@@ -120,6 +120,7 @@ namespace AutoStar.app
             
             String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
             String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
 
@@ -128,6 +129,7 @@ namespace AutoStar.app
 
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
 
             cmd.ExecuteReader();
             DataBind();
@@ -188,6 +190,7 @@ namespace AutoStar.app
             String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
             String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
             int idStatus = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
 
@@ -197,6 +200,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@idStatus", SqlDbType.Int).Value = idStatus;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
 
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;

@@ -219,6 +219,13 @@
     <Compile Include="app\GT_Asignacion_Parqueo.aspx.designer.cs">
       <DependentUpon>GT_Asignacion_Parqueo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="app\GT_Parametros.aspx.cs">
+      <DependentUpon>GT_Parametros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\GT_Parametros.aspx.designer.cs">
+      <DependentUpon>GT_Parametros.aspx</DependentUpon>
+    </Compile>
     <Compile Include="app\GT_Status_Orden.aspx.cs">
       <DependentUpon>GT_Status_Orden.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -254,13 +261,6 @@
     <Compile Include="app\GT_Planografo_Digital.aspx.designer.cs">
       <DependentUpon>GT_Planografo_Digital.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\GT_Prioridad_Orden_Trabajo.aspx.cs">
-      <DependentUpon>GT_Prioridad_Orden_Trabajo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\GT_Prioridad_Orden_Trabajo.aspx.designer.cs">
-      <DependentUpon>GT_Prioridad_Orden_Trabajo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\GT_Roles.aspx.cs">
       <DependentUpon>GT_Roles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,12 +268,12 @@
     <Compile Include="app\GT_Roles.aspx.designer.cs">
       <DependentUpon>GT_Roles.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\GT_Tareas.aspx.cs">
-      <DependentUpon>GT_Tareas.aspx</DependentUpon>
+    <Compile Include="app\GT_Tiempos_Parada.aspx.cs">
+      <DependentUpon>GT_Tiempos_Parada.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="app\GT_Tareas.aspx.designer.cs">
-      <DependentUpon>GT_Tareas.aspx</DependentUpon>
+    <Compile Include="app\GT_Tiempos_Parada.aspx.designer.cs">
+      <DependentUpon>GT_Tiempos_Parada.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\GT_Usuario.aspx.cs">
       <DependentUpon>GT_Usuario.aspx</DependentUpon>
@@ -327,14 +327,14 @@
     <Content Include="app\GT_Acceso_Menu.aspx" />
     <Content Include="app\GT_Areas.aspx" />
     <Content Include="app\GT_Asignacion_Parqueo.aspx" />
+    <Content Include="app\GT_Parametros.aspx" />
     <Content Include="app\GT_Status_Orden.aspx" />
     <Content Include="app\GT_Nueva_Orden.aspx" />
     <Content Include="app\GT_Opcion_Menu.aspx" />
     <Content Include="app\GT_Orden_Trabajo.aspx" />
     <Content Include="app\GT_Planografo_Digital.aspx" />
-    <Content Include="app\GT_Prioridad_Orden_Trabajo.aspx" />
     <Content Include="app\GT_Roles.aspx" />
-    <Content Include="app\GT_Tareas.aspx" />
+    <Content Include="app\GT_Tiempos_Parada.aspx" />
     <Content Include="app\GT_Usuario.aspx" />
     <Content Include="app\Images\backgrounds\Chrysler1.jpg" />
     <Content Include="app\Images\backgrounds\Chrysler2.jpg" />

@@ -40,6 +40,7 @@ namespace AutoStar.app
             String rol = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList5")).SelectedItem.Text;
             String opcion = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList4")).SelectedItem.Text;
             String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);            
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
@@ -48,6 +49,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@opcion", SqlDbType.NVarChar).Value = opcion;            
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();
             DataBind();
             con.Close();
@@ -84,6 +86,7 @@ namespace AutoStar.app
             String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList3")).SelectedItem.Text;
             String opcion = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList2")).SelectedItem.Text;
             String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
@@ -92,6 +95,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@idAcceso", SqlDbType.Int).Value = idAcceso;
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@opcion", SqlDbType.NVarChar).Value = opcion;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;

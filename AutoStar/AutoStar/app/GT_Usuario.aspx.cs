@@ -44,6 +44,7 @@ namespace AutoStar.app
             string str_nombre = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_nombre")).Text;  //Company
             string str_apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;  //Name
             string str_apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("insertUsuario", conn);
@@ -53,6 +54,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = str_apellido2;
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();
             //cmd.CommandText = "listarEmpleados";
             //GridView1.DataSource = cmd.ExecuteReader();
@@ -227,6 +229,7 @@ namespace AutoStar.app
             String apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
             String rol = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_rol")).Text;
             String comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("insertUsuario", conn);
@@ -236,6 +239,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();
             DataBind();
             con.Close();
@@ -270,6 +274,7 @@ namespace AutoStar.app
             String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList5")).SelectedItem.Text;
             String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList4")).SelectedItem.Text;
             String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
+            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("updateUsuario", conn);
@@ -281,6 +286,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;
             DataBind();

@@ -88,6 +88,18 @@
                 </FooterTemplate>
             </asp:TemplateField>
 
+            <asp:TemplateField HeaderText="Status" SortExpression="status">
+                        <EditItemTemplate>
+                            <asp:CheckBox ID="CheckBox1" runat="server" Checked ='<%# Bind("status") %>' />
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:CheckBox ID="CheckBox2" runat="server" Checked ='<%# Bind("status") %>' Enabled="false" />
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            <asp:CheckBox ID="CheckBox3" runat="server" />
+                        </FooterTemplate>
+            </asp:TemplateField>
+
             <asp:TemplateField HeaderText="comentarios" SortExpression="comentarios">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("comentarios") %>' TextMode="MultiLine"></asp:TextBox>

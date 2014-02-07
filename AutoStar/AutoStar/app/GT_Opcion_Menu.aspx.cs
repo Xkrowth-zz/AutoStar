@@ -129,12 +129,14 @@ namespace AutoStar.app
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
             String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
             String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
+            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("insertOpcion", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;            
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.NVarChar).Value = status;
             cmd.ExecuteReader();
             DataBind();
             con.Close();
@@ -212,6 +214,7 @@ namespace AutoStar.app
             int idOpcion = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
             String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
             String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("updateOpcion", conn);
@@ -219,6 +222,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@idOpcionMenu", SqlDbType.Int).Value = idOpcion;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;            
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            cmd.Parameters.Add("@status", SqlDbType.NVarChar).Value = status;
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;
             DataBind();

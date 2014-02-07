@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="GT_Orden_Trabajo.aspx.cs" Inherits="AutoStar.app.GT_Estado_Orden_Trabajo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" EnableEventValidation="False"  CodeBehind="GT_Orden_Trabajo.aspx.cs" Inherits="AutoStar.app.GT_Estado_Orden_Trabajo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -99,7 +99,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Tecnicos"></asp:SqlDataSource>    
     <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Tecnicos"></asp:SqlDataSource>      
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" ShowFooter="True" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridView1" CssClass="GridViewConfig" AutoPostBack="True" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
                                 
@@ -139,7 +139,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("idEstado") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
+                    <asp:DropDownList ID="DropDownList2" runat="server" onClick="setFocus" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idEstado" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idEstado" ValidationGroup="Insert" runat="server" ErrorMessage="Estado es un campo obligatario" ControlToValidate="DropDownList2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>

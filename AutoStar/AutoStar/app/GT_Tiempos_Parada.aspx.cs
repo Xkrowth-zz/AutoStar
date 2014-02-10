@@ -22,16 +22,31 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(!Page.IsPostBack){//code here
-            //}
-            //else
-            //{
-            //  Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
-            //  if (cont != null)
-            //      cont.Focus();
-            //}
-
-
+            if (IsPostBack)
+            {
+                string CtrlID = string.Empty;
+                if (Request.Form["__EVENTTARGET"] != null &&
+                    Request.Form["__EVENTTARGET"] != string.Empty)
+                {
+                    CtrlID = Request.Form["__EVENTTARGET"];
+                }
+                else
+                {
+                    //Buttons and ImageButtons
+                    if (Request.Form[hidSourceID.UniqueID] != null &&
+                        Request.Form[hidSourceID.UniqueID] != string.Empty)
+                    {
+                        CtrlID = Request.Form[hidSourceID.UniqueID];
+                    }
+                }
+                ClientScript.RegisterStartupScript(this.GetType(),
+                    "sourceofpostback",
+                    "<script type='text/javascript'>" +
+                    "window.onload=new function(){" +
+                    "alert('Control ID " + CtrlID +
+                    " caused postback.');}" +
+                    "</script>");
+            }
         }
         protected void SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
         {
@@ -67,19 +82,14 @@ namespace AutoStar.app
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (!IsPostBack)
-                {
+                
                     e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                     e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                     e.Row.ToolTip = "Click to select row";
                     e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
 
 
-                }
-                else
-                {
-
-                }
+               
 
 
             }
@@ -180,7 +190,7 @@ namespace AutoStar.app
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);            
             String area = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList2")).SelectedItem.Text;
             String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
-            String horaInicio = ((TextBox)GridView1.FooterRow.FindControl("TextBox8")).Text;
+            String horaInicio = ((TextBox)GridView1.FooterRow.FindControl("TextBox6")).Text;
             int duracion = int.Parse(((TextBox)GridView1.FooterRow.FindControl("TextBox9")).Text);
             string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox10")).Text;            
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
@@ -191,7 +201,7 @@ namespace AutoStar.app
 
             cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
             cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@horaInicio", SqlDbType.DateTime).Value = horaInicio;
+            cmd.Parameters.Add("@horaInicio", SqlDbType.Time).Value = horaInicio;
             cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;            
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             
@@ -205,7 +215,7 @@ namespace AutoStar.app
         {
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
             int idTiempos = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
-            String area = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
+            String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList3")).SelectedItem.Text;
             String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
             String horaInicio = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
             int duracion = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("TextBox4")).Text);
@@ -221,7 +231,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@horaInicio", SqlDbType.DateTime).Value = horaInicio;
             cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-
+            GridView1.EditIndex = -1;
 
             cmd.ExecuteReader();
             BindData();
@@ -229,6 +239,20 @@ namespace AutoStar.app
 
 
 
+        }
+
+        private Control GetControlThatCausedPostBack(Page page)
+        {
+            //initialize a control and set it to null
+            Control ctrl = null;
+
+            //get the event target name and find the control
+            string ctrlName = page.Request.Params.Get("__EVENTTARGET");
+            if (!String.IsNullOrEmpty(ctrlName))
+                ctrl = page.FindControl(ctrlName);
+
+            //return the control to the calling method
+            return ctrl;
         }
     }
 }

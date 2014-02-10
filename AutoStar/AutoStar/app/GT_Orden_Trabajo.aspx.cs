@@ -15,25 +15,18 @@ namespace AutoStar.app
 {
     public partial class GT_Estado_Orden_Trabajo : System.Web.UI.Page
     {
-        private string SearchString = "";
-        protected void BindData()
-        {
-            if (!Page.IsPostBack)
-            {
-                DataBind();
-            }
-        }
-
+      
         protected void Page_Load(object sender, EventArgs e)
         {
-              //if(!Page.IsPostBack){//code here
-              //}
-              //else
-              //{
-              //  Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
-              //  if (cont != null)
-              //      cont.Focus();
-              //}
+              if(!Page.IsPostBack){
+                  GridView1.DataBind();
+              }
+              else
+              {
+                Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
+                if (cont != null)
+                    cont.Focus();
+              }
 
 
         }
@@ -57,7 +50,7 @@ namespace AutoStar.app
             {
                 if (row.RowIndex == GridView1.SelectedIndex)
                 {
-                    
+                    GridView1.EditIndex = -1;
                     row.BackColor = ColorTranslator.FromHtml("#8E7070");                    
                     row.ToolTip = string.Empty;
                 }
@@ -71,19 +64,13 @@ namespace AutoStar.app
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                if (!IsPostBack)
-                {                    
+                                
                     e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                     e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                     e.Row.ToolTip = "Click to select row";
                     e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
-
-
-                }
-                else
-                {
                     
-                }
+                                  
                     
 
             }
@@ -96,7 +83,14 @@ namespace AutoStar.app
                 e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 e.Row.ToolTip = "Click to select row";
-                e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
+                if (!(e.Row.RowIndex == GridView1.SelectedIndex))
+                {
+                    
+                    e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
+
+                }
+                
+                
             }
         }
         protected void btn_orden_eliminar_Click(object sender, EventArgs e)
@@ -171,17 +165,11 @@ namespace AutoStar.app
             cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
             cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
             cmd.ExecuteReader();
-            BindData();
+            GridView1.DataBind();
             con.Close();
 
         }
-        protected void btnClear_Click(object sender, EventArgs e)
-        {
-            //  Simple clean up text to return the Gridview to it's default state
-            txtSearch.Text = "";
-            SearchString = "";
-            BindData();
-        }
+
 
         protected void link_insertClick(object sender, EventArgs e)
         {
@@ -217,13 +205,13 @@ namespace AutoStar.app
             cmd.Parameters.Add("@mes", SqlDbType.Int).Value = mes;
             cmd.Parameters.Add("@año", SqlDbType.Int).Value = año;
             cmd.Parameters.Add("@garantia", SqlDbType.NVarChar).Value = garantia;
-            cmd.Parameters.Add("@respuestas", SqlDbType.NVarChar).Value = repuestos;
+            cmd.Parameters.Add("@repuestos", SqlDbType.NVarChar).Value = repuestos;
             cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.Parameters.Add("@cliente", SqlDbType.NVarChar).Value = cliente;
 
             cmd.ExecuteReader();
-            BindData();
+            GridView1.DataBind();
             con.Close();
         }
 
@@ -269,7 +257,7 @@ namespace AutoStar.app
                 
                 cmd.ExecuteReader();
                 GridView1.EditIndex = -1;
-                BindData();
+                GridView1.DataBind();
                 con.Close();
 
             

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Tiempos_Parada.aspx.cs" Inherits="AutoStar.app.GT_Tiempos_Parada" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Tiempos_Parada.aspx.cs" EnableEventValidation="false" Inherits="AutoStar.app.GT_Tiempos_Parada" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -35,8 +35,8 @@
         </asp:Table>
     </div>
 
-    <asp:Label ID="Label1" runat="server" Text="Valor a buscar:"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+    <asp:Label ID="Label1" runat="server" CssClass="busquedalbl" Text="Valor a buscar:"></asp:Label>
+    <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt"></asp:TextBox>
     <asp:DropDownList ID="DropDownList1" runat="server">
         <asp:ListItem>Area</asp:ListItem>
         <asp:ListItem>Descripcion</asp:ListItem>
@@ -64,8 +64,9 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" Height="304px" Width="779px">
+    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" OnRowDataBound="OnRowDataBound">
         <Columns>
+
             <asp:TemplateField></asp:TemplateField>
             <asp:TemplateField HeaderText="idTiempos" InsertVisible="False" SortExpression="idTiempos" Visible="False">
                 <EditItemTemplate>
@@ -75,17 +76,19 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Bind("idTiempos") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Area" SortExpression="idArea">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("idArea") %>'></asp:TextBox>
+                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Descripcion" SortExpression="descripcion">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("descripcion") %>'></asp:TextBox>
@@ -97,17 +100,19 @@
                     <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="HoraInicio" SortExpression="horaInicio">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("horaInicio") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox3" runat="server" TextMode="Time" Text='<%# Bind("horaInicio") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("horaInicio") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox6" runat="server" TextMode="Time"></asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
+
             <asp:TemplateField HeaderText="Duracion" SortExpression="duracion">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox4" runat="server" Text='<%# Bind("duracion") %>'></asp:TextBox>
@@ -117,6 +122,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox9" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_TextBox9" ValidationGroup="Insert" runat="server" ErrorMessage="Duracion es un campo obligatario" ControlToValidate="TextBox9" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -133,6 +139,10 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
+
+    <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
+    <asp:HiddenField ID="hidSourceID" runat="server" />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     

@@ -13,5 +13,33 @@ namespace AutoStar.app
         {
 
         }
+
+        protected void btn_bahiasClick(object sender, ImageClickEventArgs e)
+        {
+            Label1.Visible = true;
+            DropDownList1.Visible = true;
+            
+        }
+        protected void onIndexChanged(object sender , EventArgs e)
+        {
+
+            String selectedItem = DropDownList1.SelectedItem.Text;
+
+            if (selectedItem == "Mercedez-Benz")
+            {
+                bahiasCDJR.Visible = false;
+                bahiasMercedez.Visible = true;
+            }
+            else if (selectedItem == "CDJR")
+            {
+                bahiasMercedez.Visible = false;
+                bahiasCDJR.Visible = true;
+            }
+        }
+        protected void irAorden(object sender , ImageClickEventArgs e) 
+        {
+
+            Panel1.Visible = true;        
+        }
     }
 }

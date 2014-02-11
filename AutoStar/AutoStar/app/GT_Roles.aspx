@@ -68,7 +68,7 @@
 
 
         
-            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
+            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField HeaderText="idRol" InsertVisible="False" SortExpression="idRol" Visible="False">
                         <EditItemTemplate>

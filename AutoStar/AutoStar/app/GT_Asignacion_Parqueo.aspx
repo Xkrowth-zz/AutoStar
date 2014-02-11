@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Asignacion_Parqueo.aspx.cs" Inherits="AutoStar.app.GT_Asignacion_Parqueo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Asignacion_Parqueo.aspx.cs" Inherits="AutoStar.app.GT_Asignacion_Parqueo"  
+    %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -60,19 +61,19 @@
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton6" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton6" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton7" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton7" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton10" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton10" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton9" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton9" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton8" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton8" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
                     
@@ -137,19 +138,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton14" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton14" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton13" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton13" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>  
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton12" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton12" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>              
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton11" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton11" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>                
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>                
             </asp:TableRow>
                 
@@ -171,19 +172,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton17" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton17" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton18" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton18" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton19" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton19" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton20" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton20" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton15" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton15" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 
             </asp:TableRow>
@@ -245,26 +246,29 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton21" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton21" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton22" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton22" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>  
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton23" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton23" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>              
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton24" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton24" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>                
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton25" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton25" AlternateText="Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" onClick="irAorden"/>
                 </asp:TableCell>                
             </asp:TableRow>
                 
         </asp:Table>
     </div>
 
-    <asp:Panel ID="Panel1" runat="server" Visible="false" class="temporal">
+
+    
+
+    <asp:Panel ID="Panel1" runat="server" Visible="false" class="temporal" dragable="true">
         <asp:Label ID="lbl_numeroOrden" CssClass="busquedalbl" runat="server" Text="Numero de Orden:"></asp:Label>
         <asp:TextBox ID="TextBox1"  runat="server"></asp:TextBox>
         <asp:Label ID="lbl_status" CssClass="busquedalbl" runat="server" Text="Status:"></asp:Label>
@@ -289,6 +293,7 @@
         <asp:TextBox ID="TextBox11"  runat="server"></asp:TextBox>
         <asp:Label ID="lbl_cliente" CssClass="busquedalbl" runat="server" Text="Cliente:"></asp:Label>
         <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+        <asp:Button ID="btncerrar" CssClass="btnCrearPlan" runat="server" OnClick="btncerrar_Click" Text="Cerrar" />
     </asp:Panel>
 
 

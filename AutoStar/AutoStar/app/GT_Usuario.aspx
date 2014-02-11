@@ -81,7 +81,7 @@
 
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
                 <FooterTemplate>

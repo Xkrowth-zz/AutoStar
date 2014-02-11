@@ -62,7 +62,7 @@
     </asp:DropDownList>
 
 
-        <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AutoGenerateColumns="False" DataKeyNames="idStatus" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" onselectedindexchanged="OnSelectedIndexChanged" onselectedindexchanging="GridView1_SelectedIndexChanging" onRowDataBound="OnRowDataBound" ShowFooter="True">
+        <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AutoGenerateColumns="False" DataKeyNames="idStatus" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" onselectedindexchanged="OnSelectedIndexChanged" onselectedindexchanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True">
             <Columns>
                 <asp:TemplateField FooterText="Informacion a insertar:"></asp:TemplateField>
 

@@ -64,7 +64,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" OnRowDataBound="OnRowDataBound">
+    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated">
         <Columns>
 
             <asp:TemplateField></asp:TemplateField>

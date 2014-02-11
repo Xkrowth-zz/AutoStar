@@ -126,31 +126,32 @@ namespace AutoStar.app
             {
                 if (row.RowIndex == GridView1.SelectedIndex)
                 {
-                    GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + GridView1.SelectedRow.RowIndex);
-
-                    //GridView1.SetEditRow(row.RowIndex);
-                    //GridView1.SelectRow(row.RowIndex);
+                    GridView1.EditIndex = -1;
                     row.BackColor = ColorTranslator.FromHtml("#8E7070");
-                    //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
                     row.ToolTip = string.Empty;
                 }
                 else
                 {
                     row.BackColor = GridView1.BackColor;
-                    //row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
-                    //row.ToolTip = "Click to select this row.";
                 }
             }
         }
-        protected void OnRowDataBound(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
+
+        protected void GridView1_RowCreated(object sender, System.Web.UI.WebControls.GridViewRowEventArgs e)
         {
+
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
+                e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
+                e.Row.ToolTip = "Click to select row";
+                if (!(e.Row.RowIndex == GridView1.SelectedIndex))
+                {
 
-                GridView1.SelectedIndex = e.Row.RowIndex;
-                e.Row.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Select$" + e.Row.RowIndex);
-                Console.Write("This is the row index selected " + e.Row.RowIndex);
-                e.Row.ToolTip = "Click to select this row.";
+                    e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
+
+                }
+
 
             }
         }

@@ -41,5 +41,11 @@ namespace AutoStar.app
 
             Panel1.Visible = true;        
         }
+
+        protected void btncerrar_Click(object sender, EventArgs e)
+        {
+            Panel1.Visible = false;
+            
+        }
     }
 }

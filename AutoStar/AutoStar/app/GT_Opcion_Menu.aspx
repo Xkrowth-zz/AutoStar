@@ -60,7 +60,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" OnRowDataBound="OnRowDataBound" ShowFooter="True" AutoGenerateColumns="False" DataKeyNames="idOpcionMenu" DataSourceID="SqlDataSource1" ShowHeaderWhenEmpty="True">
+    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" AutoGenerateColumns="False" DataKeyNames="idOpcionMenu" DataSourceID="SqlDataSource1" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:TemplateField>
                 <FooterTemplate>

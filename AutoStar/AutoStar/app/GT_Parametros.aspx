@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Parametros.aspx.cs" Inherits="AutoStar.app.GT_Parametros" EnableEventValidation="false"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" Register TagPrefix="YourPrefix" Namespace="AutoStar.app" AutoEventWireup="true" CodeBehind="GT_Parametros.aspx.cs" Inherits="AutoStar.app.GT_Parametros" EnableEventValidation="false"%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -53,7 +53,8 @@
             </asp:Table>
         </div>
 
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
+    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" ShowFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
+        
         <Columns>
             <asp:TemplateField>
                 <asp:FooterTemplate>
@@ -66,7 +67,7 @@
                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("idParametro") %>'></asp:Label>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("idParametro") %>'></asp:Label>
+                    <asp:Label ID="Label5" runat="server" Text='<%# Bind("idParametro") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="SlideShow" SortExpression="slideShow">
@@ -107,10 +108,10 @@
                     <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("status") %>' />
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("status") %>' Enabled="false" />
+                    <asp:CheckBox ID="CheckBox2" runat="server" Checked='<%# Bind("status") %>' Enabled="false" />
                 </ItemTemplate>
                 <FooterTemplate>                   
-                    <asp:CheckBox ID="CheckBox1" runat="server" Checked='<%# Bind("status") %>' />                
+                    <asp:CheckBox ID="CheckBox3" runat="server" Checked='<%# Bind("status") %>' />                
                 </FooterTemplate>
             </asp:TemplateField>
         </Columns>

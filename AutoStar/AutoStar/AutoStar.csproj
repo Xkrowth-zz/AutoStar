@@ -177,6 +177,7 @@
     <Compile Include="app\AutoStar.Master.designer.cs">
       <DependentUpon>AutoStar.Master</DependentUpon>
     </Compile>
+    <Compile Include="app\GridViewExtended.cs" />
     <Compile Include="app\GT_Configuracion_General.aspx.cs">
       <DependentUpon>GT_Configuracion_General.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

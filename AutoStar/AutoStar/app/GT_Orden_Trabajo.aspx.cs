@@ -69,9 +69,6 @@ namespace AutoStar.app
                     e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                     e.Row.ToolTip = "Click to select row";
                     e.Row.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
-                    
-                                  
-                    
 
             }
         }

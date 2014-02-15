@@ -22,30 +22,9 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack)
+            if (!IsPostBack)
             {
-                string CtrlID = string.Empty;
-                if (Request.Form["__EVENTTARGET"] != null &&
-                    Request.Form["__EVENTTARGET"] != string.Empty)
-                {
-                    CtrlID = Request.Form["__EVENTTARGET"];
-                }
-                else
-                {
-                    //Buttons and ImageButtons
-                    if (Request.Form[hidSourceID.UniqueID] != null &&
-                        Request.Form[hidSourceID.UniqueID] != string.Empty)
-                    {
-                        CtrlID = Request.Form[hidSourceID.UniqueID];
-                    }
-                }
-                ClientScript.RegisterStartupScript(this.GetType(),
-                    "sourceofpostback",
-                    "<script type='text/javascript'>" +
-                    "window.onload=new function(){" +
-                    "alert('Control ID " + CtrlID +
-                    " caused postback.');}" +
-                    "</script>");
+                GridView1.DataBind();
             }
         }
         protected void SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
@@ -84,7 +63,7 @@ namespace AutoStar.app
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
+                
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 e.Row.ToolTip = "Click to select row";
                 if (!(e.Row.RowIndex == GridView1.SelectedIndex))

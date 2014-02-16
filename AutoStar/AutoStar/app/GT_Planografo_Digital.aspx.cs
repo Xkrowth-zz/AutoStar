@@ -47,7 +47,7 @@ namespace AutoStar.app
                     btnatras.Enabled = false;
                 }
             }
-            
+
 
             crearTabla();
 
@@ -303,10 +303,13 @@ namespace AutoStar.app
 
             int hora_actual = buscar_hora_Actual();
 
+            Crear_franja_sub_Hora(hora_actual); //crea la franja que esta entre las horas y el primer tecnico
+
             for (int x = 0; x < dt.Rows.Count; x++) //ciclo para recorrer los tecnicos
             {
                 pos_dt_orden = 0;
-                string idtecnico = dt.Rows[x]["idTecnico"].ToString();
+                string idtecnico = dt.Rows[x]["idTecnico"].ToString(); 
+                Revisa_Atraso(idtecnico);
                 string query2 = "select * from GT_Ordenes where idTecnico = '" + idtecnico + "' ORDER by horaInicio ASC";
 
                 SqlCommand cmd2 = new SqlCommand(query2, con);
@@ -315,10 +318,12 @@ namespace AutoStar.app
                 da_orden.Fill(dt_orden);
 
                 /* Obtener las ordenes de cada tecnico */
+               
 
-                if (dt_orden.Rows.Count > 0) // preguntamos si se encontro alguna orden
+                if (dt_orden.Rows.Count > 0 && (bool)dt.Rows[x]["Activo"] == true) // preguntamos si se encontro alguna orden
                 {
-                    // tabla += "<tr> <td class='tableCellPlanografoTecnicos'> <label class='labelTecnicos'>" + dt.Rows[x]["nombre"].ToString() + "</label></td>";
+
+
                     TableRow tRow = new TableRow();
                     TableCell tCell = new TableCell();
 
@@ -409,7 +414,11 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
+                                           
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -478,7 +487,11 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
+                                            
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -544,6 +557,10 @@ namespace AutoStar.app
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
                                             else if (t_Trans < 0)
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -615,7 +632,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -684,6 +704,10 @@ namespace AutoStar.app
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
 
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -751,6 +775,10 @@ namespace AutoStar.app
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
 
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -817,7 +845,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -884,7 +915,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -951,7 +985,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1018,7 +1055,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1085,7 +1125,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1152,7 +1195,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1219,7 +1265,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1286,7 +1335,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1353,7 +1405,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1420,7 +1475,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1487,7 +1545,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1554,7 +1615,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1620,7 +1684,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1686,7 +1753,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1752,7 +1822,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1818,7 +1891,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1884,7 +1960,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1950,7 +2029,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2016,7 +2098,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2082,7 +2167,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2148,7 +2236,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2214,7 +2305,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2280,7 +2374,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2345,7 +2442,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2410,7 +2510,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2476,7 +2579,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2542,7 +2648,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2607,7 +2716,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2672,7 +2784,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2738,7 +2853,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2804,7 +2922,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2869,7 +2990,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2934,7 +3058,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3000,7 +3127,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3066,7 +3196,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if ((bool)dt_orden.Rows[pos_dt_orden]["pasado"])
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Red;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3100,7 +3233,12 @@ namespace AutoStar.app
                     tCell1.Controls.Add(etiq);
                     tRow1.Cells.Add(tCell1);
 
-                    
+                    bool Inactivo = false;
+                    if ((bool)dt.Rows[x]["Activo"] == false)
+                    {
+                        Inactivo = true;
+                        etiq.ForeColor = System.Drawing.Color.Gray;
+                    }
 
                     for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
                     {
@@ -3115,10 +3253,15 @@ namespace AutoStar.app
                             //tabla += "<td class='tableCellPlanografoHoras'></td>";
                             TableCell tCell2 = new TableCell();
                             tCell2.CssClass = "tableCellPlanografoHoras";
+                            if (Inactivo)
+                            {
+                                tCell2.BackColor = System.Drawing.Color.Gray;
+                            }
                             if (marcar)
                             {
                                 tCell2.BackColor = System.Drawing.Color.Blue;
                             }
+
                             tRow1.Cells.Add(tCell2);
 
                         }
@@ -3127,10 +3270,15 @@ namespace AutoStar.app
                             //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";
                             TableCell tCell2 = new TableCell();
                             tCell2.CssClass = "tableCellPlanografoHoras_impar";
+                            if (Inactivo)
+                            {
+                                tCell2.BackColor = System.Drawing.Color.Gray;
+                            }
                             if (marcar)
                             {
                                 tCell2.BackColor = System.Drawing.Color.Blue;
                             }
+
                             tRow1.Cells.Add(tCell2);
                         }
 
@@ -3147,13 +3295,195 @@ namespace AutoStar.app
             return tabla;
         }
 
+        private void Revisa_Atraso( string idTecnico)
+        {
+            DateTime actual = DateTime.Now;
+            actual = format_hora_prox(actual);
+
+            SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query1 = "select DISTINCT numero, horaInicio from GT_Ordenes where idTecnico = '" + idTecnico + "' ORDER by horaInicio ASC";
+            conex.Open();
+
+            SqlCommand cmd1 = new SqlCommand(query1, conex);
+            SqlDataAdapter dad = new SqlDataAdapter(cmd1);
+            DataTable dt_num = new DataTable();
+            dad.Fill(dt_num);
+
+            conex.Close();
+
+            TimeSpan TS_Mover = new TimeSpan(0,0,0);
+            bool  Mover = false;
+            for (int x = 0; x < dt_num.Rows.Count; x++)
+            {
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "'  ORDER by horaInicio ASC";
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                con.Close();
+
+                if (Mover == false)
+                {
+                    DateTime h_final = (DateTime)dt.Rows[0]["horaFinal"] ;
+                    DateTime h_ini = (DateTime)dt.Rows[0]["horainicio"];
+                    string statusss = dt.Rows[0]["Status"].ToString();
+                    if (h_final < actual && h_ini  < actual && !(dt.Rows[0]["Status"].Equals("Finalizada")))
+                    {
+                        Mover = true;
+                        if (h_ini.Date == actual.Date.AddDays(-1))
+                        {
+                            Eliminar_registro_id((int)dt.Rows[0]["idOrdenes"]);
+                            DateTime mover_a = new DateTime(7, 30, 00);
+                            TS_Mover = actual.Subtract(mover_a);
+                        }
+                        else if (h_ini.Date == actual.Date)
+                        {
+                            TS_Mover = actual.Subtract((DateTime)dt.Rows[0]["horaFinal"]);
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        
+                        DateTime inicio = (DateTime)dt.Rows[0]["horaInicio"];
+
+                        int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
+                        string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
+                        string dpStatus = dt.Rows[0]["Status"].ToString();
+
+                        string[] th = dt.Rows[0]["horaTasada"].ToString().Split(',');
+                        int ho = int.Parse(th[0]);
+                        int mi = int.Parse(th[1]);
+
+                        string[] he = dt.Rows[0]["horaExtra"].ToString().Split(',');
+                        ho = ho + int.Parse(he[0]);
+                        mi = mi + int.Parse(he[1]);
+
+                        mi = mi * 6;
+                        mi = mi + TS_Mover.Minutes;                        
+                        
+                        ho = ho + TS_Mover.Hours;
+                        //double mii = ((double));
+                        //mii = Math.Ceiling(mii);
+                        mi = mi/6;
+                        string htazad =  ho+","+mi;                        
+                        bool finalizado = true;
+
+                        
+                        Eliminar_registro(idordenes);
+                        Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
+                    }
+                }
+                else
+                {
+                    int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
+                    string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
+                    string dpStatus = dt.Rows[0]["Status"].ToString();
+                    string htazad = dt.Rows[0]["horaTasada"].ToString();
+                    bool finalizado = false;
+
+                    DateTime inicios = (DateTime)dt.Rows[0]["horaInicio"];
+                    DateTime inicio = inicios.Add(TS_Mover);
+
+                    Eliminar_registro(idordenes);
+                    Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
+                }
+            }
+
+
+
+        }
+
+        private bool Eliminar_registro_id(int id)
+        {
+
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            con.Open();
+            SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE idOrdenes = '" + id + "'", con, tr);
+            try
+            {
+                //Ejecuto
+                cmd.ExecuteNonQuery();
+                tr.Commit(); //Actualizar bd                                
+                //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //De haber un error lo capturo
+                // msg = ex.Message;
+                //Deshacemos la operacion
+                tr.Rollback();
+                return false;
+            }
+            finally
+            {
+                con.Close(); //Cerramos la conexion
+
+            }
+        }
+
+
+        private void Crear_franja_sub_Hora(int hora_actual)
+        {
+            TableRow tRow1 = new TableRow();
+            TableCell tCell1 = new TableCell();
+            tCell1.CssClass = "tableCellPlanografoTecnicos";
+            tCell1.Height = Unit.Pixel(2);
+            Label etiq = new Label();
+            etiq.CssClass = "labelTecnicos";
+            //etiq.Text = dt.Rows[x]["nombre"].ToString();
+            tCell1.Controls.Add(etiq);
+            tRow1.Cells.Add(tCell1);
+            for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
+            {
+                bool marcar = false;
+                if (num_cell == hora_actual)
+                {
+                    marcar = true;
+                }
+                if ((num_cell % 2) == 0)
+                {
+                    //tabla += "<td class='tableCellPlanografoHoras'></td>";
+                    TableCell tCell2 = new TableCell();
+                    tCell2.CssClass = "tableCellPlanografoHoras";
+                    if (marcar)
+                    {
+                        tCell2.BackColor = System.Drawing.Color.Blue;
+                    }
+                    tCell2.Height = Unit.Pixel(2);
+                    tRow1.Cells.Add(tCell2);
+
+                }
+                else
+                {
+                    //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";
+                    TableCell tCell2 = new TableCell();
+                    tCell2.CssClass = "tableCellPlanografoHoras_impar";
+                    if (marcar)
+                    {
+                        tCell2.BackColor = System.Drawing.Color.Blue;
+                    }
+                    tCell2.Height = Unit.Pixel(6);
+                    tRow1.Cells.Add(tCell2);
+                }
+            }
+            tPlano.Rows.Add(tRow1);
+        }
+
         /// <summary>
         /// se encarga de buscar la hora mas cercana para marcar la franja
         /// </summary>
         /// <returns></returns>
         private int buscar_hora_Actual()
-        {            
-            DateTime fecha_c =DateTime.Parse( Session["fecha_consulta"].ToString());
+        {
+            DateTime fecha_c = DateTime.Parse(Session["fecha_consulta"].ToString());
             if (fecha_c.Date != DateTime.Now.Date)
             {
                 return 0;
@@ -3161,7 +3491,7 @@ namespace AutoStar.app
 
             int numero = 0;
             DateTime fecha = DateTime.Now;
-            string hora_a = fecha.Hour +"," + fecha.Minute;
+            string hora_a = fecha.Hour + "," + fecha.Minute;
             hora_a = formatear_down(hora_a);
 
             string[] calcular = hora_a.Split(',');
@@ -3170,190 +3500,190 @@ namespace AutoStar.app
 
             switch (hora)
             {
-                case 7:                   
+                case 7:
                     if (min == 30)
                     {
-                         numero  = 2;
+                        numero = 2;
                     }
                     else if (min == 45)
                     {
-                         numero  = 3;
+                        numero = 3;
                     }
                     break;
                 case 8:
                     if (min == 0)
                     {
-                        numero  = 4;
+                        numero = 4;
                     }
                     else if (min == 15)
                     {
-                         numero  = 5;
+                        numero = 5;
                     }
                     else if (min == 30)
                     {
-                         numero  = 6;
+                        numero = 6;
                     }
                     else if (min == 45)
                     {
-                         numero  = 7;
+                        numero = 7;
                     }
                     break;
                 case 9:
                     if (min == 0)
                     {
-                        numero  = 8;
+                        numero = 8;
                     }
                     else if (min == 15)
                     {
-                         numero  = 9;
+                        numero = 9;
                     }
                     else if (min == 30)
                     {
-                         numero  = 10;
+                        numero = 10;
                     }
                     else if (min == 45)
                     {
-                         numero  = 11;
+                        numero = 11;
                     }
                     break;
                 case 10:
                     if (min == 0)
                     {
-                        numero  = 12;
+                        numero = 12;
                     }
                     else if (min == 15)
                     {
-                         numero  = 13;
+                        numero = 13;
                     }
                     else if (min == 30)
                     {
-                         numero  = 14;
+                        numero = 14;
                     }
                     else if (min == 45)
                     {
-                         numero  = 15;
+                        numero = 15;
                     }
                     break;
                 case 11:
                     if (min == 0)
                     {
-                        numero  = 16;
+                        numero = 16;
                     }
                     else if (min == 15)
                     {
-                         numero  = 17;
+                        numero = 17;
                     }
                     else if (min == 30)
                     {
-                         numero  = 18;
+                        numero = 18;
                     }
                     else if (min == 45)
                     {
-                         numero  = 19;
+                        numero = 19;
                     }
                     break;
                 case 12:
                     if (min == 0)
                     {
-                        numero  = 20;
+                        numero = 20;
                     }
                     else if (min == 15)
                     {
-                         numero  = 21;
+                        numero = 21;
                     }
                     else if (min == 30)
                     {
-                         numero  = 22;
+                        numero = 22;
                     }
                     else if (min == 45)
                     {
-                         numero  = 23;
+                        numero = 23;
                     }
                     break;
                 case 13:
                     if (min == 0)
                     {
-                        numero  = 24;
+                        numero = 24;
                     }
                     else if (min == 15)
                     {
-                         numero  = 25;
+                        numero = 25;
                     }
                     else if (min == 30)
                     {
-                         numero  = 26;
+                        numero = 26;
                     }
                     else if (min == 45)
                     {
-                         numero  = 27;
+                        numero = 27;
                     }
                     break;
                 case 14:
                     if (min == 0)
                     {
-                        numero  = 28;
+                        numero = 28;
                     }
                     else if (min == 15)
                     {
-                         numero  =29;
+                        numero = 29;
                     }
                     else if (min == 30)
                     {
-                         numero  =30 ;
+                        numero = 30;
                     }
                     else if (min == 45)
                     {
-                         numero  = 31;
+                        numero = 31;
                     }
                     break;
                 case 15:
                     if (min == 0)
                     {
-                        numero  = 32;
+                        numero = 32;
                     }
                     else if (min == 15)
                     {
-                         numero  = 33;
+                        numero = 33;
                     }
                     else if (min == 30)
                     {
-                         numero  = 34;
+                        numero = 34;
                     }
                     else if (min == 45)
                     {
-                         numero  = 35;
+                        numero = 35;
                     }
                     break;
                 case 16:
                     if (min == 0)
                     {
-                        numero  = 36;
+                        numero = 36;
                     }
                     else if (min == 15)
                     {
-                         numero  = 37;
+                        numero = 37;
                     }
                     else if (min == 30)
                     {
-                         numero  = 38;
+                        numero = 38;
                     }
                     else if (min == 45)
                     {
-                         numero  = 39;
+                        numero = 39;
                     }
                     break;
                 case 17:
                     if (min == 0)
                     {
-                        numero  = 40;
+                        numero = 40;
                     }
                     else if (min == 15)
                     {
-                         numero  = 41;
+                        numero = 41;
                     }
                     else if (min == 30)
                     {
-                         numero  = 42;
+                        numero = 42;
                     }
                     break;
             }
@@ -3371,217 +3701,81 @@ namespace AutoStar.app
                 #region AGREGAR
                 if (Button1.Text.Equals("Agregar"))
                 {
-                    Agregar_registro(-999);
+                    int id = int.Parse(drpOt.SelectedValue);
+                    string dpTecnico = drpTecnico.SelectedValue;
+
+                    DateTime fechainicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                    string dpHoraInicio = drpHoraInicio.SelectedValue;
+                    string[] inicio = dpHoraInicio.Split(':');
+                    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+                    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+                    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+                   
+                    string htazad = htazada.Text;
+                    string dpStatus = drpStatus.SelectedValue;
+                    string hextra = txtHoraExtra.Text;
+                   bool res =  Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra);
+                   if (res)
+                   {
+                       Response.Redirect("GT_Planografo_Digital.aspx", false);                    
+                   }
+                       
+
                 }
-                #endregion 
+                #endregion
                 else if (Button1.Text.Equals("Actualizar"))
                 {
                     int id = int.Parse(Session["id_modf"].ToString());
+                    SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                    string query1 = "select * from GT_Ordenes where numero = '" + id + "'";
+                    conex.Open();
+
+                    SqlCommand cmd1 = new SqlCommand(query1, conex);
+                    SqlDataAdapter dad = new SqlDataAdapter(cmd1);
+                    DataTable dt_num = new DataTable();
+                    dad.Fill(dt_num);
+
+                    conex.Close();
+                    DateTime aux = (DateTime)dt_num.Rows[0]["horaInicio"];
+                    DateTime fechainicio =  aux.Date;
+                    string dpHoraInicio = drpHoraInicio.SelectedValue;
+                    string[] inicio = dpHoraInicio.Split(':');
+                    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+                    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+                    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+                    string hextra = txtHoraExtra.Text;
+
                     Eliminar_registro(id);
-                    Agregar_registro(id);
-                    #region Actualizar anterior
-                    //string formate = formatear(htazada.Text);
-                    //string[] hora_taza = formate.Split(',');
 
-                    //DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
+                    
 
-                    //string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-                    //fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-                    //fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-                    //fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
-
-                    //DateTime fechafinal = fechainicio;
-
-                    //fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                    //fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
-
-                    //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                    //con.Open();
-                    //SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                    //int id = int.Parse(Session["id_modf"].ToString());
-                    //SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
-                    //cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
-                    //cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
-                    //cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                    //cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                    //cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-                    //try
-                    //{
-                    //    //Ejecuto
-                    //    cmd.ExecuteNonQuery();
-                    //    tr.Commit(); //Actualizar bd                            
-                    //    Response.Redirect("GT_Planografo_Digital.aspx", false);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    //De haber un error lo capturo
-                    //    // msg = ex.Message;
-                    //    //Deshacemos la operacion
-                    //    tr.Rollback();
-                    //}
-                    //finally
-                    //{
-                    //    con.Close(); //Cerramos la conexion
-
-                    //}
-                    //BUSCAMOS LOS REGISTROS QUE PERTENEZCAN A LA ORDEN ACTUAL 
-                //    int id = int.Parse(Session["id_modf"].ToString());
-                //    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                //    string query = "select * from GT_Ordenes Where numero = '" + id + "'";
-                //    con.Open();
-
-                //    SqlCommand cmd = new SqlCommand(query, con);
-                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                //    DataTable dt = new DataTable();
-                //    da.Fill(dt);
-                //    con.Close();
-
-                //    string formate = formatear(htazada.Text);
-                //    string[] hora_taza = formate.Split(',');
-
-                //    DateTime fechainicio = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
-
-                //    string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-                //    fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-                //    fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-                //    fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
-
-                //    DateTime fechafinal = fechainicio;
-
-                //    fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                //    fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1])*6);
-
-                   
-
-                //    DateTime limite = DateTime.Parse ("17:30:00");
-                //    if (fechafinal.TimeOfDay <= limite.TimeOfDay)
-                //    {
-                //        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                //        con.Open();
-                //        SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                //        SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
-                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
-                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
-                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
-                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-                //        try
-                //        {
-                //            //Ejecuto
-                //            cmd.ExecuteNonQuery();
-                //            tr.Commit(); //Actualizar bd                                
-                //            Response.Redirect("GT_Planografo_Digital.aspx", false);
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            //De haber un error lo capturo
-                //            // msg = ex.Message;
-                //            //Deshacemos la operacion
-                //            tr.Rollback();
-                //        }
-                //        finally
-                //        {
-                //            con.Close(); //Cerramos la conexion
-
-                //        }
-                //    }
-                //    else // aqui hay que dividir en 2 la orden
-                //    {
-                //        DateTime fecha_partida = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 30, 00);
-
-                //        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                //        con.Open();
-                //        SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                //        SqlCommand cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
-                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
-                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
-                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
-                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-
-                //        DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
-                //        fecha_n_inicio = fecha_n_inicio.AddDays(1);
-
-                //        DateTime fecha_n_final = fecha_n_inicio;
-
-                //        try
-                //        {
-                //            //Ejecuto
-                //            cmd.ExecuteNonQuery();
-                //            tr.Commit(); //Actualizar bd                             
-                //            //Response.Redirect("GT_Planografo_Digital.aspx", false);
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            //De haber un error lo capturo
-                //            // msg = ex.Message;
-                //            //Deshacemos la operacion
-                //            tr.Rollback();
-                //        }
-                //        finally
-                //        {
-                //            con.Close(); //Cerramos la conexion
-
-                //        }
-
-                        
-
-                //        con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                //        con.Open();
-                //        tr = con.BeginTransaction(IsolationLevel.Serializable);
-                //        cmd = new SqlCommand("UPDATE [GT_Ordenes] SET [horaInicio] = @horainicio,[horaTasada] = @horatasada, [horaFinal] = @horafinal,[status] = @status,[idTecnico] =@idtecnico  WHERE  numero = '" + id + "'", con, tr);
-
-                //        TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
-                //        fecha_n_final = fecha_n_final.Add(diferencia);
-
-
-                //        cmd.Parameters.Add("@numero", SqlDbType.Int).Value = int.Parse(drpOt.SelectedValue);
-                //        cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fecha_n_inicio;
-                //        cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_n_final;
-                //        cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                //        cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                //        cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-
-                //        try
-                //        {
-                //            //Ejecuto
-                //            cmd.ExecuteNonQuery();
-                //            tr.Commit(); //Actualizar bd                        
-                //            Response.Redirect("GT_Planografo_Digital.aspx", false);
-                //        }
-                //        catch (Exception ex)
-                //        {
-                //            //De haber un error lo capturo
-                //            // msg = ex.Message;
-                //            //Deshacemos la operacion
-                //            tr.Rollback();
-                //        }
-                //        finally
-                //        {
-                //            con.Close(); //Cerramos la conexion
-
-                //        }
-                //    }
-#endregion
+                    string dpTecnico = drpTecnico.SelectedValue;
+                    //string dpHoraInicio = drpHoraInicio.SelectedValue;
+                    string htazad = htazada.Text;
+                    string dpStatus = drpStatus.SelectedValue;
+                    bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra);
+                    if(res)
+                        Response.Redirect("GT_Planografo_Digital.aspx", false);
                 }
             }
 
         }
 
-        private void Eliminar_registro(int id)
+        private bool Eliminar_registro(int id)
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             con.Open();
             SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE numero = '"+id+"'", con, tr);
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE numero = '" + id + "'", con, tr);
             try
             {
                 //Ejecuto
                 cmd.ExecuteNonQuery();
                 tr.Commit(); //Actualizar bd                                
-                Response.Redirect("GT_Planografo_Digital.aspx", false);
+                //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                return true;
             }
             catch (Exception ex)
             {
@@ -3589,6 +3783,7 @@ namespace AutoStar.app
                 // msg = ex.Message;
                 //Deshacemos la operacion
                 tr.Rollback();
+                return false;
             }
             finally
             {
@@ -3597,31 +3792,34 @@ namespace AutoStar.app
             }
         }
 
-        private void Agregar_registro(int id)
-        {
-            if (id == -999)
-            {
-               id = int.Parse(drpOt.SelectedValue);
-            }
+        private bool Agregar_registro(int id, string dpTecnico, DateTime dpHoraInicio, string htazada, string dpStatus, bool finalizado, string hextra)
+        {           
 
             DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());// Calendar1.SelectedDate;
-            DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
+            DateTime fechainicio = dpHoraInicio;// new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
 
 
-            string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-            fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-            fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-            fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
             DateTime fechafinal = fechainicio;
 
 
-            string formate = formatear(htazada.Text);
-            string[] hora_taza = formate.Split(',');
+            TimeSpan formate = formatear(htazada);
+            TimeSpan horextra = formatear(hextra);
+            formate = formate.Add(horextra);
+            
+            fechafinal = fechafinal.Add(formate);
+            
 
-            //string[] final = drpHoraFinal.SelectedValue.Split(':');
-            fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-            fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]));
+            #region Si la orden es finalizada antes de la hora final seleccionada
+
+
+            if (dpStatus.Equals("Finalizada") && fechainicio < DateTime.Now)
+            {
+                fechafinal = Mover_Ordenes(int.Parse(dpTecnico), fechafinal, id);
+            }
+
+            #endregion
+
 
             //ver si cabe en el mismo dia o si hay que hacer split de 2 días
             DateTime limite = DateTime.Parse("17:30:00");
@@ -3630,19 +3828,22 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
-                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = dpStatus;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
+                cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
+                cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 try
                 {
                     //Ejecuto
                     cmd.ExecuteNonQuery();
                     tr.Commit(); //Actualizar bd                                
-                    Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -3650,6 +3851,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
+                    return false;
                 }
                 finally
                 {
@@ -3664,14 +3866,15 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
-                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = dpStatus;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
+                cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
+                cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
                 fecha_n_inicio = fecha_n_inicio.AddDays(1);
 
@@ -3690,6 +3893,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
+                    return false;
                 }
                 finally
                 {
@@ -3700,25 +3904,38 @@ namespace AutoStar.app
                 con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 tr = con.BeginTransaction(IsolationLevel.Serializable);
-                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico ) ", con, tr);
+                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
 
                 TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
                 fecha_n_final = fecha_n_final.Add(diferencia);
 
+                
+                int ho = diferencia.Hours;
+                int mi = diferencia.Minutes;
+                mi = mi / 6;
+                //mi = mi + fecha_n_final.TimeOfDay.Minutes;
+
+                //ho = ho + fecha_n_final.TimeOfDay.Hours;
+                //double mii = ((double));
+                //mii = Math.Ceiling(mii);
+                //mi = mi / 6;
+                string htazad = ho + "," + mi;
 
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fecha_n_inicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_n_final;
-                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazada.Text;
-                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = drpStatus.SelectedValue;
-                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = drpTecnico.SelectedValue;
-
+                cmd.Parameters.Add("@horatasada", SqlDbType.VarChar).Value = htazad;
+                cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = dpStatus;
+                cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
+                cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
+                cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 try
                 {
                     //Ejecuto
                     cmd.ExecuteNonQuery();
                     tr.Commit(); //Actualizar bd                        
-                    Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    //Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    return true;
                 }
                 catch (Exception ex)
                 {
@@ -3726,6 +3943,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
+                    return false;
                 }
                 finally
                 {
@@ -3736,33 +3954,128 @@ namespace AutoStar.app
             }
         }
 
-        private string formatear(string p)
+        ///Tengo que arreglar esta vara, no esta terminada
+        private DateTime Mover_Ordenes(int id, DateTime final, int ord_mod)
         {
-            string[] calcular = p.Split(',');
-            int hora = int.Parse(calcular[0]);
-            int min = int.Parse(calcular[1])*6;
+            DateTime actual = DateTime.Now;
+            actual = format_hora_prox(actual);
+
+            TimeSpan resta = final.TimeOfDay.Subtract(actual.TimeOfDay);
+            int adelantado = resta.Minutes + resta.Hours * 60;
+            if (adelantado > 0)
+            {
+
+                SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                string query1 = "select DISTINCT numero from GT_Ordenes";
+                conex.Open();
+
+                SqlCommand cmd1 = new SqlCommand(query1, conex);
+                SqlDataAdapter dad = new SqlDataAdapter(cmd1);
+                DataTable dt_num = new DataTable();
+                dad.Fill(dt_num);
+
+                conex.Close();
+
+
+
+                for (int x = 0; x < dt_num.Rows.Count; x++)
+                {
+                    SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                    string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "' and idOrdenes != '" + ord_mod.ToString() + "'  ORDER by horaInicio ASC";
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    con.Close();
+
+
+                    int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
+                    string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
+                    string dpStatus = dt.Rows[0]["Status"].ToString();
+
+                    DateTime new_inicio = DateTime.Parse(dt.Rows[0]["horaInicio"].ToString()).Subtract(resta);
+                    //string hora_env = new_inicio;
+                    bool finalizado = (bool)dt.Rows[0]["pasado"];                 
+
+                    string htazad = dt.Rows[0]["horaTasada"].ToString();
+                    Eliminar_registro(idordenes);
+                    Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
+                }
+                return actual;
+            }
+            else
+            {
+                return final;
+            }
+
+        }
+
+        private DateTime format_hora_prox(DateTime p)
+        {
+            DateTime nuevo = new DateTime(p.Year, p.Month, p.Day);
+            int hora = p.Hour;
+            int min = p.Minute;
             if (min > 0 && min < 15)
             {
-                return hora + ",15";
+                nuevo = nuevo.AddHours(hora);
+                nuevo = nuevo.AddMinutes(15);
+                return nuevo;
             }
             if (min > 15 && min < 30)
             {
-                return hora + ",30";
+                nuevo = nuevo.AddHours(hora);
+                nuevo = nuevo.AddMinutes(30);
+                return nuevo;
             }
             if (min > 30 && min < 45)
             {
-                return hora + ",45";
+                nuevo = nuevo.AddHours(hora);
+                nuevo = nuevo.AddMinutes(45);
+                return nuevo;
             }
             if (min > 45 && min < 60)
             {
-                hora += 1;
-                return hora + ",00";
+                nuevo = nuevo.AddHours(hora + 1);
+                nuevo = nuevo.AddMinutes(00);
+                return nuevo;
             }
             return p;
         }
 
+        private TimeSpan formatear(string p)
+        {
+            string[] calcular = p.Split(',');
+            int hora = int.Parse(calcular[0]);
+            int min = int.Parse(calcular[1]) * 6;
+            TimeSpan tiempo = new TimeSpan(hora, min, 0);
+            if (tiempo.Minutes > 0 && tiempo.Minutes < 15)
+            {
+                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString()), 15, 0);
+                return tiemp;
+            }
+            if (tiempo.Minutes > 15 && tiempo.Minutes < 30)
+            {
+                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString()), 30, 0);
+                return tiemp;
+            }
+            if (tiempo.Minutes > 30 && tiempo.Minutes < 45)
+            {
+                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString()), 45, 0);
+                return tiemp;
+            }
+            if (tiempo.Minutes > 45 && tiempo.Minutes < 60)
+            {
+                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString())+1, 00, 0);
+                return tiemp;
+            }
+            return tiempo;
+        }
+
         private string formatear_down(string p)
-        {            
+        {
             string[] calcular = p.Split(',');
             int hora = int.Parse(calcular[0]);
             int min = int.Parse(calcular[1]);
@@ -3780,7 +4093,6 @@ namespace AutoStar.app
             }
             if (min > 45 && min < 60)
             {
-                hora += 1;
                 return hora + ",45";
             }
             return p;
@@ -3790,6 +4102,7 @@ namespace AutoStar.app
         {
             //Calendar1.SelectedDate = DateTime.Now;
             Button1.Text = "Agregar";
+            htazada.Enabled = true;
             ventana.Visible = true;
         }
 
@@ -3832,17 +4145,19 @@ namespace AutoStar.app
             string tecnico = dt.Rows[0]["idTecnico"].ToString();
             drpTecnico.SelectedValue = tecnico;
 
+            txtHoraExtra.Text = dt.Rows[0]["horaExtra"].ToString();
+
             Button1.Text = "Actualizar";
+            htazada.Enabled = false;
             ventana.Visible = true;
 
         }
-      
+
         protected void htazada_TextChanged(object sender, EventArgs e)
         {
             Page.Validate("validar");
             if (Page.IsValid)
-            { 
-
+            {
                 DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
                 DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
 
@@ -3852,40 +4167,30 @@ namespace AutoStar.app
                 fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
                 string[] hora_taza = htazada.Text.Split(',');
+                string[] hora_extra = txtHoraExtra.Text.Split(',');
 
                 DateTime fechafinal = fechainicio;
                 //string[] final = drpHoraFinal.SelectedValue.Split(':');
                 fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1])*6);                
-
-                DateTime limite = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 17, 30, 00);
-                if (!(fechafinal.TimeOfDay <= limite.TimeOfDay))
-                {
-                    DateTime nuevo = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
-                    nuevo = nuevo.AddDays(1);
-                    TimeSpan resta = fechafinal.Subtract(limite);
-                    nuevo = nuevo.Add(resta);
-                    txthorafinal.Text = nuevo.TimeOfDay.ToString();
-                }
-                else
-                {
-                    txthorafinal.Text = fechafinal.TimeOfDay.ToString();
-                }
-                
+                fechafinal = fechafinal.AddHours(int.Parse(hora_extra[0]));
+                fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]) * 6);
+                fechafinal = fechafinal.AddMinutes(int.Parse(hora_extra[1]) * 6);
+                string[] text = fechafinal.ToString().Split(' ');
+                txthorafinal.Text = text[1];
             }
         }
 
         protected void btndias_Click(object sender, EventArgs e)
-        {         
-                DateTime fecha = DateTime.Now;
-                fecha = fecha.AddDays(1);
-                Session["fecha_consulta"] = fecha.Date.ToString("d");
-                Response.Redirect("GT_Planografo_Digital.aspx", false);   
+        {
+            DateTime fecha = DateTime.Now;
+            fecha = fecha.AddDays(1);
+            Session["fecha_consulta"] = fecha.Date.ToString("d");
+            Response.Redirect("GT_Planografo_Digital.aspx", false);
 
         }
 
         protected void btnatras_Click(object sender, EventArgs e)
-        {            
+        {
             DateTime fecha = DateTime.Now;
             Session["fecha_consulta"] = fecha.Date.ToString("d");
             fecha_actual.Text = fecha.Date.ToString("d");
@@ -3904,8 +4209,8 @@ namespace AutoStar.app
             con.Open();
             SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
             int id = int.Parse(Session["id_modf"].ToString());
-            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE numero = '" + id + "'", con, tr);           
-            
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes] WHERE numero = '" + id + "'", con, tr);
+
             try
             {
                 //Ejecuto
@@ -3915,7 +4220,7 @@ namespace AutoStar.app
                 Response.Redirect("GT_Planografo_Digital.aspx", false);
             }
             catch (Exception ex)
-            {                
+            {
                 tr.Rollback();
             }
             finally

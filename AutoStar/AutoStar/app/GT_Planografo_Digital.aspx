@@ -18,6 +18,9 @@
                     <asp:ImageButton PostBackUrl="~/app/Default.aspx" CssClass="botonFull" ID="ImageButton3" AlternateText="Home" runat="server" ImageUrl="~/app/Images/icons/iconInicio.png" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
+                    <asp:ImageButton PostBackUrl="~/app/GT_Planografo_Digital.aspx" CssClass="botonFull" ID="ImageButton2" AlternateText="Refresh" runat="server" ImageUrl="~/app/Images/icons/iconCambioEstado.png" />
+                </asp:TableCell>
+                <asp:TableCell CssClass="tableCell">
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton1" AlternateText="Crear" runat="server" ImageUrl="~/app/Images/icons/iconCrear.png" OnClick="ImageButton1_Click" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="reloj" BorderColor="White" BorderStyle="Solid">
@@ -101,33 +104,6 @@
             </asp:TableRow>
         </asp:Table>
 
-        <%-- DIV SIN FORMATO BONITO 
-        <div class="temporal" runat="server" id="ventana">
-        <asp:Table CssClass="temporal" ID="Table2" runat="server">
-            <asp:TableRow CssClass="tableRow">
-                <asp:TableCell CssClass="tableCell">
-                    <asp:Label ID="Label2" runat="server" Text="O.T:" ForeColor="White"></asp:Label>
-                    <asp:DropDownList ID="drpOt" runat="server" ForeColor="Black"></asp:DropDownList>
-                </asp:TableCell>
-                <asp:TableCell CssClass="tableCell">
-                    <asp:Label ID="Label3" runat="server" Text="Técnico:" ForeColor="White"></asp:Label>
-                    <asp:DropDownList ID="drpTecnico" runat="server" ForeColor="Black"></asp:DropDownList>
-                </asp:TableCell>
-                <asp:TableCell CssClass="tableCell">
-                    <asp:Label ID="Label4" runat="server" Text="Hora Inicio:" ForeColor="White"></asp:Label>
-                    <asp:DropDownList ID="drpHoraInicio" runat="server" AutoPostBack="True" OnSelectedIndexChanged="htazada_TextChanged"></asp:DropDownList>
-                </asp:TableCell>
-                <asp:TableCell CssClass="tableCell">
-                    <asp:Label ID="Label28" runat="server" Text="Hora tasada:" ForeColor="White"></asp:Label>
-                    <asp:TextBox ID="htazada" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged"></asp:TextBox>
-                </asp:TableCell>
-
-            </asp:TableRow>
-        </asp:Table>
-            </div>
-        --%>
-
-
         <div class="temporal" runat="server" id="ventana">
             <asp:Label ID="Label2" CssClass="busquedalbl" runat="server" Text="O.T:"></asp:Label>
             <asp:DropDownList ID="drpOt" CssClass="planografotxt" runat="server"></asp:DropDownList>
@@ -142,10 +118,15 @@
             <asp:TextBox ID="htazada" CssClass="planografotxt" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged"></asp:TextBox>
             <br />
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="Introduzca formato H,m" ValidationExpression="[0-9]?[0-9],[0-9]?[0-9]" ValidationGroup="validar"></asp:RegularExpressionValidator>
-
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="htazada" ErrorMessage="Introduzca formato h,m" ValidationExpression="[0-9]*[0-9],[0-9]*[0-9]" ValidationGroup="validar"></asp:RegularExpressionValidator>
+            <asp:Label ID="Label27" CssClass="busquedalbl" runat="server" Text="Hora Extra:"></asp:Label>
+            <asp:TextBox ID="txtHoraExtra" CssClass="planografotxt" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged">0,0</asp:TextBox>
             <asp:Label ID="Label5" CssClass="busquedalbl" runat="server" Text="Hora Final:"></asp:Label>
-            <asp:TextBox ID="txthorafinal" CssClass="planografotxt" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="txthorafinal" CssClass="planografotxt" runat="server" Enabled="False" ></asp:TextBox>
+            <br />
+           
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtHoraExtra" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtHoraExtra" ErrorMessage="Introduzca formato h,m" ValidationExpression="[0-9]*[0-9],[0-9]*[0-9]" ValidationGroup="validar"></asp:RegularExpressionValidator>
             <br />
             <asp:Label ID="Label6" CssClass="busquedalbl" runat="server" Text="Status:" ForeColor="White"></asp:Label>
             <asp:DropDownList ID="drpStatus" CssClass="planografotxt" runat="server"></asp:DropDownList>

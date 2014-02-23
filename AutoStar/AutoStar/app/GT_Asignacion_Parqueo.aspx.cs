@@ -106,5 +106,11 @@ namespace AutoStar.app
             DropDownList1.Visible = false;
 
         }
+
+        protected void asignarParqueo(object sender , ImageClickEventArgs e) 
+        {
+            ImageButton buttonClicked = (ImageButton)sender;
+            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonClicked.ID + "');", true);
+        }
     }
 }

@@ -302,19 +302,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_001" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_002" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton6" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_003" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton7" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_004" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton8" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_005" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 
             </asp:TableRow>
@@ -376,19 +376,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton9" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_006" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton10" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_007" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>  
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton11" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_008" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>              
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton12" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_009" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton13" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_010" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
             </asp:TableRow>
                 
@@ -409,19 +409,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton14" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_011" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton15" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_012" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton16" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_013" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton17" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_014" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton18" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_015" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 
             </asp:TableRow>
@@ -483,19 +483,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton19" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_016" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton20" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_017" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>  
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton21" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_018" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>              
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton22" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_019" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton23" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_020" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
             </asp:TableRow>
                 
@@ -516,19 +516,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton24" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_021" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClick="asignarParqueo" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton25" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_022" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClick="asignarParqueo"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton26" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_023" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton27" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_024" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton28" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_025" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 
             </asp:TableRow>
@@ -590,19 +590,19 @@
                     
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton29" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_026" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton30" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_027" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>  
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton31" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_028" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>              
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton32" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_029" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconGrua.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton33" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
+                    <asp:ImageButton CssClass="botonFull" ID="btn_030" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconBahia.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')"/>
                 </asp:TableCell>                
             </asp:TableRow>
                 

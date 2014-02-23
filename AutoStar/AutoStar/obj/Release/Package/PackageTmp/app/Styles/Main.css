@@ -1,0 +1,523 @@
+﻿.reloj {
+    color:white;
+    text-align:center;
+    font-size:36px;
+    margin-left:100px;
+    background-color:rgba(0, 0, 0, 0.60);
+}
+
+
+
+
+
+/*TEMP*/
+.construccion {
+    background-color: transparent;
+    position: absolute;
+    vertical-align: middle;
+}
+.botonInicio {
+    background-color: black;
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    color: white;
+    text-align: center;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 1200px;
+}
+
+.busquedalbl {
+    color:white;
+    font-size:26px;
+    text-transform:uppercase;
+    font-family:'Corporate A BQ', Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    text-shadow: -3px 5px 3px rgba(150, 150, 150, 1);
+}
+
+.busquedatxt {
+    height:24px;
+    width:200px;
+}
+
+.botonFecha1 {
+    margin-top:15px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.60);
+    font-size:24px;
+    height:40px;
+    width:50px;
+}
+
+.botonFecha2 {
+    margin-top:15px;
+    color:white;
+    background-color: rgba(0, 0, 0, 0.60);
+    font-size:24px;
+    height:40px;
+    width:50px;
+}
+
+.btnCrearPlan {
+    margin-top:5px;
+    height:100%;
+    padding:4px;
+    background-color: rgba(0, 0, 0, 0.60);
+    color:white;
+    font-size:14px;
+}
+
+.temporal {
+    margin-left:520px;
+    border-color:white;
+    border-style:solid;
+    background-color: rgba(0, 0, 0, 0.60);
+    margin-top:20px;
+    width:380px;
+}
+
+.planografotxt {
+    height:24px;
+    width:150px;
+    margin-left:20px;
+}
+
+
+/*MAIN BODY*/
+.bodyMain {
+    background-color: black;
+}
+
+/*LINEAS DECORATIVAS*/
+hr#hr1 {
+    color: #fff;
+    background: #fff;
+    width: 650px;
+    height: 2px;
+    opacity: 0.6;
+    position: absolute;
+    margin-top: 225px;
+    margin-left: 490px;
+}
+hr#hr2 {
+    color: #fff;
+    background: #fff;
+    width: 650px;
+    height: 2px;
+    opacity: 0.6;
+    position: absolute;
+    margin-top: 225px;
+    margin-left: 370px;
+}
+
+/*LOGO AUTOSTAR*/
+.imgLogo {
+    width: 311px;
+    height: 92px;
+    position: absolute;
+    margin-top: 125px;
+    margin-left: 825px;
+    opacity:0.9;
+}
+
+/*HEADERS/TITULOS DE PAGINAS*/
+h1 {
+    color:white;
+    position:absolute;
+    margin-top:30px;
+    margin-left:900px;
+    text-transform:uppercase;
+    font-family:'Corporate A BQ', Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    font-size:50px;
+    text-shadow: -3px 5px 3px rgba(150, 150, 150, 1);
+    
+}
+
+h2 {
+    color:white;
+    position:absolute;
+    margin-top:30px;
+    margin-left:600px;
+    text-transform:uppercase;
+    font-family:'Corporate A BQ', Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    font-size:50px;
+    text-shadow: -3px 5px 3px rgba(150, 150, 150, 1);
+    
+}
+
+/*TABLAS DE BOTONES*/
+.table {
+    border-collapse: collapse;
+}
+
+.tableCell {
+    background-color: rgba(0, 0, 0, 0.60);
+    padding: 4px;
+    padding-bottom: 1px;
+    width: 90px;
+    height: 90px;
+}
+
+.botonFull {
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    border: solid;
+    /*Gradient*/
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    /*Shadow*/
+    -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    /*Transition*/
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    -ms-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+}
+    .botonFull:hover {
+        background-color: #808080;
+    }
+
+.botonDoble {
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 2px;
+    width: 200px;
+    height: 100px;
+    border: solid;
+    /*Gradient*/
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    /*Shadow*/
+    -webkit-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.2);
+    /*Transition*/
+    -webkit-transition: All 0.5s ease;
+    -moz-transition: All 0.5s ease;
+    -o-transition: All 0.5s ease;
+    -ms-transition: All 0.5s ease;
+    transition: All 0.5s ease;
+}
+    .botonDoble:hover {
+        background-color: #808080;
+    }
+
+.botonSemi {
+    background-color: transparent;
+    margin: 2px;
+    width: 100px;
+    height: 100px;
+    color: white;
+    border: solid;
+}
+
+/*TABLE Y BOTON DE TECNICOS DEL PLANOGRAFO DIGITAL*/
+.tablePlanografo1 {
+    border-collapse: collapse;
+    margin:auto;
+    margin-top: 5px;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.tableCellPlanografoTecnicos {
+    background-color: rgba(0, 0, 0, 0.60);
+    padding: 0px;
+    width:150px;
+    height: 30px;
+    border:1px solid white;
+}
+
+.tableCellPlanografoHoras {
+    background-color: rgba(0, 0, 0, 0.60);
+    padding: 0px;
+    text-align:center;
+    width: 30px;
+    height: 30px;
+    border:none;
+    overflow-x:hidden;
+}
+
+.tableCellPlanografoHoras_impar {
+    background-color: rgba(0, 0, 0, 0.60);
+    padding: 0px;
+    text-align:center;
+    width: 30px;
+    height: 30px;
+    border-right: 1px solid white;
+    overflow-x:hidden;
+}
+
+
+.labelTecnicos {
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 2px;
+}
+
+.labelHoras {
+    font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
+    color: white;
+    text-align: center;
+    margin:auto;
+}
+
+.botonTecnicos {
+    height:100%;
+    width:100%;
+    color:white;
+    background-color:green;
+    border:1px solid white;
+    margin:0px;
+    padding:0px;
+
+}
+
+.titulo_horas {
+    background-color: rgba(0, 0, 0, 0.60);
+    padding: 0px;
+    text-align:center;
+    width: 30px;
+    height: 30px;
+    border:1px solid white;
+    overflow-x:hidden;
+}
+
+
+
+/*
+.linkTable {
+    color: white;
+}
+
+.icono {
+    width: 75px;
+    height: 75px;
+    <area shape="rect" coords="0,0,75,75" >;
+}
+    */
+
+#main {
+    padding: 20px;
+    background-color: #D0D0D0;
+    border-radius: 0px 4px 4px 4px;
+}
+/*CONFIGURACION DEL GRIDVIEW PARA MOSTRAR LOS DATOS DE LA BASE*/
+.GridViewConfig {
+    background-color:rgba(0, 0, 0, 0.60);
+    margin-top:50px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    color:white!important;
+    border-color:rgba(128, 128, 128, 0.50);
+    width:100%;
+}
+    .GridViewConfig a {
+        color:white;
+        text-decoration:none;
+    }
+    .GridViewConfig th {
+        border-bottom:3px solid #fff;
+        vertical-align:bottom;
+        padding:10px;
+        border-top:none;
+        text-transform:uppercase;
+    }
+    .GridViewConfig td {
+        text-align:left;
+        padding:3px;
+        color:white;
+    }
+    .GridViewConfig tr {
+        
+    }
+    .GridViewConfig tf {
+        text-align:center;
+    }
+
+/*CODIGO PARA EL CROSSFADE*/
+#crossfade > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: transparent;
+    opacity: 0;
+    z-index: -1;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 30s linear infinite 0s;
+    -moz-animation: imageAnimation 30s linear infinite 0s;
+    -o-animation: imageAnimation 30s linear infinite 0s;
+    -ms-animation: imageAnimation 30s linear infinite 0s;
+    animation: imageAnimation 30s linear infinite 0s;
+}
+
+    #crossfade > img:nth-child(2) {
+        -webkit-animation-delay: 6s;
+        -moz-animation-delay: 6s;
+        -o-animation-delay: 6s;
+        -ms-animation-delay: 6s;
+        animation-delay: 6s;
+    }
+
+    #crossfade > img:nth-child(3) {
+        -webkit-animation-delay: 12s;
+        -moz-animation-delay: 12s;
+        -o-animation-delay: 12s;
+        -ms-animation-delay: 12s;
+        animation-delay: 12s;
+    }
+
+    #crossfade > img:nth-child(4) {
+        -webkit-animation-delay: 18s;
+        -moz-animation-delay: 18s;
+        -o-animation-delay: 18s;
+        -ms-animation-delay: 18s;
+        animation-delay: 18s;
+    }
+
+    #crossfade > img:nth-child(5) {
+        -webkit-animation-delay: 24s;
+        -moz-animation-delay: 24s;
+        -o-animation-delay: 24s;
+        -ms-animation-delay: 24s;
+        animation-delay: 24s;
+    }
+
+@-webkit-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -webkit-animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        -webkit-animation-timing-function: ease-out;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -moz-animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        -moz-animation-timing-function: ease-out;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -o-animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        -o-animation-timing-function: ease-out;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        -ms-animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        -ms-animation-timing-function: ease-out;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+
+    8% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+
+    17% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

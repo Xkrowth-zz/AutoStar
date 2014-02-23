@@ -58,6 +58,24 @@ namespace AutoStar.app {
         protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
         
         /// <summary>
+        /// Label2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label2;
+        
+        /// <summary>
+        /// DropDownList2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        
+        /// <summary>
         /// Label1 control.
         /// </summary>
         /// <remarks>
@@ -94,103 +112,94 @@ namespace AutoStar.app {
         protected global::System.Web.UI.WebControls.Table bahiasMercedez;
         
         /// <summary>
-        /// ImageButton4 control.
+        /// bahia1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
+        protected global::System.Web.UI.WebControls.ImageButton bahia1;
         
         /// <summary>
-        /// ImageButton6 control.
+        /// bahia2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton6;
+        protected global::System.Web.UI.WebControls.ImageButton bahia2;
         
         /// <summary>
-        /// ImageButton7 control.
+        /// bahia3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton7;
+        protected global::System.Web.UI.WebControls.ImageButton bahia3;
         
         /// <summary>
-        /// ImageButton10 control.
+        /// bahia4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton10;
+        protected global::System.Web.UI.WebControls.ImageButton bahia4;
         
         /// <summary>
-        /// ImageButton9 control.
+        /// bahia5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton9;
+        protected global::System.Web.UI.WebControls.ImageButton bahia5;
         
         /// <summary>
-        /// ImageButton8 control.
+        /// bahia6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton8;
+        protected global::System.Web.UI.WebControls.ImageButton bahia6;
         
         /// <summary>
-        /// ImageButton14 control.
+        /// bahia7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton14;
+        protected global::System.Web.UI.WebControls.ImageButton bahia7;
         
         /// <summary>
-        /// ImageButton13 control.
+        /// bahia8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton13;
+        protected global::System.Web.UI.WebControls.ImageButton bahia8;
         
         /// <summary>
-        /// ImageButton12 control.
+        /// bahia9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton12;
+        protected global::System.Web.UI.WebControls.ImageButton bahia9;
         
         /// <summary>
-        /// ImageButton11 control.
+        /// bahia10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton11;
-        
-        /// <summary>
-        /// ImageButton5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
+        protected global::System.Web.UI.WebControls.ImageButton bahia10;
         
         /// <summary>
         /// bahiasCDJR control.
@@ -202,327 +211,363 @@ namespace AutoStar.app {
         protected global::System.Web.UI.WebControls.Table bahiasCDJR;
         
         /// <summary>
-        /// ImageButton17 control.
+        /// bahia11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton17;
+        protected global::System.Web.UI.WebControls.ImageButton bahia11;
         
         /// <summary>
-        /// ImageButton18 control.
+        /// bahia12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton18;
+        protected global::System.Web.UI.WebControls.ImageButton bahia12;
         
         /// <summary>
-        /// ImageButton19 control.
+        /// bahia13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton19;
+        protected global::System.Web.UI.WebControls.ImageButton bahia13;
         
         /// <summary>
-        /// ImageButton20 control.
+        /// bahia14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton20;
+        protected global::System.Web.UI.WebControls.ImageButton bahia14;
         
         /// <summary>
-        /// ImageButton15 control.
+        /// bahia15 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton15;
+        protected global::System.Web.UI.WebControls.ImageButton bahia15;
         
         /// <summary>
-        /// ImageButton21 control.
+        /// bahia16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton21;
+        protected global::System.Web.UI.WebControls.ImageButton bahia16;
         
         /// <summary>
-        /// ImageButton22 control.
+        /// bahia17 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton22;
+        protected global::System.Web.UI.WebControls.ImageButton bahia17;
         
         /// <summary>
-        /// ImageButton23 control.
+        /// parqueo_Nivel_1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton23;
+        protected global::System.Web.UI.WebControls.Table parqueo_Nivel_1;
         
         /// <summary>
-        /// ImageButton24 control.
+        /// btn_001 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton24;
+        protected global::System.Web.UI.WebControls.ImageButton btn_001;
         
         /// <summary>
-        /// ImageButton25 control.
+        /// btn_002 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton25;
+        protected global::System.Web.UI.WebControls.ImageButton btn_002;
         
         /// <summary>
-        /// Panel1 control.
+        /// btn_003 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.ImageButton btn_003;
         
         /// <summary>
-        /// lbl_numeroOrden control.
+        /// btn_004 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_numeroOrden;
+        protected global::System.Web.UI.WebControls.ImageButton btn_004;
         
         /// <summary>
-        /// TextBox1 control.
+        /// btn_005 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.ImageButton btn_005;
         
         /// <summary>
-        /// lbl_status control.
+        /// btn_006 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_status;
+        protected global::System.Web.UI.WebControls.ImageButton btn_006;
         
         /// <summary>
-        /// TextBox2 control.
+        /// btn_007 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.ImageButton btn_007;
         
         /// <summary>
-        /// lbl_tecnico control.
+        /// btn_008 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_tecnico;
+        protected global::System.Web.UI.WebControls.ImageButton btn_008;
         
         /// <summary>
-        /// TextBox3 control.
+        /// btn_009 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.ImageButton btn_009;
         
         /// <summary>
-        /// lbl_area control.
+        /// btn_010 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_area;
+        protected global::System.Web.UI.WebControls.ImageButton btn_010;
         
         /// <summary>
-        /// TextBox4 control.
+        /// parqueo_nivel_2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.Table parqueo_nivel_2;
         
         /// <summary>
-        /// lbl_asesor control.
+        /// btn_011 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_asesor;
+        protected global::System.Web.UI.WebControls.ImageButton btn_011;
         
         /// <summary>
-        /// TextBox5 control.
+        /// btn_012 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.ImageButton btn_012;
         
         /// <summary>
-        /// lbl_placa control.
+        /// btn_013 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_placa;
+        protected global::System.Web.UI.WebControls.ImageButton btn_013;
         
         /// <summary>
-        /// TextBox6 control.
+        /// btn_014 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.ImageButton btn_014;
         
         /// <summary>
-        /// lbl_fechaIngreso control.
+        /// btn_015 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_fechaIngreso;
+        protected global::System.Web.UI.WebControls.ImageButton btn_015;
         
         /// <summary>
-        /// TextBox7 control.
+        /// btn_016 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.ImageButton btn_016;
         
         /// <summary>
-        /// lbl_comentarios control.
+        /// btn_017 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_comentarios;
+        protected global::System.Web.UI.WebControls.ImageButton btn_017;
         
         /// <summary>
-        /// TextBox8 control.
+        /// btn_018 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox8;
+        protected global::System.Web.UI.WebControls.ImageButton btn_018;
         
         /// <summary>
-        /// lbl_garantia control.
+        /// btn_019 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_garantia;
+        protected global::System.Web.UI.WebControls.ImageButton btn_019;
         
         /// <summary>
-        /// TextBox9 control.
+        /// btn_020 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox9;
+        protected global::System.Web.UI.WebControls.ImageButton btn_020;
         
         /// <summary>
-        /// lbl_logistica control.
+        /// parqueo_nivel_3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_logistica;
+        protected global::System.Web.UI.WebControls.Table parqueo_nivel_3;
         
         /// <summary>
-        /// TextBox10 control.
+        /// btn_021 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.ImageButton btn_021;
         
         /// <summary>
-        /// lbl_repuestos control.
+        /// btn_022 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_repuestos;
+        protected global::System.Web.UI.WebControls.ImageButton btn_022;
         
         /// <summary>
-        /// TextBox11 control.
+        /// btn_023 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.ImageButton btn_023;
         
         /// <summary>
-        /// lbl_cliente control.
+        /// btn_024 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_cliente;
+        protected global::System.Web.UI.WebControls.ImageButton btn_024;
         
         /// <summary>
-        /// TextBox12 control.
+        /// btn_025 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.ImageButton btn_025;
         
         /// <summary>
-        /// btncerrar control.
+        /// btn_026 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncerrar;
+        protected global::System.Web.UI.WebControls.ImageButton btn_026;
+        
+        /// <summary>
+        /// btn_027 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_027;
+        
+        /// <summary>
+        /// btn_028 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_028;
+        
+        /// <summary>
+        /// btn_029 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_029;
+        
+        /// <summary>
+        /// btn_030 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton btn_030;
     }
 }

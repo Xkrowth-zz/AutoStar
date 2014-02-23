@@ -297,6 +297,13 @@
     <Compile Include="app\MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="app\ppAsignacion_Parqueos.aspx.cs">
+      <DependentUpon>ppAsignacion_Parqueos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\ppAsignacion_Parqueos.aspx.designer.cs">
+      <DependentUpon>ppAsignacion_Parqueos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="app\SlideTest.aspx.cs">
       <DependentUpon>SlideTest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -386,6 +393,7 @@
     <Content Include="app\Images\logo.png" />
     <Content Include="app\login.aspx" />
     <Content Include="app\modalBackground.css" />
+    <Content Include="app\ppAsignacion_Parqueos.aspx" />
     <Content Include="app\SlideTest.aspx" />
     <Content Include="app\Styles\Main.css" />
     <Content Include="app\default.aspx" />
@@ -404,6 +412,7 @@
     <Content Include="app\AutoStar.Master" />
     <Content Include="WebServiceAutoStar.asmx" />
     <Content Include="app\MasterPage.Master" />
+    <None Include="Properties\PublishProfiles\AutoStar.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />

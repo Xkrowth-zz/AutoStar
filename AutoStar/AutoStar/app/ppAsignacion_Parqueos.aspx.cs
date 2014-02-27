@@ -14,8 +14,36 @@ namespace AutoStar.app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            boton.Text = Request.QueryString["field1"];
+            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("infoParqueo", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@btn", SqlDbType.NVarChar).Value = Request.QueryString["field1"];            
+            SqlDataReader sdr = cmd.ExecuteReader();
+            while (sdr.Read())
+            {
+                TextBox1.Text = sdr[0].ToString();
+                TextBox2.Text = sdr["status"].ToString();
+                TextBox3.Text = sdr["tecnico"].ToString();
+                TextBox4.Text = sdr["area"].ToString();
+                TextBox5.Text = sdr["asesor"].ToString();
+                TextBox6.Text = sdr["placa"].ToString();
+                TextBox7.Text = sdr["fechaIngreso"].ToString();
+                TextBox8.Text = sdr["comentarios"].ToString();
+                TextBox9.Text = sdr["garantia"].ToString();
+                TextBox10.Text = sdr["logistica"].ToString();
+                TextBox11.Text = sdr["repuestos"].ToString();
+                TextBox12.Text = sdr["cliente"].ToString();
 
+            }
+            con.Close();
+            con.Dispose();
+            
+            
         }
+
 
         protected void irAorden(object sender , ImageClickEventArgs e) 
         {
@@ -30,7 +58,7 @@ namespace AutoStar.app
         }
         protected void btn_Asignar_Click(object sender, EventArgs e)
         {
-            TextBox1.Visible = false;
+            TextBox6.Visible = false;
             DropDownList1.Visible = true;
             
         }
@@ -42,8 +70,8 @@ namespace AutoStar.app
             conn.Open();
             SqlCommand cmd = new SqlCommand("ordenesBusqueda", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@valor", SqlDbType.Int).Value = DropDownList1.SelectedItem.Text;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = "Numero de Orden";            
+            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = DropDownList1.SelectedItem.Text;
+            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = "Placa";            
             SqlDataReader sdr = cmd.ExecuteReader();
             while (sdr.Read())
             {
@@ -60,14 +88,68 @@ namespace AutoStar.app
                 TextBox11.Text = sdr["repuestos"].ToString();
                 TextBox12.Text = sdr["cliente"].ToString();
              
-            }
+            }                     
             
             
             con.Close();
             con.Dispose();
-           
+            asignarParqueo();
                      
        
+        }
+
+        protected void asignarParqueo() 
+        {
+            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("asignarParqueo", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@placa", SqlDbType.NVarChar).Value = TextBox6.Text;
+            cmd.Parameters.Add("@boton", SqlDbType.NVarChar).Value = Request.QueryString["field1"];
+            cmd.Parameters.Add("@nivel", SqlDbType.Int).Value = 1;
+            cmd.Parameters.Add("@tipo", SqlDbType.NVarChar).Value = null;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = 1;
+            cmd.ExecuteReader();
+            con.Close();
+            con.Dispose();           
+            
+           
+        }
+
+        protected void liberar(object sender , ImageClickEventArgs e) 
+        {
+            DropDownList1.Visible = false;
+            TextBox1.Text = "";
+            TextBox2.Text = "";
+            TextBox3.Text = "";
+            TextBox4.Text = "";
+            TextBox5.Text = "";
+            TextBox6.Text = "";
+            TextBox7.Text = "";
+            TextBox8.Text = "";
+            TextBox9.Text = "";
+            TextBox10.Text = "";
+            TextBox11.Text = "";
+            TextBox12.Text = "";
+
+
+            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("asignarParqueo", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@placa", SqlDbType.NVarChar).Value = "";
+            cmd.Parameters.Add("@boton", SqlDbType.NVarChar).Value = Request.QueryString["field1"];
+            cmd.Parameters.Add("@nivel", SqlDbType.Int).Value = 1;
+            cmd.Parameters.Add("@tipo", SqlDbType.NVarChar).Value = null;
+            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = 0;
+            cmd.ExecuteReader();
+            con.Close();
+            con.Dispose(); 
+
+
+
         }
         
     }

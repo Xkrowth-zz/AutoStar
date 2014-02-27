@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,33 +12,112 @@ namespace AutoStar.app
 {
     public partial class GT_Asignacion_Parqueo : System.Web.UI.Page
     {
-        int ordenbahia1 = 0; int ordenbahia11 = 0;
-        int ordenbahia2 = 0; int ordenbahia12 = 0;
-        int ordenbahia3 = 0; int ordenbahia13 = 0;
-        int ordenbahia4 = 0; int ordenbahia14 = 0;
-        int ordenbahia5 = 0; int ordenbahia15 = 0;
-        int ordenbahia6 = 0; int ordenbahia16 = 0;
-        int ordenbahia7 = 0; int ordenbahia17 = 0;
-        int ordenbahia8 = 0; 
-        int ordenbahia9 = 0; 
-        int ordenbahia10 = 0;
-
-        int grua1, grua2, grua3, grua4 = 0;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
+            string queryString = "SELECT * FROM GT_Posicion";
+            DataSet dataset = new DataSet();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = new SqlCommand(queryString, connection);
+                //adapter.SelectCommand.Parameters.Add("@btn", SqlDbType.NVarChar).Value = valor; ;
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    String tipo = dt.Rows[i]["tipo"].ToString();
+                    bool stat = bool.Parse(dt.Rows[i]["status"].ToString());
+                    String buttonID = dt.Rows[i]["posicion"].ToString();
+                    ImageButton c = (ImageButton)this.parqueo_Nivel_1.FindControl(buttonID);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + tipo + " Ocupado" + "');", true);
+                    if (!(c == null))
+                    {
+
+                        if (tipo == "parqueo")
+                        {
+                            if (stat == true)
+                            {
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Ocupado" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconParqueoOcupado.png";
+                            }
+
+                            else
+                            {
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Libre" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconParqueoLibre.png";
+                            }
+                        }
+
+                        else if (tipo == "bahia")
+                        {
+                            if (stat == true)
+                            {
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Ocupado" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconBahiaOcupada.png";
+
+                            }
+
+                            else
+                            {
+
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Libre" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconBahiaLibre.png";
+                            }
+
+                        }
+
+                        else if (tipo == "grua")
+                        {
+                            if (stat == true)
+                            {
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Ocupado" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconGruaOcupada.png";
+
+                            }
+
+                            else
+                            {
+
+                                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Libre" + "');", true);
+                                c.ImageUrl = "~/app/Images/icons/iconGruaLibre.png";
+                            }
+
+                        }
+
+                    }
+
+
+
+
+                }
+
+                connection.Close();
+                connection.Dispose();
+
+
+
+            }
+
+
+            //label1.Text = dt.Rows[0]["phone"].toString();
+
+
+
 
         }
 
         protected void btn_bahiasClick(object sender, ImageClickEventArgs e)
         {
             Label1.Visible = true;
-            DropDownList1.Visible = true;
-            Label2.Visible = false;
-            DropDownList2.Visible = false;
+            DropDownList1.Visible = true;            
             parqueo_Nivel_1.Visible = false;
-            parqueo_nivel_2.Visible = false;
-            parqueo_nivel_3.Visible = false;
             
         }
         protected void onIndexChanged(object sender , EventArgs e)
@@ -56,7 +138,7 @@ namespace AutoStar.app
         }
         protected void irAorden(object sender , ImageClickEventArgs e) 
         {
-
+            
                     
         }
 
@@ -73,37 +155,16 @@ namespace AutoStar.app
             ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", vtn, true);
         }
 
-        protected void DropDownList2_onSelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (DropDownList2.SelectedItem.Value == "Nivel 1")
-            {
-                parqueo_Nivel_1.Visible = true;
-                parqueo_nivel_2.Visible = false;
-                parqueo_nivel_3.Visible = false;
-            }
-            else if (DropDownList2.SelectedItem.Value == "Nivel 2")
-            {
-                parqueo_Nivel_1.Visible = false;
-                parqueo_nivel_2.Visible = true;
-                parqueo_nivel_3.Visible = false;
-            }
-            else if (DropDownList2.SelectedItem.Value == "Nivel 3")
-            {
-                parqueo_Nivel_1.Visible = false;
-                parqueo_nivel_2.Visible = false;
-                parqueo_nivel_3.Visible = true;
-            }
-        }
+        
 
         protected void parqueos_Click(object sender , ImageClickEventArgs e) 
         {
             bahiasCDJR.Visible = false; 
-            bahiasMercedez.Visible = false;
-            Label2.Visible = true;
-            DropDownList2.Visible = true;
+            bahiasMercedez.Visible = false;            
             Label1.Visible = false;
             DropDownList1.Visible = false;
+            parqueo_Nivel_1.Visible = true;
+
 
         }
 

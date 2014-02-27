@@ -364,10 +364,18 @@
     <Content Include="app\Images\backgrounds\Ram1.jpg" />
     <Content Include="app\Images\backgrounds\Ram2.jpg" />
     <Content Include="app\Images\construccion.png" />
+    <Content Include="app\Images\ICONOS-35.png" />
+    <Content Include="app\Images\ICONOS-38.png" />
+    <Content Include="app\Images\ICONOS-39.png" />
+    <Content Include="app\Images\ICONOS-40.png" />
+    <Content Include="app\Images\ICONOS-41.png" />
+    <Content Include="app\Images\ICONOS-42.png" />
     <Content Include="app\Images\icons\iconAcceso.png" />
     <Content Include="app\Images\icons\iconAreas.png" />
     <Content Include="app\Images\icons\iconAsignacionTiempo.png" />
     <Content Include="app\Images\icons\iconAsignarPersonal.png" />
+    <Content Include="app\Images\icons\iconBahiaLibre.png" />
+    <Content Include="app\Images\icons\iconBahiaOcupada.png" />
     <Content Include="app\Images\icons\iconBorrar.png" />
     <Content Include="app\Images\icons\iconBuscar.png" />
     <Content Include="app\Images\icons\iconCambioEstado.png" />
@@ -377,6 +385,8 @@
     <Content Include="app\Images\icons\iconDepartamento.png" />
     <Content Include="app\Images\icons\iconEditar.png" />
     <Content Include="app\Images\icons\iconEstado.png" />
+    <Content Include="app\Images\icons\iconGruaLibre.png" />
+    <Content Include="app\Images\icons\iconGruaOcupada.png" />
     <Content Include="app\Images\icons\iconGuardar.png" />
     <Content Include="app\Images\icons\iconInicio.png" />
     <Content Include="app\Images\icons\iconListadoOrdenes.png" />
@@ -384,6 +394,8 @@
     <Content Include="app\Images\icons\iconOrdenTrabajo.png" />
     <Content Include="app\Images\icons\iconOpciones.png" />
     <Content Include="app\Images\icons\iconAsignacionParqueo.png" />
+    <Content Include="app\Images\icons\iconParqueoLibre.png" />
+    <Content Include="app\Images\icons\iconParqueoOcupado.png" />
     <Content Include="app\Images\icons\iconPlanografoDigital.png" />
     <Content Include="app\Images\icons\iconPrioridad.png" />
     <Content Include="app\Images\icons\iconRoles.png" />

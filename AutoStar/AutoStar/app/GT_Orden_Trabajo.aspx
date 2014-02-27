@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" EnableEventValidation="False"  CodeBehind="GT_Orden_Trabajo.aspx.cs" Inherits="AutoStar.app.GT_Estado_Orden_Trabajo" %>
-
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -96,10 +97,10 @@
 FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
     
     <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT [descripcion] FROM [GT_Areas]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Tecnicos"></asp:SqlDataSource>    
-    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Tecnicos"></asp:SqlDataSource>      
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = 1"></asp:SqlDataSource>    
+    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = 1"></asp:SqlDataSource>      
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" AutoPostBack="True" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
+    <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" AutoPostBack="True" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
                                 
@@ -396,7 +397,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
 
 
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
     <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
 

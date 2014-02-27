@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20827.3
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoStar", "AutoStar\AutoStar.csproj", "{B2B67497-FBB2-467B-BDDE-D4C28829C9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridViewExtended", "GridViewExtended\GridViewExtended.csproj", "{7981BF94-8B12-49A3-97AA-125A9E3B5F78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B2B67497-FBB2-467B-BDDE-D4C28829C9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2B67497-FBB2-467B-BDDE-D4C28829C9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2B67497-FBB2-467B-BDDE-D4C28829C9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7981BF94-8B12-49A3-97AA-125A9E3B5F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7981BF94-8B12-49A3-97AA-125A9E3B5F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7981BF94-8B12-49A3-97AA-125A9E3B5F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7981BF94-8B12-49A3-97AA-125A9E3B5F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

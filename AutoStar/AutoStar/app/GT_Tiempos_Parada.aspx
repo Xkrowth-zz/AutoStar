@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Tiempos_Parada.aspx.cs" EnableEventValidation="false" Inherits="AutoStar.app.GT_Tiempos_Parada" %>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -64,7 +66,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated">
+    <CCS:GridViewExtended ID="GridView1" runat="server" _showFooterWhenEmpty="true" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated">
         <Columns>
 
             <asp:TemplateField></asp:TemplateField>
@@ -138,7 +140,7 @@
                 </FooterTemplate>
             </asp:TemplateField>
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
     <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
     <asp:HiddenField ID="hidSourceID" runat="server" />

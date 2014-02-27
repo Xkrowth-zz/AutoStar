@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Parametros.aspx.cs" Inherits="AutoStar.app.GT_Parametros" EnableEventValidation="false"%>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -56,7 +58,7 @@
             </asp:Table>
         </div>
 
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
+    <CCS:GridViewExtended ID="GridView1" runat="server" _showFooterWhenEmpty="true" CssClass="GridViewConfig" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
         
         <Columns>
             <asp:TemplateField FooterText="Informacion a insertar:"></asp:TemplateField>
@@ -126,7 +128,7 @@
             </asp:TemplateField>
 
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
 
 

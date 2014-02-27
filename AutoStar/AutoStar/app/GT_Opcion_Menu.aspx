@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Opcion_Menu.aspx.cs" Inherits="AutoStar.app.GT_Opcion_Menu" EnableEventValidation="false" %>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -60,7 +62,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" AutoGenerateColumns="False" DataKeyNames="idOpcionMenu" DataSourceID="SqlDataSource1" ShowHeaderWhenEmpty="True">
+    <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" AutoGenerateColumns="False" DataKeyNames="idOpcionMenu" DataSourceID="SqlDataSource1" ShowHeaderWhenEmpty="True">
         <Columns>
             <asp:TemplateField>
                 <FooterTemplate>
@@ -113,7 +115,7 @@
             </asp:TemplateField>
 
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
 
 

@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Roles.aspx.cs" Inherits="AutoStar.app.GT_Rol" EnableEventValidation="false" %>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -68,7 +70,7 @@
 
 
         
-            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
+            <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField HeaderText="idRol" InsertVisible="False" SortExpression="idRol" Visible="False">
                         <EditItemTemplate>
@@ -117,7 +119,7 @@
                         </FooterTemplate>
                     </asp:TemplateField>
                 </Columns>
-            </asp:GridView>
+            </CCS:GridViewExtended>
 </asp:Content>
 
 

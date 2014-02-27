@@ -709,6 +709,7 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
@@ -735,6 +736,7 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebP
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.pdb
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
@@ -777,5 +779,6 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlT
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb

@@ -6,7 +6,7 @@ Assembly="GridViewExtended" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB8.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }

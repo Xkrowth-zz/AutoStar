@@ -381,7 +381,7 @@ namespace AutoStar.app
                     etiqueta.Text = dt.Rows[x]["nombre"].ToString();
                     etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
                     etiqueta.Click += new EventHandler(this.TresEstados);
-                    etiqueta.CssClass = "btnOrdenesEspera";
+                    //etiqueta.CssClass = "labelTecnicos";
 
                     tCell.Controls.Add(etiqueta);
 
@@ -461,11 +461,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -538,11 +538,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -615,11 +615,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -690,11 +690,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -765,11 +765,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -840,11 +840,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -915,11 +915,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -989,11 +989,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1063,11 +1063,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1137,11 +1137,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1211,11 +1211,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1285,11 +1285,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1359,11 +1359,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1433,11 +1433,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1507,11 +1507,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1581,11 +1581,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1655,11 +1655,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1729,11 +1729,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1802,11 +1802,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1875,11 +1875,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1948,11 +1948,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2021,11 +2021,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2094,11 +2094,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2167,11 +2167,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2240,11 +2240,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2313,11 +2313,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2386,11 +2386,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2459,11 +2459,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2532,11 +2532,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2604,11 +2604,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2676,11 +2676,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2749,11 +2749,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2822,11 +2822,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2894,11 +2894,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2967,11 +2967,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3040,11 +3040,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3113,11 +3113,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3185,11 +3185,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3257,11 +3257,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3330,11 +3330,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3403,11 +3403,11 @@ namespace AutoStar.app
                                             DateTime actual = DateTime.Now;
                                             TimeSpan falta = final.Subtract(actual);
                                             int t_Trans = falta.Hours * 60 + falta.Minutes;
-                                            if (t_Trans <= 30 && t_Trans > 0)
+                                            if (t_Trans <= 30 && t_Trans > 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                            else if (t_Trans < 0)
+                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3453,7 +3453,6 @@ namespace AutoStar.app
                     etiqueta.Text = dt.Rows[x]["nombre"].ToString();
                     etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
                     etiqueta.Click += new EventHandler(this.TresEstados);
-                    etiqueta.CssClass = "btnOrdenesEspera";
 
                     tCell1.Controls.Add(etiqueta);
                     tRow1.Cells.Add(tCell1);
@@ -3527,10 +3526,16 @@ namespace AutoStar.app
 
         private void TresEstados(object sender, EventArgs e)
         {            
+            
             Button boton = (Button)sender;
             Session["Estados_botones"] = boton.ID;
             string idtecnico = boton.ID;
             estdos.Visible = true;
+            
+            estado1.Controls.Clear();
+            estado2.Controls.Clear();
+            estado3.Controls.Clear();
+
             cargar_estado1(idtecnico);
             cargar_estado2(idtecnico);
             cargar_estado3(idtecnico);
@@ -3562,7 +3567,6 @@ namespace AutoStar.app
 
 
         }
-
 
         private void cargar_estado2(string idtecnico)
         {
@@ -3630,6 +3634,7 @@ namespace AutoStar.app
                 drpOt.Items.Add(new ListItem(dt_orden.Rows[0]["numero"].ToString(), dt_orden.Rows[0]["numero"].ToString()));
                 drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
                 drpOt.Enabled = false;
+                llenarCliente(boton.ID);
                 ventana.Visible = true;
             }
 
@@ -4280,7 +4285,7 @@ namespace AutoStar.app
 
             #region seleciona las ordenes del tecnico
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select * from GT_Ordenes Where idTecnico = '" + idtecnico + "' and numero !='" + numero + "' order by horaInicio Asc";
+            string query = "select * from GT_Ordenes Where idTecnico = '" + idtecnico + "' and numero !='" + numero + "' and Area = '"+drpAreas.SelectedValue+"' order by horaInicio Asc";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -4318,7 +4323,8 @@ namespace AutoStar.app
                 }
                 else
                 {
-                    corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                    corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                    corredor = corredor.AddDays(1);
                     for (int y = 0; y < 42; y++)
                     {
                         if (corredor >= finalviejo)
@@ -4389,12 +4395,15 @@ namespace AutoStar.app
                 }
 
                 TimeSpan resta = final.TimeOfDay.Subtract(limite);
-                DateTime final_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                DateTime final_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                final_split =  final_split.AddDays(1);
                 final_split = final_split.Add(resta);
-                DateTime inicio_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                DateTime inicio_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                inicio_split =  inicio_split.AddDays(1);
 
 
-                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                corredor = corredor.AddDays(1);
 
                 for (int xx = 0; xx < 42; xx++)
                 {
@@ -4954,6 +4963,7 @@ namespace AutoStar.app
             btneliminar.Visible = false;
             htazada.Enabled = true;
             ventana.Visible = true;
+            llenarCliente(drpOt.SelectedValue);
             //MessageBoxShow(this, "Esto es una prueba");
         }
 
@@ -5002,6 +5012,7 @@ namespace AutoStar.app
             txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
 
             Button1.Text = "Actualizar";
+            llenarCliente(drpOt.SelectedValue);
             //htazada.Enabled = false;
             ventana.Visible = true;
 
@@ -5021,9 +5032,13 @@ namespace AutoStar.app
                 fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
                 string[] hora_taza = htazada.Text.Split(',');
-                txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
+                TimeSpan hhtazada = new TimeSpan(int.Parse(hora_taza[0].ToString()), int.Parse(int.Parse(hora_taza[1]).ToString())*6, 0);
+                
+                txtHorareal.Text = hhtazada.ToString();
 
                 string[] hora_extra = txtHoraExtra.Text.Split(',');
+                TimeSpan hhamp = new TimeSpan(int.Parse(hora_extra[0].ToString()), int.Parse(int.Parse(hora_extra[1]).ToString())*6, 0);
+                txtTiemAmp.Text = hhamp.ToString();
 
                 DateTime fechafinal = fechainicio;
                 //string[] final = drpHoraFinal.SelectedValue.Split(':');
@@ -5034,6 +5049,7 @@ namespace AutoStar.app
                 string[] text = fechafinal.ToString().Split(' ');
                 txthorafinal.Text = text[1];
             }
+
         }
 
         protected void btndias_Click(object sender, EventArgs e)
@@ -5089,11 +5105,53 @@ namespace AutoStar.app
         protected void drpAreas_SelectedIndexChanged(object sender, EventArgs e)
         {
             Session["sel_area"] = drpAreas.SelectedValue;
+            ventana.Visible = false;
         }
 
         protected void bttn_Click(object sender, EventArgs e)
         {
             estdos.Visible = false;
+        }
+        //cuando se cambia la orden, para poder mostrar el nombre del cliente
+        protected void drpOt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DropDownList drporden = (DropDownList)sender;
+            string orden_num = drporden.SelectedValue;
+            llenarCliente(orden_num);
+        }
+
+        private void llenarCliente(string sender)
+        {            
+            var numero = sender;
+            int id_asesor = 0;
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Orden_Trabajo] where numeroOrden = '" + numero + "'";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            if (dt.Rows.Count > 0)
+            {
+                txtCliente.Text = dt.Rows[0]["cliente"].ToString();
+                id_asesor =int.Parse( dt.Rows[0]["idAsesor"].ToString());
+                
+            }
+            SqlConnection con2 = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query2 = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Usuarios] where idUsuario = '" + id_asesor + "'";
+            con2.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con2);
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+
+            if (dt2.Rows.Count > 0)
+            {
+                txtAsesor.Text = dt2.Rows[0]["nombre"].ToString() + " " + dt2.Rows[0]["apellido1"].ToString() +" "+ dt2.Rows[0]["apellido2"].ToString();
+            }
+            con2.Close();
         }
 
     }

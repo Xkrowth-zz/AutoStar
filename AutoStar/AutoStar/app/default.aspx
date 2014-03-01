@@ -4,11 +4,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="crossfade">
-        <img src="Images/backgrounds/FL1.jpg" alt="Image 1" />
-        <img src="Images/backgrounds/FL2.jpg" alt="Image 2" />
-        <img src="Images/backgrounds/J1.jpg" alt="Image 3" />
-        <img src="Images/backgrounds/J2.jpg" alt="Image 4" />
-        <img src="Images/backgrounds/MB3.jpg" alt="Image 5" />
+        <img src="Images/backgrounds/MB5.jpg" alt="Image 1" />
+        <img src="Images/backgrounds/J1.jpg" alt="Image 2" />
+        <img src="Images/backgrounds/MB12.jpg" alt="Image 3" />
+        <img src="Images/backgrounds/FL1.jpg" alt="Image 4" />        
+        <img src="Images/backgrounds/MB14.jpg" alt="Image 5" />
     </div>
     <hr id="hr1" />
     <asp:Image CssClass="imgLogo" ID="logoAutoStar" runat="server" ImageUrl="~/app/Images/logo.png" />

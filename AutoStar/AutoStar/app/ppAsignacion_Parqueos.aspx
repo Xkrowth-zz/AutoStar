@@ -1,8 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="ppAsignacion_Parqueos.aspx.cs" Inherits="AutoStar.app.ppAsignacion_Parqueos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <style type="text/css" class="bodyUsuarios">
+        body {
+            background-image: url('/app/Images/backgrounds/MB21.jpg');
+            background-repeat: no-repeat;
+            /*background-size: cover;*/
+        }
+    </style>
     <div>
         <asp:Table CssClass="table" ID="Table1" runat="server">
             <asp:TableRow CssClass="tableRow">
@@ -18,6 +25,7 @@
             </asp:TableRow>
         </asp:Table>
     </div>
+
     <asp:Panel ID="Panel1" runat="server" Visible="true" Width="550" class="temporal" >
         <asp:Label ID="lbl_numeroOrden" CssClass="busquedalbl" runat="server" Text="Numero de Orden:"></asp:Label>
         <asp:TextBox ID="TextBox1"  runat="server" ></asp:TextBox>

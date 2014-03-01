@@ -303,13 +303,6 @@
     <Compile Include="app\ppAsignacion_Parqueos.aspx.designer.cs">
       <DependentUpon>ppAsignacion_Parqueos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\SlideTest.aspx.cs">
-      <DependentUpon>SlideTest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\SlideTest.aspx.designer.cs">
-      <DependentUpon>SlideTest.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -343,38 +336,46 @@
     <Content Include="app\GT_Roles.aspx" />
     <Content Include="app\GT_Tiempos_Parada.aspx" />
     <Content Include="app\GT_Usuario.aspx" />
-    <Content Include="app\Images\backgrounds\Chrysler1.jpg" />
-    <Content Include="app\Images\backgrounds\Chrysler2.jpg" />
     <Content Include="app\Images\backgrounds\FL1.jpg" />
     <Content Include="app\Images\backgrounds\FL2.jpg" />
-    <Content Include="app\Images\backgrounds\Freightliner1.jpg" />
-    <Content Include="app\Images\backgrounds\Freightliner2.jpg" />
     <Content Include="app\Images\backgrounds\J1.jpg" />
     <Content Include="app\Images\backgrounds\J2.jpg" />
-    <Content Include="app\Images\backgrounds\Jeep1.jpg" />
-    <Content Include="app\Images\backgrounds\Jeep2.jpg" />
     <Content Include="app\Images\backgrounds\mb1.jpg" />
+    <Content Include="app\Images\backgrounds\MB10.jpg" />
+    <Content Include="app\Images\backgrounds\MB11.jpg" />
+    <Content Include="app\Images\backgrounds\MB12.jpg" />
+    <Content Include="app\Images\backgrounds\MB13.jpg" />
+    <Content Include="app\Images\backgrounds\MB14.jpg" />
+    <Content Include="app\Images\backgrounds\MB15.jpg" />
+    <Content Include="app\Images\backgrounds\MB16.jpg" />
+    <Content Include="app\Images\backgrounds\MB17.jpg" />
+    <Content Include="app\Images\backgrounds\MB18.jpg" />
+    <Content Include="app\Images\backgrounds\MB19.jpg" />
     <Content Include="app\Images\backgrounds\mb2.jpg" />
+    <Content Include="app\Images\backgrounds\MB20.jpg" />
+    <Content Include="app\Images\backgrounds\MB21.jpg" />
+    <Content Include="app\Images\backgrounds\MB22.jpg" />
+    <Content Include="app\Images\backgrounds\MB23.jpg" />
+    <Content Include="app\Images\backgrounds\MB24.jpg" />
     <Content Include="app\Images\backgrounds\MB3.jpg" />
-    <Content Include="app\Images\backgrounds\MercedesBenz1.jpg" />
-    <Content Include="app\Images\backgrounds\MercedesBenz2.jpg" />
+    <Content Include="app\Images\backgrounds\MB4.jpg" />
+    <Content Include="app\Images\backgrounds\MB5.jpg" />
+    <Content Include="app\Images\backgrounds\MB6.jpg" />
+    <Content Include="app\Images\backgrounds\MB7.jpg" />
+    <Content Include="app\Images\backgrounds\MB8.jpg" />
+    <Content Include="app\Images\backgrounds\MB9.jpg" />
     <Content Include="app\Images\backgrounds\ParkBack.png" />
-    <Content Include="app\Images\backgrounds\R1.jpg" />
-    <Content Include="app\Images\backgrounds\Ram1.jpg" />
-    <Content Include="app\Images\backgrounds\Ram2.jpg" />
+    <Content Include="app\Images\backgrounds\parqueo.png" />
     <Content Include="app\Images\construccion.png" />
-    <Content Include="app\Images\ICONOS-35.png" />
-    <Content Include="app\Images\ICONOS-38.png" />
-    <Content Include="app\Images\ICONOS-39.png" />
-    <Content Include="app\Images\ICONOS-40.png" />
-    <Content Include="app\Images\ICONOS-41.png" />
-    <Content Include="app\Images\ICONOS-42.png" />
     <Content Include="app\Images\icons\iconAcceso.png" />
+    <Content Include="app\Images\icons\iconActualizar.png" />
     <Content Include="app\Images\icons\iconAreas.png" />
     <Content Include="app\Images\icons\iconAsignacionTiempo.png" />
     <Content Include="app\Images\icons\iconAsignarPersonal.png" />
+    <Content Include="app\Images\icons\iconBahia.png" />
     <Content Include="app\Images\icons\iconBahiaLibre.png" />
     <Content Include="app\Images\icons\iconBahiaOcupada.png" />
+    <Content Include="app\Images\icons\iconBahias.png" />
     <Content Include="app\Images\icons\iconBorrar.png" />
     <Content Include="app\Images\icons\iconBuscar.png" />
     <Content Include="app\Images\icons\iconCambioEstado.png" />
@@ -384,6 +385,7 @@
     <Content Include="app\Images\icons\iconDepartamento.png" />
     <Content Include="app\Images\icons\iconEditar.png" />
     <Content Include="app\Images\icons\iconEstado.png" />
+    <Content Include="app\Images\icons\iconGrua.png" />
     <Content Include="app\Images\icons\iconGruaLibre.png" />
     <Content Include="app\Images\icons\iconGruaOcupada.png" />
     <Content Include="app\Images\icons\iconGuardar.png" />
@@ -393,19 +395,21 @@
     <Content Include="app\Images\icons\iconOrdenTrabajo.png" />
     <Content Include="app\Images\icons\iconOpciones.png" />
     <Content Include="app\Images\icons\iconAsignacionParqueo.png" />
+    <Content Include="app\Images\icons\iconParametros.png" />
     <Content Include="app\Images\icons\iconParqueoLibre.png" />
     <Content Include="app\Images\icons\iconParqueoOcupado.png" />
+    <Content Include="app\Images\icons\iconParqueos.png" />
     <Content Include="app\Images\icons\iconPlanografoDigital.png" />
     <Content Include="app\Images\icons\iconPrioridad.png" />
     <Content Include="app\Images\icons\iconRoles.png" />
     <Content Include="app\Images\icons\iconStatus.png" />
     <Content Include="app\Images\icons\iconTareas.png" />
+    <Content Include="app\Images\icons\iconTiempos.png" />
     <Content Include="app\Images\icons\iconUsuario.png" />
     <Content Include="app\Images\logo.png" />
     <Content Include="app\login.aspx" />
     <Content Include="app\modalBackground.css" />
     <Content Include="app\ppAsignacion_Parqueos.aspx" />
-    <Content Include="app\SlideTest.aspx" />
     <Content Include="app\Styles\Main.css" />
     <Content Include="app\default.aspx" />
     <Content Include="app\Styles\AutoStar.css" />

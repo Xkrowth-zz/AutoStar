@@ -6,7 +6,7 @@ Assembly="GridViewExtended" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB16.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -61,8 +61,8 @@ Assembly="GridViewExtended" %>
 
         
             <asp:Label ID="Label1" runat="server" Text="Valor a buscar:" CssClass="busquedalbl"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
-    <asp:DropDownList ID="DropDownList1" runat="server">
+    <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt" ></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="busquedatxt">
         <asp:ListItem>Rol</asp:ListItem>
         <asp:ListItem>Opcion</asp:ListItem>        
     </asp:DropDownList>

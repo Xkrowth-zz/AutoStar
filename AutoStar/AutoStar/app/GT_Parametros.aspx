@@ -4,7 +4,13 @@ Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <style type="text/css" class="bodyUsuarios">
+        body {
+            background-image: url('/app/Images/backgrounds/MB13.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteParametro" DeleteCommandType="StoredProcedure" InsertCommand="insertParametro" InsertCommandType="StoredProcedure" SelectCommand="selectParametros" SelectCommandType="StoredProcedure" UpdateCommand="updateParametro" UpdateCommandType="StoredProcedure">
         <DeleteParameters>
             <asp:Parameter Name="idParametro" Type="Int32" />
@@ -26,13 +32,7 @@ Assembly="GridViewExtended" %>
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <style type="text/css" class="bodyUsuarios">
-        body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    
         <div>
             <asp:Table CssClass="table" ID="Table1" runat="server">
                 <asp:TableRow CssClass="tableRow">

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB2.jpg');
+            background-image: url('/app/Images/backgrounds/MB7.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -116,6 +116,14 @@
                     <asp:Label ID="Label2" CssClass="lblCrearPlanografo" runat="server" Text="O.T:"></asp:Label>
                     <asp:DropDownList ID="drpOt" CssClass="ddlCrearPlanografo" runat="server"></asp:DropDownList>
                 </div>
+                <div runat="server" class="divParejaComponentes" id="div9">
+                    <asp:Label ID="Label29" CssClass="lblCrearPlanografo" runat="server" Text="Cliente:"></asp:Label>
+                    <asp:TextBox ID="txtCliente" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" Enabled="false" OnTextChanged="htazada_TextChanged"></asp:TextBox>
+                </div>
+                <div runat="server" class="divParejaComponentes" id="div10">
+                    <asp:Label ID="Label30" CssClass="lblCrearPlanografo" runat="server" Text="Asesor:"></asp:Label>
+                    <asp:TextBox ID="txtAsesor" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" Enabled="false" OnTextChanged="htazada_TextChanged"></asp:TextBox>
+                </div>
                 <div runat="server" class="divParejaComponentes" id="div6">
                     <asp:Label ID="Label6" CssClass="lblCrearPlanografo" runat="server" Text="Status:"></asp:Label>
                     <asp:DropDownList ID="drpStatus" CssClass="ddlCrearPlanografo" runat="server"></asp:DropDownList>
@@ -126,18 +134,15 @@
                     <asp:Label ID="Label4" CssClass="lblCrearPlanografo" runat="server" Text="Hora Inicio:"></asp:Label>
                     <asp:DropDownList ID="drpHoraInicio" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="htazada_TextChanged"></asp:DropDownList>
                 </div>
-                <div runat="server" class="divParejaComponentes" id="div8">
+                <div runat="server" class="divParejaComponentes" id="div8" >
                     <asp:Label ID="Label28" CssClass="lblCrearPlanografo" runat="server" Text="Hora Tasada:"></asp:Label>
-                    <asp:TextBox ID="htazada" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged"></asp:TextBox>
-                </div>
-
-                <div runat="server" class="divParejaComponentes" id="div10">
-                    <asp:Label ID="Label29" CssClass="lblCrearPlanografo" runat="server" Text="Hora Real:"></asp:Label>
-                    <asp:TextBox ID="txtHorareal" CssClass="ddlCrearPlanografo" runat="server" Enabled="False"></asp:TextBox>
+                    <asp:TextBox ID="htazada" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged" Width="23%"></asp:TextBox>
+                    <asp:TextBox ID="txtHorareal" CssClass="ddlCrearPlanografo" runat="server" Enabled="False" Width="23%"></asp:TextBox>
                 </div>
                 <div runat="server" class="divParejaComponentes" id="div11">
                     <asp:Label ID="Label27" CssClass="lblCrearPlanografo" runat="server" Text="Ampliación:"></asp:Label>
-                    <asp:TextBox ID="txtHoraExtra" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged">0,0</asp:TextBox>
+                    <asp:TextBox ID="txtHoraExtra" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged" Width="23%">0,0</asp:TextBox>
+                    <asp:TextBox ID="txtTiemAmp" CssClass="ddlCrearPlanografo" runat="server" Enabled="False" Width="23%"></asp:TextBox>
                 </div>
                 <div runat="server" class="divParejaComponentes" id="div12">
                     <asp:Label ID="Label5" CssClass="lblCrearPlanografo" runat="server" Text="Hora Final:"></asp:Label>

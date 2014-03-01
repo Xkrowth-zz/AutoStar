@@ -6,7 +6,7 @@ Assembly="GridViewExtended" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB15.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -39,8 +39,8 @@ Assembly="GridViewExtended" %>
         <h1>Roles</h1>
         <hr/>
             <asp:Label ID="Label1" runat="server" CssClass="busquedalbl" Text="Valor a buscar:"></asp:Label>
-        <asp:TextBox ID="TextBox1" runat="server" Font-Names="Adobe Caslon Pro Bold" Font-Size="Large" ForeColor="Black"></asp:TextBox>
-        <asp:DropDownList ID="DropDownList1" runat="server" Font-Names="Adobe Caslon Pro Bold" Font-Size="Large">
+        <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt"></asp:TextBox>
+        <asp:DropDownList ID="DropDownList1" runat="server" CssClass="busquedatxt">
             <asp:ListItem>Descripcion</asp:ListItem>
         </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteRol" DeleteCommandType="StoredProcedure" InsertCommand="insertRol" InsertCommandType="StoredProcedure" SelectCommand="rolesBusqueda" UpdateCommand="updateRol" UpdateCommandType="StoredProcedure" SelectCommandType="StoredProcedure">

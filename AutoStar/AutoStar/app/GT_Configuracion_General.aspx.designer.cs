@@ -49,13 +49,13 @@ namespace SGT_AutoStar.app {
         protected global::System.Web.UI.WebControls.Button Button6;
         
         /// <summary>
-        /// Button1 control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
         
         /// <summary>
         /// Button19 control.
@@ -94,13 +94,13 @@ namespace SGT_AutoStar.app {
         protected global::System.Web.UI.WebControls.Button Button20;
         
         /// <summary>
-        /// ImageButton1 control.
+        /// ImageButton4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
         
         /// <summary>
         /// Button18 control.
@@ -166,13 +166,13 @@ namespace SGT_AutoStar.app {
         protected global::System.Web.UI.WebControls.Table Table4;
         
         /// <summary>
-        /// ImageButton4 control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
+        protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
         /// ImageButton9 control.

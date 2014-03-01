@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace AutoStar.app
 {
     public partial class GT_Planografo_Digital : System.Web.UI.Page
@@ -19,10 +20,22 @@ namespace AutoStar.app
             if (!IsPostBack)
             {
                 ventana.Visible = false;
+                estdos.Visible = false;
+
                 cargarOrdenes();
                 cargarTecnicos();
                 cargarHoras();
                 cargarStatus();
+                cargarAreas();
+
+                if (Session["sel_area"] == null)
+                {
+                    Session["sel_area"] = drpAreas.SelectedValue;
+                }
+                else
+                {
+                    drpAreas.SelectedValue = Session["sel_area"].ToString();
+                }
 
                 if (Session["fecha_consulta"] != null && !Session["fecha_consulta"].Equals(""))
                 {
@@ -47,14 +60,42 @@ namespace AutoStar.app
                     btnatras.Enabled = false;
                 }
             }
-
-
+            if (Session["Estados_botones"] != null)
+            {
+                cargar_estado3(Session["Estados_botones"].ToString());
+                cargar_estado2(Session["Estados_botones"].ToString());
+                cargar_estado1(Session["Estados_botones"].ToString());
+            }
+            if (Session["drpestado"] != null && (bool)Session["drpestado"] == true)
+            {
+                drpOt.Enabled = false;
+            }
             crearTabla();
 
         }
 
 
+
         #region CARGAR DROPDOWNLIST
+        private void cargarAreas()
+        {
+            drpAreas.Items.Clear();
+
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Areas]";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            drpAreas.DataSource = dt;
+            drpAreas.DataValueField = "idArea";
+            drpAreas.DataTextField = "descripcion";
+            drpAreas.DataBind();
+        }
+
         private void cargarStatus()
         {
             drpStatus.Items.Clear();
@@ -63,19 +104,23 @@ namespace AutoStar.app
             ListItem pr2 = new ListItem("Programada", "Programada");
             ListItem pr3 = new ListItem("Finalizada", "Finalizada");
             ListItem pr4 = new ListItem("Activa", "Activa");
-            ListItem pr5 = new ListItem("Finalizada", "Finalizada");
             ListItem pr6 = new ListItem("Aire Acondicionado", "Aire Acondicionado");
             ListItem pr7 = new ListItem("Alineado", "Alineado");
             ListItem pr8 = new ListItem("Control de calidad", "Control de calidad");
+            ListItem pr9 = new ListItem("Pendiente de repuestos", "Pendiente de repuestos");
+            ListItem pr10 = new ListItem("Pendiente de aprobación cliente", "Pendiente de aprobación cliente");
+            ListItem pr11 = new ListItem("Trabajos de taller externo", "Trabajos de taller externo");
 
             drpStatus.Items.Add(pr);
             drpStatus.Items.Add(pr2);
             drpStatus.Items.Add(pr3);
             drpStatus.Items.Add(pr4);
-            drpStatus.Items.Add(pr5);
             drpStatus.Items.Add(pr6);
             drpStatus.Items.Add(pr7);
             drpStatus.Items.Add(pr8);
+            drpStatus.Items.Add(pr9);
+            drpStatus.Items.Add(pr10);
+            drpStatus.Items.Add(pr11);
         }
 
         private void cargarHoras()
@@ -250,7 +295,7 @@ namespace AutoStar.app
             drpTecnico.Items.Clear();
 
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Tecnicos]";
+            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Usuarios] Where idRol = '1' and Activo = '1'";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -259,7 +304,7 @@ namespace AutoStar.app
             da.Fill(dt);
 
             drpTecnico.DataSource = dt;
-            drpTecnico.DataValueField = "idTecnico";
+            drpTecnico.DataValueField = "idUsuario";
             drpTecnico.DataTextField = "nombre";
             drpTecnico.DataBind();
         }
@@ -269,7 +314,7 @@ namespace AutoStar.app
             drpOt.Items.Clear();
 
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select [numeroOrden] FROM [GT_AutoStar].[dbo].[GT_Orden_Trabajo] left join [GT_AutoStar].[dbo].[GT_Ordenes]  on [GT_Orden_Trabajo].[numeroOrden] = [GT_Ordenes].[numero] where [GT_Ordenes].[idOrdenes] is null";
+            string query = "select [numeroOrden] FROM [GT_AutoStar].[dbo].[GT_Orden_Trabajo] left join [GT_AutoStar].[dbo].[GT_Ordenes]  on [GT_Orden_Trabajo].[numeroOrden] = [GT_Ordenes].[numero] left join [GT_AutoStar].[dbo].[GT_Ordenes_Estado] ON [GT_Orden_Trabajo].[numeroOrden] = [GT_Ordenes_Estado].[numero] where [GT_Ordenes].[idOrdenes] is null and [GT_Ordenes_Estado].[numero] is null";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -293,7 +338,7 @@ namespace AutoStar.app
 
             //SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select * from GT_Tecnicos order by idTecnico Desc";
+            string query = "select * from GT_Usuarios Where idRol = '1' order by idUsuario Desc";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -308,9 +353,10 @@ namespace AutoStar.app
             for (int x = 0; x < dt.Rows.Count; x++) //ciclo para recorrer los tecnicos
             {
                 pos_dt_orden = 0;
-                string idtecnico = dt.Rows[x]["idTecnico"].ToString(); 
+                string idtecnico = dt.Rows[x]["idUsuario"].ToString();
+
                 Revisa_Atraso(idtecnico);
-                string query2 = "select * from GT_Ordenes where idTecnico = '" + idtecnico + "' ORDER by horaInicio ASC";
+                string query2 = "select * from GT_Ordenes where idTecnico = '" + idtecnico + "' and Area = '" + drpAreas.SelectedValue + "' ORDER by horaInicio ASC";
 
                 SqlCommand cmd2 = new SqlCommand(query2, con);
                 SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
@@ -318,7 +364,7 @@ namespace AutoStar.app
                 da_orden.Fill(dt_orden);
 
                 /* Obtener las ordenes de cada tecnico */
-               
+
 
                 if (dt_orden.Rows.Count > 0 && (bool)dt.Rows[x]["Activo"] == true) // preguntamos si se encontro alguna orden
                 {
@@ -328,9 +374,14 @@ namespace AutoStar.app
                     TableCell tCell = new TableCell();
 
                     tCell.CssClass = "tableCellPlanografoTecnicos";
-                    Label etiqueta = new Label();
-                    etiqueta.CssClass = "labelTecnicos";
+                    //Label etiqueta = new Label();
+                    //etiqueta.CssClass = "labelTecnicos";
+                    //etiqueta.Text = dt.Rows[x]["nombre"].ToString();
+                    Button etiqueta = new Button();
                     etiqueta.Text = dt.Rows[x]["nombre"].ToString();
+                    etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
+                    etiqueta.Click += new EventHandler(this.TresEstados);
+                    etiqueta.CssClass = "btnOrdenesEspera";
 
                     tCell.Controls.Add(etiqueta);
 
@@ -358,9 +409,13 @@ namespace AutoStar.app
                             case 2:
                                 //tabla += "<td class='tableCellPlanografoHoras'";                                
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+
+
+
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
+
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -418,7 +473,11 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-                                           
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
+
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -436,7 +495,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -491,7 +550,11 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-                                            
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
+
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -508,7 +571,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -564,7 +627,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
-
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -581,7 +647,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -636,6 +702,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -651,7 +721,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -708,6 +778,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -722,7 +796,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -779,6 +853,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -793,7 +871,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -849,6 +927,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -863,7 +945,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -919,6 +1001,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -933,7 +1019,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -989,6 +1075,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1003,7 +1093,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1059,6 +1149,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1073,7 +1167,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1129,6 +1223,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1143,7 +1241,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1199,6 +1297,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1213,7 +1315,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1269,6 +1371,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1283,7 +1389,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1339,6 +1445,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1353,7 +1463,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1409,6 +1519,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1423,7 +1537,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1479,6 +1593,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1493,7 +1611,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1549,6 +1667,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1563,7 +1685,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1619,6 +1741,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1633,7 +1759,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1688,6 +1814,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1702,7 +1832,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1757,6 +1887,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1771,7 +1905,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1826,6 +1960,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1840,7 +1978,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1895,6 +2033,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1909,7 +2051,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -1964,6 +2106,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -1978,7 +2124,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2033,6 +2179,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2047,7 +2197,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2102,6 +2252,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2116,7 +2270,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2171,6 +2325,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2185,7 +2343,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2240,6 +2398,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2254,7 +2416,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2309,6 +2471,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2323,7 +2489,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2378,6 +2544,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2392,7 +2562,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2446,6 +2616,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2460,7 +2634,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2514,6 +2688,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2528,7 +2706,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2583,6 +2761,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2597,7 +2779,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2652,6 +2834,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2666,7 +2852,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2720,6 +2906,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2734,7 +2924,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2760,6 +2950,7 @@ namespace AutoStar.app
                                             final = (DateTime)dt_orden.Rows[pos_dt_orden]["horaFinal"];
                                             DateTime inicio = new DateTime();
                                             inicio = (DateTime)dt_orden.Rows[pos_dt_orden]["horaInicio"];
+                                            tCell1.CssClass = "colorFranjaHora";
 
                                             TimeSpan resta = final.Subtract(inicio);
                                             int tiempo_Trans = resta.Hours * 60 + resta.Minutes;
@@ -2788,6 +2979,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2802,7 +2997,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2857,6 +3052,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2871,7 +3070,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2926,6 +3125,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -2940,7 +3143,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -2994,6 +3197,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3008,7 +3215,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -3062,6 +3269,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3076,7 +3287,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -3131,6 +3342,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3145,7 +3360,7 @@ namespace AutoStar.app
                                 tCell1.CssClass = "tableCellPlanografoHoras";
                                 if (marcar)
                                 {
-                                    tCell1.BackColor = System.Drawing.Color.Blue;
+                                    tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
@@ -3200,6 +3415,10 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
+                                            if (dt_orden.Rows[pos_dt_orden]["Status"].ToString().Equals("Finalizada"))
+                                            {
+                                                boton.BackColor = System.Drawing.Color.Gray;
+                                            }
                                             tCell1.Controls.Add(boton);
 
                                             num_cell += columnas - 1;
@@ -3226,18 +3445,24 @@ namespace AutoStar.app
                     TableCell tCell1 = new TableCell();
                     tCell1.CssClass = "tableCellPlanografoTecnicos";
 
-                    Label etiq = new Label();
-                    etiq.CssClass = "labelTecnicos";
-                    etiq.Text = dt.Rows[x]["nombre"].ToString();
+                    //Label etiq = new Label();
+                    //etiq.CssClass = "labelTecnicos";
+                    //etiq.Text = dt.Rows[x]["nombre"].ToString();
 
-                    tCell1.Controls.Add(etiq);
+                    Button etiqueta = new Button();
+                    etiqueta.Text = dt.Rows[x]["nombre"].ToString();
+                    etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
+                    etiqueta.Click += new EventHandler(this.TresEstados);
+                    etiqueta.CssClass = "btnOrdenesEspera";
+
+                    tCell1.Controls.Add(etiqueta);
                     tRow1.Cells.Add(tCell1);
 
                     bool Inactivo = false;
                     if ((bool)dt.Rows[x]["Activo"] == false)
                     {
                         Inactivo = true;
-                        etiq.ForeColor = System.Drawing.Color.Gray;
+                        etiqueta.ForeColor = System.Drawing.Color.Gray;
                     }
 
                     for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
@@ -3259,7 +3484,12 @@ namespace AutoStar.app
                             }
                             if (marcar)
                             {
-                                tCell2.BackColor = System.Drawing.Color.Blue;
+                                tCell2.CssClass = "colorFranjaHora";
+                                //Label nuevo = new Label();
+                                //nuevo.BackColor = System.Drawing.Color.Blue;
+                                //nuevo.Width = 130;
+                                //nuevo.Height = 30;
+                                //tCell2.Controls.Add(nuevo);
                             }
 
                             tRow1.Cells.Add(tCell2);
@@ -3276,7 +3506,7 @@ namespace AutoStar.app
                             }
                             if (marcar)
                             {
-                                tCell2.BackColor = System.Drawing.Color.Blue;
+                                tCell2.CssClass = "colorFranjaHora";
                             }
 
                             tRow1.Cells.Add(tCell2);
@@ -3295,13 +3525,125 @@ namespace AutoStar.app
             return tabla;
         }
 
-        private void Revisa_Atraso( string idTecnico)
+        private void TresEstados(object sender, EventArgs e)
+        {            
+            Button boton = (Button)sender;
+            Session["Estados_botones"] = boton.ID;
+            string idtecnico = boton.ID;
+            estdos.Visible = true;
+            cargar_estado1(idtecnico);
+            cargar_estado2(idtecnico);
+            cargar_estado3(idtecnico);
+        }
+
+        private void cargar_estado3(string idtecnico)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            //"select DISTINCT numero, horaInicio from GT_Ordenes where idTecnico = '" + idTecnico + "' and Area = '" + drpAreas.SelectedValue + "' ORDER by horaInicio ASC";
+            string query2 = "select * from GT_Ordenes_Estado where idTecnico = '" + idtecnico + "' and Status = 'Trabajos de taller externo' ORDER by id ASC";
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+            DataTable dt_orden = new DataTable();
+            da_orden.Fill(dt_orden);
+            for (int x = 0; x < dt_orden.Rows.Count; x++)
+            {
+                Button boton = new Button();
+
+                boton.Text = dt_orden.Rows[x]["numero"].ToString();
+                boton.ID = dt_orden.Rows[x]["numero"].ToString();
+                boton.Click += new EventHandler(this.Estados_Click);
+                boton.UseSubmitBehavior = false;
+                estado3.Controls.Add(boton);
+                estado3.Controls.Add(new LiteralControl("<br />"));
+            }
+
+            con.Close();
+
+
+        }
+
+
+        private void cargar_estado2(string idtecnico)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query2 = "select * from GT_Ordenes_Estado where idTecnico = '" + idtecnico + "' and Status = 'Pendiente de aprobación cliente' ORDER by id ASC";
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+            DataTable dt_orden = new DataTable();
+            da_orden.Fill(dt_orden);
+            for (int x = 0; x < dt_orden.Rows.Count; x++)
+            {
+                Button boton = new Button();
+
+                boton.Text = dt_orden.Rows[x]["numero"].ToString();
+                boton.ID = dt_orden.Rows[x]["numero"].ToString();
+                boton.Click += new EventHandler(this.Estados_Click);
+                boton.UseSubmitBehavior = false;
+                estado2.Controls.Add(boton);
+                estado2.Controls.Add(new LiteralControl("<br />"));
+            }
+
+            con.Close();
+        }
+
+        private void cargar_estado1(string idtecnico)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query2 = "select * from GT_Ordenes_Estado where idTecnico = '" + idtecnico + "' and Status = 'Pendiente de repuestos' ORDER by id ASC";
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+            DataTable dt_orden = new DataTable();
+            da_orden.Fill(dt_orden);
+            for (int x = 0; x < dt_orden.Rows.Count; x++)
+            {
+                Button boton = new Button();
+
+                boton.Text = dt_orden.Rows[x]["numero"].ToString();
+                boton.ID = dt_orden.Rows[x]["numero"].ToString();                
+                boton.Click += new EventHandler(this.Estados_Click);
+                boton.UseSubmitBehavior = false;                
+                estado1.Controls.Add(boton);
+                estado1.Controls.Add(new LiteralControl("<br />"));
+            }
+
+            con.Close();
+        }
+
+        private void Estados_Click(object sender, EventArgs e)
+        {            
+            Button boton = (Button) sender;
+            Session["drpestado"] = true;
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query2 = "select * from GT_Ordenes_Estado where numero = '" + boton.ID + "'";
+            con.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con);
+            SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+            DataTable dt_orden = new DataTable();
+            da_orden.Fill(dt_orden);
+
+            if (dt_orden.Rows.Count > 0)
+            {
+                drpTecnico.SelectedValue = dt_orden.Rows[0]["idTecnico"].ToString();
+                drpOt.Items.Add(new ListItem(dt_orden.Rows[0]["numero"].ToString(), dt_orden.Rows[0]["numero"].ToString()));
+                drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
+                drpOt.Enabled = false;
+                ventana.Visible = true;
+            }
+
+            
+            
+        }        
+
+        private void Revisa_Atraso(string idTecnico)
         {
             DateTime actual = DateTime.Now;
             actual = format_hora_prox(actual);
 
             SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query1 = "select DISTINCT numero, horaInicio from GT_Ordenes where idTecnico = '" + idTecnico + "' ORDER by horaInicio ASC";
+            string query1 = "select DISTINCT numero, horaInicio from GT_Ordenes where idTecnico = '" + idTecnico + "' and Area = '" + drpAreas.SelectedValue + "' ORDER by horaInicio ASC";
             conex.Open();
 
             SqlCommand cmd1 = new SqlCommand(query1, conex);
@@ -3311,12 +3653,12 @@ namespace AutoStar.app
 
             conex.Close();
 
-            TimeSpan TS_Mover = new TimeSpan(0,0,0);
-            bool  Mover = false;
+            TimeSpan TS_Mover = new TimeSpan(0, 0, 0);
+            bool Mover = false;
             for (int x = 0; x < dt_num.Rows.Count; x++)
             {
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "'  ORDER by horaInicio ASC";
+                string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "' and Area = '" + drpAreas.SelectedValue + "' ORDER by horaInicio ASC";
                 con.Open();
 
                 SqlCommand cmd = new SqlCommand(query, con);
@@ -3328,55 +3670,59 @@ namespace AutoStar.app
 
                 if (Mover == false)
                 {
-                    DateTime h_final = (DateTime)dt.Rows[0]["horaFinal"] ;
+                    DateTime h_final = (DateTime)dt.Rows[0]["horaFinal"];
                     DateTime h_ini = (DateTime)dt.Rows[0]["horainicio"];
                     string statusss = dt.Rows[0]["Status"].ToString();
-                    if (h_final < actual && h_ini  < actual && !(dt.Rows[0]["Status"].Equals("Finalizada")))
+                    if (h_final < actual && h_ini < actual && !(dt.Rows[0]["Status"].Equals("Finalizada")))
                     {
-                        Mover = true;
+
                         if (h_ini.Date == actual.Date.AddDays(-1))
                         {
                             Eliminar_registro_id((int)dt.Rows[0]["idOrdenes"]);
-                            DateTime mover_a = new DateTime(7, 30, 00);
-                            TS_Mover = actual.Subtract(mover_a);
+                            // DateTime mover_a = new DateTime(7, 30, 00);
+                            //TS_Mover = actual.Subtract(mover_a);
                         }
                         else if (h_ini.Date == actual.Date)
                         {
+                            Mover = true;
                             TS_Mover = actual.Subtract((DateTime)dt.Rows[0]["horaFinal"]);
+
+                            DateTime inicio = (DateTime)dt.Rows[0]["horaInicio"];
+
+                            int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
+                            string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
+                            string dpStatus = dt.Rows[0]["Status"].ToString();
+
+                            //string[] th = dt.Rows[0]["horaTasada"].ToString().Split(',');
+                            //int ho = int.Parse(th[0]);
+                            //int mi = int.Parse(th[1]);
+
+                            string[] he = dt.Rows[0]["horaExtra"].ToString().Split(',');
+                            int ho = int.Parse(he[0]);
+                            int mi = int.Parse(he[1]);
+
+                            mi = mi * 6;
+                            mi = mi + TS_Mover.Minutes;
+
+                            ho = ho + TS_Mover.Hours;
+                            //double mii = ((double));
+                            //mii = Math.Ceiling(mii);
+                            mi = mi / 6;
+                            string hextra = ho + "," + mi;
+                            bool finalizado = true;
+
+
+                            Eliminar_registro(idordenes);
+                            Agregar_registro(idordenes, dpTecnico, inicio, dt.Rows[0]["horaTasada"].ToString(), dpStatus, finalizado, hextra, (int)dt.Rows[0]["area"]);
                         }
                         else
                         {
-                            break;
+                            Eliminar_registro_id((int)dt.Rows[0]["idOrdenes"]);
+                            //break;
                         }
 
-                        
-                        DateTime inicio = (DateTime)dt.Rows[0]["horaInicio"];
 
-                        int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
-                        string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
-                        string dpStatus = dt.Rows[0]["Status"].ToString();
 
-                        string[] th = dt.Rows[0]["horaTasada"].ToString().Split(',');
-                        int ho = int.Parse(th[0]);
-                        int mi = int.Parse(th[1]);
-
-                        string[] he = dt.Rows[0]["horaExtra"].ToString().Split(',');
-                        ho = ho + int.Parse(he[0]);
-                        mi = mi + int.Parse(he[1]);
-
-                        mi = mi * 6;
-                        mi = mi + TS_Mover.Minutes;                        
-                        
-                        ho = ho + TS_Mover.Hours;
-                        //double mii = ((double));
-                        //mii = Math.Ceiling(mii);
-                        mi = mi/6;
-                        string htazad =  ho+","+mi;                        
-                        bool finalizado = true;
-
-                        
-                        Eliminar_registro(idordenes);
-                        Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
                     }
                 }
                 else
@@ -3390,8 +3736,14 @@ namespace AutoStar.app
                     DateTime inicios = (DateTime)dt.Rows[0]["horaInicio"];
                     DateTime inicio = inicios.Add(TS_Mover);
 
+                    DateTime limite = new DateTime(inicios.Year, inicios.Month, inicios.Day, 17, 30, 00);
+                    if (inicio > limite)
+                    {
+                        inicio = inicio.AddHours(14);
+                    }
+
                     Eliminar_registro(idordenes);
-                    Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
+                    Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["area"]);
                 }
             }
 
@@ -3429,7 +3781,6 @@ namespace AutoStar.app
             }
         }
 
-
         private void Crear_franja_sub_Hora(int hora_actual)
         {
             TableRow tRow1 = new TableRow();
@@ -3455,7 +3806,8 @@ namespace AutoStar.app
                     tCell2.CssClass = "tableCellPlanografoHoras";
                     if (marcar)
                     {
-                        tCell2.BackColor = System.Drawing.Color.Blue;
+                        //tCell2.BackColor = System.Drawing.Color.Blue;
+                        tCell2.CssClass = "colorFranjaHora";
                     }
                     tCell2.Height = Unit.Pixel(2);
                     tRow1.Cells.Add(tCell2);
@@ -3468,7 +3820,7 @@ namespace AutoStar.app
                     tCell2.CssClass = "tableCellPlanografoHoras_impar";
                     if (marcar)
                     {
-                        tCell2.BackColor = System.Drawing.Color.Blue;
+                        tCell2.CssClass = "colorFranjaHora";
                     }
                     tCell2.Height = Unit.Pixel(6);
                     tRow1.Cells.Add(tCell2);
@@ -3711,24 +4063,71 @@ namespace AutoStar.app
                     fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
                     fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
-                   
+
                     string htazad = htazada.Text;
                     string dpStatus = drpStatus.SelectedValue;
                     string hextra = txtHoraExtra.Text;
-                   bool res =  Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra);
-                   if (res)
-                   {
-                       Response.Redirect("GT_Planografo_Digital.aspx", false);                    
-                   }
+
+                    if (Session["drpestado"] != null && (bool)Session["drpestado"] == true && !dpStatus.Equals("Pendiente de repuestos") && !dpStatus.Equals("Pendiente de aprobación cliente") && !dpStatus.Equals("Trabajos de taller externo"))
+                    {                        
+                        bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, "-1");
+                        if (valido)
+                        {
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue));
+                            //if (res)
+                            //{
+                            if (!res)
+                            {
+                                Eliminar_en_estado(drpOt.SelectedValue);
+                                Session["drpestado"] = false;
+                                drpOt.Enabled = true;
+                                Response.Redirect("GT_Planografo_Digital.aspx", false);                                
+                            }
+                        }
+
+                    }
+
+                    else if (dpStatus.Equals("Pendiente de repuestos") || dpStatus.Equals("Pendiente de aprobación cliente") || dpStatus.Equals("Trabajos de taller externo"))
+                    {
+                        SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                        string query2 = "select * from GT_Ordenes_Estado where numero = '" + drpOt.ID + "'";
+                        con.Open();
+                        SqlCommand cmd2 = new SqlCommand(query2, con);
+                        SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+                        DataTable dt_orden = new DataTable();
+                        da_orden.Fill(dt_orden);
+
+                        if (dt_orden.Rows.Count == 0)
+                        {
+                            Agregar_A_Estados(id, dpTecnico, dpStatus);
+                            Response.Redirect("GT_Planografo_Digital.aspx", false);
+                        }
                        
+                    }
+                    else
+                    {
+                        bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, "-1");
+                        if (valido)
+                        {
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue));
+                            //if (res)
+                            //{
+                            Response.Redirect("GT_Planografo_Digital.aspx", false);
+                            //}
+                        }
+                    }
+
+
+
 
                 }
                 #endregion
+                #region MODIFICAR
                 else if (Button1.Text.Equals("Actualizar"))
                 {
                     int id = int.Parse(Session["id_modf"].ToString());
                     SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                    string query1 = "select * from GT_Ordenes where numero = '" + id + "'";
+                    string query1 = "select * from GT_Ordenes where numero = '" + id + "' and Area = '" + drpAreas.SelectedValue + "' ";
                     conex.Open();
 
                     SqlCommand cmd1 = new SqlCommand(query1, conex);
@@ -3738,7 +4137,7 @@ namespace AutoStar.app
 
                     conex.Close();
                     DateTime aux = (DateTime)dt_num.Rows[0]["horaInicio"];
-                    DateTime fechainicio =  aux.Date;
+                    DateTime fechainicio = aux.Date;
                     string dpHoraInicio = drpHoraInicio.SelectedValue;
                     string[] inicio = dpHoraInicio.Split(':');
                     fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
@@ -3747,19 +4146,390 @@ namespace AutoStar.app
 
                     string hextra = txtHoraExtra.Text;
 
-                    Eliminar_registro(id);
 
-                    
 
                     string dpTecnico = drpTecnico.SelectedValue;
                     //string dpHoraInicio = drpHoraInicio.SelectedValue;
                     string htazad = htazada.Text;
                     string dpStatus = drpStatus.SelectedValue;
-                    bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra);
-                    if(res)
+
+                    if (dpStatus.Equals("Pendiente de repuestos") || dpStatus.Equals("Pendiente de aprobación cliente") || dpStatus.Equals("Trabajos de taller externo"))
+                    {
+                        Eliminar_registro(id);
+                        Agregar_A_Estados(id, dpTecnico, dpStatus);
                         Response.Redirect("GT_Planografo_Digital.aspx", false);
+                    }
+                    else
+                    {
+                        if (fechainicio < aux)
+                        {
+                            bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, id + "");
+                            if (valido)
+                            {
+                                Eliminar_registro(id);
+                                bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"]);
+                                if (!res)
+                                {
+                                    Mover_modificacion(dt_num);
+                                    //preguntamos si movio antes                         
+
+                                }
+                                Response.Redirect("GT_Planografo_Digital.aspx", false);
+                            }
+                        }
+                        else
+                        {
+                            Eliminar_registro(id);
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"]);
+                            if (!res)
+                            {
+                                Mover_modificacion(dt_num);
+                                //preguntamos si movio antes                         
+
+                            }
+                            Response.Redirect("GT_Planografo_Digital.aspx", false);
+                        }
+                    }
+
+                }
+                #endregion
+            }
+
+        }
+
+        private void Eliminar_en_estado(string p)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            con.Open();
+            SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+            SqlCommand cmd = new SqlCommand("DELETE FROM [dbo].[GT_Ordenes_Estado] WHERE numero = '" + p + "'", con, tr);
+            try
+            {
+                //Ejecuto
+                cmd.ExecuteNonQuery();
+                tr.Commit(); //Actualizar bd                                
+                //Response.Redirect("GT_Planografo_Digital.aspx", false);                
+            }
+            catch (Exception ex)
+            {
+                //De haber un error lo capturo
+                // msg = ex.Message;
+                //Deshacemos la operacion
+                tr.Rollback();                
+            }
+            finally
+            {
+                con.Close(); //Cerramos la conexion
+
+            }
+        }
+
+        private void Agregar_A_Estados(int id, string dpTecnico, string dpStatus)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            con.Open();
+            SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+            SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes_Estado] ([numero],[idTecnico], [Status]) VALUES(@numero, @idtecnico, @status ) ", con, tr);
+            cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
+            cmd.Parameters.Add("@status", SqlDbType.VarChar).Value = dpStatus;
+            cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
+
+            try
+            {
+                //Ejecuto
+                cmd.ExecuteNonQuery();
+                tr.Commit(); //Actualizar bd                                
+                //Response.Redirect("GT_Planografo_Digital.aspx", false);
+
+            }
+            catch (Exception ex)
+            {
+                //De haber un error lo capturo
+                // msg = ex.Message;
+                //Deshacemos la operacion
+                tr.Rollback();
+
+            }
+            finally
+            {
+                con.Close(); //Cerramos la conexion
+
+            }
+        }
+
+        protected bool Valida_tiempo_agregar(DateTime inicio, string htazada, string textra, string idtecnico, string numero)
+        {
+            int[] arreglo_hoy = new int[42];
+            int[] arreglo_manana = new int[42];
+
+            for (int j = 0; j < 42; j++)
+            {
+                arreglo_hoy[j] = 0;
+                arreglo_manana[j] = 0;
+            }
+
+            #region calcular horas
+
+            TimeSpan formate = formatear(htazada);
+            TimeSpan horextra = formatear(textra);
+            formate = formate.Add(horextra);
+            DateTime final = inicio;
+            final = final.Add(formate);
+
+            #endregion
+
+            #region seleciona las ordenes del tecnico
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query = "select * from GT_Ordenes Where idTecnico = '" + idtecnico + "' and numero !='" + numero + "' order by horaInicio Asc";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            #endregion
+
+            #region LLENAMOS LOS ARRAY CON 1 SI EL CUPO ESA HORA ESTA OCUPADA
+            DateTime corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+
+            for (int x = 0; x < dt.Rows.Count; x++)
+            {
+                DateTime inicioviejo = (DateTime)dt.Rows[x]["horaInicio"];
+                DateTime finalviejo = (DateTime)dt.Rows[x]["horaFinal"];
+                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+                if (inicioviejo.Date == DateTime.Now.Date)
+                {
+                    for (int y = 0; y < 42; y++)
+                    {
+                        if (corredor >= finalviejo)
+                        {
+                            y = 42;
+                        }
+                        else
+                        {
+                            if (corredor >= inicioviejo)
+                            {
+                                arreglo_hoy[y] = 1;
+                            }
+                            corredor = corredor.AddMinutes(15);
+                        }
+                    }
+
+                }
+                else
+                {
+                    corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                    for (int y = 0; y < 42; y++)
+                    {
+                        if (corredor >= finalviejo)
+                        {
+                            y = 42;
+                        }
+                        else
+                        {
+                            if (corredor >= inicioviejo)
+                            {
+                                arreglo_manana[y] = 1;
+                            }
+                            corredor = corredor.AddMinutes(15);
+                        }
+                    }
                 }
             }
+            #endregion
+
+            TimeSpan limite = new TimeSpan(17, 30, 00);
+            if (final.TimeOfDay < limite)
+            {
+                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+
+                for (int xx = 0; xx < 42; xx++)
+                {
+                    if (corredor >= final)
+                    {
+                        xx = 42;
+                    }
+                    else
+                    {
+                        if (corredor >= inicio)
+                        {
+                            if (arreglo_hoy[xx] == 1)
+                            {
+                                MessageBoxShow(this, "Choque entre Ordenes. No se puede crear una orden con estos tiempos ");
+                                return false;
+                            }
+                        }
+                        corredor = corredor.AddMinutes(15);
+                    }
+                }
+
+            }
+            else
+            {
+                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
+
+                for (int xx = 0; xx < 42; xx++)
+                {
+                    if (corredor >= final)
+                    {
+                        xx = 42;
+                    }
+                    else
+                    {
+                        if (corredor >= inicio)
+                        {
+                            if (arreglo_hoy[xx] == 1)
+                            {
+                                MessageBoxShow(this, "Choque entre Ordenes. No se puede crear una orden con estos tiempos ");
+                                return false;
+                            }
+                        }
+                        corredor = corredor.AddMinutes(15);
+                    }
+                }
+
+                TimeSpan resta = final.TimeOfDay.Subtract(limite);
+                DateTime final_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+                final_split = final_split.Add(resta);
+                DateTime inicio_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+
+
+                corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day + 1, 7, 30, 00);
+
+                for (int xx = 0; xx < 42; xx++)
+                {
+                    if (corredor >= final_split)
+                    {
+                        xx = 42;
+                    }
+                    else
+                    {
+                        if (corredor >= inicio_split)
+                        {
+                            if (arreglo_manana[xx] == 1)
+                            {
+                                MessageBoxShow(this, "Choque entre Ordenes. No se puede crear una orden con estos tiempos ");
+                                return false;
+                            }
+                        }
+                        corredor = corredor.AddMinutes(15);
+                    }
+                }
+
+            }
+
+            return true;
+        }
+
+        //Muestra un mensaje de alerta en la pantalla con el mensaje que se le pase.
+        private void MessageBoxShow(Page page, string message)
+        {
+            Literal ltr = new Literal();
+            ltr.Text = @"<script type='text/javascript'> alert('" + message + "') </script>";
+            page.Controls.Add(ltr);
+        }
+
+        private void Mover_modificacion(DataTable dt_num)
+        {
+
+            TimeSpan mover_otros = new TimeSpan();
+            DateTime inicio = (DateTime)dt_num.Rows[0]["HoraInicio"];
+            TimeSpan nuevo = TimeSpan.Parse(drpHoraInicio.SelectedValue);
+
+            mover_otros = nuevo.Subtract(inicio.TimeOfDay);
+
+            if (dt_num.Rows[0]["horaTasada"].ToString() != htazada.Text)
+            {
+                string[] tazada = htazada.Text.Split(',');
+                TimeSpan tstazada = new TimeSpan(int.Parse(tazada[0].ToString()), int.Parse(tazada[1].ToString()) * 6, 0);
+
+                string[] tazada_db = dt_num.Rows[0]["horaTasada"].ToString().Split(',');
+                TimeSpan tstazada_db = new TimeSpan(int.Parse(tazada_db[0].ToString()), int.Parse(tazada_db[1].ToString()) * 6, 0);
+
+                TimeSpan resta_tasada = tstazada.Subtract(tstazada_db);
+
+                mover_otros = mover_otros.Add(resta_tasada);
+            }
+
+            if (dt_num.Rows[0]["horaExtra"].ToString() != txtHoraExtra.Text)
+            {
+                string[] tazada = txtHoraExtra.Text.Split(',');
+                TimeSpan tstazada = new TimeSpan(int.Parse(tazada[0].ToString()), int.Parse(tazada[1].ToString()) * 6, 0);
+
+                string[] tazada_db = dt_num.Rows[0]["horaExtra"].ToString().Split(',');
+                TimeSpan tstazada_db = new TimeSpan(int.Parse(tazada_db[0].ToString()), int.Parse(tazada_db[1].ToString()) * 6, 0);
+
+                TimeSpan resta_tasada = tstazada.Subtract(tstazada_db);
+
+                mover_otros = mover_otros.Add(resta_tasada);
+            }
+            mover_otros = format_timespan(mover_otros);
+            cambiar_Otros(mover_otros, dt_num.Rows[0]["numero"].ToString(), (int)dt_num.Rows[0]["idTecnico"], inicio);
+
+        }
+
+        private void cambiar_Otros(TimeSpan mover_otros, string id, int id_tecnico, DateTime cambiado)
+        {
+            SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query1 = "select DISTINCT numero from GT_Ordenes where Area = '" + drpAreas.SelectedValue + "' and idTecnico = '" + id_tecnico + "'";
+            conex.Open();
+
+            SqlCommand cmd1 = new SqlCommand(query1, conex);
+            SqlDataAdapter dad = new SqlDataAdapter(cmd1);
+            DataTable dt_num = new DataTable();
+            dad.Fill(dt_num);
+
+            conex.Close();
+
+            for (int x = 0; x < dt_num.Rows.Count; x++)
+            {
+                int xx = int.Parse(dt_num.Rows[x]["numero"].ToString());
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "' and numero != '" + id + "' and idTecnico = '" + id_tecnico + "' and Area = '" + drpAreas.SelectedValue + "'  ORDER by horaInicio ASC";
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                con.Close();
+
+                if (dt.Rows.Count > 0)
+                {
+                    DateTime inicio_viejo = DateTime.Parse(dt.Rows[0]["horaInicio"].ToString());
+                    if (inicio_viejo > cambiado)
+                    {
+                        int idordenes = int.Parse(dt.Rows[0]["numero"].ToString());
+                        string dpTecnico = dt.Rows[0]["idTecnico"].ToString();
+                        string dpStatus = dt.Rows[0]["Status"].ToString();
+
+                        DateTime new_inicio = DateTime.Parse(dt.Rows[0]["horaInicio"].ToString()).Add(mover_otros);
+
+                        DateTime limite = new DateTime(new_inicio.Year, new_inicio.Month, new_inicio.Day, 7, 30, 00);
+                        TimeSpan limite2 = new TimeSpan(17, 15, 00);
+                        if ((new_inicio.Date > DateTime.Now.Date) && (new_inicio.TimeOfDay < limite.TimeOfDay))
+                        {
+                            new_inicio = new_inicio.AddHours(-14);
+                            //new_inicio = new_inicio.AddMinutes(-15);
+                        }
+
+                        if ((new_inicio.TimeOfDay > limite2))
+                        {
+                            new_inicio = new_inicio.AddHours(14);
+                            //new_inicio = new_inicio.AddMinutes(15);
+                        }
+
+                        //string hora_env = new_inicio;
+                        bool finalizado = (bool)dt.Rows[0]["pasado"];
+
+                        string htazad = dt.Rows[0]["horaTasada"].ToString();
+                        Eliminar_registro(idordenes);
+                        Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"]);
+                    }
+                }
+            }
+
 
         }
 
@@ -3792,9 +4562,9 @@ namespace AutoStar.app
             }
         }
 
-        private bool Agregar_registro(int id, string dpTecnico, DateTime dpHoraInicio, string htazada, string dpStatus, bool finalizado, string hextra)
-        {           
-
+        private bool Agregar_registro(int id, string dpTecnico, DateTime dpHoraInicio, string htazada, string dpStatus, bool finalizado, string hextra, int area)
+        {
+            bool movido = false;
             DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());// Calendar1.SelectedDate;
             DateTime fechainicio = dpHoraInicio;// new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
 
@@ -3806,9 +4576,9 @@ namespace AutoStar.app
             TimeSpan formate = formatear(htazada);
             TimeSpan horextra = formatear(hextra);
             formate = formate.Add(horextra);
-            
+
             fechafinal = fechafinal.Add(formate);
-            
+
 
             #region Si la orden es finalizada antes de la hora final seleccionada
 
@@ -3816,6 +4586,7 @@ namespace AutoStar.app
             if (dpStatus.Equals("Finalizada") && fechainicio < DateTime.Now)
             {
                 fechafinal = Mover_Ordenes(int.Parse(dpTecnico), fechafinal, id);
+                movido = true;
             }
 
             #endregion
@@ -3828,7 +4599,7 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [Area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
@@ -3837,13 +4608,14 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
+                cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
                 try
                 {
                     //Ejecuto
                     cmd.ExecuteNonQuery();
                     tr.Commit(); //Actualizar bd                                
                     //Response.Redirect("GT_Planografo_Digital.aspx", false);
-                    return true;
+                    return movido;
                 }
                 catch (Exception ex)
                 {
@@ -3851,7 +4623,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
-                    return false;
+                    return movido;
                 }
                 finally
                 {
@@ -3866,7 +4638,7 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
@@ -3875,6 +4647,7 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
+                cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
                 DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
                 fecha_n_inicio = fecha_n_inicio.AddDays(1);
 
@@ -3893,7 +4666,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
-                    return false;
+                    return movido;
                 }
                 finally
                 {
@@ -3904,12 +4677,12 @@ namespace AutoStar.app
                 con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 tr = con.BeginTransaction(IsolationLevel.Serializable);
-                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras ) ", con, tr);
+                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [Area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
 
                 TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
                 fecha_n_final = fecha_n_final.Add(diferencia);
 
-                
+
                 int ho = diferencia.Hours;
                 int mi = diferencia.Minutes;
                 mi = mi / 6;
@@ -3929,13 +4702,14 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@idtecnico", SqlDbType.Int).Value = dpTecnico;
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
+                cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
                 try
                 {
                     //Ejecuto
                     cmd.ExecuteNonQuery();
                     tr.Commit(); //Actualizar bd                        
                     //Response.Redirect("GT_Planografo_Digital.aspx", false);
-                    return true;
+                    return movido;
                 }
                 catch (Exception ex)
                 {
@@ -3943,7 +4717,7 @@ namespace AutoStar.app
                     // msg = ex.Message;
                     //Deshacemos la operacion
                     tr.Rollback();
-                    return false;
+                    return movido;
                 }
                 finally
                 {
@@ -3954,7 +4728,6 @@ namespace AutoStar.app
             }
         }
 
-        ///Tengo que arreglar esta vara, no esta terminada
         private DateTime Mover_Ordenes(int id, DateTime final, int ord_mod)
         {
             DateTime actual = DateTime.Now;
@@ -3966,7 +4739,7 @@ namespace AutoStar.app
             {
 
                 SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                string query1 = "select DISTINCT numero from GT_Ordenes";
+                string query1 = "select DISTINCT numero from GT_Ordenes where Area = '" + drpAreas.SelectedValue + "'";
                 conex.Open();
 
                 SqlCommand cmd1 = new SqlCommand(query1, conex);
@@ -3981,7 +4754,7 @@ namespace AutoStar.app
                 for (int x = 0; x < dt_num.Rows.Count; x++)
                 {
                     SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-                    string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "' and idOrdenes != '" + ord_mod.ToString() + "'  ORDER by horaInicio ASC";
+                    string query = "select  * from GT_Ordenes where numero = '" + dt_num.Rows[x]["numero"] + "' and idOrdenes != '" + ord_mod.ToString() + "' and Area = '" + drpAreas.SelectedValue + "'  ORDER by horaInicio ASC";
                     con.Open();
 
                     SqlCommand cmd = new SqlCommand(query, con);
@@ -3997,12 +4770,19 @@ namespace AutoStar.app
                     string dpStatus = dt.Rows[0]["Status"].ToString();
 
                     DateTime new_inicio = DateTime.Parse(dt.Rows[0]["horaInicio"].ToString()).Subtract(resta);
+
+                    DateTime limite = new DateTime(new_inicio.Year, new_inicio.Month, new_inicio.Day, 7, 30, 00);
+                    if ((new_inicio.Date > DateTime.Now.Date) && (new_inicio.TimeOfDay < limite.TimeOfDay))
+                    {
+                        new_inicio = new_inicio.AddHours(-14);
+                    }
+
                     //string hora_env = new_inicio;
-                    bool finalizado = (bool)dt.Rows[0]["pasado"];                 
+                    bool finalizado = (bool)dt.Rows[0]["pasado"];
 
                     string htazad = dt.Rows[0]["horaTasada"].ToString();
                     Eliminar_registro(idordenes);
-                    Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString());
+                    Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"]);
                 }
                 return actual;
             }
@@ -4045,6 +4825,75 @@ namespace AutoStar.app
             return p;
         }
 
+        private TimeSpan format_timespan(TimeSpan p)
+        {
+            TimeSpan nuevo = new TimeSpan();
+            int hora = p.Hours;
+            int min = p.Minutes;
+            if (min > 0 && min < 15)
+            {
+                nuevo = new TimeSpan(hora, 15, 0);
+                //nuevo = nuevo.AddMinutes(15);
+                return nuevo;
+            }
+            if (min > 15 && min < 30)
+            {
+                nuevo = new TimeSpan(hora, 30, 0);
+                //nuevo = nuevo.AddMinutes(30);
+                return nuevo;
+            }
+            if (min > 30 && min < 45)
+            {
+                nuevo = new TimeSpan(hora, 45, 00);
+                //nuevo = nuevo.AddMinutes(45);
+                return nuevo;
+            }
+            if (min > 45 && min < 60)
+            {
+                nuevo = new TimeSpan(hora + 1, 0, 0);
+                //nuevo = nuevo.AddMinutes(00);
+                return nuevo;
+            }
+
+            //------------------------si es negativo //
+            if (min < 0 && min > -15)
+            {
+                if (hora < 0)
+                {
+                    nuevo = new TimeSpan(hora + 1, 00, 0);
+                    //nuevo = nuevo.AddMinutes(15);
+                    return nuevo;
+                }
+                else
+                {
+                    nuevo = new TimeSpan(0, 00, 0);
+                    //nuevo = nuevo.AddMinutes(15);
+                    return nuevo;
+                }
+
+            }
+            if (min < -15 && min > -30)
+            {
+                nuevo = new TimeSpan(hora, -15, 0);
+                //nuevo = nuevo.AddMinutes(30);
+                return nuevo;
+            }
+            if (min < -30 && min > -45)
+            {
+                nuevo = new TimeSpan(hora, -30, 00);
+                //nuevo = nuevo.AddMinutes(45);
+                return nuevo;
+            }
+            if (min < -45 && min > -60)
+            {
+                nuevo = new TimeSpan(hora, -45, 00);
+                //nuevo = nuevo.AddMinutes(00);
+                return nuevo;
+            }
+
+            return p;
+        }
+
         private TimeSpan formatear(string p)
         {
             string[] calcular = p.Split(',');
@@ -4068,7 +4917,7 @@ namespace AutoStar.app
             }
             if (tiempo.Minutes > 45 && tiempo.Minutes < 60)
             {
-                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString())+1, 00, 0);
+                TimeSpan tiemp = new TimeSpan(int.Parse(tiempo.Hours.ToString()) + 1, 00, 0);
                 return tiemp;
             }
             return tiempo;
@@ -4102,8 +4951,10 @@ namespace AutoStar.app
         {
             //Calendar1.SelectedDate = DateTime.Now;
             Button1.Text = "Agregar";
+            btneliminar.Visible = false;
             htazada.Enabled = true;
             ventana.Visible = true;
+            //MessageBoxShow(this, "Esto es una prueba");
         }
 
         protected void cargar_act(object sender, ImageClickEventArgs e)
@@ -4119,7 +4970,7 @@ namespace AutoStar.app
             btneliminar.Visible = true;
 
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select * from GT_Ordenes Where numero = '" + id_boton + "'";
+            string query = "select * from GT_Ordenes Where numero = '" + id_boton + "' and Area = '" + drpAreas.SelectedValue + "' ";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -4147,8 +4998,11 @@ namespace AutoStar.app
 
             txtHoraExtra.Text = dt.Rows[0]["horaExtra"].ToString();
 
+            string[] hora_taza = htazada.Text.Split(',');
+            txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
+
             Button1.Text = "Actualizar";
-            htazada.Enabled = false;
+            //htazada.Enabled = false;
             ventana.Visible = true;
 
         }
@@ -4167,6 +5021,8 @@ namespace AutoStar.app
                 fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
 
                 string[] hora_taza = htazada.Text.Split(',');
+                txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
+
                 string[] hora_extra = txtHoraExtra.Text.Split(',');
 
                 DateTime fechafinal = fechainicio;
@@ -4228,6 +5084,16 @@ namespace AutoStar.app
                 con.Close(); //Cerramos la conexion
 
             }
+        }
+
+        protected void drpAreas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Session["sel_area"] = drpAreas.SelectedValue;
+        }
+
+        protected void bttn_Click(object sender, EventArgs e)
+        {
+            estdos.Visible = false;
         }
 
     }

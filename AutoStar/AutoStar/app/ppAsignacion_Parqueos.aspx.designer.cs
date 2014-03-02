@@ -272,7 +272,7 @@ namespace AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox12;
-<<<<<<< HEAD
+
         
         /// <summary>
         /// SqlDataSource1 control.
@@ -291,7 +291,6 @@ namespace AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-=======
->>>>>>> a7dd790eae458340e3a23f68fe2e5b2269ba2ef2
+
     }
 }

@@ -11,6 +11,7 @@ Assembly="GridViewExtended" %>
             background-size: cover;
         }
     </style>
+    <h1>Parámetros</h1>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteParametro" DeleteCommandType="StoredProcedure" InsertCommand="insertParametro" InsertCommandType="StoredProcedure" SelectCommand="selectParametros" SelectCommandType="StoredProcedure" UpdateCommand="updateParametro" UpdateCommandType="StoredProcedure">
         <DeleteParameters>
             <asp:Parameter Name="idParametro" Type="Int32" />

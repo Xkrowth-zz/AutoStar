@@ -45,6 +45,8 @@ namespace AutoStar.app
             string str_apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;  //Name
             string str_apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
             bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+            String nickname=((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_usuario")).Text;
+            String password = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_contraseña")).Text;
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("insertUsuario", conn);
@@ -55,6 +57,8 @@ namespace AutoStar.app
             cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+            cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
+            cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
             cmd.ExecuteReader();
             //cmd.CommandText = "listarEmpleados";
             //GridView1.DataSource = cmd.ExecuteReader();

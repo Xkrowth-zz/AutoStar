@@ -177,6 +177,30 @@ Assembly="GridViewExtended" %>
                     <asp:TextBox ID="txtfld_insert_comentarios" runat="server" TextMode="MultiLine"></asp:TextBox>                    
                 </FooterTemplate>
             </asp:TemplateField>
+            
+            <asp:TemplateField HeaderText="Usuario" SortExpression="nickName">
+                <EditItemTemplate>
+                    <asp:TextBox ID="txtfld_usuario" runat="server" Text='<%# Bind("nickname") %>' ></asp:TextBox>                    
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lbl_usuario" runat="server" Text='<%# Bind("nickname") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtfld_insert_usuario" runat="server" TextMode="SingleLine"></asp:TextBox>                    
+                </FooterTemplate>
+            </asp:TemplateField>
+            
+            <asp:TemplateField HeaderText="Contraseña" SortExpression="password">
+                <EditItemTemplate>
+                    <asp:TextBox ID="txtfld_contraseña" runat="server" Text='<%# Bind("password") %>' TextMode="Password"></asp:TextBox>                    
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lbl_contraseña" runat="server" Text='<%# Bind("password") %>' TextMode="Password"></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtfld_insert_contraseña" runat="server" TextMode="Password"></asp:TextBox>                    
+                </FooterTemplate>
+            </asp:TemplateField>            
 
             <asp:TemplateField HeaderText="idUsuario" SortExpression="idUsuario" Visible="false">
                 <EditItemTemplate>

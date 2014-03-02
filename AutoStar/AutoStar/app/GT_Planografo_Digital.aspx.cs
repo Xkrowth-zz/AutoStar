@@ -447,14 +447,11 @@ namespace AutoStar.app
                                             int tiempo_Trans = resta.Hours * 60 + resta.Minutes;
 
 
-                                            int columnas = tiempo_Trans / 15;
-
-                                            //tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
-
+                                            int columnas = tiempo_Trans / 15;            
 
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
 
@@ -531,8 +528,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -608,8 +605,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -683,8 +680,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -758,8 +755,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -833,8 +830,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -908,8 +905,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -982,8 +979,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1056,8 +1053,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1130,8 +1127,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1204,8 +1201,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1278,8 +1275,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1352,8 +1349,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1426,8 +1423,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1500,8 +1497,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1574,8 +1571,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1648,8 +1645,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1722,8 +1719,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1795,8 +1792,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1868,8 +1865,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1941,8 +1938,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2014,8 +2011,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2087,8 +2084,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2160,8 +2157,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2233,8 +2230,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2306,8 +2303,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2379,8 +2376,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2452,8 +2449,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2525,8 +2522,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2597,8 +2594,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2669,8 +2666,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2742,8 +2739,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2815,8 +2812,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2887,8 +2884,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2960,8 +2957,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3033,8 +3030,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3106,8 +3103,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3178,8 +3175,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3250,8 +3247,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3323,8 +3320,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3396,8 +3393,8 @@ namespace AutoStar.app
 
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
-                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
-                                            boton.ID = boton.Text;
+                                            boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
+                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3617,28 +3614,33 @@ namespace AutoStar.app
         }
 
         private void Estados_Click(object sender, EventArgs e)
-        {            
-            Button boton = (Button) sender;
-            Session["drpestado"] = true;
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query2 = "select * from GT_Ordenes_Estado where numero = '" + boton.ID + "'";
-            con.Open();
-            SqlCommand cmd2 = new SqlCommand(query2, con);
-            SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
-            DataTable dt_orden = new DataTable();
-            da_orden.Fill(dt_orden);
-
-            if (dt_orden.Rows.Count > 0)
+        {
+            if (DateTime.Now.Date == DateTime.Parse(fecha_actual.Text).Date)
             {
-                drpTecnico.SelectedValue = dt_orden.Rows[0]["idTecnico"].ToString();
-                drpOt.Items.Add(new ListItem(dt_orden.Rows[0]["numero"].ToString(), dt_orden.Rows[0]["numero"].ToString()));
-                drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
-                drpOt.Enabled = false;
-                llenarCliente(boton.ID);
-                ventana.Visible = true;
-            }
+                Button boton = (Button)sender;
+                Session["drpestado"] = true;
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                string query2 = "select * from GT_Ordenes_Estado where numero = '" + boton.ID + "'";
+                con.Open();
+                SqlCommand cmd2 = new SqlCommand(query2, con);
+                SqlDataAdapter da_orden = new SqlDataAdapter(cmd2);
+                DataTable dt_orden = new DataTable();
+                da_orden.Fill(dt_orden);
 
-            
+                if (dt_orden.Rows.Count > 0)
+                {
+                    drpTecnico.SelectedValue = dt_orden.Rows[0]["idTecnico"].ToString();
+                    drpOt.Items.Add(new ListItem(dt_orden.Rows[0]["numero"].ToString(), dt_orden.Rows[0]["numero"].ToString()));
+                    drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
+                    drpOt.Enabled = false;
+                    llenarCliente(boton.ID);
+                    ventana.Visible = true;
+                }
+            }
+            else
+            {
+                MessageBoxShow(Page, "No se puede agregar en el día de mañana");
+            }
             
         }        
 
@@ -4599,9 +4601,7 @@ namespace AutoStar.app
             }
 
             #endregion
-
-
-            //ver si cabe en el mismo dia o si hay que hacer split de 2 días
+            //ver si cabe en el mismo día o si hay que hacer split de 2 días
             DateTime limite = DateTime.Parse("17:30:00");
             if (fechafinal.TimeOfDay <= limite.TimeOfDay)
             {
@@ -4958,13 +4958,20 @@ namespace AutoStar.app
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-            //Calendar1.SelectedDate = DateTime.Now;
-            Button1.Text = "Agregar";
-            btneliminar.Visible = false;
-            htazada.Enabled = true;
-            ventana.Visible = true;
-            llenarCliente(drpOt.SelectedValue);
-            //MessageBoxShow(this, "Esto es una prueba");
+            if (DateTime.Now.Date == DateTime.Parse(fecha_actual.Text).Date)
+            {
+                drpOt.Enabled = true;
+                drpOt.Visible = true;
+                Button1.Text = "Agregar";
+                btneliminar.Visible = false;
+                htazada.Enabled = true;
+                ventana.Visible = true;
+                llenarCliente(drpOt.SelectedValue);
+            }
+            else
+            {
+                MessageBoxShow(Page, "No se pueden agregar ordenes del día de mañana");
+            }
         }
 
         protected void cargar_act(object sender, ImageClickEventArgs e)
@@ -4974,48 +4981,57 @@ namespace AutoStar.app
 
         protected void Modificar_Click(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
-            string id_boton = b.ID;
+            if (DateTime.Now.Date == DateTime.Parse(fecha_actual.Text).Date)
+            {
+                Button b = (Button)sender;
+                string id_boton = b.ID;
 
-            btneliminar.Visible = true;
+                btneliminar.Visible = true;
 
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select * from GT_Ordenes Where numero = '" + id_boton + "' and Area = '" + drpAreas.SelectedValue + "' ";
-            con.Open();
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                string query = "select * from GT_Ordenes Where numero = '" + id_boton + "' and Area = '" + drpAreas.SelectedValue + "' ";
+                con.Open();
 
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
+                SqlCommand cmd = new SqlCommand(query, con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
 
-            Session["id_modf"] = id_boton;
-            drpOt.Visible = false;
-            Label2.Visible = false;
-            string[] hinicos = dt.Rows[0]["horaInicio"].ToString().Split(' ');
-            string[] fecha = hinicos[0].Split('/');
-            //Calendar1.SelectedDate = new DateTime(int.Parse(fecha[2]), int.Parse(fecha[1]), int.Parse(fecha[0]));
-            htazada.Text = dt.Rows[0]["horaTasada"].ToString();
-            string hinicio = hinicos[1];
-            drpHoraInicio.SelectedValue = hinicio;
-            string[] hfinals = dt.Rows[0]["horaFinal"].ToString().Split(' ');
-            string hfinal = hfinals[1];
-            txthorafinal.Text = hfinal;
-            string status = dt.Rows[0]["status"].ToString();
-            drpStatus.SelectedValue = status;
-            string tecnico = dt.Rows[0]["idTecnico"].ToString();
-            drpTecnico.SelectedValue = tecnico;
+                Session["id_modf"] = id_boton;
+                drpOt.Visible = false;
+                Label2.Visible = false;
+                string[] hinicos = dt.Rows[0]["horaInicio"].ToString().Split(' ');
+                string[] fecha = hinicos[0].Split('/');
 
-            txtHoraExtra.Text = dt.Rows[0]["horaExtra"].ToString();
+                htazada.Text = dt.Rows[0]["horaTasada"].ToString();
+                string hinicio = hinicos[1];
+                drpHoraInicio.SelectedValue = hinicio;
+                string[] hfinals = dt.Rows[0]["horaFinal"].ToString().Split(' ');
+                string hfinal = hfinals[1];
+                txthorafinal.Text = hfinal;
+                string status = dt.Rows[0]["status"].ToString();
+                drpStatus.SelectedValue = status;
+                string tecnico = dt.Rows[0]["idTecnico"].ToString();
+                drpTecnico.SelectedValue = tecnico;
 
-            string[] hora_taza = htazada.Text.Split(',');
-            txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
+                txtHoraExtra.Text = dt.Rows[0]["horaExtra"].ToString();
 
-            Button1.Text = "Actualizar";
-            llenarCliente(drpOt.SelectedValue);
-            //htazada.Enabled = false;
-            ventana.Visible = true;
+                string[] hora_taza = htazada.Text.Split(',');
+                txtHorareal.Text = int.Parse(hora_taza[0]) + ":" + int.Parse(hora_taza[1]) * 6;
 
+                Button1.Text = "Actualizar";
+                horatazadaCalcular();
+                llenarCliente(id_boton);
+                //htazada.Enabled = false;
+                ventana.Visible = true;
+
+            }
+            else
+            {
+                MessageBoxShow(Page, "No se pueden modificar ordenes del día de mañana");
+            }
+            
         }
 
         protected void htazada_TextChanged(object sender, EventArgs e)
@@ -5023,33 +5039,38 @@ namespace AutoStar.app
             Page.Validate("validar");
             if (Page.IsValid)
             {
-                DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
-                DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
-
-                string[] inicio = drpHoraInicio.SelectedValue.Split(':');
-                fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
-                fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
-                fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
-
-                string[] hora_taza = htazada.Text.Split(',');
-                TimeSpan hhtazada = new TimeSpan(int.Parse(hora_taza[0].ToString()), int.Parse(int.Parse(hora_taza[1]).ToString())*6, 0);
-                
-                txtHorareal.Text = hhtazada.ToString();
-
-                string[] hora_extra = txtHoraExtra.Text.Split(',');
-                TimeSpan hhamp = new TimeSpan(int.Parse(hora_extra[0].ToString()), int.Parse(int.Parse(hora_extra[1]).ToString())*6, 0);
-                txtTiemAmp.Text = hhamp.ToString();
-
-                DateTime fechafinal = fechainicio;
-                //string[] final = drpHoraFinal.SelectedValue.Split(':');
-                fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
-                fechafinal = fechafinal.AddHours(int.Parse(hora_extra[0]));
-                fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]) * 6);
-                fechafinal = fechafinal.AddMinutes(int.Parse(hora_extra[1]) * 6);
-                string[] text = fechafinal.ToString().Split(' ');
-                txthorafinal.Text = text[1];
+                horatazadaCalcular();
             }
 
+        }
+
+        private void horatazadaCalcular()
+        {
+            DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());  //Calendar1.SelectedDate;
+            DateTime fechainicio = new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
+
+            string[] inicio = drpHoraInicio.SelectedValue.Split(':');
+            fechainicio = fechainicio.AddHours(int.Parse(inicio[0]));
+            fechainicio = fechainicio.AddMinutes(int.Parse(inicio[1]));
+            fechainicio = fechainicio.AddSeconds(int.Parse(inicio[2]));
+
+            string[] hora_taza = htazada.Text.Split(',');
+            TimeSpan hhtazada = new TimeSpan(int.Parse(hora_taza[0].ToString()), int.Parse(int.Parse(hora_taza[1]).ToString()) * 6, 0);
+
+            txtHorareal.Text = hhtazada.ToString();
+
+            string[] hora_extra = txtHoraExtra.Text.Split(',');
+            TimeSpan hhamp = new TimeSpan(int.Parse(hora_extra[0].ToString()), int.Parse(int.Parse(hora_extra[1]).ToString()) * 6, 0);
+            txtTiemAmp.Text = hhamp.ToString();
+
+            DateTime fechafinal = fechainicio;
+            //string[] final = drpHoraFinal.SelectedValue.Split(':');
+            fechafinal = fechafinal.AddHours(int.Parse(hora_taza[0]));
+            fechafinal = fechafinal.AddHours(int.Parse(hora_extra[0]));
+            fechafinal = fechafinal.AddMinutes(int.Parse(hora_taza[1]) * 6);
+            fechafinal = fechafinal.AddMinutes(int.Parse(hora_extra[1]) * 6);
+            string[] text = fechafinal.ToString().Split(' ');
+            txthorafinal.Text = text[1];
         }
 
         protected void btndias_Click(object sender, EventArgs e)
@@ -5152,6 +5173,42 @@ namespace AutoStar.app
                 txtAsesor.Text = dt2.Rows[0]["nombre"].ToString() + " " + dt2.Rows[0]["apellido1"].ToString() +" "+ dt2.Rows[0]["apellido2"].ToString();
             }
             con2.Close();
+        }
+
+        private string Inicialiales(string numero)
+        {
+            string Iniciales= "";
+
+            int id_asesor = 0;
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Orden_Trabajo] where numeroOrden = '" + numero + "'";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            if (dt.Rows.Count > 0)
+            {                
+                id_asesor = int.Parse(dt.Rows[0]["idAsesor"].ToString());
+
+            }
+            SqlConnection con2 = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query2 = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Usuarios] where idUsuario = '" + id_asesor + "'";
+            con2.Open();
+            SqlCommand cmd2 = new SqlCommand(query2, con2);
+            SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+            DataTable dt2 = new DataTable();
+            da2.Fill(dt2);
+
+            if (dt2.Rows.Count > 0)
+            {
+                Iniciales = dt2.Rows[0]["Iniciales"].ToString();
+            }
+            con2.Close();
+
+            return Iniciales;
         }
 
     }

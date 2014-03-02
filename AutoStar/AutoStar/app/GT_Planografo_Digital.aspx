@@ -107,6 +107,11 @@
         </asp:Table>
 
         <div class="divPopupPlanografo" runat="server" id="ventana">
+            <div runat="server" id="div2" class="divCrearPlanografo">
+                <asp:Button ID="Button1" CssClass="btnCrearPlanografo" runat="server" Text="Agregar" OnClick="Button1_Click" />
+                <asp:Button ID="btneliminar" CssClass="btnCrearPlanografo" runat="server" OnClick="btneliminar_Click" Text="Eliminar" Visible="False" />
+                <asp:Button ID="btncerrar" CssClass="btnCrearPlanografo" runat="server" OnClick="btncerrar_Click" Text="Cerrar" />
+            </div>
             <div runat="server" class="divComponentesPlanografo" id="div1" style="width: 39.5%">
                 <div runat="server" class="divParejaComponentes" id="divAdentro1">
                     <asp:Label ID="Label3" CssClass="lblCrearPlanografo" runat="server" Text="Técnico:"></asp:Label>
@@ -114,7 +119,7 @@
                 </div>
                 <div runat="server" class="divParejaComponentes" id="div5">
                     <asp:Label ID="Label2" CssClass="lblCrearPlanografo" runat="server" Text="O.T:"></asp:Label>
-                    <asp:DropDownList ID="drpOt" CssClass="ddlCrearPlanografo" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="drpOt" CssClass="ddlCrearPlanografo" runat="server" OnSelectedIndexChanged="drpOt_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
                 </div>
                 <div runat="server" class="divParejaComponentes" id="div9">
                     <asp:Label ID="Label29" CssClass="lblCrearPlanografo" runat="server" Text="Cliente:"></asp:Label>
@@ -134,7 +139,7 @@
                     <asp:Label ID="Label4" CssClass="lblCrearPlanografo" runat="server" Text="Hora Inicio:"></asp:Label>
                     <asp:DropDownList ID="drpHoraInicio" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnSelectedIndexChanged="htazada_TextChanged"></asp:DropDownList>
                 </div>
-                <div runat="server" class="divParejaComponentes" id="div8" >
+                <div runat="server" class="divParejaComponentes" id="div8">
                     <asp:Label ID="Label28" CssClass="lblCrearPlanografo" runat="server" Text="Hora Tasada:"></asp:Label>
                     <asp:TextBox ID="htazada" CssClass="ddlCrearPlanografo" runat="server" AutoPostBack="True" OnTextChanged="htazada_TextChanged" Width="23%"></asp:TextBox>
                     <asp:TextBox ID="txtHorareal" CssClass="ddlCrearPlanografo" runat="server" Enabled="False" Width="23%"></asp:TextBox>
@@ -161,14 +166,10 @@
                 <br />
                 <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton5" AlternateText="Comentarios" runat="server" />
             </div>
-            <div runat="server" id="div2" style="padding: 5px; text-align: right">
-                <asp:Button ID="Button1" CssClass="btnCrearPlanografo" runat="server" Text="Agregar" OnClick="Button1_Click" />
-                <asp:Button ID="btneliminar" CssClass="btnCrearPlanografo" runat="server" OnClick="btneliminar_Click" Text="Eliminar" Visible="False" />
-                <asp:Button ID="btncerrar" CssClass="btnCrearPlanografo" runat="server" OnClick="btncerrar_Click" Text="Cerrar" />
-            </div>
+
         </div>
 
-        <div id="estdos" runat="server" class="divColEspera" >
+        <%--       <div id="estdos" runat="server" class="divColEspera" >
             <div id="estado1" runat="server" class="divListEspera">
                 <p class="lblOrdenesEspera">Pendiente de Repuestos</p>
             </div>
@@ -179,37 +180,52 @@
                 <p class="lblOrdenesEspera">Trabajos de Taller Externo</p>
             </div>
         </div>
-    </div>
+    </div>--%>
 
-    <script>
-        var myVar = setInterval(function () { myTimer() }, 1000);
-        var refres = setInterval(function () { refresh() }, 900000);
+        <div id="estdos" runat="server" style="display: inline-block">
+            <div id="Div13" runat="server" style="float: left; border: solid green;">
+                <p>pendiente de repuestos</p>
+                <div id="estado1" runat="server">
+                </div>
+            </div>
+            <div id="Div14" runat="server" style="float: left; border: solid green;">
+                <p>pendiente de aprobación cliente</p>
+                <div id="estado2" runat="server">
+                </div>
+            </div>
 
-        function myTimer() {
-            var d = new Date();
-            var h = d.getHours();
-            var m = d.getMinutes();
-            var s = d.getSeconds();
+            <div id="Div15" runat="server" style="float: left; border: solid green;">
+                <p>trabajos de taller externo</p>
+                <div id="estado3" runat="server">
+                </div>
+            </div>
+        </div>
 
-            if (m < 10) {
-                m = "0" + m.toString();
+        <script>
+            var myVar = setInterval(function () { myTimer() }, 1000);
+            var refres = setInterval(function () { refresh() }, 900000);
+
+            function myTimer() {
+                var d = new Date();
+                var h = d.getHours();
+                var m = d.getMinutes();
+                var s = d.getSeconds();
+
+                if (m < 10) {
+                    m = "0" + m.toString();
+                }
+                if (s < 10) {
+                    s = "0" + s.toString();
+                }
+
+                var hora = h + ":" + m + ":" + s;
+                document.getElementById("reloj").innerHTML = hora;
             }
-            if (s < 10) {
-                s = "0" + s.toString();
+
+            function refresh() {
+                document.location.href = document.location.href;
             }
-
-            var hora = h + ":" + m + ":" + s;
-            document.getElementById("reloj").innerHTML = hora;
-        }
-
-        function refresh() {
-            document.location.href = document.location.href;
-        }
-
-
-
-    </script>
-
+        </script>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

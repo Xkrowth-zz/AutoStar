@@ -88,10 +88,15 @@
         background-color: #808080;
     }
 
+.divCrearPlanografo {
+    margin-top:270px;
+    margin-left:110px;
+    position:absolute;
+}
+
 .btnCrearPlanografo {
-    margin-top:5px;
-    height:100%;
-    padding:4px;
+    height:60px;
+    width:120px;
     background-color: rgba(0, 0, 0, 0.60);
     color:white;
     font-size:14px;
@@ -127,7 +132,7 @@
     margin-top:20px;
     /*display:inline-block;*/
     width: 700px;
-    height: 350px;
+    height: 335px;
 }
 
 .divComponentesPlanografo {
@@ -193,6 +198,29 @@ font-family: Arial, Tahoma, Verdana, FreeSans, sans-serif;
     height:24px;
     width:150px;
     margin-left:20px;
+}
+
+.divPopupParqueo {
+    border: solid white;
+    background-color: rgba(0, 0, 0, 0.60);
+    margin-top:20px;
+    /*display:inline-block;*/
+    width: 900px;
+    height: 150px;
+
+}
+
+.divComponentesParqueos {
+    width:50%;
+    height: 100%;
+    float: left;
+    margin: 0px;
+    padding:0px;
+}
+
+.divParejaComponentesParqueo {
+    margin: 2px;
+    padding:0px;
 }
 
 .fechaConfig {

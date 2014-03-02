@@ -11,6 +11,7 @@ Assembly="GridViewExtended" %>
             background-size: cover;
         }
     </style>
+    <h1>Roles</h1>
         <div>
             <asp:Table CssClass="table" ID="Table1" runat="server">
                 <asp:TableRow CssClass="tableRow">
@@ -35,9 +36,6 @@ Assembly="GridViewExtended" %>
                 </asp:TableRow>
             </asp:Table>
         </div>
-
-        <h1>Roles</h1>
-        <hr/>
             <asp:Label ID="Label1" runat="server" CssClass="busquedalbl" Text="Valor a buscar:"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt"></asp:TextBox>
         <asp:DropDownList ID="DropDownList1" runat="server" CssClass="busquedatxt">
@@ -70,7 +68,7 @@ Assembly="GridViewExtended" %>
 
 
         
-            <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" Height="286px" style="margin-left: 396px; margin-right: 0px; margin-top: 137px" Width="595px" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
+            <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" DataKeyNames="idRol" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField HeaderText="idRol" InsertVisible="False" SortExpression="idRol" Visible="False">
                         <EditItemTemplate>

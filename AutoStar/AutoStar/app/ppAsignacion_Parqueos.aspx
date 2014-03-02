@@ -63,7 +63,7 @@
         
     </asp:Panel>
     
-    <asp:Label ID="boton" runat="server" Text="" TextColor="white"></asp:Label>
+    
     
 
 </asp:Content>

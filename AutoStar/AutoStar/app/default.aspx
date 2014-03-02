@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    
     <div id="crossfade">
         <img src="Images/backgrounds/MB5.jpg" alt="Image 1" />
         <img src="Images/backgrounds/J1.jpg" alt="Image 2" />
@@ -10,6 +11,13 @@
         <img src="Images/backgrounds/FL1.jpg" alt="Image 4" />        
         <img src="Images/backgrounds/MB14.jpg" alt="Image 5" />
     </div>
+    
+    <asp:Panel ID="Panel1" runat="server">
+        <asp:Login ID="Login1" runat="server" TitleText="Login"  UserNameLabelText="Usuario" PasswordLabelText="Contraseña" OnAuthenticate="Login1_Authenticate" >            
+        </asp:Login>
+
+
+    </asp:Panel>
     <hr id="hr1" />
     <asp:Image CssClass="imgLogo" ID="logoAutoStar" runat="server" ImageUrl="~/app/Images/logo.png" />
     <div>
@@ -28,7 +36,7 @@
                     <asp:Button CssClass="botonSemi" ID="Button3" runat="server" Enabled="False" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton PostBackUrl="~/app/construccion.aspx" CssClass="botonFull" ID="login" AlternateText="Login" runat="server" ImageUrl="~/app/Images/icons/iconLogin.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="login" AlternateText="Login" runat="server" ImageUrl="~/app/Images/icons/iconLogin.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppLogin.aspx','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

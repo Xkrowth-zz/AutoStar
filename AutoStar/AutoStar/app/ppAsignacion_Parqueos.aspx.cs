@@ -14,7 +14,7 @@ namespace AutoStar.app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            boton.Text = Request.QueryString["field1"];
+            
             SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();

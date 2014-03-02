@@ -282,13 +282,6 @@
     <Compile Include="app\GT_Usuario.aspx.designer.cs">
       <DependentUpon>GT_Usuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
     <Compile Include="app\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +295,13 @@
     </Compile>
     <Compile Include="app\ppAsignacion_Parqueos.aspx.designer.cs">
       <DependentUpon>ppAsignacion_Parqueos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\ppLogin.aspx.cs">
+      <DependentUpon>ppLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\ppLogin.aspx.designer.cs">
+      <DependentUpon>ppLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -407,9 +407,9 @@
     <Content Include="app\Images\icons\iconTiempos.png" />
     <Content Include="app\Images\icons\iconUsuario.png" />
     <Content Include="app\Images\logo.png" />
-    <Content Include="app\login.aspx" />
     <Content Include="app\modalBackground.css" />
     <Content Include="app\ppAsignacion_Parqueos.aspx" />
+    <Content Include="app\ppLogin.aspx" />
     <Content Include="app\Styles\Main.css" />
     <Content Include="app\default.aspx" />
     <Content Include="app\Styles\AutoStar.css" />

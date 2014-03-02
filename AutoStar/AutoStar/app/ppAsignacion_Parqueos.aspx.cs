@@ -14,6 +14,10 @@ namespace AutoStar.app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            
+>>>>>>> a7dd790eae458340e3a23f68fe2e5b2269ba2ef2
             SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();

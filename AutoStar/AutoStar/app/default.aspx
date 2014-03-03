@@ -4,12 +4,16 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <asp:Label ID="loggedin" runat="server" ></asp:Label>
+
+
     <div id="crossfade">
         <img src="Images/backgrounds/MB5.jpg" alt="Image 1" />
         <img src="Images/backgrounds/J1.jpg" alt="Image 2" />
         <img src="Images/backgrounds/MB12.jpg" alt="Image 3" />
         <img src="Images/backgrounds/FL1.jpg" alt="Image 4" />
         <img src="Images/backgrounds/MB14.jpg" alt="Image 5" />
+        
     </div>
 
 
@@ -23,7 +27,7 @@
                 <asp:Label ID="label_contraseña" runat="server" CssClass="lblLogin" Text="Contraseña:" Width="48%"></asp:Label>
                 <asp:TextBox ID="contraseña" runat="server" CssClass="tbLogin" Width="48%"></asp:TextBox>
             </div>
-            <asp:Button ID="Submit" runat="server" Text="Login" OnClick="Login1_Authenticate" />
+            
         </div>
     </asp:Panel>
 
@@ -46,7 +50,8 @@
                     <asp:Button CssClass="botonSemi" ID="Button3" runat="server" Enabled="False" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="login" AlternateText="Login" runat="server" ImageUrl="~/app/Images/icons/iconLogin.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="login" AlternateText="Login" runat="server" OnClick="Login1_Authenticate" ImageUrl="~/app/Images/icons/iconLogin.png" />
+                    <asp:ImageButton CssClass="botonFull" ID="logout" Visible = "false" AlternateText="Log out" runat="server" OnClick="logout_Click" ImageUrl="~/app/Images/icons/iconLogout.png" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

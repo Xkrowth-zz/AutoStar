@@ -18,9 +18,13 @@ namespace SGT_AutoStar.app
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + Session["idUsuario"] +" al inicio');", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + Session["idUsuario"] +" al inicio');", true);
             if(!(Session["idUsuario"] == null))
             {
+                panel_login.Visible = false;
+                login.Visible = false;
+                logout.Visible = true;
+                if (!(Session["loggedin"] == null)) { loggedin.Text = Session["loggedin"].ToString(); } 
                 string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
                 string queryString = "SELECT btn FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE idUsuario = " + Session["idUsuario"];
 
@@ -43,11 +47,11 @@ namespace SGT_AutoStar.app
                         if (!(c == null))
                         {
                             c.Enabled = true;
-                            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Existe" + "');", true);
+                            //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Existe" + "');", true);
 
 
                         }
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " No Existe" + "');", true);
+                        //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " No Existe" + "');", true);
                     }
 
                     connection.Close();
@@ -56,6 +60,12 @@ namespace SGT_AutoStar.app
 
 
                 }
+            }
+            else 
+            {
+                panel_login.Visible = true;
+                login.Visible = true;
+                logout.Visible = false;
             }
             
         }
@@ -66,8 +76,11 @@ namespace SGT_AutoStar.app
             Autenticado = LoginCorrecto(usuario.Text, contraseña.Text);             
             if (Autenticado)
             {
-
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + idUsuario + " al login');", true);
+                panel_login.Visible = false;
+                login.Visible = false;
+                logout.Visible = true;
+                if (!(Session["loggedin"] == null)) { loggedin.Text = Session["loggedin"].ToString(); }
+                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + idUsuario + " al login');", true);
                 string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
                 string queryString = "SELECT btn FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE idUsuario = "+ Session["idUsuario"];
 
@@ -90,11 +103,11 @@ namespace SGT_AutoStar.app
                         if (!(c == null))
                         {
                             c.Enabled = true;
-                            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Existe" + "');", true);
+                            //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " Existe" + "');", true);
 
 
                         }
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " No Existe" + "');", true);
+                        //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonID + " No Existe" + "');", true);
                     }
 
                     connection.Close();
@@ -106,17 +119,17 @@ namespace SGT_AutoStar.app
 
 
 
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('entro');", true);
+                //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('entro');", true);
                 //Response.Redirect("Default.aspx");
             }
 
         }
         private bool LoginCorrecto(string Usuario, string Contrasena) 
         {
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('loginCorrecto');", true);
+            //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('loginCorrecto');", true);
             string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
             //string queryString = "SELECT btn FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE nickname = @nickname AND password = @password";
-            string queryString = "SELECT idUsuario FROM GT_Usuarios WHERE nickname=@nickname and password = @password";
+            string queryString = "SELECT * FROM GT_Usuarios WHERE nickname=@nickname and password = @password";
             DataSet dataset = new DataSet();
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -128,21 +141,37 @@ namespace SGT_AutoStar.app
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
 
-                if(dt.Rows.Count>0)
+                if (dt.Rows.Count > 0)
                 {
                     Session["idUsuario"] = int.Parse(dt.Rows[0]["idUsuario"].ToString());
+                    Session["loggedin"] = dt.Rows[0]["nombre"].ToString();
                     connection.Close();
                     connection.Dispose();
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('return true');", true);
+                    //ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('return true');", true);
                     return true;
                 }
-                connection.Close();
-                connection.Dispose();
-                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('return false');", true);
-                return false;
+                else 
+                {
+                    ClientScript.RegisterStartupScript(this.GetType(), "El usuario o la contraseña es incorrecto", "alert('El usuario o la contraseña es incorrecto');", true);
+                    connection.Close();
+                    connection.Dispose();
+                    
+                    return false;
+                }
+                
             }           
              
            
+        }
+
+        protected void logout_Click(object sender , ImageClickEventArgs e) 
+        {
+            panel_login.Visible = true;
+            login.Visible = true;
+            logout.Visible = false;
+            Session["loggedin"] = null;
+            Session["idUsuario"] = null;
+            loggedin.Text = "";
         }
         
     

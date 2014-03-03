@@ -13,6 +13,15 @@ namespace SGT_AutoStar.app {
     public partial class Default {
         
         /// <summary>
+        /// loggedin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label loggedin;
+        
+        /// <summary>
         /// panel_login control.
         /// </summary>
         /// <remarks>
@@ -56,15 +65,6 @@ namespace SGT_AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox contraseña;
-        
-        /// <summary>
-        /// Submit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit;
         
         /// <summary>
         /// logoAutoStar control.
@@ -128,6 +128,15 @@ namespace SGT_AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton login;
+        
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton logout;
         
         /// <summary>
         /// Table2 control.

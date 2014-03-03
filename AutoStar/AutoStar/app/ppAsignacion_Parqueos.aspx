@@ -14,7 +14,7 @@
         <asp:Table CssClass="table" ID="Table1" runat="server">
             <asp:TableRow CssClass="tableRow">
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="btn_Asignar" AlternateText="Asignar" runat="server" ImageUrl="~/app/Images/icons/iconAsignacionTiempo.png" OnClick="btn_Asignar_Click" />
+                    <asp:ImageButton CssClass="botonFull" ID="btn_Asignar" AlternateText="Asignar" runat="server" ImageUrl="~/app/Images/icons/iconAsignarParqueo.png" OnClick="btn_Asignar_Click" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
                     <asp:ImageButton CssClass="botonFull" ID="btn_Eliminar" AlternateText="Eliminar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="liberar" />

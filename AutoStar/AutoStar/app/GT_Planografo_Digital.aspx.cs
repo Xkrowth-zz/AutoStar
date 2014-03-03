@@ -940,12 +940,17 @@ namespace AutoStar.app
                             case 9:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
                                 }
                                 if (dt_orden.Rows.Count > pos_dt_orden) // verificamos que existan ordenes pendientes
                                 {
+                                    //Button desayuno = new Button();
+                                    //desayuno.CssClass = "comidas";
+                                    //tCell1.Controls.Add(desayuno);
+
                                     string[] get_fecha = dt_orden.Rows[pos_dt_orden]["horaInicio"].ToString().Split(' ');
                                     string[] get_hora = get_fecha[1].Split(':');
 
@@ -954,7 +959,8 @@ namespace AutoStar.app
                                     DateTime fecha_seleccionada = DateTime.Parse(solo_fecha[0].ToString());
 
                                     if (get_hora[0].Equals("9") && get_hora[1].Equals("15")) // verificamos que esta sea la hora correspondiente a la celda
-                                    {
+                                    {                                       
+
                                         if (!DateTime.Equals(fecha_guardada, fecha_seleccionada))
                                         {
                                             pos_dt_orden++;
@@ -1900,6 +1906,7 @@ namespace AutoStar.app
                             case 22:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -1914,6 +1921,7 @@ namespace AutoStar.app
 
                                     if (get_hora[0].Equals("12") && get_hora[1].Equals("30")) // verificamos que esta sea la hora correspondiente a la celda
                                     {
+                                                       
                                         if (!DateTime.Equals(fecha_guardada, fecha_seleccionada))
                                         {
                                             pos_dt_orden++;
@@ -1973,6 +1981,7 @@ namespace AutoStar.app
                             case 23:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2046,6 +2055,7 @@ namespace AutoStar.app
                             case 24:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2119,6 +2129,7 @@ namespace AutoStar.app
                             case 25:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2701,6 +2712,7 @@ namespace AutoStar.app
                             case 33:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
+                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -3463,6 +3475,16 @@ namespace AutoStar.app
 
                     for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
                     {
+                        TableCell tCell2 = new TableCell();
+                        if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
+                        {
+                            //Panel desayuno = new Panel();
+                            //desayuno.CssClass = "comidas";
+                            //desayuno.Height = 30;
+                            //desayuno.BackColor = System.Drawing.Color.YellowGreen;                    
+                            //tCell2.Controls.Add(desayuno);                                                        
+                            tCell2.BackColor = System.Drawing.Color.YellowGreen;
+                        }
                         bool marcar = false;
                         if (num_cell == hora_actual)
                         {
@@ -3472,7 +3494,7 @@ namespace AutoStar.app
                         if ((num_cell % 2) == 0)
                         {
                             //tabla += "<td class='tableCellPlanografoHoras'></td>";
-                            TableCell tCell2 = new TableCell();
+                            //TableCell tCell2 = new TableCell();
                             tCell2.CssClass = "tableCellPlanografoHoras";
                             if (Inactivo)
                             {
@@ -3493,8 +3515,7 @@ namespace AutoStar.app
                         }
                         else
                         {
-                            //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";
-                            TableCell tCell2 = new TableCell();
+                            //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";                            
                             tCell2.CssClass = "tableCellPlanografoHoras_impar";
                             if (Inactivo)
                             {
@@ -3521,6 +3542,11 @@ namespace AutoStar.app
             return tabla;
         }
 
+        #region HORAS COMIDA
+
+        #endregion
+
+        #region VENTANA DE ESTADOS
         private void TresEstados(object sender, EventArgs e)
         {            
             
@@ -3633,7 +3659,8 @@ namespace AutoStar.app
                     drpOt.Items.Add(new ListItem(dt_orden.Rows[0]["numero"].ToString(), dt_orden.Rows[0]["numero"].ToString()));
                     drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
                     drpOt.Enabled = false;
-                    llenarCliente(boton.ID);
+                    drpOt.Visible = true;
+                    llenarCliente(boton.ID);                    
                     ventana.Visible = true;
                 }
             }
@@ -3642,7 +3669,9 @@ namespace AutoStar.app
                 MessageBoxShow(Page, "No se puede agregar en el día de mañana");
             }
             
-        }        
+        }
+
+        #endregion
 
         private void Revisa_Atraso(string idTecnico)
         {
@@ -3720,7 +3749,7 @@ namespace AutoStar.app
 
 
                             Eliminar_registro(idordenes);
-                            Agregar_registro(idordenes, dpTecnico, inicio, dt.Rows[0]["horaTasada"].ToString(), dpStatus, finalizado, hextra, (int)dt.Rows[0]["area"]);
+                            Agregar_registro(idordenes, dpTecnico, inicio, dt.Rows[0]["horaTasada"].ToString(), dpStatus, finalizado, hextra, (int)dt.Rows[0]["area"], (bool)dt.Rows[0]["Desayuno"], (bool)dt.Rows[0]["Almuerzo"], (bool)dt.Rows[0]["Cafe"]);
                         }
                         else
                         {
@@ -3750,7 +3779,7 @@ namespace AutoStar.app
                     }
 
                     Eliminar_registro(idordenes);
-                    Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["area"]);
+                    Agregar_registro(idordenes, dpTecnico, inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["area"], (bool)dt.Rows[0]["Desayuno"], (bool)dt.Rows[0]["Almuerzo"], (bool)dt.Rows[0]["Cafe"]);
                 }
             }
 
@@ -4060,6 +4089,8 @@ namespace AutoStar.app
                 #region AGREGAR
                 if (Button1.Text.Equals("Agregar"))
                 {
+                    bool [] comidas =  verificar_comidas(); // verifica que la orden no caiga entre las hoas de comida, y si lo hace le suma el tiempo extra
+
                     int id = int.Parse(drpOt.SelectedValue);
                     string dpTecnico = drpTecnico.SelectedValue;
 
@@ -4075,12 +4106,14 @@ namespace AutoStar.app
                     string dpStatus = drpStatus.SelectedValue;
                     string hextra = txtHoraExtra.Text;
 
+                    
+
                     if (Session["drpestado"] != null && (bool)Session["drpestado"] == true && !dpStatus.Equals("Pendiente de repuestos") && !dpStatus.Equals("Pendiente de aprobación cliente") && !dpStatus.Equals("Trabajos de taller externo"))
                     {                        
                         bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, "-1");
                         if (valido)
                         {
-                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue));
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue), comidas[0], comidas[1], comidas[2]);
                             //if (res)
                             //{
                             if (!res)
@@ -4116,7 +4149,7 @@ namespace AutoStar.app
                         bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, "-1");
                         if (valido)
                         {
-                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue));
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, false, hextra, int.Parse(drpAreas.SelectedValue), comidas[0], comidas[1], comidas[2]);
                             //if (res)
                             //{
                             Response.Redirect("GT_Planografo_Digital.aspx", false);
@@ -4133,6 +4166,9 @@ namespace AutoStar.app
                 else if (Button1.Text.Equals("Actualizar"))
                 {
                     int id = int.Parse(Session["id_modf"].ToString());
+
+                     bool [] horas_comida =  verificar_comidas_aux(id);
+
                     SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                     string query1 = "select * from GT_Ordenes where numero = '" + id + "' and Area = '" + drpAreas.SelectedValue + "' ";
                     conex.Open();
@@ -4174,7 +4210,7 @@ namespace AutoStar.app
                             if (valido)
                             {
                                 Eliminar_registro(id);
-                                bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"]);
+                                bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"], horas_comida[0], horas_comida[1], horas_comida[2]);
                                 if (!res)
                                 {
                                     Mover_modificacion(dt_num);
@@ -4187,7 +4223,7 @@ namespace AutoStar.app
                         else
                         {
                             Eliminar_registro(id);
-                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"]);
+                            bool res = Agregar_registro(id, dpTecnico, fechainicio, htazad, dpStatus, (bool)dt_num.Rows[0]["pasado"], hextra, (int)dt_num.Rows[0]["Area"], horas_comida[0], horas_comida[1], horas_comida[2]);
                             if (!res)
                             {
                                 Mover_modificacion(dt_num);
@@ -4202,6 +4238,181 @@ namespace AutoStar.app
                 #endregion
             }
 
+        }
+
+        private bool[] verificar_comidas_aux(int id)
+        {            
+
+            SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query1 = "select * from GT_Ordenes where numero = '" + id + "' and Area = '" + drpAreas.SelectedValue + "' ";
+            conex.Open();
+
+            SqlCommand cmd1 = new SqlCommand(query1, conex);
+            SqlDataAdapter dad = new SqlDataAdapter(cmd1);
+            DataTable dt_num = new DataTable();
+            dad.Fill(dt_num);
+
+            bool[] comidas = new bool[3] { (bool)dt_num.Rows[0]["Desayuno"], (bool)dt_num.Rows[0]["Almuerzo"], (bool)dt_num.Rows[0]["Cafe"] };
+
+            #region  convertimos los tiempos de timespan a datetime
+            TimeSpan droptimeinicio = TimeSpan.Parse(drpHoraInicio.Text);
+            DateTime inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimeinicio.Hours, droptimeinicio.Minutes, droptimeinicio.Seconds);
+
+            TimeSpan droptimefinal = TimeSpan.Parse(txthorafinal.Text);
+            DateTime final = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimefinal.Hours, droptimefinal.Minutes, droptimefinal.Seconds);
+
+            TimeSpan limite = new TimeSpan(17, 30, 00);
+            if (droptimefinal > limite)
+            {
+                TimeSpan limite_inicio = new TimeSpan(7, 30, 00);
+
+                TimeSpan resta = droptimefinal.Subtract(limite);
+
+                limite_inicio = limite_inicio.Add(resta);
+                droptimefinal = limite_inicio;
+                final = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimefinal.Hours, droptimefinal.Minutes, droptimefinal.Seconds);
+                final = final.AddDays(1);
+            }
+            #endregion
+
+            #region DESAYUNO
+            TimeSpan inicio_desayuno = new TimeSpan(9, 15, 00);
+            TimeSpan final_desayuno = new TimeSpan(9, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_desayuno && inicio.TimeOfDay < final_desayuno) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_desayuno) || (inicio.TimeOfDay < inicio_desayuno && final.TimeOfDay > final_desayuno))
+            {
+                if (!((bool)dt_num.Rows[0]["Desayuno"]))
+                {
+                    string[] tiemp_extra = txtHoraExtra.Text.Split(',');
+                    int min = int.Parse(tiemp_extra[1].ToString());
+                    min = min + 2;
+                    txtHoraExtra.Text = tiemp_extra[0] + "," + min;
+                    comidas[0] = true;
+                }
+            }
+            else
+            {
+                comidas[0] = false;
+            }
+
+            #endregion
+
+            #region ALMUERZO
+            TimeSpan inicio_almuerzo = new TimeSpan(12, 30, 00);
+            TimeSpan final_almuerzo = new TimeSpan(13, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
+            {
+                if (!((bool)dt_num.Rows[0]["Almuerzo"]))
+                {
+                    string[] tiemp_extra = txtHoraExtra.Text.Split(',');
+                    int hor = int.Parse(tiemp_extra[0].ToString());
+                    hor = hor + 1;
+                    txtHoraExtra.Text = hor + "," + tiemp_extra[1];
+                    comidas[1] = true;
+                }
+            }
+            else
+            {
+                comidas[1] = false;
+            }
+            #endregion
+
+            #region CAFE
+            TimeSpan inicio_cafe = new TimeSpan(15, 15, 00);
+            TimeSpan final_cafe = new TimeSpan(15, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_cafe && inicio.TimeOfDay < final_cafe) || (final.TimeOfDay >= inicio_cafe && final.TimeOfDay <= final_cafe) || (inicio.TimeOfDay < inicio_cafe && final.TimeOfDay > final_cafe))
+            {
+                if (!((bool)dt_num.Rows[0]["Cafe"]))
+                {
+                    string[] tiemp_extra = txtHoraExtra.Text.Split(',');
+                    int min = int.Parse(tiemp_extra[1].ToString());
+                    min = min + 2;
+                    txtHoraExtra.Text = tiemp_extra[0] + "," + min;
+                    comidas[2] = true;
+                }
+            }
+            else
+            {
+                comidas[2] = false;
+            }
+
+            #endregion
+
+            return comidas;
+        }
+
+        private bool[] verificar_comidas()
+        {
+            bool[] comidas = new bool[3] {false, false, false };
+            #region  convertimos los tiempos de timespan a datetime
+            TimeSpan droptimeinicio = TimeSpan.Parse(drpHoraInicio.Text);
+            DateTime inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimeinicio.Hours, droptimeinicio.Minutes, droptimeinicio.Seconds);
+
+            TimeSpan droptimefinal = TimeSpan.Parse(txthorafinal.Text);
+            DateTime final = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimefinal.Hours, droptimefinal.Minutes, droptimefinal.Seconds);
+
+            TimeSpan limite = new TimeSpan(17, 30, 00);
+            if (droptimefinal > limite)
+            {
+                TimeSpan limite_inicio = new TimeSpan(7, 30, 00);
+
+                TimeSpan resta = droptimefinal.Subtract(limite);
+
+                limite_inicio = limite_inicio.Add(resta);
+                droptimefinal = limite_inicio;
+                final = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimefinal.Hours, droptimefinal.Minutes, droptimefinal.Seconds);
+                final = final.AddDays(1);
+            }
+            #endregion
+
+            #region DESAYUNO
+            TimeSpan inicio_desayuno = new TimeSpan(9, 15, 00);
+            TimeSpan final_desayuno = new TimeSpan(9, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_desayuno && inicio.TimeOfDay < final_desayuno) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_desayuno) || (inicio.TimeOfDay < inicio_desayuno && final.TimeOfDay > final_desayuno))
+            {
+                string [] tiemp_extra = txtHoraExtra.Text.Split(',');
+                int min = int.Parse(tiemp_extra[1].ToString());
+                min = min + 2;
+                txtHoraExtra.Text = tiemp_extra[0] + "," + min;
+                comidas[0] = true;
+            }
+
+            #endregion
+
+            #region ALMUERZO
+            TimeSpan inicio_almuerzo = new TimeSpan(12, 30, 00);
+            TimeSpan final_almuerzo = new TimeSpan(13, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
+            {
+                string[] tiemp_extra = txtHoraExtra.Text.Split(',');
+                int hor = int.Parse(tiemp_extra[0].ToString());
+                hor = hor + 1;
+                txtHoraExtra.Text = hor + "," + tiemp_extra[1];
+                comidas[1] = true;
+            }
+
+            #endregion
+
+            #region DESAYUNO
+            TimeSpan inicio_cafe = new TimeSpan(15, 15, 00);
+            TimeSpan final_cafe = new TimeSpan(15, 30, 00);
+
+            if ((inicio.TimeOfDay >= inicio_cafe && inicio.TimeOfDay < final_cafe) || (final.TimeOfDay >= inicio_cafe && final.TimeOfDay <= final_cafe) || (inicio.TimeOfDay < inicio_cafe && final.TimeOfDay > final_cafe))
+            {
+                string[] tiemp_extra = txtHoraExtra.Text.Split(',');
+                int min = int.Parse(tiemp_extra[1].ToString());
+                min = min + 2;
+                txtHoraExtra.Text = tiemp_extra[0] + "," + min;
+                comidas[2] = true;
+            }
+
+            #endregion
+
+            return comidas;
         }
 
         private void Eliminar_en_estado(string p)
@@ -4536,7 +4747,7 @@ namespace AutoStar.app
 
                         string htazad = dt.Rows[0]["horaTasada"].ToString();
                         Eliminar_registro(idordenes);
-                        Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"]);
+                        Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"], (bool)dt.Rows[0]["Desayuno"], (bool)dt.Rows[0]["Almuerzo"], (bool)dt.Rows[0]["Cafe"]);
                     }
                 }
             }
@@ -4573,16 +4784,13 @@ namespace AutoStar.app
             }
         }
 
-        private bool Agregar_registro(int id, string dpTecnico, DateTime dpHoraInicio, string htazada, string dpStatus, bool finalizado, string hextra, int area)
+        private bool Agregar_registro(int id, string dpTecnico, DateTime dpHoraInicio, string htazada, string dpStatus, bool finalizado, string hextra, int area, bool desayuno, bool almuerzo, bool cafe)
         {
             bool movido = false;
             DateTime fechainicio_Aux = DateTime.Parse(Session["fecha_consulta"].ToString());// Calendar1.SelectedDate;
             DateTime fechainicio = dpHoraInicio;// new DateTime(fechainicio_Aux.Year, fechainicio_Aux.Month, fechainicio_Aux.Day, 0, 0, 0);
 
-
-
             DateTime fechafinal = fechainicio;
-
 
             TimeSpan formate = formatear(htazada);
             TimeSpan horextra = formatear(hextra);
@@ -4608,7 +4816,7 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [Area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [area], [Desayuno], [Almuerzo], [Cafe]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area, @desayuno, @almuerzo, @cafe ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fechafinal;
@@ -4618,6 +4826,9 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
+                cmd.Parameters.Add("@desayuno", SqlDbType.Int).Value = desayuno;
+                cmd.Parameters.Add("@almuerzo", SqlDbType.Int).Value = almuerzo;
+                cmd.Parameters.Add("@cafe", SqlDbType.Int).Value = cafe;
                 try
                 {
                     //Ejecuto
@@ -4647,7 +4858,7 @@ namespace AutoStar.app
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [area], [Desayuno], [Almuerzo], [Cafe]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area, @desayuno, @almuerzo, @cafe ) ", con, tr);
                 cmd.Parameters.Add("@numero", SqlDbType.Int).Value = id;
                 cmd.Parameters.Add("@horainicio", SqlDbType.DateTime).Value = fechainicio;
                 cmd.Parameters.Add("@horafinal", SqlDbType.DateTime).Value = fecha_partida;
@@ -4657,6 +4868,9 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
+                cmd.Parameters.Add("@desayuno", SqlDbType.Int).Value = desayuno;
+                cmd.Parameters.Add("@almuerzo", SqlDbType.Int).Value = almuerzo;
+                cmd.Parameters.Add("@cafe", SqlDbType.Int).Value = cafe;
                 DateTime fecha_n_inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
                 fecha_n_inicio = fecha_n_inicio.AddDays(1);
 
@@ -4686,7 +4900,7 @@ namespace AutoStar.app
                 con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                 con.Open();
                 tr = con.BeginTransaction(IsolationLevel.Serializable);
-                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [Area]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area ) ", con, tr);
+                cmd = new SqlCommand("INSERT INTO [dbo].[GT_Ordenes] ([numero],[horaInicio],[horaTasada],[horaFinal],[status],[idTecnico], [pasado], [horaextra], [Area], [Desayuno], [Almuerzo], [Cafe]) VALUES(@numero, @horainicio, @horatasada, @horafinal, @status, @idtecnico, @finalizado, @horaextras, @area, @desayuno, @almuerzo, @cafe ) ", con, tr);
 
                 TimeSpan diferencia = fechafinal.Subtract(fecha_partida);
                 fecha_n_final = fecha_n_final.Add(diferencia);
@@ -4712,6 +4926,9 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@finalizado", SqlDbType.Int).Value = finalizado;
                 cmd.Parameters.Add("@horaextras", SqlDbType.VarChar).Value = hextra;
                 cmd.Parameters.Add("@area", SqlDbType.Int).Value = area;
+                cmd.Parameters.Add("@desayuno", SqlDbType.Int).Value = desayuno;
+                cmd.Parameters.Add("@almuerzo", SqlDbType.Int).Value = almuerzo;
+                cmd.Parameters.Add("@cafe", SqlDbType.Int).Value = cafe;
                 try
                 {
                     //Ejecuto
@@ -4791,7 +5008,7 @@ namespace AutoStar.app
 
                     string htazad = dt.Rows[0]["horaTasada"].ToString();
                     Eliminar_registro(idordenes);
-                    Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"]);
+                    Agregar_registro(idordenes, dpTecnico, new_inicio, htazad, dpStatus, finalizado, dt.Rows[0]["horaExtra"].ToString(), (int)dt.Rows[0]["Area"], (bool)dt.Rows[0]["Desayuno"], (bool)dt.Rows[0]["Almuerzo"], (bool)dt.Rows[0]["Cafe"]);
                 }
                 return actual;
             }
@@ -5209,7 +5426,7 @@ namespace AutoStar.app
             con2.Close();
 
             return Iniciales;
-        }
+        }        
 
     }
 }

@@ -379,6 +379,7 @@
     <Content Include="app\Images\icons\iconBorrar.png" />
     <Content Include="app\Images\icons\iconBuscar.png" />
     <Content Include="app\Images\icons\iconCambioEstado.png" />
+    <Content Include="app\Images\icons\iconComentarios.png" />
     <Content Include="app\Images\icons\iconConfigGeneral.png" />
     <Content Include="app\Images\icons\iconConsultas.png" />
     <Content Include="app\Images\icons\iconCrear.png" />

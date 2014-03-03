@@ -27,6 +27,8 @@
         </asp:Table>
     </div>
 
+    
+
     <script type="text/javascript">
 
         //function popup(mylink, windowname) {
@@ -55,6 +57,8 @@
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
 
+    <div class="divParqueoLayout" >
+    </div>
 
     <div>
         <asp:Table ID="bahiasMercedez" CssClass="table" runat="server" Visible="False">

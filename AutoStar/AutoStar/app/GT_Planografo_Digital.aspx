@@ -164,9 +164,8 @@
                 <br />
                 <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton4" AlternateText="Asignacion de Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconAsignacionParqueo.png" />
                 <br />
-                <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton5" AlternateText="Comentarios" runat="server" />
+                <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton5" AlternateText="Comentarios" runat="server" ImageUrl="~/app/Images/icons/iconComentarios.png" />
             </div>
-
         </div>
 
         <%--       <div id="estdos" runat="server" class="divColEspera" >
@@ -182,24 +181,45 @@
         </div>
     </div>--%>
 
-        <div id="estdos" runat="server" style="display: inline-block">
-            <div id="Div13" runat="server" style="float: left; border: solid green;">
-                <p>pendiente de repuestos</p>
+        <div id="estdos" runat="server" class="divColEspera">
+            <div id="Div13" runat="server" class="divListEspera">
+                <p>Pendiente de Repuestos</p>
                 <div id="estado1" runat="server">
                 </div>
             </div>
-            <div id="Div14" runat="server" style="float: left; border: solid green;">
-                <p>pendiente de aprobación cliente</p>
+            <div id="Div14" runat="server" class="divListEspera">
+                <p>Pendiente de Aprobación</p>
                 <div id="estado2" runat="server">
                 </div>
             </div>
 
-            <div id="Div15" runat="server" style="float: left; border: solid green;">
-                <p>trabajos de taller externo</p>
+            <div id="Div15" runat="server" class="divListEspera">
+                <p>Trabajos de Taller Externo</p>
                 <div id="estado3" runat="server">
                 </div>
             </div>
         </div>
+
+
+
+<%--        <div id="Div16" runat="server" style="display: inline-block">
+            <div id="Div17" runat="server" style="float: left; border: solid green;">
+                <p>pendiente de repuestos</p>
+                <div id="Div18" runat="server">
+                </div>
+            </div>
+            <div id="Div19" runat="server" style="float: left; border: solid green;">
+                <p>pendiente de aprobación cliente</p>
+                <div id="Div20" runat="server">
+                </div>
+            </div>
+
+            <div id="Div21" runat="server" style="float: left; border: solid green;">
+                <p>trabajos de taller externo</p>
+                <div id="Div22" runat="server">
+                </div>
+            </div>
+        </div>--%>
 
         <script>
             var myVar = setInterval(function () { myTimer() }, 1000);

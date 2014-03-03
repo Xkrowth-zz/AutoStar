@@ -51,7 +51,8 @@
         <asp:Table CssClass="table" ID="Table3" runat="server">
             <asp:TableRow CssClass="tableRow">
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton ID="ImageButton6" runat="server" CssClass="botonFull" PostBackUrl="~/app/GT_Parametros.aspx" AlternateText="Parametros"  ImageUrl="~/app/Images/icons/iconParametros.png" />
+                    <asp:Button CssClass="botonSemi" ID="Button2" runat="server" Enabled="False" />
+                    <%--<asp:ImageButton ID="ImageButton6" runat="server" CssClass="botonFull" PostBackUrl="~/app/GT_Parametros.aspx" AlternateText="Parametros"  ImageUrl="~/app/Images/icons/iconParametros.png" />--%>
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
                     <asp:Button CssClass="botonSemi" ID="Button21" runat="server" Enabled="False" />

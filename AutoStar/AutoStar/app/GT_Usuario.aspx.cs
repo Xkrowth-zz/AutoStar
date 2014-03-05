@@ -280,6 +280,8 @@ namespace AutoStar.app
             String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList4")).SelectedItem.Text;
             String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
             bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
+            String nickname = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_usuario")).Text;
+            String password = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_contraseña")).Text;               
             SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             conn.Open();
             SqlCommand cmd = new SqlCommand("updateUsuario", conn);
@@ -292,6 +294,9 @@ namespace AutoStar.app
             cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
             cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
             cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+            cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
+            cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+
             cmd.ExecuteReader();
             GridView1.EditIndex = -1;
             DataBind();

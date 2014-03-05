@@ -1,12 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Usuario.aspx.cs" Inherits="AutoStar.app.GT_Usuario" EnableEventValidation="false" %>
-
-
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB6.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -81,7 +81,7 @@
 
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
+    <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" DataKeyNames="idUsuario" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
                 <FooterTemplate>
@@ -177,6 +177,30 @@
                     <asp:TextBox ID="txtfld_insert_comentarios" runat="server" TextMode="MultiLine"></asp:TextBox>                    
                 </FooterTemplate>
             </asp:TemplateField>
+            
+            <asp:TemplateField HeaderText="Usuario" SortExpression="nickName">
+                <EditItemTemplate>
+                    <asp:TextBox ID="txtfld_usuario" runat="server" Text='<%# Bind("nickname") %>' ></asp:TextBox>                    
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lbl_usuario" runat="server" Text='<%# Bind("nickname") %>'></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtfld_insert_usuario" runat="server" TextMode="SingleLine"></asp:TextBox>                    
+                </FooterTemplate>
+            </asp:TemplateField>
+            
+            <asp:TemplateField HeaderText="Contraseña" SortExpression="password">
+                <EditItemTemplate>
+                    <asp:TextBox ID="txtfld_contraseña" runat="server" Text='<%# Bind("password") %>' TextMode="Password"></asp:TextBox>                    
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="lbl_contraseña" runat="server" Text='<%# Bind("password") %>' TextMode="Password"></asp:Label>
+                </ItemTemplate>
+                <FooterTemplate>
+                    <asp:TextBox ID="txtfld_insert_contraseña" runat="server" TextMode="Password"></asp:TextBox>                    
+                </FooterTemplate>
+            </asp:TemplateField>            
 
             <asp:TemplateField HeaderText="idUsuario" SortExpression="idUsuario" Visible="false">
                 <EditItemTemplate>
@@ -187,7 +211,7 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
 

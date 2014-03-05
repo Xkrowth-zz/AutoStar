@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" EnableEventValidation="false" AutoEventWireup="true" CodeBehind="GT_Status_Orden.aspx.cs" Inherits="AutoStar.app.GT_Estado_Orden" %>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB8.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -62,7 +64,7 @@
     </asp:DropDownList>
 
 
-        <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AutoGenerateColumns="False" DataKeyNames="idStatus" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" onselectedindexchanged="OnSelectedIndexChanged" onselectedindexchanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True">
+        <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" _showFooterWhenEmpty="true" AutoGenerateColumns="False" DataKeyNames="idStatus" DataSourceID="SqlDataSource1" AllowPaging="True" AllowSorting="True" ShowHeaderWhenEmpty="True" onselectedindexchanged="OnSelectedIndexChanged" onselectedindexchanging="GridView1_SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True">
             <Columns>
                 <asp:TemplateField FooterText="Informacion a insertar:"></asp:TemplateField>
 
@@ -113,7 +115,7 @@
                     </FooterTemplate>
                 </asp:TemplateField>
             </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
 
     

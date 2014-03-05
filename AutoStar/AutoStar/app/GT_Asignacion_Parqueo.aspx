@@ -57,8 +57,8 @@
     </asp:DropDownList>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
 
-    <div class="divParqueoLayout" >
-    </div>
+  <%--  <div class="divParqueoLayout" >
+    </div>--%>
 
     <div>
         <asp:Table ID="bahiasMercedez" CssClass="table" runat="server" Visible="False">
@@ -273,129 +273,129 @@
     </div>
 
 
-    <asp:Panel ID="parqueo_Nivel_1" runat="server" Visible="false">
+    <asp:Panel ID="parqueo_Nivel_1" CssClass="divParqueoLayout" runat="server" Visible="false">
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_022" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_022','Search','width=1025px,height=410px,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_023" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_023','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo1" ID="btn_022" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_022','Search','width=1025px,height=410px,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_024" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_024','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_025" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_025','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_026" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_026','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo2" ID="btn_023" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_023','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_027" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_027','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo3" ID="btn_024" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_024','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_028" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_028','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo4" ID="btn_025" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_025','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_029" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_029','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_030" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_030','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_031" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_031','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo5" ID="btn_026" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_026','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_032" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_032','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo6" ID="btn_027" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_027','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_033" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_033','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo7" ID="btn_028" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_028','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_034" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_034','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo8" ID="btn_029" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_029','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_035" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_035','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo9" ID="btn_030" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_030','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_036" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_036','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_037" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_037','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_038" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_038','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_039" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_039','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_040" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_040','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_041" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_041','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-        <asp:ImageButton CssClass="botonFull" ID="btn_042" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClick="asignarParqueo" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_042','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1'); ppAsignacion_Parqueo.aspx.boton.Text = this.ID;" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_043" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_043','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_044" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_044','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_045" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_045','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
-
-        <asp:ImageButton CssClass="botonFull" ID="btn_046" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_046','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo10" ID="btn_031" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_031','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_047" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_047','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo11" ID="btn_032" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_032','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_048" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_048','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo12" ID="btn_033" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_033','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_049" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_049','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo13" ID="btn_034" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_034','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_050" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_050','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo14" ID="btn_035" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_035','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_051" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_051','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo15" ID="btn_036" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_036','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_052" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_052','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo16" ID="btn_037" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_037','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_053" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_053','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo17" ID="btn_038" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_038','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_054" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_054','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo18" ID="btn_039" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_039','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_055" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_055','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo19" ID="btn_040" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_040','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_056" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_056','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo20" ID="btn_041" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_041','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo21" ID="btn_042" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClick="asignarParqueo" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_042','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1'); ppAsignacion_Parqueo.aspx.boton.Text = this.ID;" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_057" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_057','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo22" ID="btn_043" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_043','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_058" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_058','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo23" ID="btn_044" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_044','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_059" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_059','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo24" ID="btn_045" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_045','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_060" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_060','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo25" ID="btn_046" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_046','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_061" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_061','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_062" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_062','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo26" ID="btn_047" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_047','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_063" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_063','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo27" ID="btn_048" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_048','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_064" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_064','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo28" ID="btn_049" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_049','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_065" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_065','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo29" ID="btn_050" AlternateText="Grua" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_050','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_066" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_066','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo30" ID="btn_051" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_051','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_067" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_067','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo31" ID="btn_052" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_052','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_068" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_068','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo32" ID="btn_053" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_053','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_069" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_069','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <%--<asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_054" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_054','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_070" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_070','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_055" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_055','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_071" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_071','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_056" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_056','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_072" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_072','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_057" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_057','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_073" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_073','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_058" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_058','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_074" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_074','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_059" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_059','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_075" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_075','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_060" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_060','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_076" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_076','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_061" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_061','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_077" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_077','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_062" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_062','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_078" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_078','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_063" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_063','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_079" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_079','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_064" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_064','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
 
-        <asp:ImageButton CssClass="botonFull" ID="btn_080" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_080','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_065" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_065','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_066" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_066','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_067" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_067','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_068" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_068','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_069" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_069','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_070" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_070','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_071" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_071','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_072" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_072','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_073" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_073','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_074" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_074','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_075" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_075','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_076" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_076','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_077" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_077','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_078" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_078','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_079" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_079','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />
+
+        <asp:ImageButton CssClass="btnAsignarParqueo" ID="btn_080" AlternateText="Bahia" runat="server" ImageUrl="~/app/Images/icons/iconParqueoLibre.png" OnClientClick="window.showModalDialog('http://localhost:1874/app/ppAsignacion_Parqueos.aspx?field1=btn_080','Search','width=550,height=170,left=150,top=200,scrollbars=1,toolbar=no,status=1')" />--%>
 
     </asp:Panel>
 

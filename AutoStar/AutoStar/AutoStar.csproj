@@ -408,6 +408,7 @@
     <Content Include="app\Images\icons\iconTiempos.png" />
     <Content Include="app\Images\icons\iconUsuario.png" />
     <Content Include="app\Images\logo.png" />
+    <Content Include="app\Images\logoRD.png" />
     <Content Include="app\modalBackground.css" />
     <Content Include="app\ppAsignacion_Parqueos.aspx" />
     <Content Include="app\ppLogin.aspx" />

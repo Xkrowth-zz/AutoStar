@@ -158,13 +158,16 @@
                 <br />
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtHoraExtra" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtHoraExtra" ErrorMessage="Introducir formato H,M en Ampliación de Tiempo" ValidationExpression="[0-9]*[0-9],[0-9]*[0-9]" ValidationGroup="validar" ForeColor="Red" Font-Size="Small"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="drpOt" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="drpTecnico" ErrorMessage="*" ValidationGroup="validar"></asp:RequiredFieldValidator>
+                <asp:TextBox ID="txtComentario" CssClass="tbComentariosPlanografo" runat="server" TextMode="MultiLine" Visible="False" ></asp:TextBox>
             </div>
             <div runat="server" id="div4" class="divComponentesPlanografo" style="width: 15.5%">
                 <asp:ImageButton PostBackUrl="~/app/GT_Orden_Trabajo.aspx" CssClass="btnPopupToolbar" ID="ordenTrabajo" AlternateText="Orden de Trabajo" runat="server" ImageUrl="~/app/Images/icons/iconOrdenTrabajo.png" />
                 <br />
                 <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton4" AlternateText="Asignacion de Parqueos" runat="server" ImageUrl="~/app/Images/icons/iconAsignacionParqueo.png" />
                 <br />
-                <asp:ImageButton PostBackUrl="~/app/GT_Asignacion_Parqueo.aspx" CssClass="btnPopupToolbar" ID="ImageButton5" AlternateText="Comentarios" runat="server" ImageUrl="~/app/Images/icons/iconComentarios.png" />
+                <asp:ImageButton CssClass="btnPopupToolbar" ID="ImageButton5" AlternateText="Comentarios" runat="server" ImageUrl="~/app/Images/icons/iconComentarios.png" OnClick="ImageButton5_Click1" />
             </div>
         </div>
 
@@ -182,22 +185,23 @@
     </div>--%>
 
         <div id="estdos" runat="server" class="divColEspera">
+            <asp:Button ID="btncerrarestados" runat="server" CssClass="btnCerrarOrdenesEspera" Text="Cerrar" OnClick="btncerrarestados_Click" />
             <div id="Div13" runat="server" class="divListEspera">
-                <p>Pendiente de Repuestos</p>
+                <p>Pendiente de Repuestos    |</p>
                 <div id="estado1" runat="server">
                 </div>
             </div>
             <div id="Div14" runat="server" class="divListEspera">
-                <p>Pendiente de Aprobación</p>
+                <p>Pendiente de Aprobación    |</p>
                 <div id="estado2" runat="server">
                 </div>
             </div>
-
             <div id="Div15" runat="server" class="divListEspera">
                 <p>Trabajos de Taller Externo</p>
                 <div id="estado3" runat="server">
                 </div>
             </div>
+            
         </div>
 
 
@@ -246,6 +250,7 @@
                 document.location.href = document.location.href;
             }
         </script>
+    </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 </asp:Content>

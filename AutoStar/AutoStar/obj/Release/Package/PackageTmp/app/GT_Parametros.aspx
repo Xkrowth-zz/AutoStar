@@ -1,8 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Parametros.aspx.cs" Inherits="AutoStar.app.GT_Parametros" EnableEventValidation="false"%>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <style type="text/css" class="bodyUsuarios">
+        body {
+            background-image: url('/app/Images/backgrounds/MB13.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+    <h1>Parámetros</h1>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" DeleteCommand="deleteParametro" DeleteCommandType="StoredProcedure" InsertCommand="insertParametro" InsertCommandType="StoredProcedure" SelectCommand="selectParametros" SelectCommandType="StoredProcedure" UpdateCommand="updateParametro" UpdateCommandType="StoredProcedure">
         <DeleteParameters>
             <asp:Parameter Name="idParametro" Type="Int32" />
@@ -24,13 +33,7 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <style type="text/css" class="bodyUsuarios">
-        body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
+    
         <div>
             <asp:Table CssClass="table" ID="Table1" runat="server">
                 <asp:TableRow CssClass="tableRow">
@@ -56,7 +59,7 @@
             </asp:Table>
         </div>
 
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridViewConfig" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
+    <CCS:GridViewExtended ID="GridView1" runat="server" _showFooterWhenEmpty="true" CssClass="GridViewConfig" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idParametro" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" OnRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True" ShowFooter="True">
         
         <Columns>
             <asp:TemplateField FooterText="Informacion a insertar:"></asp:TemplateField>
@@ -126,7 +129,7 @@
             </asp:TemplateField>
 
         </Columns>
-    </asp:GridView>
+    </CCS:GridViewExtended>
 
 
 

@@ -1,10 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/app/MasterPage.Master" AutoEventWireup="true" CodeBehind="GT_Acceso_Menu.aspx.cs" EnableEventValidation="false" Inherits="AutoStar.app.GT_Acceso_Menu1" %>
+<%@ Register TagPrefix="CCS" Namespace="CustomControls" 
+Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style type="text/css" class="bodyUsuarios">
         body {
-            background-image: url('/app/Images/backgrounds/MB3.jpg');
+            background-image: url('/app/Images/backgrounds/MB16.jpg');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -59,8 +61,8 @@
 
         
             <asp:Label ID="Label1" runat="server" Text="Valor a buscar:" CssClass="busquedalbl"></asp:Label>
-    <asp:TextBox ID="TextBox1" runat="server" ></asp:TextBox>
-    <asp:DropDownList ID="DropDownList1" runat="server">
+    <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt" ></asp:TextBox>
+    <asp:DropDownList ID="DropDownList1" runat="server" CssClass="busquedatxt">
         <asp:ListItem>Rol</asp:ListItem>
         <asp:ListItem>Opcion</asp:ListItem>        
     </asp:DropDownList>
@@ -68,7 +70,7 @@
             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Rol"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Opcion_Menu"></asp:SqlDataSource>
         
-            <asp:GridView ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnRowCreated="GridView1_RowCreated" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging"  DataKeyNames="idAcceso" ShowFooter="True" ShowHeaderWhenEmpty="True">
+            <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" runat="server" AllowPaging="True" AllowSorting="True" _showFooterWhenEmpty="true" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnRowCreated="GridView1_RowCreated" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="GridView1_SelectedIndexChanging"  DataKeyNames="idAcceso" ShowFooter="True" ShowHeaderWhenEmpty="True">
                 <Columns>
                     <asp:TemplateField>
                         <FooterTemplate>
@@ -134,5 +136,5 @@
                     </asp:TemplateField>
 
                 </Columns>
-            </asp:GridView>
+            </CCS:GridViewExtended>
 </asp:Content>

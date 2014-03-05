@@ -3,10 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <asp:Label ID="loggedin" runat="server" ></asp:Label>
-
-
+    
     <div id="crossfade">
         <img src="Images/backgrounds/MB5.jpg" alt="Image 1" />
         <img src="Images/backgrounds/J1.jpg" alt="Image 2" />
@@ -16,6 +13,7 @@
         
     </div>
 
+    <asp:Label ID="loggedin" CssClass="lblLoggedIn" runat="server" ></asp:Label>
 
     <asp:Panel ID="panel_login" CssClass="panelLogin" runat="server">
         <div class="divLogin">

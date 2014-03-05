@@ -381,7 +381,7 @@ namespace AutoStar.app
                     etiqueta.Text = dt.Rows[x]["nombre"].ToString();
                     etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
                     etiqueta.Click += new EventHandler(this.TresEstados);
-                    //etiqueta.CssClass = "labelTecnicos";
+                    etiqueta.CssClass = "btnOrdenesEspera";
 
                     tCell.Controls.Add(etiqueta);
 
@@ -447,7 +447,7 @@ namespace AutoStar.app
                                             int tiempo_Trans = resta.Hours * 60 + resta.Minutes;
 
 
-                                            int columnas = tiempo_Trans / 15;            
+                                            int columnas = tiempo_Trans / 15;
 
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
@@ -529,7 +529,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -539,7 +539,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -606,7 +606,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -616,7 +616,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -681,7 +681,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -691,7 +691,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -756,7 +756,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -766,7 +766,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -831,7 +831,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -841,7 +841,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -906,7 +906,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -916,7 +916,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -940,7 +940,7 @@ namespace AutoStar.app
                             case 9:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                 tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -959,7 +959,7 @@ namespace AutoStar.app
                                     DateTime fecha_seleccionada = DateTime.Parse(solo_fecha[0].ToString());
 
                                     if (get_hora[0].Equals("9") && get_hora[1].Equals("15")) // verificamos que esta sea la hora correspondiente a la celda
-                                    {                                       
+                                    {
 
                                         if (!DateTime.Equals(fecha_guardada, fecha_seleccionada))
                                         {
@@ -986,7 +986,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -996,7 +996,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1060,7 +1060,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1070,7 +1070,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1134,7 +1134,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1144,7 +1144,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1208,7 +1208,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1218,7 +1218,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1282,7 +1282,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1292,7 +1292,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1356,7 +1356,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1366,7 +1366,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1430,7 +1430,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1440,7 +1440,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1504,7 +1504,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1514,7 +1514,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1578,7 +1578,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1588,7 +1588,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1652,7 +1652,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1662,7 +1662,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1726,7 +1726,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1736,7 +1736,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1799,7 +1799,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1809,7 +1809,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1872,7 +1872,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1882,7 +1882,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1906,7 +1906,7 @@ namespace AutoStar.app
                             case 22:
                                 //tabla += "<td class='tableCellPlanografoHoras'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                 tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -1921,7 +1921,7 @@ namespace AutoStar.app
 
                                     if (get_hora[0].Equals("12") && get_hora[1].Equals("30")) // verificamos que esta sea la hora correspondiente a la celda
                                     {
-                                                       
+
                                         if (!DateTime.Equals(fecha_guardada, fecha_seleccionada))
                                         {
                                             pos_dt_orden++;
@@ -1947,7 +1947,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -1957,7 +1957,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -1981,7 +1981,7 @@ namespace AutoStar.app
                             case 23:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                 tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2021,7 +2021,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2031,7 +2031,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2055,7 +2055,7 @@ namespace AutoStar.app
                             case 24:
                                 //tabla += "<td class='tableCellPlanografoHoras'";
                                 tCell1.CssClass = "tableCellPlanografoHoras";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                 tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2095,7 +2095,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2105,7 +2105,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2129,7 +2129,7 @@ namespace AutoStar.app
                             case 25:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                 tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2169,7 +2169,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2179,7 +2179,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2242,7 +2242,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2252,7 +2252,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2315,7 +2315,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2325,7 +2325,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2388,7 +2388,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2398,7 +2398,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2461,7 +2461,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2471,7 +2471,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2534,7 +2534,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2544,7 +2544,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2606,7 +2606,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2616,7 +2616,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2678,7 +2678,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2688,7 +2688,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2712,7 +2712,7 @@ namespace AutoStar.app
                             case 33:
                                 //tabla += "<td class='tableCellPlanografoHoras_impar'";  
                                 tCell1.CssClass = "tableCellPlanografoHoras_impar";
-                                tCell1.BackColor = System.Drawing.Color.YellowGreen;
+                                tCell1.CssClass = "estiloHorasComidas";
                                 if (marcar)
                                 {
                                     tCell1.CssClass = "colorFranjaHora";
@@ -2752,7 +2752,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2762,7 +2762,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2825,7 +2825,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2835,7 +2835,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2897,7 +2897,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2907,7 +2907,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -2970,7 +2970,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -2980,7 +2980,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3043,7 +3043,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3053,7 +3053,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3116,7 +3116,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3126,7 +3126,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3188,7 +3188,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3198,7 +3198,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3260,7 +3260,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3270,7 +3270,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3333,7 +3333,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3343,7 +3343,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3406,7 +3406,7 @@ namespace AutoStar.app
                                             // tabla += " colspan='" + columnas + "'><button  class='botonTecnicos'  runat='server' onserverclickk='cargar_act' value='"+dt_orden.Rows[pos_dt_orden]["idOrdenes"].ToString()+"'>" + dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "</button>";
                                             tCell1.ColumnSpan = columnas;
                                             boton.Text = dt_orden.Rows[pos_dt_orden]["numero"].ToString() + "-" + Inicialiales(dt_orden.Rows[pos_dt_orden]["numero"].ToString());
-                                           boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
+                                            boton.ID = dt_orden.Rows[pos_dt_orden]["numero"].ToString();
                                             boton.Click += new EventHandler(this.Modificar_Click);
                                             boton.CssClass = "botonTecnicos";
                                             DateTime actual = DateTime.Now;
@@ -3416,7 +3416,7 @@ namespace AutoStar.app
                                             {
                                                 boton.BackColor = System.Drawing.Color.Yellow;
                                             }
-                                           else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
+                                            else if (t_Trans < 0 & final.Date == DateTime.Now.Date)
                                             {
                                                 boton.BackColor = System.Drawing.Color.Red;
                                             }
@@ -3462,7 +3462,7 @@ namespace AutoStar.app
                     etiqueta.Text = dt.Rows[x]["nombre"].ToString();
                     etiqueta.ID = dt.Rows[x]["idUsuario"].ToString();
                     etiqueta.Click += new EventHandler(this.TresEstados);
-
+                    etiqueta.CssClass = "btnOrdenesEspera";
                     tCell1.Controls.Add(etiqueta);
                     tRow1.Cells.Add(tCell1);
 
@@ -3475,16 +3475,7 @@ namespace AutoStar.app
 
                     for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
                     {
-                        TableCell tCell2 = new TableCell();
-                        if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
-                        {
-                            //Panel desayuno = new Panel();
-                            //desayuno.CssClass = "comidas";
-                            //desayuno.Height = 30;
-                            //desayuno.BackColor = System.Drawing.Color.YellowGreen;                    
-                            //tCell2.Controls.Add(desayuno);                                                        
-                            tCell2.BackColor = System.Drawing.Color.YellowGreen;
-                        }
+                        TableCell tCell2 = new TableCell();                        
                         bool marcar = false;
                         if (num_cell == hora_actual)
                         {
@@ -3509,7 +3500,15 @@ namespace AutoStar.app
                                 //nuevo.Height = 30;
                                 //tCell2.Controls.Add(nuevo);
                             }
-
+                            if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
+                            {
+                                //Panel desayuno = new Panel();
+                                //desayuno.CssClass = "comidas";
+                                //desayuno.Height = 30;
+                                //desayuno.BackColor = System.Drawing.Color.YellowGreen;                    
+                                //tCell2.Controls.Add(desayuno);                                                        
+                                tCell2.CssClass = "estiloHorasComidas";
+                            }
                             tRow1.Cells.Add(tCell2);
 
                         }
@@ -3525,7 +3524,15 @@ namespace AutoStar.app
                             {
                                 tCell2.CssClass = "colorFranjaHora";
                             }
-
+                            if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
+                            {
+                                //Panel desayuno = new Panel();
+                                //desayuno.CssClass = "comidas";
+                                //desayuno.Height = 30;
+                                //desayuno.BackColor = System.Drawing.Color.YellowGreen;                    
+                                //tCell2.Controls.Add(desayuno);                                                        
+                                tCell2.CssClass = "estiloHorasComidas";
+                            }
                             tRow1.Cells.Add(tCell2);
                         }
 
@@ -3548,13 +3555,13 @@ namespace AutoStar.app
 
         #region VENTANA DE ESTADOS
         private void TresEstados(object sender, EventArgs e)
-        {            
-            
+        {
+
             Button boton = (Button)sender;
             Session["Estados_botones"] = boton.ID;
             string idtecnico = boton.ID;
             estdos.Visible = true;
-            
+
             estado1.Controls.Clear();
             estado2.Controls.Clear();
             estado3.Controls.Clear();
@@ -3577,13 +3584,14 @@ namespace AutoStar.app
             for (int x = 0; x < dt_orden.Rows.Count; x++)
             {
                 Button boton = new Button();
-
+                boton.CssClass = "btnEstadoEspera";
                 boton.Text = dt_orden.Rows[x]["numero"].ToString();
                 boton.ID = dt_orden.Rows[x]["numero"].ToString();
                 boton.Click += new EventHandler(this.Estados_Click);
                 boton.UseSubmitBehavior = false;
                 estado3.Controls.Add(boton);
                 estado3.Controls.Add(new LiteralControl("<br />"));
+                
             }
 
             con.Close();
@@ -3603,7 +3611,7 @@ namespace AutoStar.app
             for (int x = 0; x < dt_orden.Rows.Count; x++)
             {
                 Button boton = new Button();
-
+                boton.CssClass = "btnEstadoEspera";
                 boton.Text = dt_orden.Rows[x]["numero"].ToString();
                 boton.ID = dt_orden.Rows[x]["numero"].ToString();
                 boton.Click += new EventHandler(this.Estados_Click);
@@ -3627,11 +3635,11 @@ namespace AutoStar.app
             for (int x = 0; x < dt_orden.Rows.Count; x++)
             {
                 Button boton = new Button();
-
+                boton.CssClass = "btnEstadoEspera";
                 boton.Text = dt_orden.Rows[x]["numero"].ToString();
-                boton.ID = dt_orden.Rows[x]["numero"].ToString();                
+                boton.ID = dt_orden.Rows[x]["numero"].ToString();
                 boton.Click += new EventHandler(this.Estados_Click);
-                boton.UseSubmitBehavior = false;                
+                boton.UseSubmitBehavior = false;
                 estado1.Controls.Add(boton);
                 estado1.Controls.Add(new LiteralControl("<br />"));
             }
@@ -3660,7 +3668,7 @@ namespace AutoStar.app
                     drpOt.SelectedValue = dt_orden.Rows[0]["numero"].ToString();
                     drpOt.Enabled = false;
                     drpOt.Visible = true;
-                    llenarCliente(boton.ID);                    
+                    llenarCliente(boton.ID);
                     ventana.Visible = true;
                 }
             }
@@ -3668,7 +3676,7 @@ namespace AutoStar.app
             {
                 MessageBoxShow(Page, "No se puede agregar en el día de mañana");
             }
-            
+
         }
 
         #endregion
@@ -3828,8 +3836,10 @@ namespace AutoStar.app
             //etiq.Text = dt.Rows[x]["nombre"].ToString();
             tCell1.Controls.Add(etiq);
             tRow1.Cells.Add(tCell1);
+
             for (int num_cell = 1; num_cell <= 42; num_cell++) //vamos recorriendo celda por celda y comparando si la hora concuerda con la orden
             {
+                TableCell tCell2 = new TableCell();                
                 bool marcar = false;
                 if (num_cell == hora_actual)
                 {
@@ -3837,9 +3847,12 @@ namespace AutoStar.app
                 }
                 if ((num_cell % 2) == 0)
                 {
-                    //tabla += "<td class='tableCellPlanografoHoras'></td>";
-                    TableCell tCell2 = new TableCell();
+
                     tCell2.CssClass = "tableCellPlanografoHoras";
+                    if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
+                    {
+                        tCell2.CssClass = "estiloHorasComidas";
+                    }
                     if (marcar)
                     {
                         //tCell2.BackColor = System.Drawing.Color.Blue;
@@ -3851,9 +3864,12 @@ namespace AutoStar.app
                 }
                 else
                 {
-                    //tabla += "<td class='tableCellPlanografoHoras_impar'></td>";
-                    TableCell tCell2 = new TableCell();
+                    //TableCell tCell2 = new TableCell();
                     tCell2.CssClass = "tableCellPlanografoHoras_impar";
+                    if (num_cell == 9 || num_cell == 22 || num_cell == 23 || num_cell == 24 || num_cell == 25 || num_cell == 33)
+                    {
+                        tCell2.CssClass = "estiloHorasComidas";
+                    }
                     if (marcar)
                     {
                         tCell2.CssClass = "colorFranjaHora";
@@ -3861,6 +3877,7 @@ namespace AutoStar.app
                     tCell2.Height = Unit.Pixel(6);
                     tRow1.Cells.Add(tCell2);
                 }
+
             }
             tPlano.Rows.Add(tRow1);
         }
@@ -4089,7 +4106,7 @@ namespace AutoStar.app
                 #region AGREGAR
                 if (Button1.Text.Equals("Agregar"))
                 {
-                    bool [] comidas =  verificar_comidas(); // verifica que la orden no caiga entre las hoas de comida, y si lo hace le suma el tiempo extra
+                    bool[] comidas = verificar_comidas(); // verifica que la orden no caiga entre las hoas de comida, y si lo hace le suma el tiempo extra
 
                     int id = int.Parse(drpOt.SelectedValue);
                     string dpTecnico = drpTecnico.SelectedValue;
@@ -4106,10 +4123,10 @@ namespace AutoStar.app
                     string dpStatus = drpStatus.SelectedValue;
                     string hextra = txtHoraExtra.Text;
 
-                    
+
 
                     if (Session["drpestado"] != null && (bool)Session["drpestado"] == true && !dpStatus.Equals("Pendiente de repuestos") && !dpStatus.Equals("Pendiente de aprobación cliente") && !dpStatus.Equals("Trabajos de taller externo"))
-                    {                        
+                    {
                         bool valido = Valida_tiempo_agregar(fechainicio, htazad, hextra, dpTecnico, "-1");
                         if (valido)
                         {
@@ -4121,7 +4138,7 @@ namespace AutoStar.app
                                 Eliminar_en_estado(drpOt.SelectedValue);
                                 Session["drpestado"] = false;
                                 drpOt.Enabled = true;
-                                Response.Redirect("GT_Planografo_Digital.aspx", false);                                
+                                Response.Redirect("GT_Planografo_Digital.aspx", false);
                             }
                         }
 
@@ -4142,7 +4159,7 @@ namespace AutoStar.app
                             Agregar_A_Estados(id, dpTecnico, dpStatus);
                             Response.Redirect("GT_Planografo_Digital.aspx", false);
                         }
-                       
+
                     }
                     else
                     {
@@ -4167,7 +4184,7 @@ namespace AutoStar.app
                 {
                     int id = int.Parse(Session["id_modf"].ToString());
 
-                     bool [] horas_comida =  verificar_comidas_aux(id);
+                    bool[] horas_comida = verificar_comidas_aux(id);
 
                     SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
                     string query1 = "select * from GT_Ordenes where numero = '" + id + "' and Area = '" + drpAreas.SelectedValue + "' ";
@@ -4241,7 +4258,7 @@ namespace AutoStar.app
         }
 
         private bool[] verificar_comidas_aux(int id)
-        {            
+        {
 
             SqlConnection conex = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             string query1 = "select * from GT_Ordenes where numero = '" + id + "' and Area = '" + drpAreas.SelectedValue + "' ";
@@ -4301,7 +4318,7 @@ namespace AutoStar.app
             TimeSpan inicio_almuerzo = new TimeSpan(12, 30, 00);
             TimeSpan final_almuerzo = new TimeSpan(13, 30, 00);
 
-            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
+            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_almuerzo && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
             {
                 if (!((bool)dt_num.Rows[0]["Almuerzo"]))
                 {
@@ -4345,7 +4362,7 @@ namespace AutoStar.app
 
         private bool[] verificar_comidas()
         {
-            bool[] comidas = new bool[3] {false, false, false };
+            bool[] comidas = new bool[3] { false, false, false };
             #region  convertimos los tiempos de timespan a datetime
             TimeSpan droptimeinicio = TimeSpan.Parse(drpHoraInicio.Text);
             DateTime inicio = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, droptimeinicio.Hours, droptimeinicio.Minutes, droptimeinicio.Seconds);
@@ -4373,7 +4390,7 @@ namespace AutoStar.app
 
             if ((inicio.TimeOfDay >= inicio_desayuno && inicio.TimeOfDay < final_desayuno) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_desayuno) || (inicio.TimeOfDay < inicio_desayuno && final.TimeOfDay > final_desayuno))
             {
-                string [] tiemp_extra = txtHoraExtra.Text.Split(',');
+                string[] tiemp_extra = txtHoraExtra.Text.Split(',');
                 int min = int.Parse(tiemp_extra[1].ToString());
                 min = min + 2;
                 txtHoraExtra.Text = tiemp_extra[0] + "," + min;
@@ -4386,7 +4403,7 @@ namespace AutoStar.app
             TimeSpan inicio_almuerzo = new TimeSpan(12, 30, 00);
             TimeSpan final_almuerzo = new TimeSpan(13, 30, 00);
 
-            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_desayuno && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
+            if ((inicio.TimeOfDay >= inicio_almuerzo && inicio.TimeOfDay < final_almuerzo) || (final.TimeOfDay >= inicio_almuerzo && final.TimeOfDay <= final_almuerzo) || (inicio.TimeOfDay < inicio_almuerzo && final.TimeOfDay > final_almuerzo))
             {
                 string[] tiemp_extra = txtHoraExtra.Text.Split(',');
                 int hor = int.Parse(tiemp_extra[0].ToString());
@@ -4433,7 +4450,7 @@ namespace AutoStar.app
                 //De haber un error lo capturo
                 // msg = ex.Message;
                 //Deshacemos la operacion
-                tr.Rollback();                
+                tr.Rollback();
             }
             finally
             {
@@ -4472,7 +4489,7 @@ namespace AutoStar.app
             {
                 con.Close(); //Cerramos la conexion
 
-            }
+           }
         }
 
         protected bool Valida_tiempo_agregar(DateTime inicio, string htazada, string textra, string idtecnico, string numero)
@@ -4498,7 +4515,7 @@ namespace AutoStar.app
 
             #region seleciona las ordenes del tecnico
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            string query = "select * from GT_Ordenes Where idTecnico = '" + idtecnico + "' and numero !='" + numero + "' and Area = '"+drpAreas.SelectedValue+"' order by horaInicio Asc";
+            string query = "select * from GT_Ordenes Where idTecnico = '" + idtecnico + "' and numero !='" + numero + "' and Area = '" + drpAreas.SelectedValue + "' order by horaInicio Asc";
             con.Open();
 
             SqlCommand cmd = new SqlCommand(query, con);
@@ -4609,10 +4626,10 @@ namespace AutoStar.app
 
                 TimeSpan resta = final.TimeOfDay.Subtract(limite);
                 DateTime final_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
-                final_split =  final_split.AddDays(1);
+                final_split = final_split.AddDays(1);
                 final_split = final_split.Add(resta);
                 DateTime inicio_split = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
-                inicio_split =  inicio_split.AddDays(1);
+                inicio_split = inicio_split.AddDays(1);
 
 
                 corredor = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 7, 30, 00);
@@ -5183,12 +5200,24 @@ namespace AutoStar.app
                 btneliminar.Visible = false;
                 htazada.Enabled = true;
                 ventana.Visible = true;
+                txtComentario.Visible = false;
+                Label2.Visible = true;
+                limpiarcampos();
                 llenarCliente(drpOt.SelectedValue);
             }
             else
             {
                 MessageBoxShow(Page, "No se pueden agregar ordenes del día de mañana");
             }
+        }
+
+        private void limpiarcampos()
+        {
+            htazada.Text = "0,0";
+            txtHorareal.Text = "";
+            txtHoraExtra.Text = "0,0";
+            txtTiemAmp.Text = "";
+            txthorafinal.Text = "";
         }
 
         protected void cargar_act(object sender, ImageClickEventArgs e)
@@ -5202,7 +5231,7 @@ namespace AutoStar.app
             {
                 Button b = (Button)sender;
                 string id_boton = b.ID;
-
+                txtComentario.Visible = false;
                 btneliminar.Visible = true;
 
                 SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
@@ -5248,7 +5277,7 @@ namespace AutoStar.app
             {
                 MessageBoxShow(Page, "No se pueden modificar ordenes del día de mañana");
             }
-            
+
         }
 
         protected void htazada_TextChanged(object sender, EventArgs e)
@@ -5355,11 +5384,12 @@ namespace AutoStar.app
         {
             DropDownList drporden = (DropDownList)sender;
             string orden_num = drporden.SelectedValue;
+            comentarios();
             llenarCliente(orden_num);
         }
 
         private void llenarCliente(string sender)
-        {            
+        {
             var numero = sender;
             int id_asesor = 0;
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
@@ -5374,8 +5404,8 @@ namespace AutoStar.app
             if (dt.Rows.Count > 0)
             {
                 txtCliente.Text = dt.Rows[0]["cliente"].ToString();
-                id_asesor =int.Parse( dt.Rows[0]["idAsesor"].ToString());
-                
+                id_asesor = int.Parse(dt.Rows[0]["idAsesor"].ToString());
+
             }
             SqlConnection con2 = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
             string query2 = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Usuarios] where idUsuario = '" + id_asesor + "'";
@@ -5387,14 +5417,14 @@ namespace AutoStar.app
 
             if (dt2.Rows.Count > 0)
             {
-                txtAsesor.Text = dt2.Rows[0]["nombre"].ToString() + " " + dt2.Rows[0]["apellido1"].ToString() +" "+ dt2.Rows[0]["apellido2"].ToString();
+                txtAsesor.Text = dt2.Rows[0]["nombre"].ToString() + " " + dt2.Rows[0]["apellido1"].ToString() + " " + dt2.Rows[0]["apellido2"].ToString();
             }
             con2.Close();
         }
 
         private string Inicialiales(string numero)
         {
-            string Iniciales= "";
+            string Iniciales = "";
 
             int id_asesor = 0;
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
@@ -5407,7 +5437,7 @@ namespace AutoStar.app
             da.Fill(dt);
             con.Close();
             if (dt.Rows.Count > 0)
-            {                
+            {
                 id_asesor = int.Parse(dt.Rows[0]["idAsesor"].ToString());
 
             }
@@ -5426,7 +5456,96 @@ namespace AutoStar.app
             con2.Close();
 
             return Iniciales;
-        }        
+        }
+
+        protected void ImageButton5_Click1(object sender, ImageClickEventArgs e)
+        {
+            string numero;
+            //optener # de orden
+            if (Button1.Text == "Agregar")
+            {
+                numero = drpOt.SelectedValue;
+
+            }
+            else
+            {
+                numero = Session["id_modf"].ToString();
+            }
+            
+            if (txtComentario.Visible == true)
+            {
+                txtComentario.Visible = false;
+                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                con.Open();
+                SqlTransaction tr = con.BeginTransaction(IsolationLevel.Serializable);
+                SqlCommand cmd = new SqlCommand("UPDATE [dbo].[GT_Orden_Trabajo] SET [comentarios] = @comentario WHERE numeroOrden = @numero", con, tr);
+                cmd.Parameters.Add("@numero", SqlDbType.VarChar).Value = numero;
+                cmd.Parameters.Add("@comentario", SqlDbType.VarChar).Value = txtComentario.Text;
+
+                try
+                {
+                    //Ejecuto
+                    cmd.ExecuteNonQuery();
+                    tr.Commit(); //Actualizar bd                                
+                    //Response.Redirect("GT_Planografo_Digital.aspx", false);
+
+                }
+                catch (Exception ex)
+                {
+                    //De haber un error lo capturo
+                    // msg = ex.Message;
+                    //Deshacemos la operacion
+                    tr.Rollback();
+
+                }
+                finally
+                {
+                    con.Close(); //Cerramos la conexion
+
+                }
+
+
+            }
+            else
+            {
+                txtComentario.Visible = true;
+                comentarios();
+            }
+        }
+
+        private void comentarios()
+        {
+            string numero;
+            //optener # de orden
+            if (Button1.Text == "Agregar")
+            {
+                numero = drpOt.SelectedValue;
+
+            }
+            else
+            {
+                numero = Session["id_modf"].ToString();               
+            }
+
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+            string query = "SELECT * FROM [GT_AutoStar].[dbo].[GT_Orden_Trabajo] where numeroOrden = '" + numero + "'";
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            txtComentario.Text = dt.Rows[0]["comentarios"].ToString();
+
+
+        }
+
+        protected void btncerrarestados_Click(object sender, EventArgs e)
+        {
+            estdos.Visible = false;
+        }
 
     }
 }

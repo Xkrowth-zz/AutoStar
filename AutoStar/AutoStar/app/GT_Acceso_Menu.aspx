@@ -63,7 +63,7 @@ Assembly="GridViewExtended" %>
             <asp:Label ID="Label1" runat="server" Text="Valor a buscar:" CssClass="busquedalbl"></asp:Label>
     <asp:TextBox ID="TextBox1" runat="server" CssClass="busquedatxt" ></asp:TextBox>
     <asp:DropDownList ID="DropDownList1" runat="server" CssClass="busquedatxt">
-        <asp:ListItem>Rol</asp:ListItem>
+        <asp:ListItem>Puesto</asp:ListItem>
         <asp:ListItem>Opcion</asp:ListItem>        
     </asp:DropDownList>
         

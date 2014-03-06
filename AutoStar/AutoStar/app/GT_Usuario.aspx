@@ -75,7 +75,7 @@ Assembly="GridViewExtended" %>
         <asp:ListItem>Nombre</asp:ListItem>
         <asp:ListItem>Apellido1</asp:ListItem>
         <asp:ListItem>Apellido2</asp:ListItem>
-        <asp:ListItem>Rol</asp:ListItem>
+        <asp:ListItem>Puesto</asp:ListItem>
         <asp:ListItem>Area</asp:ListItem>        
     </asp:DropDownList>
 

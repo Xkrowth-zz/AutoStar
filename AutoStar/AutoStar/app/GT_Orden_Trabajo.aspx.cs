@@ -178,9 +178,7 @@ namespace AutoStar.app
             String Tecnico = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList3")).SelectedItem.Text;
             String Area = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList4")).SelectedItem.Text;
             string placa = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_placa")).Text;
-            int dia = int.Parse(((DropDownList)GridView1.FooterRow.FindControl("DropDownList6")).SelectedItem.Text);
-            int mes = int.Parse(((DropDownList)GridView1.FooterRow.FindControl("DropDownList7")).SelectedItem.Text);
-            int año = int.Parse(((DropDownList)GridView1.FooterRow.FindControl("DropDownList8")).SelectedItem.Text);
+            String fecha  = ((TextBox)GridView1.FooterRow.FindControl("TextBox14")).Text;
             String garantia = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_garantia")).Text;
             String repuestos = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_repuestos")).Text;
             String logistica = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_logistica")).Text;
@@ -198,9 +196,7 @@ namespace AutoStar.app
             cmd.Parameters.Add("@Tecnico", SqlDbType.NVarChar).Value = Tecnico;
             cmd.Parameters.Add("@Area", SqlDbType.NVarChar).Value = Area;
             cmd.Parameters.Add("@placa", SqlDbType.NVarChar).Value = placa;
-            cmd.Parameters.Add("@dia", SqlDbType.Int).Value = dia;
-            cmd.Parameters.Add("@mes", SqlDbType.Int).Value = mes;
-            cmd.Parameters.Add("@año", SqlDbType.Int).Value = año;
+            cmd.Parameters.Add("@fechaIngreso", SqlDbType.NVarChar).Value = fecha;
             cmd.Parameters.Add("@garantia", SqlDbType.NVarChar).Value = garantia;
             cmd.Parameters.Add("@repuestos", SqlDbType.NVarChar).Value = repuestos;
             cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;
@@ -222,11 +218,12 @@ namespace AutoStar.app
                 int numeroOrden = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("txtfld_numeroOrden")).Text);
                 String Asesor = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList12")).SelectedItem.Text;
                 String Estado = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList15")).SelectedItem.Text;
+                
                 String Tecnico = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList14")).SelectedItem.Text;
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + Tecnico + " Ocupado" + "');", true);
                 String placa = ((TextBox)GridView1.SelectedRow.FindControl("TextBox5")).Text;
-                int dia = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList9")).SelectedItem.Text);
-                int mes = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList10")).SelectedItem.Text);
-                int año = int.Parse(((DropDownList)GridView1.SelectedRow.FindControl("DropDownList11")).SelectedItem.Text);
+                String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList13")).SelectedItem.Text;
+                String fecha = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
                 String repuestos = ((TextBox)GridView1.SelectedRow.FindControl("TextBox9")).Text;
                 String logistica = ((TextBox)GridView1.SelectedRow.FindControl("TextBox13")).Text;
                 String garantia = ((TextBox)GridView1.SelectedRow.FindControl("TextBox11")).Text;                 
@@ -240,12 +237,11 @@ namespace AutoStar.app
                 cmd.Parameters.Add("@idOrdenTrabajo", SqlDbType.Int).Value = idOrdenTrabajo;
                 cmd.Parameters.Add("@numeroOrden", SqlDbType.Int).Value = numeroOrden;
                 cmd.Parameters.Add("@Asesor", SqlDbType.NVarChar).Value = Asesor;
+                cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
                 cmd.Parameters.Add("@Estado", SqlDbType.NVarChar).Value = Estado;
                 cmd.Parameters.Add("@Tecnico", SqlDbType.NVarChar).Value = Tecnico;
                 cmd.Parameters.Add("@placa", SqlDbType.NVarChar).Value = placa;
-                cmd.Parameters.Add("@dia", SqlDbType.Int).Value = dia;
-                cmd.Parameters.Add("@mes", SqlDbType.Int).Value = mes;
-                cmd.Parameters.Add("@año", SqlDbType.Int).Value = año;
+                cmd.Parameters.Add("@fechaIngreso", SqlDbType.NVarChar).Value = fecha;
                 cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
                 cmd.Parameters.Add("@repuestos", SqlDbType.NVarChar).Value = repuestos;
                 cmd.Parameters.Add("@logistica", SqlDbType.NVarChar).Value = logistica;

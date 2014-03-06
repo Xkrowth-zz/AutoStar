@@ -81,7 +81,7 @@ Assembly="GridViewExtended" %>
 
             <asp:TemplateField HeaderText="Area" SortExpression="idArea">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" SelectedValue='<%# Bind("idArea") %>'></asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>

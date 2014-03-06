@@ -87,21 +87,21 @@ Assembly="GridViewExtended" %>
                         </ItemTemplate>                                             
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Rol" SortExpression="idRol">
+                    <asp:TemplateField HeaderText="Puesto" SortExpression="idRol">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" SelectedValue='<%# Bind("idRol") %>'></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label3" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
                         </ItemTemplate>
                         <FooterTemplate>
-                            <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" ></asp:DropDownList>
                         </FooterTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Opcion" SortExpression="idOpcion">
                         <EditItemTemplate>
-                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion" SelectedValue='<%# Bind("idOpcion") %>'></asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="Label1" runat="server" Text='<%# Bind("idOpcion") %>'></asp:Label>

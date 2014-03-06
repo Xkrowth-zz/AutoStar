@@ -93,12 +93,13 @@ Assembly="GridViewExtended" %>
     <%--FIN--%>    
 
     
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion 
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion as idEstado
 FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
     
-    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT [descripcion] FROM [GT_Areas]"></asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = 1"></asp:SqlDataSource>    
-    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = 1"></asp:SqlDataSource>      
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT [descripcion] as idArea FROM [GT_Areas]"></asp:SqlDataSource>
+    
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre as idTecnico FROM GT_Usuarios WHERE idRol = (SELECT idRol FROM GT_Rol WHERE descripcion = 'Tecnico')"></asp:SqlDataSource>    
+    <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = (SELECT idRol FROM GT_Rol WHERE descripcion ='Asesor')"></asp:SqlDataSource>      
 
     <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" AutoPostBack="True" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
@@ -133,14 +134,14 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
 
             <asp:TemplateField HeaderText="Estado" SortExpression="idEstado">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList15" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
+                    <asp:DropDownList ID="DropDownList15" runat="server" DataSourceID="SqlDataSource2" DataTextField="idEstado" DataValueField="idEstado" SelectedValue='<%# Bind("idEstado") %>'> 
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("idEstado") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList2" runat="server" onClick="setFocus" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" >
+                    <asp:DropDownList ID="DropDownList2" runat="server" onClick="setFocus" DataSourceID="SqlDataSource2" DataTextField="idEstado" DataValueField="idEstado" >
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idEstado" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idEstado" ValidationGroup="Insert" runat="server" ErrorMessage="Estado es un campo obligatario" ControlToValidate="DropDownList2" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -148,14 +149,14 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
             
             <asp:TemplateField HeaderText="Técnico" SortExpression="idTecnico">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList14" runat="server" DataSourceID="SqlDataSource3" DataTextField="nombre" DataValueField="nombre">
+                    <asp:DropDownList ID="DropDownList14" runat="server" DataSourceID="SqlDataSource3" DataTextField="idTecnico" DataValueField="idTecnico" SelectedValue='<%# Bind("idTecnico") %>'>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label3" runat="server" Text='<%# Bind("idTecnico") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="nombre" DataValueField="nombre">
+                    <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource3" DataTextField="idTecnico" DataValueField="idTecnico">
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idTecnico" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idTecnico" ValidationGroup="Insert" runat="server" ErrorMessage="Tecnico es un campo obligatario" ControlToValidate="DropDownList3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -163,14 +164,14 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
 
             <asp:TemplateField HeaderText="Area" SortExpression="idArea">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList13" runat="server" DataSourceID="SqlDataSource4" DataTextField="descripcion" DataValueField="descripcion">
+                    <asp:DropDownList ID="DropDownList13" runat="server" DataSourceID="SqlDataSource4" DataTextField="idArea" DataValueField="idArea" SelectedValue='<%# Bind("idArea") %>'>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label4" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="descripcion" DataValueField="descripcion">
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource4" DataTextField="idArea" DataValueField="idArea">
                     </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idArea" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idArea" ValidationGroup="Insert" runat="server" ErrorMessage="Area es un campo obligatario" ControlToValidate="DropDownList4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
@@ -191,7 +192,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
 
             <asp:TemplateField HeaderText="Asesor" SortExpression="idAsesor">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList12" runat="server" DataSourceID="SqlDataSource5" DataTextField="nombre" DataValueField="nombre">
+                    <asp:DropDownList ID="DropDownList12" runat="server" DataSourceID="SqlDataSource5" DataTextField="nombre" DataValueField="nombre" SelectedValue='<%# Bind("idAsesor") %>'>
                     </asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
@@ -199,137 +200,20 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource5" DataTextField="nombre" DataValueField="nombre">
-    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idAsesor" runat="server"></asp:TextBox>--%>
+                    </asp:DropDownList><%--<asp:TextBox ID="txtfld_insert_idAsesor" runat="server"></asp:TextBox>--%>
                     <asp:RequiredFieldValidator ID="rfv_insert_idAsesor" ValidationGroup="Insert" runat="server" ErrorMessage="Asesor es un campo obligatario" ControlToValidate="DropDownList5" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="Fecha de Ingreso" SortExpression="fechaIngreso">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList9" runat="server">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem> 2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>
-                        <asp:ListItem>13</asp:ListItem>
-                        <asp:ListItem>14</asp:ListItem>
-                        <asp:ListItem>15</asp:ListItem>
-                        <asp:ListItem>16</asp:ListItem>
-                        <asp:ListItem>17</asp:ListItem>
-                        <asp:ListItem>18</asp:ListItem>
-                        <asp:ListItem>19</asp:ListItem>
-                        <asp:ListItem>20</asp:ListItem>
-                        <asp:ListItem>21</asp:ListItem>
-                        <asp:ListItem>22</asp:ListItem>
-                        <asp:ListItem>23</asp:ListItem>
-                        <asp:ListItem>24</asp:ListItem>
-                        <asp:ListItem>25</asp:ListItem>
-                        <asp:ListItem>26</asp:ListItem>
-                        <asp:ListItem>27</asp:ListItem>
-                        <asp:ListItem>28</asp:ListItem>
-                        <asp:ListItem>29</asp:ListItem>
-                        <asp:ListItem>30</asp:ListItem>
-                        <asp:ListItem>31</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="DropDownList10" runat="server">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>                        
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="DropDownList11" runat="server">
-                        <asp:ListItem>2014</asp:ListItem>
-                        <asp:ListItem>2015</asp:ListItem>
-                        <asp:ListItem>2016</asp:ListItem>
-                        <asp:ListItem>2017</asp:ListItem>
-                        <asp:ListItem>2018</asp:ListItem>
-                        <asp:ListItem>2019</asp:ListItem>
-                        <asp:ListItem>2020</asp:ListItem>                        
-                    </asp:DropDownList>
-                    <%--<asp:TextBox ID="txtfld_insert_fechaIngreso" runat="server"></asp:TextBox>--%>
-                    <asp:RequiredFieldValidator ID="rfv_insert_dia" ValidationGroup="Insert" runat="server" ErrorMessage="Dia es un campo obligatario" ControlToValidate="DropDownList9" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="rfv_insert_mes" ValidationGroup="Insert" runat="server" ErrorMessage="Mes es un campo obligatario" ControlToValidate="DropDownList10" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="rfv_insert_año" ValidationGroup="Insert" runat="server" ErrorMessage="Año de Ingreso es un campo obligatario" ControlToValidate="DropDownList11" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Date" Text='<%# Bind("fechaIngreso")%>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label7" runat="server" Text='<%# Bind("fechaIngreso") %>'></asp:Label>
+                    <asp:Label ID="Label7" runat="server"  TextMode="Date" Text='<%# Bind("fechaIngreso") %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
-                    <asp:DropDownList ID="DropDownList6" runat="server">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem> 2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>
-                        <asp:ListItem>13</asp:ListItem>
-                        <asp:ListItem>14</asp:ListItem>
-                        <asp:ListItem>15</asp:ListItem>
-                        <asp:ListItem>16</asp:ListItem>
-                        <asp:ListItem>17</asp:ListItem>
-                        <asp:ListItem>18</asp:ListItem>
-                        <asp:ListItem>19</asp:ListItem>
-                        <asp:ListItem>20</asp:ListItem>
-                        <asp:ListItem>21</asp:ListItem>
-                        <asp:ListItem>22</asp:ListItem>
-                        <asp:ListItem>23</asp:ListItem>
-                        <asp:ListItem>24</asp:ListItem>
-                        <asp:ListItem>25</asp:ListItem>
-                        <asp:ListItem>26</asp:ListItem>
-                        <asp:ListItem>27</asp:ListItem>
-                        <asp:ListItem>28</asp:ListItem>
-                        <asp:ListItem>29</asp:ListItem>
-                        <asp:ListItem>30</asp:ListItem>
-                        <asp:ListItem>31</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="DropDownList7" runat="server">
-                        <asp:ListItem>1</asp:ListItem>
-                        <asp:ListItem>2</asp:ListItem>
-                        <asp:ListItem>3</asp:ListItem>
-                        <asp:ListItem>4</asp:ListItem>
-                        <asp:ListItem>5</asp:ListItem>
-                        <asp:ListItem>6</asp:ListItem>
-                        <asp:ListItem>7</asp:ListItem>
-                        <asp:ListItem>8</asp:ListItem>
-                        <asp:ListItem>9</asp:ListItem>
-                        <asp:ListItem>10</asp:ListItem>
-                        <asp:ListItem>11</asp:ListItem>
-                        <asp:ListItem>12</asp:ListItem>                        
-                    </asp:DropDownList>
-                    <asp:DropDownList ID="DropDownList8" runat="server">
-                        <asp:ListItem>2014</asp:ListItem>
-                        <asp:ListItem>2015</asp:ListItem>
-                        <asp:ListItem>2016</asp:ListItem>
-                        <asp:ListItem>2017</asp:ListItem>
-                        <asp:ListItem>2018</asp:ListItem>
-                        <asp:ListItem>2019</asp:ListItem>
-                        <asp:ListItem>2020</asp:ListItem>                        
-                    </asp:DropDownList>                    
-                    <asp:RequiredFieldValidator ID="rfv_insert_dia" ValidationGroup="Insert" runat="server" ErrorMessage="Dia es un campo obligatario" ControlToValidate="DropDownList6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="rfv_insert_mes" ValidationGroup="Insert" runat="server" ErrorMessage="Mes es un campo obligatario" ControlToValidate="DropDownList7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
-                    <asp:RequiredFieldValidator ID="rfv_insert_año" ValidationGroup="Insert" runat="server" ErrorMessage="Año de Ingreso es un campo obligatario" ControlToValidate="DropDownList8" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="TextBox14" runat="server" TextMode="Date"></asp:TextBox>
                 </FooterTemplate>
             </asp:TemplateField>
 

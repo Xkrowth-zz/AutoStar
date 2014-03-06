@@ -128,9 +128,9 @@ Assembly="GridViewExtended" %>
                 </FooterTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Rol" SortExpression="Rol">
+            <asp:TemplateField HeaderText="Puesto" SortExpression="idRol">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList5" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="descripcion" SelectedValue='<%# Bind("idRol") %>'></asp:DropDownList>
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_rol" runat="server" Text='<%# Bind("idRol") %>'></asp:Label>
@@ -143,7 +143,7 @@ Assembly="GridViewExtended" %>
 
             <asp:TemplateField HeaderText="Area" SortExpression="idArea">
                 <EditItemTemplate>
-                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion"></asp:DropDownList>                    
+                    <asp:DropDownList ID="DropDownList4" runat="server" DataSourceID="SqlDataSource2" DataTextField="descripcion" DataValueField="descripcion" SelectedValue='<%# Bind("idArea") %>'></asp:DropDownList>                    
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="lbl_area" runat="server" Text='<%# Bind("idArea") %>'></asp:Label>

@@ -22,9 +22,14 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!(Session["idUsuario"] == null))
             {
-                GridView1.DataBind();
+
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+                Response.Redirect("Default.aspx");
             }
         }
         protected void SelectedIndexChanging(object sender, GridViewSelectEventArgs e)

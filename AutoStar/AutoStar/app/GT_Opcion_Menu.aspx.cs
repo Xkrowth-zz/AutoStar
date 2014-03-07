@@ -23,19 +23,15 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LevelUp;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.CommandText = "listarEmpleados";
-            //cmd.Connection = con;
+            if (!(Session["idUsuario"] == null))
+            {
 
-            //    con.Open();
-            //    GridView1.EmptyDataText = "No Records Found";
-            //    GridView1.DataSource = cmd.ExecuteReader();
-            //    GridView1.DataBind();
-
-            //    con.Close();
-            //    con.Dispose();
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+                Response.Redirect("Default.aspx");
+            }
 
 
         }

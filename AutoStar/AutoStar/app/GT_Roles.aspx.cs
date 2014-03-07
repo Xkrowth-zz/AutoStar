@@ -37,7 +37,15 @@ namespace AutoStar.app
             //    con.Close();
             //    con.Dispose();
 
+            if (!(Session["idUsuario"] == null))
+            {
 
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+                Response.Redirect("Default.aspx");
+            }
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

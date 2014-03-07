@@ -18,15 +18,25 @@ namespace AutoStar.app
       
         protected void Page_Load(object sender, EventArgs e)
         {
-              if(!Page.IsPostBack){
-                  GridView1.DataBind();
-              }
-              else
-              {
-                Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
-                if (cont != null)
-                    cont.Focus();
-              }
+              //if(!Page.IsPostBack){
+              //    GridView1.DataBind();
+              //}
+              //else
+              //{
+              //  Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
+              //  if (cont != null)
+              //      cont.Focus();
+              //}
+
+            if (!(Session["idUsuario"] == null))
+            {
+
+            }
+            else
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+                Response.Redirect("Default.aspx");
+            }
 
 
         }

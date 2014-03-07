@@ -11,10 +11,7 @@ using System.Web.UI.WebControls;
 namespace SGT_AutoStar.app
 {
     public partial class Default : System.Web.UI.Page
-    {
-        protected string _contraseña;
-        protected string _usuario;
-        protected int idUsuario;
+    {       
         
         protected void Page_Load(object sender, EventArgs e)
         {

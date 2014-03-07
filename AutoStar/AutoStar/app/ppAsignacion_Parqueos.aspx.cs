@@ -14,32 +14,40 @@ namespace AutoStar.app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("infoParqueo", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@btn", SqlDbType.NVarChar).Value = Request.QueryString["field1"];            
-            SqlDataReader sdr = cmd.ExecuteReader();
-            while (sdr.Read())
+            if (!(Session["idUsuario"] == null))
             {
-                TextBox1.Text = sdr[0].ToString();
-                TextBox2.Text = sdr["status"].ToString();
-                TextBox3.Text = sdr["tecnico"].ToString();
-                TextBox4.Text = sdr["area"].ToString();
-                TextBox5.Text = sdr["asesor"].ToString();
-                TextBox6.Text = sdr["placa"].ToString();
-                TextBox7.Text = sdr["fechaIngreso"].ToString();
-                TextBox8.Text = sdr["comentarios"].ToString();
-                TextBox9.Text = sdr["garantia"].ToString();
-                TextBox10.Text = sdr["logistica"].ToString();
-                TextBox11.Text = sdr["repuestos"].ToString();
-                TextBox12.Text = sdr["cliente"].ToString();
+                SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("infoParqueo", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@btn", SqlDbType.NVarChar).Value = Request.QueryString["field1"];
+                SqlDataReader sdr = cmd.ExecuteReader();
+                while (sdr.Read())
+                {
+                    TextBox1.Text = sdr[0].ToString();
+                    TextBox2.Text = sdr["status"].ToString();
+                    TextBox3.Text = sdr["tecnico"].ToString();
+                    TextBox4.Text = sdr["area"].ToString();
+                    TextBox5.Text = sdr["asesor"].ToString();
+                    TextBox6.Text = sdr["placa"].ToString();
+                    TextBox7.Text = sdr["fechaIngreso"].ToString();
+                    TextBox8.Text = sdr["comentarios"].ToString();
+                    TextBox9.Text = sdr["garantia"].ToString();
+                    TextBox10.Text = sdr["logistica"].ToString();
+                    TextBox11.Text = sdr["repuestos"].ToString();
+                    TextBox12.Text = sdr["cliente"].ToString();
 
+                }
+                con.Close();
+                con.Dispose();
             }
-            con.Close();
-            con.Dispose();
+            else
+            {
+                Response.Close();
+            }
+
+            
             
             
         }

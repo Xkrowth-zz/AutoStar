@@ -296,13 +296,6 @@
     <Compile Include="app\ppAsignacion_Parqueos.aspx.designer.cs">
       <DependentUpon>ppAsignacion_Parqueos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\ppLogin.aspx.cs">
-      <DependentUpon>ppLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="app\ppLogin.aspx.designer.cs">
-      <DependentUpon>ppLogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -411,7 +404,6 @@
     <Content Include="app\Images\logoRD.png" />
     <Content Include="app\modalBackground.css" />
     <Content Include="app\ppAsignacion_Parqueos.aspx" />
-    <Content Include="app\ppLogin.aspx" />
     <Content Include="app\Styles\Main.css" />
     <Content Include="app\default.aspx" />
     <Content Include="app\Styles\AutoStar.css" />

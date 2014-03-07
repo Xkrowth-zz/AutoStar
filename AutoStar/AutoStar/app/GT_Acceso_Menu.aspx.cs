@@ -14,9 +14,17 @@ namespace AutoStar.app
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if(GridView1.DataSource == null)
+            if (!(Session["idUsuario"] == null))
+            {
+                
+            }
+            else 
+            {
+               ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+               Response.Redirect("Default.aspx");
+            }
 
-        }
+        }      
 
         protected void btn_buscarClick(object sender, ImageClickEventArgs e)
         {
@@ -223,6 +231,59 @@ namespace AutoStar.app
 
 
                 }
+        }
+
+        private void ChangeControlStatus(bool status)
+        {
+
+            foreach (Control c in Page.Controls)
+                foreach (Control ctrl in c.Controls)
+
+                    if (ctrl is TextBox)
+
+                        ((TextBox)ctrl).Enabled = status;
+
+                    else if (ctrl is Button)
+
+                        ((Button)ctrl).Enabled = status;
+
+                    else if (ctrl is RadioButton)
+
+                        ((RadioButton)ctrl).Enabled = status;
+
+                    else if (ctrl is ImageButton)
+
+                        ((ImageButton)ctrl).Enabled = status;
+
+                    else if (ctrl is CheckBox)
+
+                        ((CheckBox)ctrl).Enabled = status;
+
+                    else if (ctrl is DropDownList)
+
+                        ((DropDownList)ctrl).Enabled = status;
+
+                    else if (ctrl is HyperLink)
+
+                        ((HyperLink)ctrl).Enabled = status;
+
+                    else if (ctrl is GridView)
+
+                        ((GridView)ctrl).Enabled = status;
+
+        }
+        private void ClearControls()
+        {
+            foreach (Control c in Page.Controls)
+            {
+                foreach (Control ctrl in c.Controls)
+                {
+                    if (ctrl is TextBox)
+                    {
+                        ((TextBox)ctrl).Text = string.Empty;
+                    }
+                }
+            }
         }
     }
 }

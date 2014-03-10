@@ -20,10 +20,13 @@
             <div class="divLoginParejas">
                 <asp:Label ID="label_usuario" runat="server" CssClass="lblLogin" Text="Usuario:" Width="48%"></asp:Label>
                 <asp:TextBox ID="usuario" runat="server" CssClass="tbLogin" Width="48%"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfv_loggin_usuario" runat="server" ErrorMessage="Usuario es un campo obligatario" ControlToValidate="usuario" Text="Campo oblicatorio" ForeColor="Red"></asp:RequiredFieldValidator>
             </div>
             <div class="divLoginParejas">
                 <asp:Label ID="label_contraseña" runat="server" CssClass="lblLogin" Text="Contraseña:" Width="48%"></asp:Label>
                 <asp:TextBox ID="contraseña" runat="server" CssClass="tbLogin" Width="48%" TextMode="Password"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="rfv_loggin_contrasena" runat="server" ErrorMessage="Contraseña es un campo obligatario" ControlToValidate="contraseña" Text="Campo oblicatorio" ForeColor="Red"></asp:RequiredFieldValidator>
+                
             </div>
             
         </div>

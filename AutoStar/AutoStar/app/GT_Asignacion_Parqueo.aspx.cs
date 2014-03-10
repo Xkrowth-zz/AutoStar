@@ -18,6 +18,7 @@ namespace AutoStar.app
         {
             if (!(Session["idUsuario"] == null))
             {
+
                 string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
                 string queryString = "SELECT * FROM GT_Posicion";
                 DataSet dataset = new DataSet();

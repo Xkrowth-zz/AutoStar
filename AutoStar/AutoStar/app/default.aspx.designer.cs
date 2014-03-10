@@ -49,6 +49,15 @@ namespace SGT_AutoStar.app {
         protected global::System.Web.UI.WebControls.TextBox usuario;
         
         /// <summary>
+        /// rfv_loggin_usuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_loggin_usuario;
+        
+        /// <summary>
         /// label_contraseña control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace SGT_AutoStar.app {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox contraseña;
+        
+        /// <summary>
+        /// rfv_loggin_contrasena control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfv_loggin_contrasena;
         
         /// <summary>
         /// logoAutoStar control.

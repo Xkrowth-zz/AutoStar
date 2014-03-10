@@ -23,22 +23,44 @@ namespace AutoStar.app
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=LevelUp;Integrated Security=True");
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.CommandText = "listarEmpleados";
-            //cmd.Connection = con;
-
-            //    con.Open();
-            //    GridView1.EmptyDataText = "No Records Found";
-            //    GridView1.DataSource = cmd.ExecuteReader();
-            //    GridView1.DataBind();
-
-            //    con.Close();
-            //    con.Dispose();
-
             if (!(Session["idUsuario"] == null))
             {
+                string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
+                string queryString = "SELECT * FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE idUsuario = " + Session["idUsuario"];
+
+                DataSet dataset = new DataSet();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = new SqlCommand(queryString, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    bool tieneAcceso = false;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+
+                        String opcion = dt.Rows[i]["descripcion"].ToString();
+
+                        if (opcion == "Configuracion General")
+                        {
+                            tieneAcceso = true;
+                        }
+
+                    }
+
+                    if (tieneAcceso == false)
+                    {
+                        Response.Redirect("default.aspx");
+                    }
+
+                    connection.Close();
+                    connection.Dispose();
+
+
+
+                }
+
 
             }
             else

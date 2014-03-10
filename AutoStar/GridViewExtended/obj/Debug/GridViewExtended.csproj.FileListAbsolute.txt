@@ -7,3 +7,8 @@ C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Debug\G
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Debug\GridViewExtended.pdb
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Debug\GridViewExtended.dll
 C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Debug\GridViewExtended.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\GridViewExtended\bin\Debug\GridViewExtended.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\GridViewExtended\bin\Debug\GridViewExtended.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\GridViewExtended\obj\Debug\GridViewExtended.csprojResolveAssemblyReference.cache
+C:\Users\Fer\Documents\AutoStar\AutoStar\GridViewExtended\obj\Debug\GridViewExtended.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\GridViewExtended\obj\Debug\GridViewExtended.pdb

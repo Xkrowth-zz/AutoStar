@@ -18,18 +18,44 @@ namespace AutoStar.app
       
         protected void Page_Load(object sender, EventArgs e)
         {
-              //if(!Page.IsPostBack){
-              //    GridView1.DataBind();
-              //}
-              //else
-              //{
-              //  Control cont = this.Page.FindControl(Request.Form["__EVENTTARGET"]);
-              //  if (cont != null)
-              //      cont.Focus();
-              //}
-
             if (!(Session["idUsuario"] == null))
             {
+                string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
+                string queryString = "SELECT * FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE idUsuario = " + Session["idUsuario"];
+
+                DataSet dataset = new DataSet();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = new SqlCommand(queryString, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    bool tieneAcceso = false;
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+
+                        String opcion = dt.Rows[i]["descripcion"].ToString();
+
+                        if (opcion == "Orden de Trabajo")
+                        {
+                            tieneAcceso = true;
+                        }
+
+                    }
+
+                    if (tieneAcceso == false)
+                    {
+                        Response.Redirect("default.aspx");
+                    }
+
+                    connection.Close();
+                    connection.Dispose();
+
+
+
+                }
+
 
             }
             else
@@ -216,6 +242,7 @@ namespace AutoStar.app
             cmd.ExecuteReader();
             GridView1.DataBind();
             con.Close();
+            txtSearch.Text = fecha.ToString();
         }
 
         protected void btn_orden_guardar_Click(object sender, ImageClickEventArgs e)

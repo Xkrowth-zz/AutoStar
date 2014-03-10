@@ -17,60 +17,111 @@ namespace AutoStar.app
         int pos_dt_orden = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!(Session["idUsuario"] == null))
             {
-                ventana.Visible = false;
-                estdos.Visible = false;
+                string connectionString = "Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True";
+                string queryString = "SELECT * FROM GT_Opcion_Menu JOIN GT_Acceso_Menu AS temp ON GT_Opcion_Menu.idOpcionMenu = temp.idOpcion  JOIN GT_Usuarios ON GT_Usuarios.idRol = temp.idRol WHERE idUsuario = " + Session["idUsuario"];
 
-                cargarOrdenes();
-                cargarTecnicos();
-                cargarHoras();
-                cargarStatus();
-                cargarAreas();
+                DataSet dataset = new DataSet();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = new SqlCommand(queryString, connection);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
 
-                if (Session["sel_area"] == null)
-                {
-                    Session["sel_area"] = drpAreas.SelectedValue;
-                }
-                else
-                {
-                    drpAreas.SelectedValue = Session["sel_area"].ToString();
-                }
-
-                if (Session["fecha_consulta"] != null && !Session["fecha_consulta"].Equals(""))
-                {
-                    fecha_actual.Text = Session["fecha_consulta"].ToString();
-                    DateTime fecha = DateTime.Parse(Session["fecha_consulta"].ToString());
-                    if (fecha.Date != DateTime.Now.Date)
+                    bool tieneAcceso = false;
+                    for (int i = 0; i < dt.Rows.Count; i++)
                     {
-                        btndias.Enabled = false;
-                        btnatras.Enabled = true;
+
+                        String opcion = dt.Rows[i]["descripcion"].ToString();
+
+                        if (opcion == "Configuracion General")
+                        {
+                            tieneAcceso = true;
+                        }
+
                     }
-                    else
+
+                    if (tieneAcceso == false)
                     {
-                        btndias.Enabled = true;
-                        btnatras.Enabled = false;
+                        Response.Redirect("default.aspx");
                     }
+
+                    else 
+                    {
+
+                        if (!IsPostBack)
+                        {
+                            ventana.Visible = false;
+                            estdos.Visible = false;
+
+                            cargarOrdenes();
+                            cargarTecnicos();
+                            cargarHoras();
+                            cargarStatus();
+                            cargarAreas();
+
+                            if (Session["sel_area"] == null)
+                            {
+                                Session["sel_area"] = drpAreas.SelectedValue;
+                            }
+                            else
+                            {
+                                drpAreas.SelectedValue = Session["sel_area"].ToString();
+                            }
+
+                            if (Session["fecha_consulta"] != null && !Session["fecha_consulta"].Equals(""))
+                            {
+                                fecha_actual.Text = Session["fecha_consulta"].ToString();
+                                DateTime fecha = DateTime.Parse(Session["fecha_consulta"].ToString());
+                                if (fecha.Date != DateTime.Now.Date)
+                                {
+                                    btndias.Enabled = false;
+                                    btnatras.Enabled = true;
+                                }
+                                else
+                                {
+                                    btndias.Enabled = true;
+                                    btnatras.Enabled = false;
+                                }
+                            }
+                            else
+                            {
+                                DateTime fecha = DateTime.Now;
+                                Session["fecha_consulta"] = fecha.Date.ToString("d");
+                                fecha_actual.Text = fecha.Date.ToString("d");
+                                btnatras.Enabled = false;
+                            }
+                        }
+                        if (Session["Estados_botones"] != null)
+                        {
+                            cargar_estado3(Session["Estados_botones"].ToString());
+                            cargar_estado2(Session["Estados_botones"].ToString());
+                            cargar_estado1(Session["Estados_botones"].ToString());
+                        }
+                        if (Session["drpestado"] != null && (bool)Session["drpestado"] == true)
+                        {
+                            drpOt.Enabled = false;
+                        }
+                        crearTabla();
+
+                    }
+
+
+
                 }
-                else
-                {
-                    DateTime fecha = DateTime.Now;
-                    Session["fecha_consulta"] = fecha.Date.ToString("d");
-                    fecha_actual.Text = fecha.Date.ToString("d");
-                    btnatras.Enabled = false;
-                }
+
+
             }
-            if (Session["Estados_botones"] != null)
+            else
             {
-                cargar_estado3(Session["Estados_botones"].ToString());
-                cargar_estado2(Session["Estados_botones"].ToString());
-                cargar_estado1(Session["Estados_botones"].ToString());
+                ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Para ingresar debe iniciar session');", true);
+                Response.Redirect("Default.aspx");
             }
-            if (Session["drpestado"] != null && (bool)Session["drpestado"] == true)
-            {
-                drpOt.Enabled = false;
-            }
-            crearTabla();
+
+
+            
 
         }
 

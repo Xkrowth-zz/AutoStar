@@ -225,53 +225,68 @@ namespace AutoStar.app
 
         protected void btn_buscarClick(object sender, ImageClickEventArgs e)
         {
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
 
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                String valor = TextBox1.Text;
+                String campo = DropDownList1.SelectedItem.Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("rolesBusqueda", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+                cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
+                cmd.ExecuteReader();
+                GridView1.DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
 
+            }
 
-            String valor = TextBox1.Text;
-            String campo = DropDownList1.SelectedItem.Text; 
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("rolesBusqueda", conn);
-            cmd.CommandType = CommandType.StoredProcedure;            
-            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
-            cmd.ExecuteReader();
-            GridView1.DataBind();
-            con.Close();
+            
 
         }
 
         protected void btn_crearClick(object sender, EventArgs e)
         {
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
+                String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
+                bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
 
-            String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
-            String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
-            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("insertRol", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
             
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand("insertRol", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
         }
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
-
-                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);                
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
                 int idRol = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
                 string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
                 string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
@@ -280,14 +295,20 @@ namespace AutoStar.app
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("updateRol", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add("@idRol", SqlDbType.Int).Value = idRol;                
-                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;                
+                cmd.Parameters.Add("@idRol", SqlDbType.Int).Value = idRol;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
                 cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
                 cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
                 cmd.ExecuteReader();
                 GridView1.EditIndex = -1;
                 DataBind();
                 con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+                
 
             
 

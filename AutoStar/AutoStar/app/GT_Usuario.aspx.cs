@@ -75,36 +75,44 @@ namespace AutoStar.app
         }
 
         protected void lbInsert_Click(object sender, EventArgs e)
-        {            
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            //Accessing Edited values from the GridView
-            //string str_id =  //ID
-            string rol = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList2")).SelectedItem.Text;
+        {
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                //Accessing Edited values from the GridView
+                //string str_id =  //ID
+                string rol = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList2")).SelectedItem.Text;
+
+                string comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
+                string str_nombre = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_nombre")).Text;  //Company
+                string str_apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;  //Name
+                string str_apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
+                bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+                String nickname = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_usuario")).Text;
+                String password = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_contraseña")).Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("insertUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = str_nombre;
+                cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = str_apellido1;
+                cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = str_apellido2;
+                cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+                cmd.ExecuteReader();
+                //cmd.CommandText = "listarEmpleados";
+                //GridView1.DataSource = cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
             
-            string comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
-            string str_nombre = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_nombre")).Text;  //Company
-            string str_apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;  //Name
-            string str_apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
-            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
-            String nickname=((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_usuario")).Text;
-            String password = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_contraseña")).Text;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("insertUsuario", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = str_nombre;
-            cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = str_apellido1;
-            cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = str_apellido2;
-            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
-            cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
-            cmd.ExecuteReader();
-            //cmd.CommandText = "listarEmpleados";
-            //GridView1.DataSource = cmd.ExecuteReader();
-            DataBind();
-            con.Close();
         } 
 
 
@@ -269,79 +277,104 @@ namespace AutoStar.app
         }
         protected void btn_insertarClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            String nombre = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_nombre")).Text;
-            String apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;
-            String apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
-            String rol = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_rol")).Text;
-            String comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
-            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("insertUsuario", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
-            cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
-            cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
-            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                String nombre = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_nombre")).Text;
+                String apellido1 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido1")).Text;
+                String apellido2 = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_apellido2")).Text;
+                String rol = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_rol")).Text;
+                String area = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList3")).SelectedItem.Text;
+                String comentarios = ((TextBox)GridView1.FooterRow.FindControl("txtfld_insert_comentarios")).Text;
+                bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("insertUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
+                cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+                cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
         }
 
         protected void btn_buscarClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            String valor = TextBox1.Text;
-            String campo = DropDownList1.SelectedItem.Text;
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                String valor = TextBox1.Text;
+                String campo = DropDownList1.SelectedItem.Text;
+
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("usuariosBusqueda", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+                cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
             
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("usuariosBusqueda", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
 
 
         }
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            int idUsuario = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label2")).Text);
-            String nombre = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_nombre")).Text;
-            String apellido1 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido1")).Text;
-            String apellido2 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido2")).Text;
-            String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList5")).SelectedItem.Text;
-            String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList4")).SelectedItem.Text;
-            String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
-            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
-            String nickname = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_usuario")).Text;
-            String password = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_contraseña")).Text;               
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("updateUsuario", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
-            cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
-            cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
-            cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
-            cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
-            cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
-            cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                int idUsuario = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label2")).Text);
+                String nombre = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_nombre")).Text;
+                String apellido1 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido1")).Text;
+                String apellido2 = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_apellido2")).Text;
+                String rol = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList5")).SelectedItem.Text;
+                String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList4")).SelectedItem.Text;
+                String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_comentarios")).Text;
+                bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
+                String nickname = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_usuario")).Text;
+                String password = ((TextBox)GridView1.SelectedRow.FindControl("txtfld_contraseña")).Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("updateUsuario", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+                cmd.Parameters.Add("@nombre", SqlDbType.NVarChar).Value = nombre;
+                cmd.Parameters.Add("@apellido1", SqlDbType.NVarChar).Value = apellido1;
+                cmd.Parameters.Add("@apellido2", SqlDbType.NVarChar).Value = apellido2;
+                cmd.Parameters.Add("@rol", SqlDbType.NVarChar).Value = rol;
+                cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.Parameters.Add("@nickname", SqlDbType.NVarChar).Value = nickname;
+                cmd.Parameters.Add("@password", SqlDbType.NVarChar).Value = password;
 
-            cmd.ExecuteReader();
-            GridView1.EditIndex = -1;
-            DataBind();
-            con.Close();
+                cmd.ExecuteReader();
+                GridView1.EditIndex = -1;
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
         }
     }
 }

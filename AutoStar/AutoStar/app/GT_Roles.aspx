@@ -11,7 +11,14 @@ Assembly="GridViewExtended" %>
             background-size: cover;
         }
     </style>
-    <h1>Roles</h1>
+
+    <script>
+        function UserDeleteConfirmation() {
+            return confirm("Desea eliminar este puesto?");
+        }
+    </script>
+
+    <h1>Puestos</h1>
         <div>
             <asp:Table CssClass="table" ID="Table1" runat="server">
                 <asp:TableRow CssClass="tableRow">
@@ -31,7 +38,7 @@ Assembly="GridViewExtended" %>
                         <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="btn_guardarClick" />
                     </asp:TableCell>
                     <asp:TableCell CssClass="tableCell">
-                        <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminarClick" />
+                        <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminarClick" OnClientClick="if ( ! UserDeleteConfirmation()) return false;" />
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>

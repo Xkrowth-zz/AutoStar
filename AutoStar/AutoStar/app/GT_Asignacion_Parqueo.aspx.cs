@@ -179,27 +179,7 @@ namespace AutoStar.app
                 bahiasMercedez.Visible = false;
                 bahiasCDJR.Visible = true;
             }
-        }
-        protected void irAorden(object sender , ImageClickEventArgs e) 
-        {
-            
-                    
-        }
-
-        //protected void btncerrar_Click(object sender, EventArgs e)
-        //{
-        //    Panel1.Visible = false;
-            
-        //}
-
-        
-        protected void Abrir_Click(object sender, EventArgs e)
-        {
-            string vtn = "window.open('GT_Usuarios.aspx','Dates','scrollbars=yes,resizable=yes','height=300', 'width=300')";
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "popup", vtn, true);
-        }
-
-        
+        }        
 
         protected void parqueos_Click(object sender , ImageClickEventArgs e) 
         {
@@ -212,10 +192,11 @@ namespace AutoStar.app
 
         }
 
-        protected void asignarParqueo(object sender , ImageClickEventArgs e) 
+        protected void asignarParqueo(object sender , ImageClickEventArgs e)
+ 
         {
-            ImageButton buttonClicked = (ImageButton)sender;
-            ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('" + buttonClicked.ID + "');", true);
+
         }
+
     }
 }

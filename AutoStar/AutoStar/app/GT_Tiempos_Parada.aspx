@@ -11,6 +11,11 @@ Assembly="GridViewExtended" %>
             background-size: cover;
         }
     </style>
+    <script>
+        function UserDeleteConfirmation() {
+            return confirm("Desea eliminar esta tiempo?");
+        }
+    </script>
     <h1>Tiempos</h1>
     <div>
         <asp:Table CssClass="table" ID="Table1" runat="server">
@@ -31,7 +36,7 @@ Assembly="GridViewExtended" %>
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="btn_guardar_Click" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton1" AlternateText="Eliminar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminar_Click" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton1" AlternateText="Eliminar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminar_Click" OnClientClick="if ( ! UserDeleteConfirmation()) return false;" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
@@ -66,7 +71,7 @@ Assembly="GridViewExtended" %>
         </UpdateParameters>
     </asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT descripcion FROM GT_Areas"></asp:SqlDataSource>
-    <CCS:GridViewExtended ID="GridView1" runat="server" _showFooterWhenEmpty="true" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated">
+    <CCS:GridViewExtended ID="GridView1" runat="server" _showFooterWhenEmpty="true" CssClass="GridViewConfig" ShowFooter="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="idTiempos" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="OnSelectedIndexChanged" SelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowHeaderWhenEmpty="True">
         <Columns>
 
             <asp:TemplateField></asp:TemplateField>

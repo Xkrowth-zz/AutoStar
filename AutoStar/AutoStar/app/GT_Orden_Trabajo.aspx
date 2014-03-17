@@ -12,6 +12,14 @@ Assembly="GridViewExtended" %>
         }
     </style>
     <h1>Orden de trabajo</h1>
+
+    <script>
+        function UserDeleteConfirmation() {
+            return confirm("Desea eliminar esta orden?");
+        }
+    </script>
+    
+
     <div>
         <asp:Table CssClass="table" ID="Table1" runat="server">
             <asp:TableRow CssClass="tableRow">
@@ -31,7 +39,7 @@ Assembly="GridViewExtended" %>
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" Onclick="btn_orden_guardar_Click" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_orden_eliminar_Click" />
+                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_orden_eliminar_Click" OnClientClick="if ( ! UserDeleteConfirmation()) return false;" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>
@@ -101,7 +109,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre as idTecnico FROM GT_Usuarios WHERE idRol = (SELECT idRol FROM GT_Rol WHERE descripcion = 'Tecnico')"></asp:SqlDataSource>    
     <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT nombre FROM GT_Usuarios WHERE idRol = (SELECT idRol FROM GT_Rol WHERE descripcion ='Asesor')"></asp:SqlDataSource>      
 
-    <CCS:GridViewExtended ID="GridView1" CssClass="GridViewConfig" AutoPostBack="True" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
+    <CCS:GridViewExtended ID="GridView1"  h CssClass="GridViewConfig" AutoPostBack="True" runat="server" _showFooterWhenEmpty="true" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="idOrdenTrabajo" OnSelectedIndexChanged="OnSelectedIndexChanged" OnSelectedIndexChanging="SelectedIndexChanging" onRowCreated="GridView1_RowCreated" ShowFooter="True" ShowHeaderWhenEmpty="True">
         <Columns>            
             <asp:TemplateField ShowHeader="False">
                                 
@@ -205,12 +213,12 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </FooterTemplate>
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Fecha de Ingreso" SortExpression="fechaIngreso">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Date" Text='<%# Bind("fechaIngreso")%>'></asp:TextBox>
+            <asp:TemplateField HeaderText="Fecha de Ingreso" SortExpression="fechaIngreso" >
+                <EditItemTemplate >
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("fechaIngreso" , "{0:dd/MM/yyyy}") %>' ></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label7" runat="server"  TextMode="Date" Text='<%# Bind("fechaIngreso") %>'></asp:Label>
+                    <asp:Label ID="Label7" runat="server"  Text='<%# Bind("fechaIngreso" ) %>'></asp:Label>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox14" runat="server" TextMode="Date"></asp:TextBox>

@@ -192,69 +192,94 @@ namespace AutoStar.app
 
         protected void btn_eliminarClick(object sender, EventArgs e)     // Panel Eliminar
         {
-            foreach (GridViewRow row in GridView1.Rows)
+            try 
             {
-                if (row.RowIndex == GridView1.SelectedIndex)
+                foreach (GridViewRow row in GridView1.Rows)
                 {
-                    //GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Delete$" + GridView1.SelectedRow.RowIndex);
-                    GridView1.DeleteRow(row.RowIndex);
-                    //GridView1.SetEditRow(row.RowIndex);
-                    //GridView1.SelectRow(GridView1.SelectedIndex);
-                    row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
-                    //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
-                    row.ToolTip = string.Empty;
-                }
-                else
-                {
-                    row.BackColor = GridView1.BackColor;
-                    //row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
-                    //row.ToolTip = "Click to select this row.";
+                    if (row.RowIndex == GridView1.SelectedIndex)
+                    {
+                        //GridView1.SelectedRow.Attributes["onclick"] = Page.ClientScript.GetPostBackClientHyperlink(GridView1, "Delete$" + GridView1.SelectedRow.RowIndex);
+                        GridView1.DeleteRow(row.RowIndex);
+                        //GridView1.SetEditRow(row.RowIndex);
+                        //GridView1.SelectRow(GridView1.SelectedIndex);
+                        row.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                        //GridView1.SelectedRow.BackColor = ColorTranslator.FromHtml("#A1DCF2");
+                        row.ToolTip = string.Empty;
+                    }
+                    else
+                    {
+                        row.BackColor = GridView1.BackColor;
+                        //row.BackColor = ColorTranslator.FromHtml("#FFFFFF");
+                        //row.ToolTip = "Click to select this row.";
+                    }
                 }
             }
+            catch(Exception ex)
+            {
+
+            }
+            
 
         }
         
         protected virtual void btn_crearclick(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
-            //Accessing Edited values from the GridView
+            try 
+            {
+                SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+                //Accessing Edited values from the GridView
 
 
-            string descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;  
-            string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
-            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("insertArea", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;            
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.ExecuteReader();            
-            DataBind();
-            con.Close();
+                string descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
+                string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox3")).Text;
+                bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("insertArea", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            
 
         }        
         
 
         protected void btn_buscar_click(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
-            //Accessing Edited values from the GridView
+            try 
+            {
+                SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+                //Accessing Edited values from the GridView
 
-            string valor = TextBox1.Text;  //Company
-            string campo = DropDownList1.SelectedItem.Text; //Name
+                string valor = TextBox1.Text;  //Company
+                string campo = DropDownList1.SelectedItem.Text; //Name
 
 
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("areasBusqueda", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;            
-            cmd.ExecuteReader();              
-            DataBind();
-            con.Close();
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("areasBusqueda", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+                cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
         }
 
         protected void btn_editar(object sender, ImageClickEventArgs e)
@@ -281,27 +306,36 @@ namespace AutoStar.app
         protected void btn_guardarClick(object sender, ImageClickEventArgs e) 
         {
 
-            SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
-            //Accessing Edited values from the GridView
+            try 
+            {
+                SqlConnection con = new SqlConnection(ConfigurationSettings.AppSettings["connect"]);
+                //Accessing Edited values from the GridView
 
 
-            int idArea = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
-            string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
-            string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
-            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
+                int idArea = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+                string descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+                string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox1")).Text;
+                bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
 
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("updateArea", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@idArea", SqlDbType.Int).Value = idArea;
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-            cmd.ExecuteReader();
-            GridView1.EditIndex = -1;
-            DataBind();
-            con.Close();
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("updateArea", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@idArea", SqlDbType.Int).Value = idArea;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.ExecuteReader();
+                GridView1.EditIndex = -1;
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            
 
 
         }

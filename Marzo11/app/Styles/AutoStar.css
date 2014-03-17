@@ -1,0 +1,58 @@
+﻿body
+{
+    font: "Trebuchet MS", Verdana, sans-serif;
+    background-color: #D0D0D0; /*#5c87b2 ;*/
+    color: #696969;
+}
+h1 
+{
+    color: #000000;
+    position:fixed;
+    top:100px;
+    right:700px;
+}
+h2 
+{
+    border-bottom : 3px solid #CC9900;
+    font: Georgia, serif;
+    color: #996600;
+}
+
+hr
+{
+    color: black;
+    position:fixed;
+    top:178px;
+    right:153px;
+    width:1000px;
+}
+
+#label {
+    color:#FF0000;
+}
+
+.icono
+{
+    width:75px;
+    height:75px;
+    <area shape="rect" coords="0,0,75,75" >;
+
+}
+
+#main {
+    padding: 20px;
+    background-color: #D0D0D0;
+    border-radius: 0px 4px 4px 4px;
+}
+
+GridView#GridView1 {
+    background-color:black;
+
+.GridViewConfig 
+{
+    position:fixed;
+    top:300px;
+    width:500px;
+
+}
+

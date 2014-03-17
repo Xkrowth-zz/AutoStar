@@ -11,6 +11,11 @@ Assembly="GridViewExtended" %>
             background-size: cover;
         }
     </style>
+    <script type="text/Javascript">
+        function alert_meth() {
+            alert("Accion no permitida");
+        }
+</script>
     <h1>Opciones</h1>
     <div>
         <asp:Table CssClass="table" ID="Table1" runat="server">
@@ -31,7 +36,7 @@ Assembly="GridViewExtended" %>
                     <asp:ImageButton CssClass="botonFull" ID="ImageButton4" AlternateText="Guardar" runat="server" ImageUrl="~/app/Images/icons/iconGuardar.png" OnClick="btn_guardarClick" />
                 </asp:TableCell>
                 <asp:TableCell CssClass="tableCell">
-                    <asp:ImageButton CssClass="botonFull" ID="ImageButton5" AlternateText="Borrar" runat="server" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClick="btn_eliminar_Click" />
+                    <asp:ImageButton ID="ImageButton5" runat="server" CssClass="botonFull" AlternateText="Eliminar" ImageUrl="~/app/Images/icons/iconBorrar.png" OnClientClick="alert_meth()" />
                 </asp:TableCell>
             </asp:TableRow>
         </asp:Table>

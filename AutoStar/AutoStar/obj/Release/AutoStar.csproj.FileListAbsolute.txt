@@ -157,3 +157,5 @@ D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.res
 D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Release\AutoStar.csprojResolveAssemblyReference.cache
 D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Release\AutoStar.dll
 D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Release\AutoStar.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.pdb

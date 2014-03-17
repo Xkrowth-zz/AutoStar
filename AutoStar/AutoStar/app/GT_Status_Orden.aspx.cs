@@ -160,46 +160,63 @@ namespace AutoStar.app
         }
         protected void btn_crearClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
+            try
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+
+
+                String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
+                String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
+                bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("insertStatus", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
             
-            String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox5")).Text;
-            String comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox4")).Text;
-            bool status = ((CheckBox)GridView1.FooterRow.FindControl("CheckBox3")).Checked;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand("insertStatus", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
-
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
 
         }
         protected void btn_buscarClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
 
-            String valor = TextBox1.Text;
-            String campo = DropDownList1.SelectedItem.Text;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
+                String valor = TextBox1.Text;
+                String campo = DropDownList1.SelectedItem.Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
 
-            SqlCommand cmd = new SqlCommand("statusBusqueda", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("statusBusqueda", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
+                cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+                cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
 
-            cmd.ExecuteReader();
-            DataBind();
-            con.Close();
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
 
         }
 
@@ -229,35 +246,39 @@ namespace AutoStar.app
 
         protected void btn_guardarClick(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
 
 
-            String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
-            String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
-            int idStatus = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
-            bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
+                String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+                String comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
+                int idStatus = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+                bool status = ((CheckBox)GridView1.SelectedRow.FindControl("CheckBox1")).Checked;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
 
-            SqlCommand cmd = new SqlCommand("updateStatus", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+                SqlCommand cmd = new SqlCommand("updateStatus", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add("@idStatus", SqlDbType.Int).Value = idStatus;
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
+                cmd.Parameters.Add("@idStatus", SqlDbType.Int).Value = idStatus;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.Parameters.Add("@status", SqlDbType.Bit).Value = status;
 
-            cmd.ExecuteReader();
-            GridView1.EditIndex = -1;
-            DataBind();
-            con.Close();
+                cmd.ExecuteReader();
+                GridView1.EditIndex = -1;
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
 
         }
 
-        protected void setFocus(object sender, EventArgs e)
-        {
-            this.Focus();
-        }
 
 
 

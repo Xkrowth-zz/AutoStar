@@ -104,7 +104,7 @@ namespace AutoStar.app
 
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
-                
+                e.Row.Attributes["onmouseover"] = "this.style.cursor='pointer';this.style.textDecoration='underline';";
                 e.Row.Attributes["onmouseout"] = "this.style.textDecoration='none';";
                 e.Row.ToolTip = "Click to select row";
                 if (!(e.Row.RowIndex == GridView1.SelectedIndex))
@@ -166,106 +166,126 @@ namespace AutoStar.app
 
         protected void btn_buscar_Click(object sender, ImageClickEventArgs e)
         {
-
-
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-
-
-            String valor = TextBox1.Text;
-            String campo = DropDownList1.SelectedItem.Text;
-
-            Console.Write("Esto es valor: " + valor + " Esto es campo: " + campo);
-
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-
-            conn.Open();
-
-            SqlCommand cmd = new SqlCommand("tiemposBusqueda", conn);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-            if (valor == "" | campo == "")
+            try 
             {
-                valor = "vacio";
-                campo = "vacio";
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+
+
+                String valor = TextBox1.Text;
+                String campo = DropDownList1.SelectedItem.Text;
+
+                Console.Write("Esto es valor: " + valor + " Esto es campo: " + campo);
+
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("tiemposBusqueda", conn);
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                if (valor == "" | campo == "")
+                {
+                    valor = "vacio";
+                    campo = "vacio";
+                }
+                cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
+                cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
+                cmd.ExecuteReader();
+                BindData();
+                con.Close();
             }
-            cmd.Parameters.Add("@valor", SqlDbType.NVarChar).Value = valor;
-            cmd.Parameters.Add("@campo", SqlDbType.NVarChar).Value = campo;
-            cmd.ExecuteReader();
-            BindData();
-            con.Close();
+            catch(Exception ex)
+            {
+
+            }
+            
 
         }
 
 
         protected void btn_crear_Click(object sender, EventArgs e)
         {
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                String area = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList2")).SelectedItem.Text;
+                String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
+                String horaInicio = ((TextBox)GridView1.FooterRow.FindControl("TextBox6")).Text;
+                int duracion = int.Parse(((TextBox)GridView1.FooterRow.FindControl("TextBox9")).Text);
+                string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox10")).Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
 
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);            
-            String area = ((DropDownList)GridView1.FooterRow.FindControl("DropDownList2")).SelectedItem.Text;
-            String descripcion = ((TextBox)GridView1.FooterRow.FindControl("TextBox7")).Text;
-            String horaInicio = ((TextBox)GridView1.FooterRow.FindControl("TextBox6")).Text;
-            int duracion = int.Parse(((TextBox)GridView1.FooterRow.FindControl("TextBox9")).Text);
-            string comentarios = ((TextBox)GridView1.FooterRow.FindControl("TextBox10")).Text;            
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
+                SqlCommand cmd = new SqlCommand("insertTiempos", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlCommand cmd = new SqlCommand("insertTiempos", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@horaInicio", SqlDbType.Time).Value = horaInicio;
+                cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                cmd.ExecuteReader();
+                DataBind();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
 
-            cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@horaInicio", SqlDbType.Time).Value = horaInicio;
-            cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;            
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+            }
+
             
-
-            cmd.ExecuteReader();
-            BindData();
-            con.Close();
         }
 
         protected void btn_guardar_Click(object sender, ImageClickEventArgs e)
         {
-            SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
-            int idTiempos = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
-            String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList3")).SelectedItem.Text;
-            String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
-            String horaInicio = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
-            int duracion = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("TextBox4")).Text);
-            string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox5")).Text;
-            SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
-            conn.Open();
+            try 
+            {
+                SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.AppSettings["connect"]);
+                int idTiempos = int.Parse(((Label)GridView1.SelectedRow.FindControl("Label1")).Text);
+                String area = ((DropDownList)GridView1.SelectedRow.FindControl("DropDownList3")).SelectedItem.Text;
+                String descripcion = ((TextBox)GridView1.SelectedRow.FindControl("TextBox2")).Text;
+                String horaInicio = ((TextBox)GridView1.SelectedRow.FindControl("TextBox3")).Text;
+                int duracion = int.Parse(((TextBox)GridView1.SelectedRow.FindControl("TextBox4")).Text);
+                string comentarios = ((TextBox)GridView1.SelectedRow.FindControl("TextBox5")).Text;
+                SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=GT_AutoStar;Integrated Security=True");
+                conn.Open();
 
-            SqlCommand cmd = new SqlCommand("updateTiempos", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@idTiempos", SqlDbType.Int).Value = idTiempos;
-            cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
-            cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
-            cmd.Parameters.Add("@horaInicio", SqlDbType.DateTime).Value = horaInicio;
-            cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;
-            cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
-            GridView1.EditIndex = -1;
+                SqlCommand cmd = new SqlCommand("updateTiempos", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@idTiempos", SqlDbType.Int).Value = idTiempos;
+                cmd.Parameters.Add("@area", SqlDbType.NVarChar).Value = area;
+                cmd.Parameters.Add("@descripcion", SqlDbType.NVarChar).Value = descripcion;
+                cmd.Parameters.Add("@horaInicio", SqlDbType.DateTime).Value = horaInicio;
+                cmd.Parameters.Add("@duracion", SqlDbType.Int).Value = duracion;
+                cmd.Parameters.Add("@comentarios", SqlDbType.NVarChar).Value = comentarios;
+                GridView1.EditIndex = -1;
 
-            cmd.ExecuteReader();
-            BindData();
-            con.Close();
+                cmd.ExecuteReader();
+                BindData();
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+
+            }
+            
 
 
 
         }
 
-        private Control GetControlThatCausedPostBack(Page page)
-        {
-            //initialize a control and set it to null
-            Control ctrl = null;
+        //private Control GetControlThatCausedPostBack(Page page)
+        //{
+        //    //initialize a control and set it to null
+        //    Control ctrl = null;
 
-            //get the event target name and find the control
-            string ctrlName = page.Request.Params.Get("__EVENTTARGET");
-            if (!String.IsNullOrEmpty(ctrlName))
-                ctrl = page.FindControl(ctrlName);
+        //    //get the event target name and find the control
+        //    string ctrlName = page.Request.Params.Get("__EVENTTARGET");
+        //    if (!String.IsNullOrEmpty(ctrlName))
+        //        ctrl = page.FindControl(ctrlName);
 
-            //return the control to the calling method
-            return ctrl;
-        }
+        //    //return the control to the calling method
+        //    return ctrl;
+        //}
     }
 }

@@ -1,0 +1,8 @@
+D:\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Release\GridViewExtended.dll
+D:\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Release\GridViewExtended.pdb
+D:\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Release\GridViewExtended.dll
+D:\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Release\GridViewExtended.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Release\GridViewExtended.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\bin\Release\GridViewExtended.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Release\GridViewExtended.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\GridViewExtended\obj\Release\GridViewExtended.pdb

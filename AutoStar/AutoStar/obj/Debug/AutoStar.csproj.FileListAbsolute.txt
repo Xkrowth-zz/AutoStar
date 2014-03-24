@@ -1,0 +1,945 @@
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\AutoStar.dll.config
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\AutoStar.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\AutoStar.pdb
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\EntityFramework.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Owin.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Razor.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\WebGrease.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Razor.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\EntityFramework.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+c:\users\marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Http.dll
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Http.xml
+C:\Users\Marcelo\documents\visual studio 2013\Projects\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\AjaxMin.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\Visual Studio 2013\Projects\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\AutoStar.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\AutoStar.pdb
+F:\ladeverdad\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\AjaxMin.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\Owin.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Razor.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\WebGrease.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+F:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Razor.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+F:\ladeverdad\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+F:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+F:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+F:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+I:\ladeverdad\AutoStar\AutoStar\bin\AutoStar.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\AutoStar.pdb
+I:\ladeverdad\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\AjaxMin.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\Owin.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Razor.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\WebGrease.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+I:\ladeverdad\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.Razor.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+I:\ladeverdad\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+I:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+I:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+I:\ladeverdad\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Documents Jose\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Documents Jose\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\Owin.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Documents Jose\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Documents Jose\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Documents Jose\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Documents Jose\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Documents Jose\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Owin.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Documents\Visual Studio 2012\Projects\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Owin.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Dropbox\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Owin.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Documents\Dropbox\AutoStar - Andres\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.pdb
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Owin.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+C:\Users\Andres\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Owin.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Documents Jose\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.pdb
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Owin.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.pdb
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+D:\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll.config
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\AutoStar.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Owin.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\EntityFramework.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+C:\Users\Fer\Documents\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll.config
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AutoStar.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxControlToolkit.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\AjaxMin.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Antlr3.Runtime.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Owin.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Optimization.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\WebGrease.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\GridViewExtended.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.pdb
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\HtmlAgilityPack.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Net.Http.Formatting.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Http.WebHost.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Mvc.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.Razor.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\System.Web.WebPages.Razor.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\EntityFramework.SqlServer.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\Newtonsoft.Json.xml
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ar\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\cs\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\de\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\es\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\fr\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\he\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\hi\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\it\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ja\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ko\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\nl\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pl\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\pt\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\ru\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\tr-TR\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHS\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\bin\zh-CHT\AjaxControlToolkit.resources.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.csprojResolveAssemblyReference.cache
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.dll
+C:\Users\Marcelo\Documents\GitHub\AutoStar\AutoStar\AutoStar\obj\Debug\AutoStar.pdb

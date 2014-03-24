@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AutoStar.master.cs" Inherits="AutoStar.app.AutoStar" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>AutoStar</title>
+    <link href="Styles/AutoStar.css" rel="stylesheet" type="text/css" /> <%--//jala todo el CSS a todas las paginas que vamos creando--%>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+<%--    <div>
+            <ul>
+                <li><a href="Default.aspx">Inicio</a></li>
+                <li><a href="About.aspx">Acerca de</a></li>
+            </ul>
+        </div>--%>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"><%--Contenido que se va generando con las paginas--%>
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" ><%--Contenido que se va generando con las paginas--%>
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

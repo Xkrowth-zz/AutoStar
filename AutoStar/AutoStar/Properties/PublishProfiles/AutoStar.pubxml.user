@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Marcelo\Documents\GitHub\AutoStar\Marzo11</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="app/AutoStar.Master">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/construccion.aspx">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/default.aspx">
+      <publishTime>03/07/2014 16:28:16</publishTime>
+    </File>
+    <File Include="app/GT_Acceso_Menu.aspx">
+      <publishTime>03/05/2014 22:16:55</publishTime>
+    </File>
+    <File Include="app/GT_Areas.aspx">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/GT_Asignacion_Parqueo.aspx">
+      <publishTime>03/04/2014 23:09:18</publishTime>
+    </File>
+    <File Include="app/GT_Configuracion_General.aspx">
+      <publishTime>03/02/2014 22:18:39</publishTime>
+    </File>
+    <File Include="app/GT_Nueva_Orden.aspx">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/GT_Opcion_Menu.aspx">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/GT_Orden_Trabajo.aspx">
+      <publishTime>03/07/2014 18:15:27</publishTime>
+    </File>
+    <File Include="app/GT_Parametros.aspx">
+      <publishTime>03/02/2014 14:00:51</publishTime>
+    </File>
+    <File Include="app/GT_Planografo_Digital.aspx">
+      <publishTime>03/04/2014 23:09:18</publishTime>
+    </File>
+    <File Include="app/GT_Roles.aspx">
+      <publishTime>03/02/2014 14:00:51</publishTime>
+    </File>
+    <File Include="app/GT_Status_Orden.aspx">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/GT_Tiempos_Parada.aspx">
+      <publishTime>03/05/2014 22:01:19</publishTime>
+    </File>
+    <File Include="app/GT_Usuario.aspx">
+      <publishTime>03/05/2014 22:25:24</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/FL1.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/FL2.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/J1.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/J2.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/mb1.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB10.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB11.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB12.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB13.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB14.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB15.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB16.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB17.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB18.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB19.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/mb2.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB20.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB21.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB22.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB23.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB24.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB3.jpg">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB4.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB5.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB6.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB7.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB8.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/MB9.jpg">
+      <publishTime>03/01/2014 12:47:43</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/ParkBack.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/backgrounds/parqueo.png">
+      <publishTime>03/02/2014 22:18:39</publishTime>
+    </File>
+    <File Include="app/Images/construccion.png">
+      <publishTime>03/01/2014 12:47:44</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconAcceso.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconActualizar.png">
+      <publishTime>03/01/2014 12:47:44</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconAreas.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconAsignacionParqueo.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconAsignacionTiempo.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconAsignarPersonal.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBahia.png">
+      <publishTime>02/07/2014 17:57:56</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBahiaLibre.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBahiaOcupada.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBahias.png">
+      <publishTime>01/26/2014 19:16:22</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBorrar.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconBuscar.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconCambioEstado.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconComentarios.png">
+      <publishTime>03/02/2014 22:18:39</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconConfigGeneral.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconConsultas.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconCrear.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconDepartamento.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconEditar.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconEstado.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconGrua.png">
+      <publishTime>02/15/2014 18:56:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconGruaLibre.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconGruaOcupada.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconGuardar.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconInicio.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconListadoOrdenes.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconLogin.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconOpciones.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconOrdenTrabajo.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconParametros.png">
+      <publishTime>02/15/2014 14:40:35</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconParqueoLibre.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconParqueoOcupado.png">
+      <publishTime>02/24/2014 01:52:51</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconParqueos.png">
+      <publishTime>01/26/2014 19:16:20</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconPlanografoDigital.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconPrioridad.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconRoles.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconStatus.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconTareas.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconTiempos.png">
+      <publishTime>02/15/2014 14:39:09</publishTime>
+    </File>
+    <File Include="app/Images/icons/iconUsuario.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Images/logo.png">
+      <publishTime>03/01/2014 12:47:44</publishTime>
+    </File>
+    <File Include="app/Images/logoRD.png">
+      <publishTime>03/04/2014 23:09:18</publishTime>
+    </File>
+    <File Include="app/MasterPage.Master">
+      <publishTime>03/04/2014 23:09:18</publishTime>
+    </File>
+    <File Include="app/modalBackground.css">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/ppAsignacion_Parqueos.aspx">
+      <publishTime>03/02/2014 22:18:39</publishTime>
+    </File>
+    <File Include="app/Styles/AutoStar.css">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="app/Styles/Main.css">
+      <publishTime>03/04/2014 23:09:18</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/AjaxMin.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>01/31/2014 13:04:35</publishTime>
+    </File>
+    <File Include="bin/ar/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/AutoStar.dll">
+      <publishTime>03/11/2014 20:15:51</publishTime>
+    </File>
+    <File Include="bin/cs/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/de/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/es/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/fr/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/GridViewExtended.dll">
+      <publishTime>03/11/2014 20:15:51</publishTime>
+    </File>
+    <File Include="bin/he/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/hi/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/it/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/ja/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/ko/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>01/31/2014 13:04:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>01/31/2014 13:04:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>01/31/2014 13:04:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>01/31/2014 13:04:33</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>01/31/2014 13:04:33</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>01/31/2014 13:04:34</publishTime>
+    </File>
+    <File Include="bin/nl/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>01/31/2014 13:04:35</publishTime>
+    </File>
+    <File Include="bin/pl/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/pt/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/ru/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/31/2014 13:04:32</publishTime>
+    </File>
+    <File Include="bin/tr-TR/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>01/31/2014 13:04:35</publishTime>
+    </File>
+    <File Include="bin/zh-CHS/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="bin/zh-CHT/AjaxControlToolkit.resources.dll">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.css">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Content/bootstrap-responsive.min.css">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="img/glyphicons-halflings-white.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="img/glyphicons-halflings.png">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>01/31/2014 13:04:31</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/Manage.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/_ChangePasswordPartial.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/_RemoveAccountPartial.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Account/_SetPasswordPartial.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>03/11/2014 20:15:52</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/11/2014 20:15:52</publishTime>
+    </File>
+    <File Include="WebServiceAutoStar.asmx">
+      <publishTime>01/31/2014 13:04:30</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -103,7 +103,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox3" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_rol" runat="server" ErrorMessage="Rol es un campo obligatario" ControlToValidate="TextBox3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfv_rol" ValidationGroup="Insert" runat="server" ErrorMessage="Rol es un campo obligatario" ControlToValidate="TextBox3" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -132,6 +132,10 @@
             </asp:TemplateField>
         </Columns>
     </CCS:GridViewExtended>
+
+    <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
+
+
 </asp:Content>
 
 

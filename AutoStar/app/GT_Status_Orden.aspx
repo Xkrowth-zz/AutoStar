@@ -96,7 +96,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox5" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_status" runat="server" ErrorMessage="Status es un campo obligatario" ControlToValidate="TextBox5" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfv_status" ValidationGroup="Insert" runat="server" ErrorMessage="Status es un campo obligatario" ControlToValidate="TextBox5" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -127,7 +127,7 @@
         </Columns>
     </CCS:GridViewExtended>
 
-
+   <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
 
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:GT_AutoStarConnectionString2 %>" SelectCommand="SELECT GT_Status_Orden_Trabajo.descripcion FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
 

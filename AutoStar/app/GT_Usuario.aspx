@@ -196,6 +196,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_usuario" runat="server" TextMode="SingleLine"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_nickname" ValidationGroup="Insert" runat="server" ErrorMessage="Usuario es un campo obligatario" ControlToValidate="txtfld_insert_usuario" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -209,6 +210,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_contraseña" runat="server" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_contraseña" ValidationGroup="Insert" runat="server" ErrorMessage="Contraseña es un campo obligatario" ControlToValidate="txtfld_insert_contraseña" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 

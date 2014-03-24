@@ -104,7 +104,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox4" runat="server" TextMode="MultiLine"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_area" runat="server" ErrorMessage="Area es un campo obligatario" ControlToValidate="TextBox4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfv_area" ValidationGroup="Insert" runat="server" ErrorMessage="Area es un campo obligatario" ControlToValidate="TextBox4" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -134,7 +134,7 @@
             </asp:TemplateField>
         </Columns>
     </CCS:GridViewExtended>
-
+    <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
 
 </asp:Content>
 

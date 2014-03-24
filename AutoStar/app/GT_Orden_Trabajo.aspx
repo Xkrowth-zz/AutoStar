@@ -3,7 +3,7 @@
 Assembly="GridViewExtended" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" DefaultButton="ImageButton1" >
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server" >
     <style type="text/css" class="bodyUsuarios">
         body {
             background-image: url('/app/Images/backgrounds/MB10.jpg');
@@ -196,7 +196,7 @@ FROM GT_Status_Orden_Trabajo"></asp:SqlDataSource>
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="txtfld_insert_placa" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="rfv_placa" runat="server" ErrorMessage="Placa es un campo obligatario" ControlToValidate="txtfld_insert_placa" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfv_placa" runat="server" ValidationGroup="Insert" ErrorMessage="Placa es un campo obligatario" ControlToValidate="txtfld_insert_placa" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 

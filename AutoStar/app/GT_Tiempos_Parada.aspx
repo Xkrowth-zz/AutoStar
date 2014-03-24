@@ -109,6 +109,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_descripcion" ValidationGroup="Insert" runat="server" ErrorMessage="Descripcion es un campo obligatario" ControlToValidate="TextBox7" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -121,6 +122,7 @@
                 </ItemTemplate>
                 <FooterTemplate>
                     <asp:TextBox ID="TextBox6" runat="server" TextMode="Time"></asp:TextBox>
+                    <asp:RequiredFieldValidator ID="rfv_horaInicio" ValidationGroup="Insert" runat="server" ErrorMessage="Hora de Inicio es un campo obligatario" ControlToValidate="TextBox6" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
                 </FooterTemplate>
             </asp:TemplateField>
 
@@ -152,7 +154,7 @@
     </CCS:GridViewExtended>
 
     <asp:ValidationSummary ID="ValidationSummary1" ValidationGroup="Insert" ForeColor="Red" runat="server" />
-    <asp:HiddenField ID="hidSourceID" runat="server" />
+    
 
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
